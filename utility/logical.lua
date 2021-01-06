@@ -1,5 +1,5 @@
+-- Generic language utilities for logical operations.
 local Logical = {
-    description = "Generic language utilities for logical operations.",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 

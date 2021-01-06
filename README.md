@@ -38,9 +38,9 @@ p = Bartmoss.System.Player()
 pd = Bartmoss.System.PlayerData()
 
 -- Access various low-level systems.
-ts = Bartmoss.System.TransactionSystem()
-cs = Bartmoss.System.CraftingSystem()
-es = Bartmoss.System.EquipmentSystem()
+ts = Bartmoss.System.Transaction()
+cs = Bartmoss.System.Crafting()
+es = Bartmoss.System.Equipment()
 ssc = Bartmoss.System.ScriptableSystemsContainer()
 ```
 

@@ -1,5 +1,5 @@
+-- Internal glossary for enumeration, lookups, constants and so on.
 local Glossary = {
-    description = "Internal glossary for enumeration, lookups, constants and so on.",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -54,7 +54,7 @@ Glossary.Recipes = {
 }
 
 -- Enumerations.
-Glossary.ItemQuality = {
+Glossary.Quality = {
     Common = "Common",
     Uncommon = "Uncommon",
     Rare = "Rare",

@@ -1,5 +1,5 @@
+-- Cheats interacting more-or-less directly with the equipment system.
 local EquipmentHandler = {
-    description = "Cheats interacting more-or-less directly with the equipment system.",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -9,7 +9,7 @@ local ItemHandler = require(EquipmentHandler.rootPath .. "cheats.itemhandler")
 
 function EquipmentHandler.MakeEquippedItemsLegendary()
     local player = System.Player()
-    local ts = System.TransactionSystem()
+    local ts = System.Transaction()
     local espd = System.PlayerData()
 
     local slots = {
@@ -28,8 +28,8 @@ function EquipmentHandler.MakeEquippedItemsLegendary()
             if itemid.tdbid.hash ~= 0 then
                 print("Upgrading item in " .. k .. " slot " .. (i - 1))
                 local itemdata = ts:GetItemData(player, itemid)
-                ItemHandler.SetItemLevel(itemdata)
-                ItemHandler.SetItemQuality(itemdata, Glossary.ItemQuality.Legendary)
+                ItemHandler.SetLevel(itemdata)
+                ItemHandler.SetQuality(itemdata, Glossary.Quality.Legendary)
             end
         end
     end
