@@ -1,5 +1,5 @@
 # Bartmoss
-A suite of scripts to simplify interaction with the Cyberpunk 2077 console.
+A suite of Lua scripts to simplify interaction with the Cyberpunk 2077 console while maintaining game integrity and user safety.
 
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
@@ -69,7 +69,7 @@ Bartmoss.Cheats.Items.GiveItem(item)
 -- Also supports quantity.
 Bartmoss.Cheats.Items.GiveItem(item, quantity)
 
--- And quality (some endgame items will be forced to specific qualities)
+-- And quality (some endgame items will be forced to specific qualities).
 Bartmoss.Cheats.Items.GiveItem(item, quantity, quality)
 ```
 

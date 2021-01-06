@@ -49,6 +49,10 @@ Glossary.Resources = {
     Money = "Items.money"
 }
 
+Glossary.Recipes = {
+    -- Do this one next.
+}
+
 -- Enumerations.
 Glossary.ItemQuality = {
     Common = "Common",
