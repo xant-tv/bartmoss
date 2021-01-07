@@ -33,22 +33,22 @@ Glossary.Cyberware = {
 			{{- end}}
 		},
 		Epic = {
-			{{- range $element := cyberware $.Objects "Skeleton" "Legendary"}}
+			{{- range $element := cyberware $.Objects "Skeleton" "Epic"}}
 			{{ $element }}
 			{{- end}}
 		},
 		Rare = {
-			{{- range $element := cyberware $.Objects "Skeleton" "Legendary"}}
+			{{- range $element := cyberware $.Objects "Skeleton" "Rare"}}
 			{{ $element }}
 			{{- end}}
 		},
 		Uncommon = {
-			{{- range $element := cyberware $.Objects "Skeleton" "Legendary"}}
+			{{- range $element := cyberware $.Objects "Skeleton" "Uncommon"}}
 			{{ $element }}
 			{{- end}}
 		},
 		Common = {
-			{{- range $element := cyberware $.Objects "Skeleton" "Legendary"}}
+			{{- range $element := cyberware $.Objects "Skeleton" "Common"}}
 			{{ $element }}
 			{{- end}}
 		},
