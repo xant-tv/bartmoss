@@ -16,16 +16,16 @@ function ItemHandler.HasDefaultQuality(item)
     return nil
 end
 
-function ItemHandler.SetLevel(data)
+function ItemHandler.SetLevel(itemdata)
     local cs = System.Crafting()
-    local result = cs:SetItemLevel(data)
+    local result = cs:SetItemLevel(itemdata)
     -- Appears as though this doesn't return anything?
     -- Doesn't immediately update item until game manager is forced to (see SetItemQuality).
 end
 
-function ItemHandler.SetQuality(data, quality)
+function ItemHandler.SetQuality(itemdata, quality)
     local player = System.Player()
-    local result = Game["gameRPGManager::ForceItemQuality;GameObjectgameItemDataCName"](player, data, CName.new(quality))
+    local result = Game["gameRPGManager::ForceItemQuality;GameObjectgameItemDataCName"](player, itemdata, CName.new(quality))
     -- Returns true even if quality does not exist. Likely because "forcing" the item update is successful.
     -- TODO: Ideally, there would be an equivalent function for forcing level?
 end

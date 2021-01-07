@@ -11,15 +11,15 @@ function Bartmoss:new()
 
     -- Load modules into memory.
     Interface.System = require(Bartmoss.rootPath .. "game.system")
-    Interface.Quickhacks = require(Bartmoss.rootPath .. "quickhacks")
-    Interface.Glossary = require(Bartmoss.rootPath .. "data.glossary")
     Interface.Utility = {
         Logical = require(Bartmoss.rootPath .. "utility.logical")
     }
+    Interface.Glossary = require(Bartmoss.rootPath .. "data.glossary")
     Interface.Cheats = {
         Items = require(Bartmoss.rootPath .. "cheats.itemhandler"),
         Equipment = require(Bartmoss.rootPath .. "cheats.equipmenthandler")
     }
+    Interface.Quickhacks = require(Bartmoss.rootPath .. "quickhacks")
 
     return Interface
 end
