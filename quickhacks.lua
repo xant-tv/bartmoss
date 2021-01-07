@@ -1,5 +1,5 @@
+-- Pre-built quickhacks for easy use.
 local Quickhacks = {
-    description = "Pre-built quickhacks for easy use.",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -11,152 +11,152 @@ function Quickhacks.GiveFemaleNomadCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Jacket_14_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Undershirt_02_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Glasses_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Shorts_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Shorts_01_rich_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Boots_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Boots_02_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Boots_09_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_01_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_01_rich_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_03_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_03_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_03_rich_03", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_05_rich_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Q001_Pants", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Q001_Shoes", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         }
     }
-    ItemHandler.GiveMultipleItems(itemspecs)
+    ItemHandler.GiveMultiple(itemspecs)
 end
 
 function Quickhacks.GiveFemaleCorpoCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Fixer_01_Set_Glasses", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.TightJumpsuit_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.TightJumpsuit_01_rich_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Jacket_11_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Vest_19_rich_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Vest_19_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Shorts_01_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Pants_03_rich_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Dress_02_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_01_basic_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_01_rich_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_02_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_02_basic_03", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_02_rich_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalSkirt_02_rich_02", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Boots_09_basic_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.Boots_09_rich_03", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         },
         {
             item = "Items.FormalShoes_01_rich_01", 
-            quality = Glossary.ItemQuality.Legendary
+            quality = Glossary.Quality.Legendary
         }
     }
-    ItemHandler.GiveMultipleItems(itemspecs)
+    ItemHandler.GiveMultiple(itemspecs)
 end
 
 function Quickhacks.GiveEndgameMods()
@@ -167,12 +167,12 @@ function Quickhacks.GiveEndgameMods()
         },
         {
             item = Glossary.ClothingMods.Armadillo,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 60,
         },
         {
             item = Glossary.ClothingMods.BoomBreaker,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 10
         },
         {
@@ -209,7 +209,7 @@ function Quickhacks.GiveEndgameMods()
         },
         {
             item = Glossary.ClothingMods.ZeroDrag,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 10
         },
         {
@@ -218,7 +218,7 @@ function Quickhacks.GiveEndgameMods()
         },
         {
             item = Glossary.RangedMods.Crunch,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 30
         },
         {
@@ -231,12 +231,12 @@ function Quickhacks.GiveEndgameMods()
         },
         {
             item = Glossary.RangedMods.Pacifier,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 30
         },
         {
             item = Glossary.RangedMods.Penetrator,
-            quality = Glossary.ItemQuality.Legendary,
+            quality = Glossary.Quality.Legendary,
             quantity = 10
         },
         {
@@ -268,7 +268,7 @@ function Quickhacks.GiveEndgameMods()
             quantity = 7
         }
     }
-    ItemHandler.GiveMultipleItems(itemspecs)
+    ItemHandler.GiveMultiple(itemspecs)
 end
 
 function Quickhacks.MakeMeLegendary()

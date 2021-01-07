@@ -1,5 +1,5 @@
+-- Interface to access the entire Bartmoss suite.
 Bartmoss = {
-    description = "Interface to access the entire Bartmoss suite.",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
