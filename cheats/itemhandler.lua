@@ -7,7 +7,11 @@ local System = require(ItemHandler.rootPath .. "game.system")
 local Logical = require(ItemHandler.rootPath .. "utility.logical")
 local Glossary = require(ItemHandler.rootPath .. "data.glossary")
 
-function ItemHandler.HasDefaultQuality(item)
+function ItemHandler.IsStackable(item)
+    return Logical.TableHasValue(Glossary.IsStackable, item)
+end
+
+function ItemHandler.GetDefaultQuality(item)
     for key, value in pairs(Glossary.Quality) do
         if Logical.TableHasValue(Glossary.ForcedQuality[key], item) then
             return value
@@ -30,32 +34,24 @@ function ItemHandler.SetQuality(itemdata, quality)
     -- TODO: Ideally, there would be an equivalent function for forcing level?
 end
 
--- Items which share the same seed will have the same unique internal value!
--- This causes all items such as clothing and mods to stack (evne when they shouldn't).
--- Solution is to random generate a seed each time this transaction is called.
-function ItemHandler.GiveN(item, n, quality)
-    if not item then
-        return
-    end
-
+function ItemHandler.GiveItems(item, n, quality)
+    -- Items which share the same seed will have the same unique internal value!
+    -- This causes all items such as clothing and mods to stack (even when they shouldn't).
+    -- Solution is to randomly generate a seed each time this transaction is called.
     local player = System.Player()
     local ts = System.Transaction()
     local tweakid = TweakDBID.new(item)
-    local default = ItemHandler.HasDefaultQuality(item)
+    local default = ItemHandler.GetDefaultQuality(item)
 
-    if default then
-        quality = default
-    end
-
-    if not quality then
-        quality = Glossary.Quality.Common
-    end
+    -- Force default quality for certain items!
+    quality = default or quality
+    quality = quality or Glossary.Quality.Common
 
     for i = 1, n do
-        local seed = math.random(0, 4294967295)
+        local seed = math.random(0, math.tointeger(2^32) - 1)
         local itemid = ItemID.new(tweakid, seed)
         local result = ts:GiveItem(player, itemid, 1)
-        
+
         if result then
             -- Best way to do this for now until another method to get item data is found.
             -- This requires giving the "base" item to the player, then retrieving the item data from their inventory.
@@ -66,6 +62,22 @@ function ItemHandler.GiveN(item, n, quality)
         else
             print("Failed to add " .. tostring(itemid))
         end
+    end
+end
+
+function ItemHandler.GiveResources(item, n)
+    Game.AddToInventory(item, n)
+end
+
+function ItemHandler.GiveN(item, n, quality)
+    if not item then
+        return
+    end
+    -- If item is a stackable (resource) we can use in-built developer function.
+    if ItemHandler.IsStackable(item) then
+        ItemHandler.GiveResources(item, n)
+    else
+        ItemHandler.GiveItems(item, n, quality)
     end
 end
 

@@ -21,10 +21,10 @@ All interfaces loaded in `init.lua` will now be available.
 ## Quickhacks
 ```lua
 -- Gives a mix of desirable endgame mods at your current character level.
-Bartmoss.Quickhacks.GiveEndgameMods() 
+Bartmoss.Quickhacks.Inventory.GiveEndgameMods() 
 
 -- Scales to level and makes all of your equipped items legendary.
-Bartmoss.Quickhacks.MakeMeLegendary()
+Bartmoss.Quickhacks.Inventory.MakeMeLegendary()
 ```
 
 ## Interfaces
@@ -48,14 +48,24 @@ ssc = Bartmoss.System.ScriptableSystemsContainer()
 Contains a variety of dictionaries and property lookups to make your life easier.
 ```lua
 -- Easy lookups for mods by clothing, ranged or melee types.
-Bartmoss.Glossary.ClothingMods.Fortuna
-Bartmoss.Glossary.RangedMods.Crunch
-Bartmoss.Glossary.MeleeMods.Scourge
+Bartmoss.Glossary.Mods.Clothing.Fortuna
+Bartmoss.Glossary.Mods.Ranged.Crunch
+Bartmoss.Glossary.Mods.Melee.Scourge
+
+-- Weapon presets and recipe (soon) glossary.
+Bartmoss.Glossary.Weapons.Ranged.Quasar.Pimp
+Bartmoss.Glossary.Weapons.Melee.Katana.Iconic.Satori
+Bartmoss.Glossary.Weapons.Grenade.Incendiary.Homing
+
+-- Resource glossary.
+Bartmoss.Glossary.Resources.Components.Crafting.Legendary
+Bartmoss.Glossary.Resources.Components.Upgrade.Epic
+Bartmoss.Glossary.Resources.Components.Quickhack.Rare
 ```
 These can be used internally and when calling other functions.
 ```lua
 -- I want some Armadillo mods!
-Bartmoss.Cheats.Items.GiveItem(Bartmoss.Glossary.ClothingMods.Armadillo, 20, "Legendary")
+Bartmoss.Cheats.Items.GiveItem(Bartmoss.Glossary.Mods.Clothing.Armadillo, 20, "Legendary")
 ```
 Glossaries are currently still a work in progress.
 

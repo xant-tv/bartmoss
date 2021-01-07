@@ -19,7 +19,10 @@ function Bartmoss:new()
         Items = require(Bartmoss.rootPath .. "cheats.itemhandler"),
         Equipment = require(Bartmoss.rootPath .. "cheats.equipmenthandler")
     }
-    Interface.Quickhacks = require(Bartmoss.rootPath .. "quickhacks")
+    Interface.Quickhacks = {
+        Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits"),
+        Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory")
+    }
 
     return Interface
 end
