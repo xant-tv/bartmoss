@@ -74,13 +74,13 @@ Lower-level access to item-related cheats.
 ```lua
 -- Give character-scaled items.
 -- Item names can be obtained from glossaries.
-Bartmoss.Cheats.Items.GiveItem(item)
+Bartmoss.Cheats.Items.Give(item)
 
 -- Also supports quantity.
-Bartmoss.Cheats.Items.GiveItem(item, quantity)
+Bartmoss.Cheats.Items.GiveN(item, quantity)
 
 -- And quality (some endgame items will be forced to specific qualities).
-Bartmoss.Cheats.Items.GiveItem(item, quantity, quality)
+Bartmoss.Cheats.Items.GiveN(item, quantity, quality)
 ```
 
 ### Cheats.Equipment
