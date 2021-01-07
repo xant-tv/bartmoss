@@ -14,10 +14,11 @@ const (
 Application entrypoint that accepts file to parse, to generate LUA glossary
 
 # Example
-$ glossgen --file=../data/itemlist.csv
+$ glossgen --file=../data/itemlist.csv --target=glossary
 
 Flags: 
---file, -f : path to input csv file`
+--file, -f : path to input csv file
+--target, -t : path to output Lua file`
 
 	fileFlag   = "file"
 	targetFlag = "target"
