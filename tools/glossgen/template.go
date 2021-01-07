@@ -57,15 +57,6 @@ Glossary.Cyberware = {
 `))
 )
 
-/*
-// Copybook{{.Name}} contains a representation of your provided Copybook
-type Copybook{{.Name}} struct {
-	{{- range $element := .Records}}
-		{{sanitiseName $element.Name}} {{goType $element.Picture $element.Occurs}} {{picTag $element.Length $element.Occurs}}{{indexComment $element.Length $element.Occurs}}
-	{{- end}}
-}
-*/
-
 func newGlossary(output string, d dict) error {
 	f, err := os.Create(fmt.Sprintf("%s.lua", output))
 	if err != nil {
@@ -75,10 +66,6 @@ func newGlossary(output string, d dict) error {
 	if err := glossary.Execute(f, d); err != nil {
 		return fmt.Errorf("failed to execute templater: %w", err)
 	}
-
-	// if _, err = f.Write(f.); err != nil {
-	// 	return fmt.Errorf("failed to write output file: %w", err)
-	// }
 
 	return nil
 }
