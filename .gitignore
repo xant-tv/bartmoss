@@ -39,3 +39,8 @@ luac.out
 *.x86_64
 *.hex
 
+/.idea/bartmoss.iml
+/tools/glossgen/glossgen
+/.idea/vcs.xml
+/.idea/workspace.xml
+/.idea/modules.xml
