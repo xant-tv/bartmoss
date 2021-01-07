@@ -44,3 +44,5 @@ luac.out
 /.idea/vcs.xml
 /.idea/workspace.xml
 /.idea/modules.xml
+/tools/glossgen/glossary.lua
+
