@@ -7,6 +7,10 @@ Bartmoss lets you:
  - Modify existing items in the player's inventory.
  - Easily find and reference items by name instead of obscure hashes.
 
+In future Bartmoss may let you:
+ - Control weapon and attachment skins.
+ - Do all this through a simple UI in-game!
+
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
  - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.2+)
@@ -122,3 +126,6 @@ Lower-level access to equipment-related cheats. Similar functionality but focuse
 -- Quickly return item data in a particular equip slot.
 itemdata = Bartmoss.Cheats.Equipment.GetItemDataInSlot(slot, index)
 ```
+
+## Credits
+Huge thanks to the community of amazing netrunners working on [CET](https://github.com/yamashi/CyberEngineTweaks), [RED4ext](https://github.com/WopsS/RED4ext) and not [one](https://github.com/PixelRick/CyberpunkSaveEditor), but [two](https://github.com/WolvenKit/CyberCAT) save editors. Without you, this would not have been possible. Check out the modding [Discord](https://discord.gg/cp77modding).
