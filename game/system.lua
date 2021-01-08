@@ -11,6 +11,14 @@ function System.Transaction()
     return Game.GetTransactionSystem()
 end
 
+function System.Stats()
+    return Game.GetStatsSystem()
+end
+
+function System.Targeting()
+    return Game.GetTargetingSystem()
+end
+
 function System.ScriptableSystemsContainer()
     return Game.GetScriptableSystemsContainer()
 end
@@ -35,7 +43,6 @@ function System.PlayerData()
     espd["GetItemInEquipSlot"] = espd["GetItemInEquipSlot;gamedataEquipmentAreaInt32"]
     return espd
 end
-
 
 function System.InventoryManager()
     local espd = System.PlayerData()

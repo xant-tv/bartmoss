@@ -20,6 +20,49 @@ Glossary.Quality = {
     Legendary = "Legendary"
 }
 
+Glossary.QualityNum = {
+    Common = 0,
+    Uncommon = 1,
+    Rare = 2,
+    Epic = 3,
+    Legendary = 4
+}
+
+Glossary.Stats = {
+    -- Not yet complete.
+    ItemLevel = "ItemLevel",
+    PowerLevel = "PowerLevel",
+    Quality = "Quality",
+    BaseDamage = "BaseDamage",
+    ThermalDamage = "ThermalDamage",
+    ChemicalDamage = "ChemicalDamage",
+    PhysicalDamage = "PhysicalDamage",
+    ElectricalDamage = "ElectricalDamage",
+    AttacksPerSecond = "AttacksPerSecond",
+    ReloadSpeed = "ReloadSpeed", -- Unsure how this works for now.
+    CritChance = "CritChance",
+    CritDamage = "CritDamage",
+    HeadshotMultiplier = "HeadshotDamageMultiplier",
+    RicochetChance = "RicochetChance",
+    RicochetCount = "RicochetCount"
+}
+
+Glossary.Calculation = {
+    Additive = "Additive",
+    Multiplicative = "Multiply"
+}
+
+Glossary.EquipSlots = {
+    Face = 1,
+    Feet = 1,
+    Heads = 1,
+    InnerChest = 1,
+    Legs = 1,
+    OuterChest = 1,
+    Weapon = 3,
+    Outfit = 1
+}
+
 -- Property Lookups
 Glossary.ForcedQuality = {
     -- Keys should match those in item quality.

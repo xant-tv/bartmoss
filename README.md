@@ -1,5 +1,11 @@
 # Bartmoss
-A suite of Lua scripts to simplify interaction with the Cyberpunk 2077 console while maintaining game integrity and user safety.
+A suite of Lua scripts to simplify interaction with the Cyberpunk 2077 console.
+
+Bartmoss lets you:
+ - Control item stats such as quality (rarity), item level or weapon damage and effects.
+ - Give the player new items with these controls.
+ - Modify existing items in the player's inventory.
+ - Easily find and reference items by name instead of obscure hashes.
 
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
@@ -103,11 +109,16 @@ Bartmoss.Cheats.Items.GiveN(item, quantity)
 
 -- And quality (some endgame items will be forced to specific qualities).
 Bartmoss.Cheats.Items.GiveN(item, quantity, quality)
+
+-- Set level, quality or add any other modifier to underlying item data.
+Bartmoss.Cheats.Items.SetLevel(itemdata, level)
+Bartmoss.Cheats.Items.SetQuality(itemdata, quality)
+Bartmoss.Cheats.Items.AddModifier(itemdata, modtype, calc, val)
 ```
 
 ### Cheats.Equipment
 Lower-level access to equipment-related cheats. Similar functionality but focused on what you already have.
 ```lua
--- Self-explanatory, really.
-Bartmoss.Cheats.Equipment.MakeEquippedItemsLegendary()
+-- Quickly return item data in a particular equip slot.
+itemdata = Bartmoss.Cheats.Equipment.GetItemDataInSlot(slot, index)
 ```
