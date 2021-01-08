@@ -69,6 +69,28 @@ Bartmoss.Cheats.Items.GiveItem(Bartmoss.Glossary.Mods.Clothing.Armadillo, 20, "L
 ```
 Glossaries are currently still a work in progress.
 
+### Utilities
+Helpful functions to find/navigate the glossary from console.
+```lua
+-- Find an item or glossary element you are looking for.
+-- Output can also be captured as an array.
+matches = Bartmoss.Utility.Search("Trauma")
+>> Glossary.Weapons.Ranged.Dian.Trauma
+>> Glossary.Weapons.Ranged.Masamune.Trauma
+>> Glossary.Weapons.Ranged.Zhuo.Trauma
+
+-- Describe a glossary item.
+Bartmoss.Utility.Describe(Bartmoss.Glossary.Weapons.Ranged.Dian) -- By element.
+Bartmoss.Utility.Describe("Glossary.Weapons.Ranged.Dian") -- By pathstring.
+>> ├── Default
+>> ├── Iconic
+>> │   └── YingLong
+>> ├── Military
+>> ├── Neon
+>> ├── Pimp
+>> └── Trauma
+```
+
 ### Cheats.Items
 Lower-level access to item-related cheats.
 ```lua

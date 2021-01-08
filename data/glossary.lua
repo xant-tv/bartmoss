@@ -74,4 +74,11 @@ Glossary.IsStackable = {
     Glossary.Resources.Components.Quickhack.Uncommon
 }
 
+Glossary.Searchable = {
+    Resources = Glossary.Resources,
+    Weapons = Glossary.Weapons,
+    Mods = Glossary.Mods,
+    -- Recipes = Glossary.Recipes
+}
+
 return Glossary

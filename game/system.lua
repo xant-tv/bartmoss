@@ -36,4 +36,11 @@ function System.PlayerData()
     return espd
 end
 
+
+function System.InventoryManager()
+    local espd = System.PlayerData()
+    local imgr = espd:GetInventoryManager()
+    return imgr
+end
+
 return System
