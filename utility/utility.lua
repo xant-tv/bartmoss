@@ -3,7 +3,8 @@ local Utility = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Logical = require(Utility.rootPath .. "utility.logical")
+local Table = require(Utility.rootPath .. "utility.table")
+local String = require(Utility.rootPath .. "utility.string")
 local Printer = require(Utility.rootPath .. "utility.printer")
 local Glossary = require(Utility.rootPath .. "data.glossary")
 
@@ -16,11 +17,15 @@ function Utility.Describe(input)
     end
 end
 
-function Utility.Search(word)
+function Utility.Search(word, silent)
     if type(word) ~= "string" then
         return
     end
-    return Printer.Search(Glossary.Searchable, "Glossary", word)
+    local matches = Table.DeepSearch(Glossary.Searchable, "Glossary", word)
+    if not silent then
+        Printer.List(matches)
+    end
+    return matches
 end
 
 function Utility.GetElementFromString(path)
@@ -28,7 +33,7 @@ function Utility.GetElementFromString(path)
         return
     end
 
-    local splits = Logical.StringSplit(path, ".")
+    local splits = String.Split(path, ".")
     local skip = 1
     if #splits <= skip then
         -- Assume that the first element in path is the glossary header.

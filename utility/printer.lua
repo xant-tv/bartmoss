@@ -3,13 +3,13 @@ local Printer = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Logical = require(Printer.rootPath .. "utility.logical")
+local Table = require(Printer.rootPath .. "utility.table")
 
 Printer.Trunk = "    "
 Printer.Branch = "+-- "
 
 function Printer.Tree(elem, pfix)
-    local skeys = Logical.TableSortedIndex(elem)
+    local skeys = Table.SortedIndex(elem)
     for _, key in ipairs(skeys) do
         local child = elem[key]
         print(pfix .. key)
@@ -20,12 +20,10 @@ function Printer.Tree(elem, pfix)
     end
 end
 
-function Printer.Search(elem, path, word)
-    local matches = Logical.TableDeepSearch(elem, path, word)
-    for _, key in ipairs(matches) do
+function Printer.List(list)
+    for _, key in ipairs(list) do
         print(key)
     end
-    return matches
 end
 
 return Printer

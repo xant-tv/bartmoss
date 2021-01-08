@@ -4,18 +4,18 @@ local ItemHandler = {
 }
 
 local System = require(ItemHandler.rootPath .. "game.system")
-local Logical = require(ItemHandler.rootPath .. "utility.logical")
+local Table = require(ItemHandler.rootPath .. "utility.table")
 local GameHandler = require(ItemHandler.rootPath .. "cheats.gamehandler")
 local PlayerHandler = require(ItemHandler.rootPath .. "cheats.playerhandler")
 local Glossary = require(ItemHandler.rootPath .. "data.glossary")
 
 function ItemHandler.IsStackable(item)
-    return Logical.TableHasValue(Glossary.IsStackable, item)
+    return Table.HasValue(Glossary.IsStackable, item)
 end
 
 function ItemHandler.GetDefaultQuality(item)
     for key, value in pairs(Glossary.Quality) do
-        if Logical.TableHasValue(Glossary.ForcedQuality[key], item) then
+        if Table.HasValue(Glossary.ForcedQuality[key], item) then
             return value
         end
     end

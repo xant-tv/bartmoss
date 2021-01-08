@@ -30,7 +30,7 @@ function EquipmentHandler.MakeEquippedItemsLegendary()
             local itemid = espd:GetItemInEquipSlot(k, i - 1)
             -- Skip empty slots.
             if itemid.tdbid.hash ~= 0 then
-                print("Upgrading item in " .. k .. " [" .. (i - 1) .. "]")
+                print("UPGRADING=" .. k .. "|" .. (i - 1))
                 local itemdata = ts:GetItemData(player, itemid)
                 ItemHandler.SetLevel(itemdata)
                 ItemHandler.SetQuality(itemdata, Glossary.Quality.Legendary)
