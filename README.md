@@ -13,7 +13,7 @@ In future Bartmoss may let you:
 
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
- - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.2+)
+ - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.3+)
 
 ## Installation
 ```bash

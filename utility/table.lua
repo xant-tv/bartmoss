@@ -23,17 +23,59 @@ function Table.HasValue(tab, tgt)
     return false
 end
 
-function Table.DeepSearch(elem, strpath, word)
+function Table.Filter(tab, filter, is_regex)
+    local result = {}
+    filter = filter or ""
+    if filter == "" then
+        return result
+    end
+    for _, key in ipairs(tab) do
+        if String.Contains(string.lower(key), string.lower(filter), is_regex) then
+            table.insert(result, key)
+        end
+    end
+    return result
+end
+
+function Table.DeepSearch(elem, strpath, word, is_regex)
     local result = {}
     local skeys = Table.SortedIndex(elem)
     for _, key in ipairs(skeys) do
         local child = elem[key]
-        local cstrpath = strpath .. "." .. key
-        if String.Contains(string.lower(key), string.lower(word)) then
+        local cstrpath
+        if strpath == "" then
+            cstrpath = key
+        else
+            cstrpath = strpath .. "." .. key
+        end
+        if String.Contains(string.lower(key), string.lower(word), is_regex) then
             table.insert(result, cstrpath)
         end
         if type(child) == "table" then
             local coutput = Table.DeepSearch(child, cstrpath, word)
+            for _, ckey in ipairs(coutput) do
+                table.insert(result, ckey)
+            end
+        end
+    end
+    return result
+end
+
+function Table.DeepPath(elem, strpath)
+    local result = {}
+    local skeys = Table.SortedIndex(elem)
+    for _, key in ipairs(skeys) do
+        local child = elem[key]
+        local cstrpath
+        if strpath == "" then
+            cstrpath = key
+        else
+            cstrpath = strpath .. "." .. key
+        end
+        if type(child) ~= "table" then
+            table.insert(result, cstrpath)
+        else
+            local coutput = Table.DeepPath(child, cstrpath)
             for _, ckey in ipairs(coutput) do
                 table.insert(result, ckey)
             end

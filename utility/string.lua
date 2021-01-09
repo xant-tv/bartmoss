@@ -3,8 +3,9 @@ local String = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-function String.Contains(subject, pattern)
-    return string.find(subject, pattern, 1, true)
+function String.Contains(subject, pattern, is_regex)
+    local is_plain = not is_regex
+    return string.find(subject, pattern, 1, is_plain)
 end
 
 function String.Split(subject, sep, n, is_regex)

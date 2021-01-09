@@ -20,4 +20,9 @@ function PlayerHandler.GetPower()
     return Math.SafeFloor(PlayerHandler.GetStat(Glossary.Stats.PowerLevel))
 end
 
+function PlayerHandler.GiveXP(attribute, amount)
+    print("ADD_EXP=" .. attribute .. "|" .. amount)
+    Game.AddExp(attribute, amount)
+end
+
 return PlayerHandler

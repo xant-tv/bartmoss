@@ -5,6 +5,13 @@ local Resources = {
 
 Resources = {
     Money = "Items.money",
+    Ammo = {
+        Handgun = "Ammo.HandgunAmmo",
+        Rifle = "Ammo.RifleAmmo",
+        Shotgun = "Ammo.ShotgunAmmo",
+        SniperRifle = "Ammo.SniperRifle.Ammo",
+        Special = "Ammo.Special"
+    },
     Components = {
         Crafting = {
             Common = "Items.CommonMaterial1",
@@ -23,6 +30,26 @@ Resources = {
             Rare = "Items.QuickHackRareMaterial1",
             Epic = "Items.QuickHackEpicMaterial1",
             Legendary = "Items.QuickHackLegendaryMaterial1"
+        }
+    },
+    Consumables = {
+        Booster = {
+            Capacity = "Items.CarryCapacityBooster",
+            Health = "Items.HealthBooster",
+            Oxygen = "Items.OxyBooster",
+            Stamina = "Items.StaminaBooster"
+        }
+    },
+    Medicine = {
+        BounceBack = {
+            Common = "Items.BonesMcCoy70V0",
+            Uncommon = "Items.BonesMcCoy70V1",
+            Rare = "Items.BonesMcCoy70V2",
+        },
+        MaxDoc = {
+            Uncommon = "Items.FirstAidWhiffV0",
+            Rare = "Items.FirstAidWhiffV1",
+            Epic = "Items.FirstAidWhiffV2",
         }
     }
 }

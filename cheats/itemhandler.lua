@@ -5,6 +5,7 @@ local ItemHandler = {
 
 local System = require(ItemHandler.rootPath .. "game.system")
 local Table = require(ItemHandler.rootPath .. "utility.table")
+local Math = require(ItemHandler.rootPath .. "utility.math")
 local GameHandler = require(ItemHandler.rootPath .. "cheats.gamehandler")
 local PlayerHandler = require(ItemHandler.rootPath .. "cheats.playerhandler")
 local Glossary = require(ItemHandler.rootPath .. "data.glossary")
@@ -55,14 +56,17 @@ function ItemHandler.SetQuality(itemdata, quality)
     local statsobjid = itemdata:GetStatsObjectID()
 
     -- If no quality, just exit.
+    if not quality then
+        local cquality = Math.SafeFloor(ss:GetStatValue(statsobjid, Glossary.Stats.Quality))
+        print("QUALITY_DEFAULT=" .. Glossary.QualityNum[cquality])
+        return
+    end
+
     local nquality = Glossary.QualityNum[quality]
     if not nquality then
         print("QUALITY_SET_FAIL=" .. quality)
         return
     end
-
-    -- It is possible to obtain current quality.
-    -- cquality = ss:GetStatValue(statsobjid, Glossary.Stats.Quality)
 
     -- Set quality modifiers.
     ss:RemoveAllModifiers(statsobjid, Glossary.Stats.Quality, true)
@@ -87,6 +91,16 @@ function ItemHandler.MarkCrafted(itemdata)
     local result = cs:MarkItemAsCrafted(itemdata)
 end
 
+function ItemHandler.MarkQuest(itemdata)
+    itemdata:SetDynamicTag(Glossary.Tags.Quest)
+end
+
+function ItemHandler.UnmarkQuest(itemdata)
+    if itemdata:HasTag(Glossary.Tags.Quest) then
+        itemdata:RemoveDynamicTag(Glossary.Tags.Quest)
+    end
+end
+
 function ItemHandler.UpgradeItem(itemid)
     local player = System.Player()
     local ts = System.Transaction()
@@ -94,7 +108,7 @@ function ItemHandler.UpgradeItem(itemid)
     ItemHandler.SetLevel(itemdata)
 end
 
-function ItemHandler.GiveItems(item, n, quality)
+function ItemHandler.GiveItems(item, n, quality, level)
     -- Items which share the same seed will have the same unique internal value!
     -- This causes all items such as clothing and mods to stack (even when they shouldn't).
     -- Solution is to randomly generate a seed each time this transaction is called.
@@ -104,7 +118,9 @@ function ItemHandler.GiveItems(item, n, quality)
 
     -- Force default quality for certain items!
     local default = ItemHandler.GetDefaultQuality(item)
-    quality = default or quality
+    if default then
+        quality = nil
+    end
 
     for i = 1, n do
         local seed = math.random(0, math.tointeger(2^32) - 1)
@@ -116,7 +132,8 @@ function ItemHandler.GiveItems(item, n, quality)
             -- This requires giving the "base" item to the player, then retrieving the item data from their inventory.
             print("ADD_OK: " .. tostring(itemid))
             local itemdata = ts:GetItemData(player, itemid)
-            ItemHandler.SetLevel(itemdata)
+            ItemHandler.UnmarkQuest(itemdata)
+            ItemHandler.SetLevel(itemdata, level)
             ItemHandler.SetQuality(itemdata, quality)
         else
             print("ADD_FAIL")
