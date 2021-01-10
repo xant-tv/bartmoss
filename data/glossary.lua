@@ -253,7 +253,6 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Ranged.Lexington.Iconic.DyingNight.Epic,
         Glossary.Weapons.Ranged.Liberty.Iconic.Konguo.Epic,
         Glossary.Weapons.Ranged.Liberty.Iconic.PlanB.Epic,
-        Glossary.Weapons.Ranged.Liberty.Iconic.Pride.Epic,
         Glossary.Weapons.Ranged.Nekomata.Iconic.Breakthrough.Epic,
         Glossary.Weapons.Ranged.Nova.Iconic.DoomDoom.Epic,
         Glossary.Weapons.Ranged.Nue.Iconic.ChingonaDorada.Epic,

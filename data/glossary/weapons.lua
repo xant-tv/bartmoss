@@ -180,8 +180,7 @@ Weapons = {
                     Legendary = "Items.Preset_Liberty_Dex_Legendary"
                 },
                 Pride = {
-                    Epic = "Items.Preset_Liberty_Rogue",
-                    Legendary = "Items.Preset_Liberty_Rogue_Legendary"
+                    Legendary = "Items.Preset_Liberty_Rogue"
                 }
             }
         },
