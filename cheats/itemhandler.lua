@@ -14,6 +14,10 @@ function ItemHandler.IsStackable(item)
     return Table.HasValue(Glossary.IsStackable, item)
 end
 
+function ItemHandler.CannotBeLevelled(item)
+    return Table.HasValue(Glossary.CannotBeLevelled, item)
+end
+
 function ItemHandler.GetDefaultQuality(item)
     for key, value in pairs(Glossary.Quality) do
         if Table.HasValue(Glossary.ForcedQuality[key], item) then
@@ -29,13 +33,18 @@ function ItemHandler.SetLevel(itemdata, level)
 
     -- If no level, read from player current.
     level = level or PlayerHandler.GetPower()
+    if level == 0 then
+        -- Setting zero level is special case.
+        -- Used for items which cannot be levelled.
+        return
+    end
 
     -- Expects incoming level to be player level.
     -- Effectively range should be [1, 50] inclusive.
     -- This determines the level requirement to equip the item.
     -- However, "true" item level is stored as (roughly) a factor of 10 over this.
     local plevel = level
-    local ilevel = 10 * level
+    local ilevel = (10 * level)
 
     -- Set item level modifiers.
     ss:RemoveAllModifiers(statsobjid, Glossary.Stats.PowerLevel, true)
@@ -120,6 +129,11 @@ function ItemHandler.GiveItems(item, n, quality, level)
     local default = ItemHandler.GetDefaultQuality(item)
     if default then
         quality = nil
+    end
+
+    -- Force level for cetain items!
+    if ItemHandler.CannotBeLevelled(item) then
+        level = 0
     end
 
     for i = 1, n do

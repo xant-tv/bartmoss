@@ -8,6 +8,7 @@ function UI.Init()
 end
 
 function UI.Update(delta)
+    -- Remove once console events are supported.
     if (ImGui.IsKeyPressed(0x71, false)) then
         UI.DrawWindow = not UI.DrawWindow
     end

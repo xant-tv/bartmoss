@@ -41,7 +41,7 @@ function ItemCheatsTab.DoGiveItem()
     if level <= 0 then
         level = nil
     end
-    print("UI_ITEM_GIVE=" .. itempath .. "|Q" .. quantity .. "|" .. quality .. "|L" .. level)
+    print("UI_ITEM_GIVE=" .. itempath .. "|Q" .. quantity .. "|" .. quality .. "|L" .. (level or 0))
     ItemHandler.GiveItems(item, quantity, quality, level)
 end
 

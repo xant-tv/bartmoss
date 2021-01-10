@@ -8,7 +8,11 @@ local Widget = require(PlayerCheatsTab.rootPath .. "utility.widget")
 local PlayerHandler = require(PlayerCheatsTab.rootPath .. "cheats.playerhandler")
 
 function PlayerCheatsTab.DoExperience()
-    PlayerHandler.GiveXP(State.PlayerTab.AttrOptions[State.PlayerTab.AttrSelect + 1], State.PlayerTab.ExpAmount)
+    local amount = State.PlayerTab.ExpAmount
+    if amount < 0 then
+        return
+    end
+    PlayerHandler.GiveXP(State.PlayerTab.AttrOptions[State.PlayerTab.AttrSelect + 1], amount)
 end
 
 function PlayerCheatsTab.BuildExpGiver()
