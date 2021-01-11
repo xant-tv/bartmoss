@@ -8,6 +8,10 @@ function String.Contains(subject, pattern, is_regex)
     return string.find(subject, pattern, 1, is_plain)
 end
 
+function String.Trim(subject)
+    return string.gsub(subject, "^%s*(.-)%s*$", "%1")
+end
+
 function String.Split(subject, sep, n, is_regex)
     -- Check if subject string is non-null.
     if string.len(subject) <= 0 then
@@ -38,6 +42,23 @@ function String.Split(subject, sep, n, is_regex)
     splits[field] = string.sub(subject, start)
 
     return splits
+end
+
+function String.RemoveBuffer(subject)
+    local first, last = string.find(subject, "\0", 1, true)
+    if first then
+        return string.sub(subject, 1, first - 1)
+    end
+    return subject
+end
+
+function String.WildcardSearch(subject)
+    local splits = String.Split(subject, "*")
+    for i, s in ipairs(splits) do
+        splits[i] = string.gsub(s, "%.", "%%.")
+    end
+    local result = table.concat(splits, ".*")
+    return result
 end
 
 return String

@@ -159,7 +159,7 @@ function ItemHandler.GiveResources(item, n)
     Game.AddToInventory(item, n)
 end
 
-function ItemHandler.GiveN(item, n, quality)
+function ItemHandler.GiveN(item, n, quality, level)
     if not item then
         return
     end
@@ -167,7 +167,7 @@ function ItemHandler.GiveN(item, n, quality)
     if ItemHandler.IsStackable(item) then
         ItemHandler.GiveResources(item, n)
     else
-        ItemHandler.GiveItems(item, n, quality)
+        ItemHandler.GiveItems(item, n, quality, level)
     end
 end
 

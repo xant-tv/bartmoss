@@ -20,6 +20,7 @@ end
 function QuickhacksTab.BuildDisplay()
     ImGui.Spacing()
     ImGui.Text("Shortcuts for quick user action:")
+    -- Manual text bulleting like this looks better than using ImGui.BulletText(text) in my opinion.
     ImGui.Text(" - One-click level and quality upgrade for equipped items.")
     ImGui.Text(" - More coming soon...")
     ImGui.Spacing()

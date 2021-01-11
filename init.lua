@@ -1,18 +1,28 @@
 -- Interface to access the entire Bartmoss suite.
 Bartmoss = {
     name = "Bartmoss",
-    version = "0.5.1",
+    version = "0.5.2",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
 local Global = require(Bartmoss.rootPath .. "game.global")
 
-local function OverloadDraw()
-    local Config = {
+local function AppConfig()
+    local app = {
         name = Bartmoss.name,
         version = Bartmoss.version
     }
-    Interface.UI.Draw(Config)
+    return app
+end
+
+local function OverloadInit()
+    local app = AppConfig()
+    Interface.UI.Init(app)
+end
+
+local function OverloadDraw()
+    local app = AppConfig()
+    Interface.UI.Draw(app)
 end
 
 function Bartmoss:new()
@@ -41,13 +51,11 @@ function Bartmoss:new()
     Global.OnLoad()
 
     -- Attach user interface events.
-    registerForEvent("onInit", Interface.UI.Init)
+    registerForEvent("onInit", OverloadInit)
     registerForEvent("onUpdate", Interface.UI.Update)
     registerForEvent("onConsoleOpen", Interface.UI.ConsoleOpen)
     registerForEvent("onConsoleClose", Interface.UI.ConsoleClose)
     registerForEvent("onDraw", OverloadDraw)
-
-    print(Bartmoss.name .. " (" .. Bartmoss.version .. ") successfully loaded! Press [F2] to access the UI.")
 
     return Interface
 end

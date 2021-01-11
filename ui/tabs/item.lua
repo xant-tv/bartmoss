@@ -4,6 +4,7 @@ local ItemCheatsTab = {
 
 local Style = require(ItemCheatsTab.rootPath .. "ui.style")
 local State = require(ItemCheatsTab.rootPath .. "ui.state")
+local String = require(ItemCheatsTab.rootPath .. "utility.string")
 local Table = require(ItemCheatsTab.rootPath .. "utility.table")
 local Widget = require(ItemCheatsTab.rootPath .. "utility.widget")
 local Utility = require(ItemCheatsTab.rootPath .. "utility.utility")
@@ -11,10 +12,16 @@ local Glossary = require(ItemCheatsTab.rootPath .. "data.glossary")
 local ItemHandler = require(ItemCheatsTab.rootPath .. "cheats.itemhandler")
 
 function ItemCheatsTab.DoGlossary()
-    -- Hardcode until CET's input text bug is fixed.
-    State.ItemsTab.GlossaryInput = "Iconic"
-    print("UI_SEARCH=" .. State.ItemsTab.GlossaryInput)
-    State.ItemsTab.GlossaryOptions = Table.Filter(State.ItemsTab.GlossaryPaths, State.ItemsTab.GlossaryInput)
+    -- Strings are automatically null-padded to buffer length for the input. Need to trim down.
+    local input = String.RemoveBuffer(State.ItemsTab.GlossaryInput)
+    local is_regex = State.ItemsTab.GlossarySearchRegex
+    local search = input
+    if (not is_regex) and String.Contains(input, "*") then
+        is_regex = true
+        search = String.WildcardSearch(input)
+    end
+    print("UI_SEARCH=" .. input)
+    State.ItemsTab.GlossaryOptions = Table.Filter(State.ItemsTab.GlossaryPaths, search, is_regex)
     -- Reset any current selections.
     State.ItemsTab.ItemSelect = 0
 end
@@ -58,14 +65,15 @@ function ItemCheatsTab.BuildGlossary()
     ImGui.Spacing()
     ImGui.Text("Glossary")
     ImGui.Text(" - Search for items by name to populate the dropdown list.")
+    ImGui.Text(" - Wildcards (*) are supported!")
     ImGui.PushItemWidth(Style.Size.ItemTab.Text.Width)
-    State.ItemsTab.GlossaryInput = ImGui.InputText("##Glossary", State.ItemsTab.GlossaryInput, 300, Widget.GetInputFlags())
+    State.ItemsTab.GlossaryInput = ImGui.InputTextWithHint("##Glossary", "Phrase (e.g. Weapons.*.Iconic)", State.ItemsTab.GlossaryInput, 300, Widget.GetInputFlags())
     ImGui.SameLine(Style.Size.ItemTab.Text.Width + Style.Size.ColSpacer)
     if (ImGui.Button("Search")) then
         ItemCheatsTab.DoGlossary()
     end
     -- No immediate callback needed on this checkbox.
-    State.ItemsTab.GlossarySearchRegex, _ = ImGui.Checkbox("Is Regex?", State.ItemsTab.GlossarySearchRegex)
+    -- State.ItemsTab.GlossarySearchRegex, _ = ImGui.Checkbox("Is Pattern?", State.ItemsTab.GlossarySearchRegex)
     ImGui.Spacing()
 end
 
@@ -87,7 +95,7 @@ function ItemCheatsTab.BuildItemProperties()
     ImGui.Separator()
     ImGui.Spacing()
     ImGui.Text("Items Properties")
-    ImGui.Text(" - Select item level, quality.")
+    ImGui.Text(" - Select item level and quality (may be forced for certain items).")
     State.ItemsTab.QualitySelect = ImGui.Combo("Quality", State.ItemsTab.QualitySelect, State.ItemsTab.QualityOptions, #State.ItemsTab.QualityOptions, 8)
     State.ItemsTab.ItemLevel = ImGui.InputInt("Level", State.ItemsTab.ItemLevel, 1, 1, Widget.GetInputFlags())
     ImGui.Spacing()

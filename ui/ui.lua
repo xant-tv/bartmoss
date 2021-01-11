@@ -4,14 +4,11 @@ local UI = {
 
 local Draw = require(UI.rootPath .. "ui.draw")
 
-function UI.Init()
+function UI.Init(app)
+    print(app.name .. " (" .. app.version .. ") successfully loaded!")
 end
 
 function UI.Update(delta)
-    -- Remove once console events are supported.
-    if (ImGui.IsKeyPressed(0x71, false)) then
-        UI.DrawWindow = not UI.DrawWindow
-    end
 end
 
 function UI.Draw(app)
@@ -23,10 +20,12 @@ function UI.Draw(app)
 end
 
 function UI.ConsoleOpen()
+    UI.DrawConsole = true
     UI.DrawWindow = true
 end
 
 function UI.ConsoleClose()
+    UI.DrawConsole = false
     UI.DrawWindow = false
 end
 

@@ -6,14 +6,16 @@ Bartmoss lets you:
  - Give the player new items with these controls.
  - Modify existing items in the player's inventory.
  - Easily find and reference items by name instead of obscure hashes.
+ - Do all this through a simple UI in-game!
+
+![bartmoss_items_ui](docs/images/item.png)
 
 In future Bartmoss may let you:
  - Control weapon and attachment skins.
- - Do all this through a simple UI in-game!
 
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
- - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.3+)
+ - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.4+)
 
 ## Installation
 ```bash
