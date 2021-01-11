@@ -13,6 +13,8 @@ Bartmoss lets you:
 In future Bartmoss may let you:
  - Control weapon and attachment skins.
 
+See [here](docs/FAQ.md) for frequently asked questions.
+
 ## Requirements
  - Cyberpunk 2077 (version 1.0.6)
  - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.8.4+)
@@ -59,15 +61,25 @@ ssc = Bartmoss.System.ScriptableSystemsContainer()
 ### Glossary
 Contains a variety of dictionaries and property lookups to make your life easier.
 ```lua
--- Easy lookups for mods by clothing, ranged or melee types.
+-- Weapon presets glossary.
+Bartmoss.Glossary.Weapons.Ranged.Quasar.Pimp
+Bartmoss.Glossary.Weapons.Melee.Katana.Iconic.Satori.Legendary
+Bartmoss.Glossary.Weapons.Grenade.Incendiary.Homing
+
+-- Cyberware glossary.
+Bartmoss.Glossary.Cyberware.Circulatory.SecondHeart.Legendary
+
+-- Quickhacks glossary.
+Bartmoss.Glossary.Quickhacks.RebootOptics.Legendary
+
+-- Mods lookup by clothing, ranged, melee or cyberware types.
 Bartmoss.Glossary.Mods.Clothing.Fortuna
 Bartmoss.Glossary.Mods.Ranged.Crunch
 Bartmoss.Glossary.Mods.Melee.Scourge
+Bartmoss.Glossary.Mods.Cyberware.Arms.MantisBlades.Edge.Physical
 
--- Weapon presets and recipe (soon) glossary.
-Bartmoss.Glossary.Weapons.Ranged.Quasar.Pimp
-Bartmoss.Glossary.Weapons.Melee.Katana.Iconic.Satori
-Bartmoss.Glossary.Weapons.Grenade.Incendiary.Homing
+-- Attachments glossary.
+Bartmoss.Glossary.Attachments.Silencer.Alecto
 
 -- Resource glossary.
 Bartmoss.Glossary.Resources.Components.Crafting.Legendary
@@ -97,6 +109,7 @@ Bartmoss.Utility.Describe("Glossary.Weapons.Ranged.Dian") -- By pathstring.
 >> ├── Default
 >> ├── Iconic
 >> │   └── YingLong
+>> │       └── Legendary
 >> ├── Military
 >> ├── Neon
 >> ├── Pimp
@@ -106,15 +119,12 @@ Bartmoss.Utility.Describe("Glossary.Weapons.Ranged.Dian") -- By pathstring.
 ### Cheats.Items
 Lower-level access to item-related cheats.
 ```lua
--- Give character-scaled items.
+-- Give the player items.
 -- Item names can be obtained from glossaries.
-Bartmoss.Cheats.Items.Give(item)
-
--- Also supports quantity.
-Bartmoss.Cheats.Items.GiveN(item, quantity)
-
--- And quality (some endgame items will be forced to specific qualities).
-Bartmoss.Cheats.Items.GiveN(item, quantity, quality)
+-- If level is not provided, item will scale to character level.
+-- Some items will be forced to certain qualities or levels.
+Bartmoss.Cheats.Items.Give(item, quality, level)
+Bartmoss.Cheats.Items.GiveN(item, quantity, quality, level)
 
 -- Set level, quality or add any other modifier to underlying item data.
 Bartmoss.Cheats.Items.SetLevel(itemdata, level)

@@ -33,7 +33,7 @@ function ItemHandler.SetLevel(itemdata, level)
 
     -- If no level, read from player current.
     level = level or PlayerHandler.GetPower()
-    if level == 0 then
+    if level <= 0 then
         -- Setting zero level is special case.
         -- Used for items which cannot be levelled.
         return
@@ -171,8 +171,8 @@ function ItemHandler.GiveN(item, n, quality, level)
     end
 end
 
-function ItemHandler.Give(item, quality)
-    ItemHandler.GiveN(item, 1, quality)
+function ItemHandler.Give(item, quality, level)
+    ItemHandler.GiveN(item, 1, quality, level)
 end
 
 function ItemHandler.GiveMultiple(itemspecs)
@@ -181,10 +181,11 @@ function ItemHandler.GiveMultiple(itemspecs)
         local item = itemspec["item"]
         local quality = itemspec["quality"]
         local quantity = itemspec["quantity"]
+        local level = itemspec["level"]
         if not quantity then
             quantity = 1
         end
-        ItemHandler.GiveN(item, quantity, quality)
+        ItemHandler.GiveN(item, quantity, quality, level)
     end
 end
 

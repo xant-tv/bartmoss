@@ -46,6 +46,7 @@ function ItemCheatsTab.DoGiveItem()
         level = 50
     end
     if level <= 0 then
+        -- This will scale item to player level.
         level = nil
     end
     print("UI_ITEM_GIVE=" .. itempath .. "|Q" .. quantity .. "|" .. quality .. "|L" .. (level or 0))
