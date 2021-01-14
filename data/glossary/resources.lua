@@ -9,7 +9,7 @@ Resources = {
         Handgun = "Ammo.HandgunAmmo",
         Rifle = "Ammo.RifleAmmo",
         Shotgun = "Ammo.ShotgunAmmo",
-        SniperRifle = "Ammo.SniperRifle.Ammo",
+        SniperRifle = "Ammo.SniperRifleAmmo",
         Special = "Ammo.Special"
     },
     Components = {

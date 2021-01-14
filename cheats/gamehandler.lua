@@ -3,8 +3,8 @@ local GameHandler = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-function GameHandler.CreateStatModifier(modtype, calc, val) 
-    return Game.CreateStatModifier(modtype, calc, val)
+function GameHandler.CreateStatModifier(modtype, calctype, val) 
+    return Game.CreateStatModifier(modtype, calctype, val)
 end
 
 return GameHandler

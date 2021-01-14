@@ -6,6 +6,7 @@ local Glossary = {
 -- Dictionary.
 Glossary.Resources = require(Glossary.rootPath .. "data.glossary.resources")
 Glossary.Weapons = require(Glossary.rootPath .. "data.glossary.weapons")
+Glossary.Clothing = require(Glossary.rootPath .. "data.glossary.clothing")
 Glossary.Cyberware = require(Glossary.rootPath .. "data.glossary.cyberware")
 Glossary.Quickhacks = require(Glossary.rootPath .. "data.glossary.quickhacks")
 Glossary.Mods = require(Glossary.rootPath .. "data.glossary.mods")
@@ -72,26 +73,265 @@ Glossary.QualityRank = {
 }
 
 Glossary.Stats = {
-    -- Not yet complete.
-    ItemLevel = "ItemLevel",
-    PowerLevel = "PowerLevel",
-    StreetCred = "StreetCred",
-    Quality = "Quality",
-    BaseDamage = "BaseDamage",
-    ThermalDamage = "ThermalDamage",
-    ChemicalDamage = "ChemicalDamage",
-    PhysicalDamage = "PhysicalDamage",
-    ElectricalDamage = "ElectricDamage",
+    -- This list is likely still incomplete.
+    -- On dump the numerical value of each enumeration is also returned. 
+    -- Some numbers were skipped.
+    Accuracy = "Accuracy",
+    AimFOV = "AimFOV",
+    AimOffset = "AimOffset",
+    AimInTime = "AimInTime", -- Value expected to be negative on order of ~0.02.
+    AimOutTime = "AimOutTime",
+    AttacksPerSecondBase = "AttacksPerSecondBase", -- Probably inherited from weapon type. Recommend not modifying this one.
     AttacksPerSecond = "AttacksPerSecond",
-    ReloadSpeed = "ReloadSpeed", -- Unsure how this works for now.
+    AttackPenetration = "AttackPenetration", -- Is this a resistance or armour penetration value?
+    BaseDamage = "BaseDamage", -- Recommend modifying base damage modifiers where possible.
+    BaseDamageMin = "BaseDamageMin", -- Minimum and maximum damage ranges are computed as +/- 10% of base.
+    BaseDamageMax = "BaseDamageMax",
+    BleedChance = "BleedingApplicationRate",
+    BlockLocomotionWhenLeaningOutOfCover = "BlockLocomotionWhenLeaningOutOfCover",
+    BonusRicochetDamage = "BonusRicochetDamage",
+    BulletMagnetismDefaultAngle = "BulletMagnetismDefaultAngle",
+    BulletMagnetismHighVelocityAngle = "BulletMagnetismHighVelocityAngle",
+    BurnChance = "BurningApplicationRate",
+    Charge = "Charge", -- Not entirely sure what this represents.
+    BaseChargeTime = "BaseChargeTime", -- Appears to be in seconds.
+    ChargeTime = "ChargeTime", -- Pure value seen on weapon. Likely to be seconds to maximum charge.
+    ChargeMaxTimeInChargedState = "ChargeMaxTimeInChargedState", -- Time before automatic discharge.
+    ChargeDischargeTime = "ChargeDischargeTime", -- Cooldown until can be charged again?
+    ChargeMultiplier = "ChargeMultiplier", -- Damage multiplier to charged damage.
+    ChargeFullMultiplier = "ChargeFullMultiplier", -- Separate modifier for fully-charged state.
+    ChargeReadyPercentage = "ChargeReadyPercentage",
+    ChemicalDamage = "ChemicalDamage",
+    ChemicalDamageMin = "ChemicalDamageMin",
+    ChemicalDamageMax = "ChemicalDamageMax",
+    CycleTimeBase = "CycleTimeBase", -- Unsure what this refers to. Time between shots for pump actions, perhaps?
+    CycleTimeBonus = "CycleTimeBonus",
+    CycleTime = "CycleTime",
+    CycleTimeBurstMaxCharge = "CycleTime_BurstMaxCharge",
+    ClipTimesCycleBase = "ClipTimesCycleBase",
+    ClipTimesCycle = "ClipTimesCycle",
+    ClipTimesCyclePlusReload = "ClipTimesCyclePlusReload",
+    ClipTimesCyclePlusReloadBase = "ClipTimesCyclePlusReloadBase",
     CritChance = "CritChance",
     CritDamage = "CritDamage",
-    HeadshotMultiplier = "HeadshotDamageMultiplier",
-    ChargeTime = "ChargeTime",
-    ChargeMultiplier = "ChargeMultiplier",
+    CritChanceTimesCritDamage = "CritChanceTimeCritDamage", -- Product of chance and damage maybe. Not sure where this is used.
+    CritDPSBonus = "CritDPSBonus", -- Likely to be visual only. Used for calculating in-inventory damage.
+    DPS = "DPS", -- Surely this is visual only.
+    DamagePerHit = "DamagePerHit", -- Probably also visual.
+    DamageFalloffDisabled = "DamageFalloffDisabled", -- Boolean flag. No range penalty for damage?
+    DealsChemicalDamage = "DealsChemicalDamage", -- Boolean flags for damage type.
+    DealsElectricalDamage = "DealsElectricDamage",
+    DealsPhysicalDamage = "DealsPhysicalDamage",
+    DealsThermalDamage = "DealsThermalDamage",
+    EffectiveDPS = "EffectiveDPS", -- Suspect these values are computed.
+    EffectiveDamagePerHit = "EffectiveDamagePerHit",
+    EffectiveDamagePerHitMin = "EffectiveDamagePerHitMin",
+    EffectiveDamagePerHitMax = "EffectiveDamagePerHitMax",
+    EffectiveDamagePerHitTimesAttacksPerSecond = "EffectiveDamagePerHitTimesAttacksPerSecond",
+    EffectiveRange = "EffectiveRange",
+    ElectricalDamage = "ElectricDamage",
+    ElectricalDamageMin = "ElectricDamageMin",
+    ElectricalDamageMax = "ElectricDamageMax",
+    ShockChance = "ElectrocutedApplicationRate",
+    EmptyReloadTime = "EmptyReloadTime", -- Self-explanatory, really.
+    EquipDuration = "EquipDuration", -- No idea what these are used for.
+    EquipDurationFirst = "EquipDuration_First",
+    HeadshotDamageMultiplier = "HeadshotDamageMultiplier",
+    HasSmartLink = "HasSmartLink", -- Boolean value. Use this to make smart weapons be usable even without a link!
+    HitDismembermentFactor = "HitDismembermentFactor", -- Not too sure what these control but they sound fun to play with.
+    HitReactionFactor = "HitReactionFactor",
+    HitWoundsFactor = "HitWoundsFactor",
+    IconicItemUpgraded = "IconicItemUpgraded", -- Checks if this iconic weapon is the result of a previous upgrade?
+    IsItemCrafted = "IsItemCrafted", -- Booleans to set or unset craft flag.
+    IsItemIconic = "IsItemIconic", -- Similar for iconic flag.
+    ItemLevel = "ItemLevel",
+    ItemRequiresSmartLink = "ItemRequiresSmartLink", -- This is a boolean value.
+    KnockdownImpulse = "KnockdownImpulse", -- Physics value for knockdowns? Sounds fun!
+    Level = "Level", -- Matches power level but doesn't set requirement.
+    MagazineCapacityBase = "MagazineCapacityBase",
+    MagazineCapacityBonus = "MagazineCapacityBonus",
+    MagazineCapacity = "MagazineCapacity", -- Might be a computed value. Try modifying bonus.
+    NumShotsInBurstMaxCharge = "NumShotsInBurstMaxCharge", -- For tech weapons with burst fire on charge.
+    NumShotsToFire = "NumShotsToFire", -- For normal burst weapons.
+    PhysicalDamage = "PhysicalDamage",
+    PhysicalDamageMin = "PhysicalDamageMin",
+    PhysicalDamageMax = "PhysicalDamageMax",
+    PhysicalImpulse = "PhysicalImpulse", -- Physics value for other ragdolling? Sounds fun!
+    PoisonChance = "PoisonedApplicationRate",
+    PowerLevel = "PowerLevel",
+    ProjectilesPerShotBase = "ProjectilesPerShotBase", -- Tech weapons or shotguns use this.
+    ProjectilesPerShotBonus = "ProjectilesPerShotBonus", -- Best to modify bonus rather than base (likely inherited from weapon type).
+    ProjectilesPerShot = "ProjectilesPerShot", -- May be a computed value. Needs testing.
+    Quality = "Quality",
+    Quantity = "Quantity", -- Unsure how this is used for non-stackable items. Value is not always one. Avoid!
+    RandomCurveInput = "RandomCurveInput",
+    Range = "Range",
+    Recoil = "Recoil",
+    RecoilAngle = "RecoilAngle",
+    RecoilAnimation = "RecoilAnimation",
+    RecoilDelay = "RecoilDelay",
+    RecoilDir = "RecoilDir", -- Angle could be changed to force recoil direction.
+    RecoilDirADS = "RecoilDirADS",
+    RecoilDriftRandomRangeMin = "RecoilDriftRandomRangeMin",
+    RecoilDriftRandomRangeMax = "RecoilDriftRandomRangeMax",
+    RecoilEnableLinearX = "RecoilEnableLinearX",
+    RecoilEnableLinearXADS = "RecoilEnableLinearXADS",
+    RecoilEnableLinearY = "RecoilEnableLinearY",
+    RecoilEnableLinearYADS = "RecoilEnableLinearYADS",
+    RecoilFullChargeMult = "RecoilFullChargeMult",
+    RecoilHoldDuration = "RecoilHoldDuration",
+    RecoilHoldDurationADS = "RecoilHoldDurationADS",
+    RecoilKickMin = "RecoilKickMin",
+    RecoilKickMinADS = "RecoilKickMinADS",
+    RecoilKickMax = "RecoilKickMax",
+    RecoilKickMaxADS = "RecoilKickMaxADS",
+    RecoilMagForFullDrift = "RecoilMagForFullDrift",
+    RecoilMaxLength = "RecoilMaxLength",
+    RecoilRecoveryMinSpeed = "RecoilRecoveryMinSpeed",
+    RecoilRecoveryTime = "RecoilRecoveryTime",
+    RecoilRecoveryTimeADS = "RecoilRecoveryTimeADS",
+    RecoilTime = "RecoilTime",
+    RecoilTimeADS = "RecoilTimeADS",
+    RecoilUseDifferentStatsInADS = "RecoilUseDifferentStatsInADS", -- Boolean flag. Usually for rifles like snipers.
+    ReloadTimeBase = "ReloadTimeBase", -- Likely should modify base or bonus values. Only affects non-empty magazine reloads?
+    ReloadTimeBonus = "ReloadTimeBonus",
+    ReloadTime = "ReloadTime",
     RicochetChance = "RicochetChance",
     RicochetCount = "RicochetCount",
-    ShotDelay = "ShotDelay"
+    RicochetMinAngle = "RicochetMinAngle", -- Change these to make bouncy bullets?
+    RicochetMaxAngle = "RicochetMaxAngle",
+    RicochetTargetSearchAngle = "RicochetTargetSearchAngle", -- Automatically tries to guide to a target for hit.
+    ScopeFOV = "ScopeFOV",
+    ScopeOffset = "ScopeOffset",
+    ShotDelay = "ShotDelay", -- This is mainly a sniper rifle thing.
+    SlideWhenLeaningOutOfCover = "SlideWhenLeaningOutOfCover",
+    SmartGunAddSpiralTrajectory = "SmartGunAddSpiralTrajectory",
+    SmartGunAdsLockingAnglePitch = "SmartGunAdsLockingAnglePitch", -- Unsure what the locking angles control.
+    SmartGunAdsLockingAngleYaw = "SmartGunAdsLockingAngleYaw",
+    SmartGunAdsMaxLockedTargets = "SmartGunAdsMaxLockedTargets", -- Ooh baby.
+    SmartGunAdsTargetableAnglePitch = "SmartGunAdsTargetableAnglePitch",
+    SmartGunAdsTargetableAngleYaw = "SmartGunAdsTargetableAngleYaw",
+    SmartGunAdsTimeToLock = "SmartGunAdsTimeToLock", -- Appears to be in seconds.
+    SmartGunAdsTimeToUnlock = "SmartGunAdsTimeToUnlock", -- Usually set to zero.
+    SmartGunHipLockingAnglePitch = "SmartGunHipLockingAnglePitch",
+    SmartGunHipLockingAngleYaw = "SmartGunHipLockingAngleYaw",
+    SmartGunHipMaxLockedTargets = "SmartGunHipMaxLockedTargets", -- As with aim-down-sights variant.
+    SmartGunHipTargetableAnglePitch = "SmartGunHipTargetableAnglePitch",
+    SmartGunHipTargetableAngleYaw = "SmartGunHipTargetableAngleYaw",
+    SmartGunHipTimeToLock = "SmartGunHipTimeToLock",
+    SmartGunHipTimeToUnlock = "SmartGunHipTimeToUnlock",
+    SmartGunHitProbability = "SmartGunHitProbability", -- Values between zero and one. Why is it even possible for shots to miss?
+    SmartGunMissDelay = "SmartGunMissDelay",
+    SmartGunMissRadius = "SmartGunMissRadius",
+    SmartGunPlayerProjectileVelocity = "SmartGunPlayerProjectileVelocity", -- Default values are pretty low (~25) while max is very high (9999).
+    SmartGunProjectileVelocityVariance = "SmartGunProjectileVelocityVariance",
+    SmartGunSpiralCycleTimeMin = "SmartGunSpiralCycleTimeMin", -- Unsure what the spiral cycle times represent.
+    SmartGunSpiralCycleTimeMax = "SmartGunSpiralCycleTimeMax",
+    SmartGunSpiralRadius = "SmartGunSpiralRadius",
+    SmartGunSpiralRampDistanceStart = "SmartGunSpiralRampDistanceStart",
+    SmartGunSpiralRampDistanceEnd = "SmartGunSpiralRampDistanceEnd",
+    SmartGunSpiralRandomizeDirection = "SmartGunSpiralRandomizeDirection", -- This is a boolean flag.
+    SmartGunSpreadMultiplier = "SmartGunSpreadMultiplier",
+    SmartGunStartingAccuracy = "SmartGunStartingAccuracy", -- Default gun accuracy. For weapons that improve accuracy as they remain locked.
+    SmartGunTargetAcquisitionRange = "SmartGunTargetAcquisitionRange", -- Usually quite low (~20) while max is much higher (1000).
+    SmartGunTimeToMaxAccuracy = "SmartGunTimeToMaxAccuracy",
+    SmartGunTimeToRemoveOccludedTarget = "SmartGunTimeToRemoveOccludedTarget", -- You could use this to keep track through walls.
+    SmartGunTrackAllBodyparts = "SmartGunTrackAllBodyparts", -- Disable this to track only heads?
+    SmartGunUseEvenDistributionTargeting = "SmartGunUseEvenDistributionTargeting",
+    SmartGunUseTimeBasedAccuracy = "SmartGunUseTimeBasedAccuracy", -- Boolean flag.
+    Spread = "Spread", -- Here comes all the bullet spread stuff.
+    SpreadAdsChangePerShot = "SpreadAdsChangePerShot",
+    SpreadAdsChargeMult = "SpreadAdsChargeMult",
+    SpreadAdsDefaultX = "SpreadAdsDefaultX",
+    SpreadAdsFastSpeedMin = "SpreadAdsFastSpeedMin",
+    SpreadAdsFastSpeedMinAdd = "SpreadAdsFastSpeedMinAdd",
+    SpreadAdsFastSpeedMax = "SpreadAdsFastSpeedMax",
+    SpreadAdsFastSpeedMaxAdd = "SpreadAdsFastSpeedMaxAdd",
+    SpreadAdsFullChargeMult = "SpreadAdsFullChargeMult",
+    SpreadAdsMinX = "SpreadAdsMinX",
+    SpreadAdsMinY = "SpreadAdsMinY",
+    SpreadAdsMaxX = "SpreadAdsMaxX",
+    -- SpreadAdsMaxY = "SpreadAdsMaxY", -- Haven't seen this in any weapon dumps yet.
+    SpreadAnimation = "SpreadAnimation",
+    SpreadChangePerShot = "SpreadChangePerShot",
+    SpreadChargeMult = "SpreadChargeMult",
+    SpreadCrouchDefaultMult = "SpreadCrouchDefaultMult",
+    SpreadCrouchMaxMult = "SpreadCrouchMaxMult",
+    SpreadDefaultX = "SpreadDefaultX",
+    SpreadEvenDistributionJitterSize = "SpreadEvenDistributionJitterSize",
+    SpreadEvenDistributionRowCount = "SpreadEvenDistributionRowCount",
+    SpreadFastSpeedMin = "SpreadFastSpeedMin",
+    SpreadFastSpeedMinAdd = "SpreadFastSpeedMinAdd",
+    SpreadFastSpeedMax = "SpreadFastSpeedMax",
+    SpreadFastSpeedMaxAdd = "SpreadFastSpeedMaxAdd",
+    SpreadFullChargeMult = "SpreadFullChargeMult",
+    SpreadMinX = "SpreadMinX",
+    SpreadMaxX = "SpreadMaxX",
+    SpreadMinY = "SpreadMinY",
+    -- SpreadMaxY = "SpreadMaxY", -- Haven't seen this in any weapon dumps yet.
+    SpreadRandomizeOriginPoint = "SpreadRandomizeOriginPoint",
+    SpreadResetSpeed = "SpreadResetSpeed",
+    SpreadResetTimeThreshold = "SpreadResetTimeThreshold",
+    SpreadUseCircularSpread = "SpreadUseCircularSpread", -- This is a boolean. Common for tech weapons.
+    SpreadUseEvenDistribution = "SpreadUseEvenDistribution", -- This is a boolean. Common for tech weapons.
+    SpreadUseInAds = "SpreadUseInAds", -- This is a boolean.
+    StreetCred = "StreetCred",
+    Strength = "Strength", -- No idea what this represents.
+    SwayCenterMaximumAngleOffset = "SwayCenterMaximumAngleOffset",
+    SwayCurvatureMinimumFactor = "SwayCurvatureMinimumFactor",
+    SwayCurvatureMaximumFactor = "SwayCurvatureMaximumFactor",
+    SwayInitialOffsetRandomFactor = "SwayInitialOffsetRandomFactor",
+    SwayResetOnAimStart = "SwayResetOnAimStart",
+    SwaySideBottomAngleLimit = "SwaySideBottomAngleLimit",
+    SwaySideMinimumAngleDistance = "SwaySideMinimumAngleDistance",
+    SwaySideMaximumAngleDistance = "SwaySideMaximumAngleDistance",
+    SwaySideStepChangeMinimumFactor = "SwaySideStepChangeMinimumFactor",
+    SwaySideStepChangeMaximumFactor = "SwaySideStepChangeMaximumFactor",
+    SwaySideTopAngleLimit = "SwaySideTopAngleLimit",
+    SwayStartBlendTime = "SwayStartBlendTime",
+    SwayStartDelay = "SwayStartDelay",
+    SwayTraversalTime = "SwayTraversalTime",
+    TechPierceChargeLevel = "TechPierceChargeLevel", -- This is a threshold value of charge that must be exceeded to allow pierce.
+    TechPierceEnabled = "TechPierceEnabled", -- This is a boolean flag. Can set to allow piercing.
+    ThermalDamage = "ThermalDamage",
+    ThermalDamageMin = "ThermalDamageMin",
+    ThermalDamageMax = "ThermalDamageMax",
+    UnequipDuration = "UnequipDuration",
+    WasItemUpgraded = "WasItemUpgraded", -- Boolean or counter that tracks how to scale upgrade recipe?
+    Weight = "Weight",
+    ZoomLevel = "ZoomLevel"
+}
+
+Glossary.Inspect = {
+    Glossary.Stats.Level,
+    Glossary.Stats.ItemLevel,
+    Glossary.Stats.PowerLevel,
+    Glossary.Stats.IsItemIconic,
+    Glossary.Stats.IsItemCrafted,
+    Glossary.Stats.PhysicalDamage,
+    Glossary.Stats.BleedChance,
+    Glossary.Stats.ThermalDamage,
+    Glossary.Stats.BurnChance,
+    Glossary.Stats.ElectricalDamage,
+    Glossary.Stats.ShockChance,
+    Glossary.Stats.ChemicalDamage,
+    Glossary.Stats.PoisonChance,
+    Glossary.Stats.CritChance,
+    Glossary.Stats.CritDamage,
+    Glossary.Stats.HeadshotDamageMultiplier,
+    Glossary.Stats.ProjectilesPerShot,
+    Glossary.Stats.MagazineCapacity,
+    Glossary.Stats.CycleTime,
+    Glossary.Stats.RicochetChance,
+    Glossary.Stats.RicochetCount,
+    Glossary.Stats.BonusRicochetDamage,
+    Glossary.Stats.TechPierceEnabled,
+    Glossary.Stats.TechPierceChargeLevel,
+    Glossary.Stats.ChargeMultiplier,
+    Glossary.Stats.ChargeFullMultiplier,
+    Glossary.Stats.HasSmartLink,
+    Glossary.Stats.SmartGunHitProbability,
+    Glossary.Stats.SmartGunTrackAllBodyparts
 }
 
 Glossary.Calculation = {
@@ -112,6 +352,30 @@ Glossary.EquipSlots = {
     OuterChest = 1,
     Weapon = 3,
     Outfit = 1
+}
+
+Glossary.WeaponSlots = {
+    [1] = "Weapon 1",
+    [2] = "Weapon 2",
+    [3] = "Weapon 3"
+}
+
+Glossary.ClothingSlots = {
+    [1] = "Head",
+    [2] = "Face",
+    [3] = "Inner Torso",
+    [4] = "Outer Torso",
+    [5] = "Legs",
+    [6] = "Feet"
+}
+
+Glossary.ClothingSlotsInv = {
+    ["Head"] = "Heads",
+    ["Face"] = "Face",
+    ["Inner Torso"] = "InnerChest",
+    ["Outer Torso"] = "OuterChest",
+    ["Legs"] = "Legs",
+    ["Feet"] = "feet"
 }
 
 -- Property Lookups

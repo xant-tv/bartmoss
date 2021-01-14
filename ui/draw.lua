@@ -3,9 +3,11 @@ local Draw = {
 }
 
 local Style = require(Draw.rootPath .. "ui.style")
+local QuickhacksTab = require(Draw.rootPath .. "ui.tabs.qh")
 local PlayerCheatsTab = require(Draw.rootPath .. "ui.tabs.player")
 local ItemCheatsTab = require(Draw.rootPath .. "ui.tabs.item")
-local QuickhacksTab = require(Draw.rootPath .. "ui.tabs.qh")
+local WeaponCheatsTab = require(Draw.rootPath .. "ui.tabs.weapon")
+local ArmorCheatsTab = require(Draw.rootPath .. "ui.tabs.armor")
 
 function Draw.SetWindowSize()
     ImGui.SetNextWindowPos(Style.Position.App.X, Style.Position.App.Y, ImGuiCond.FirstUseEver)
@@ -27,6 +29,8 @@ function Draw.BuildTabs()
         QuickhacksTab.Build()
         PlayerCheatsTab.Build()
         ItemCheatsTab.Build()
+        WeaponCheatsTab.Build()
+        -- ArmorCheatsTab.Build()
         ImGui.EndTabBar()
     end
 end

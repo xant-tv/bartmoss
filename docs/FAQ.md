@@ -9,11 +9,18 @@ Bartmoss lets you:
  - Do all this through a simple UI in-game!
 
 ![bartmoss_items_ui](images/item.png)
+![bartmoss_weapons_ui](images/weapon.png)
 
 ## Why should I use this mod?
-Item generation in Cyberpunk 2077 is a very complicated process that has a lot of unseen steps which other mods or simple commands may not follow.
+Item generation in Cyberpunk 2077 is a very complicated process that has a lot of unseen steps which other mods or simple commands may not follow. Simple commands for upgrading item level or quality [can have unintended side-effects](https://www.youtube.com/watch?v=l13OkxImayk).
 
-Simple commands for upgrading item level or quality [can have unintended side-effects](https://www.youtube.com/watch?v=l13OkxImayk).
+Bartmoss handles all this complexity for you:
+ - Check if the item is stackable and use appropriate generation method.
+ - Check if the item is of fixed-quality and enforce.
+ - Check if the item is of fixed-level and enforce expected level.
+ - Generate a new random seed for each item.
+ - Remove any unwanted flags (quest, etc.) and application of desired ones.
+ - Apply any desired item modifiers or statistics.
 
 ## I want an item that isn't in the glossary!
 I'm still in the process of manually building and reviewing the glossary.
@@ -25,11 +32,11 @@ Bartmoss = GetMod("bartmoss")
 Bartmoss.Cheats.Items.GiveN("Items.item_not_in_glossary", 1, "Legendary", 50)
 ```
 
-Items added this way will not undergo the typical quality/level force checks.
+Items added this way will not undergo the typical quality or level force checks.
 
 ## This item doesn't let me set its quality or level!
 Many items in the game are generated at specific levels or forced to be specific qualities. 
-In such cases, each item is represented by an multiple item bases rather than a single scalable one.
+In such cases, each item is represented by multiple item bases rather than a single scalable one.
 
 This is true for:
  - Iconic weapons (fixed quality).

@@ -24,6 +24,7 @@ function ItemCheatsTab.DoGlossary()
     State.ItemsTab.GlossaryOptions = Table.Filter(State.ItemsTab.GlossaryPaths, search, is_regex)
     -- Reset any current selections.
     State.ItemsTab.ItemSelect = 0
+    State.ItemsTab.ItemQuantity = 1
 end
 
 function ItemCheatsTab.DoGiveItem()
@@ -49,27 +50,27 @@ function ItemCheatsTab.DoGiveItem()
         -- This will scale item to player level.
         level = nil
     end
-    print("UI_ITEM_GIVE=" .. itempath .. "|Q" .. quantity .. "|" .. quality .. "|L" .. (level or 0))
-    ItemHandler.GiveItems(item, quantity, quality, level)
+    print("UI_ITEM_GIVE=" .. itempath .. "|QTY=" .. quantity .. "|QL=" .. quality .. "|LVL=" .. (level or 0))
+    ItemHandler.GiveN(item, quantity, quality, level)
 end
 
 function ItemCheatsTab.BuildDisplay()
     ImGui.Spacing()
     ImGui.Text("Give yourself items with options for:")
     ImGui.Text(" - Item level, quality and quantity.")
-    ImGui.Text(" - Weapon stats (modifiers) coming soon.")
+    ImGui.Text(" - Weapon modifiers are in another tab.")
     ImGui.Spacing()
 end
 
 function ItemCheatsTab.BuildGlossary()
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Glossary")
+    ImGui.Text("1. Glossary")
     ImGui.Text(" - Search for items by name to populate the dropdown list.")
     ImGui.Text(" - Wildcards (*) are supported!")
-    ImGui.PushItemWidth(Style.Size.ItemTab.Text.Width)
+    ImGui.PushItemWidth(Style.Size.ItemsTab.Text.Width)
     State.ItemsTab.GlossaryInput = ImGui.InputTextWithHint("##Glossary", "Phrase (e.g. Weapons.*.Iconic)", State.ItemsTab.GlossaryInput, 300, Widget.GetInputFlags())
-    ImGui.SameLine(Style.Size.ItemTab.Text.Width + Style.Size.ColSpacer)
+    ImGui.SameLine(Style.Size.ItemsTab.Text.Width + Style.Size.SmallColSpacer)
     if (ImGui.Button("Search")) then
         ItemCheatsTab.DoGlossary()
     end
@@ -81,13 +82,13 @@ end
 function ItemCheatsTab.BuildItemSelect()
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Available Items")
+    ImGui.Text("2. Item Select")
     ImGui.Text(" - Select item base and quantity.")
-    ImGui.PushItemWidth(Style.Size.ItemTab.Text.Width)
+    ImGui.PushItemWidth(Style.Size.ItemsTab.Text.Width)
     -- Return value is the index of the chosen element.
     State.ItemsTab.ItemSelect = ImGui.Combo("##Item", State.ItemsTab.ItemSelect, State.ItemsTab.GlossaryOptions, #State.ItemsTab.GlossaryOptions)
-    ImGui.SameLine(Style.Size.ItemTab.Text.Width + Style.Size.ColSpacer)
-    ImGui.PushItemWidth(Style.Size.ItemTab.Integer.Width)
+    ImGui.SameLine(Style.Size.ItemsTab.Text.Width + Style.Size.SmallColSpacer)
+    ImGui.PushItemWidth(Style.Size.ItemsTab.Integer.Width)
     State.ItemsTab.ItemQuantity = ImGui.InputInt("##Quantity", State.ItemsTab.ItemQuantity, 1, 100, Widget.GetInputFlags())
     ImGui.Spacing()
 end
@@ -95,17 +96,17 @@ end
 function ItemCheatsTab.BuildItemProperties()
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Items Properties")
-    ImGui.Text(" - Select item level and quality (may be forced for certain items).")
+    ImGui.Text("3. Properties")
+    ImGui.Text(" - Please read item statistics glossary documentation.")
     State.ItemsTab.QualitySelect = ImGui.Combo("Quality", State.ItemsTab.QualitySelect, State.ItemsTab.QualityOptions, #State.ItemsTab.QualityOptions, 8)
-    State.ItemsTab.ItemLevel = ImGui.InputInt("Level", State.ItemsTab.ItemLevel, 1, 1, Widget.GetInputFlags())
+    State.ItemsTab.ItemLevel = ImGui.InputInt("Level (Auto=0)", State.ItemsTab.ItemLevel, 1, 1, Widget.GetInputFlags())
     ImGui.Spacing()
 end
 
 function ItemCheatsTab.BuildGiveItem()
     ImGui.Separator()
     ImGui.Spacing()
-    if (ImGui.Button("Give Item(s)", Style.Size.ItemTab.Button.Width, Style.Size.ItemTab.Button.Height)) then
+    if (ImGui.Button("Give Item(s)", Style.Size.ItemsTab.Button.Width, Style.Size.ItemsTab.Button.Height)) then
         ItemCheatsTab.DoGiveItem()
     end
     ImGui.Spacing()

@@ -27,6 +27,21 @@ function ItemHandler.GetDefaultQuality(item)
     return nil
 end
 
+function ItemHandler.GetModifier(itemdata, modifier)
+    local ss = System.Stats()
+    local statsobjid = itemdata:GetStatsObjectID()
+    local result = ss:GetStatValue(statsobjid, modifier) -- Default return is zero.
+    return result
+end
+
+function ItemHandler.Inspect(itemdata)
+    local result = {}
+    for _, mod in ipairs(Glossary.Inspect) do
+        result[mod] = ItemHandler.GetModifier(itemdata, mod)
+    end
+    return result
+end
+
 function ItemHandler.SetLevel(itemdata, level)
     local ss = System.Stats()
     local statsobjid = itemdata:GetStatsObjectID()
@@ -45,6 +60,11 @@ function ItemHandler.SetLevel(itemdata, level)
     -- However, "true" item level is stored as (roughly) a factor of 10 over this.
     local plevel = level
     local ilevel = (10 * level)
+
+    -- Set pure level modifiers.
+    ss:RemoveAllModifiers(statsobjid, Glossary.Stats.Level, true)
+    local mod = GameHandler.CreateStatModifier(Glossary.Stats.Level, Glossary.Calculation.Additive, level)
+    ss:AddSavedModifier(statsobjid, mod)
 
     -- Set item level modifiers.
     ss:RemoveAllModifiers(statsobjid, Glossary.Stats.PowerLevel, true)
@@ -86,12 +106,21 @@ function ItemHandler.SetQuality(itemdata, quality)
 
 end
 
-function ItemHandler.AddModifier(itemdata, modtype, calc, val)
+function ItemHandler.SetModifier(itemdata, modtype, calctype, val)
     local ss = System.Stats()
     local statsobjid = itemdata:GetStatsObjectID()
-    local mod = GameHandler.CreateStatModifier(modtype, calc, val)
+    ss:RemoveAllModifiers(statsobjid, modtype, true)
+    local mod = GameHandler.CreateStatModifier(modtype, calctype, val)
     ss:AddSavedModifier(statsobjid, mod)
-    print("MOD_ADD_OK=" .. modtype .. "|" .. calc .. "|" .. val .. ": " .. tostring(itemdata:GetID()))
+    print("MOD_SET_OK=" .. modtype .. "|" .. calctype .. "|" .. val .. ": " .. tostring(itemdata:GetID()))
+end
+
+function ItemHandler.AddModifier(itemdata, modtype, calctype, val)
+    local ss = System.Stats()
+    local statsobjid = itemdata:GetStatsObjectID()
+    local mod = GameHandler.CreateStatModifier(modtype, calctype, val)
+    ss:AddSavedModifier(statsobjid, mod)
+    print("MOD_ADD_OK=" .. modtype .. "|" .. calctype .. "|" .. val .. ": " .. tostring(itemdata:GetID()))
 end
 
 function ItemHandler.MarkCrafted(itemdata)
@@ -102,6 +131,15 @@ end
 
 function ItemHandler.MarkQuest(itemdata)
     itemdata:SetDynamicTag(Glossary.Tags.Quest)
+end
+
+function ItemHandler.MarkIconic(itemdata)
+    ItemHandler.SetModifier(itemdata, Glossary.Stats.IsItemIconic, Glossary.Calculation.Additive, 1)
+end
+
+function ItemHandler.UnmarkIconic(itemdata)
+    -- Will not override actual iconic weapons.
+    ItemHandler.SetModifier(itemdata, Glossary.Stats.IsItemIconic, Glossary.Calculation.Additive, 0)
 end
 
 function ItemHandler.UnmarkQuest(itemdata)
@@ -131,7 +169,7 @@ function ItemHandler.GiveItems(item, n, quality, level)
         quality = nil
     end
 
-    -- Force level for cetain items!
+    -- Force level for certain items!
     if ItemHandler.CannotBeLevelled(item) then
         level = 0
     end

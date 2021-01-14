@@ -23,10 +23,10 @@ function PlayerCheatsTab.BuildExpGiver()
     ImGui.PushItemWidth(Style.Size.PlayerTab.Text.Width)
     -- Return value is the index of the chosen element.
     State.PlayerTab.AttrSelect = ImGui.Combo("##Attribute", State.PlayerTab.AttrSelect, State.PlayerTab.AttrOptions, #State.PlayerTab.AttrOptions)
-    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.ColSpacer)
+    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.SmallColSpacer)
     ImGui.PushItemWidth(Style.Size.PlayerTab.Integer.Width)
     State.PlayerTab.ExpAmount = ImGui.InputInt("##Amount", State.PlayerTab.ExpAmount, 1000, 1000, Widget.GetInputFlags())
-    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.PlayerTab.Integer.Width + (1.5 * Style.Size.ColSpacer))
+    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.PlayerTab.Integer.Width + Style.Size.PlayerTab.Integer.Offset + Style.Size.SmallColSpacer)
     if (ImGui.Button("Add XP")) then
         PlayerCheatsTab.DoExperience()
     end

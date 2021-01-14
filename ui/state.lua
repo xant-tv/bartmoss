@@ -21,6 +21,49 @@ State.ItemsTab.ItemSelect = 0
 State.ItemsTab.ItemQuantity = 1
 State.ItemsTab.QualityOptions = Glossary.QualityRank
 State.ItemsTab.QualitySelect = 4
-State.ItemsTab.ItemLevel = 50
+State.ItemsTab.ItemLevel = 0
+
+State.WeaponsTab = {}
+State.WeaponsTab.SlotOptions = Glossary.WeaponSlots
+State.WeaponsTab.SlotSelect = 0
+State.WeaponsTab.SlotActivated = false
+State.WeaponsTab.ItemData = nil
+State.WeaponsTab.Modifiers = {
+    PhysicalDamage = 0,
+    BleedChance = 0,
+    ThermalDamage = 0,
+    BurnChance = 0,
+    ElectricalDamage = 0,
+    ShockChance = 0,
+    ChemicalDamage = 0,
+    PoisonChance = 0,
+    CritChance = 0,
+    CritDamage = 0,
+    HeadshotDamageMultiplier = 0,
+    ProjectilesPerShot = 0,
+    CycleTime = 0,
+    MagazineCapacity = 0,
+    IsItemIconic = false,
+    IsItemCrafted = false,
+    RicochetChance = 0,
+    RicochetCount = 0,
+    BonusRicochetDamage = 0,
+    TechPierceEnabled = false,
+    TechPierceChargeLevel = 0,
+    ChargeMultiplier = 0,
+    ChargeFullMultiplier = 0,
+    HasSmartLink = false,
+    SmartGunHitProbability = 0,
+    SmartGunTrackAllBodyparts = false
+}
+for key, item in pairs(State.WeaponsTab.Modifiers) do
+    State.WeaponsTab[key] = {
+        Default = item
+    }
+    State.WeaponsTab[key].Value = State.WeaponsTab[key].Default
+    State.WeaponsTab[key].Read = State.WeaponsTab[key].Value
+end
+
+State.ArmorTab = {}
 
 return State

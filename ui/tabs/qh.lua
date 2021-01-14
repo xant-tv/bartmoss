@@ -29,11 +29,11 @@ end
 function QuickhacksTab.BuildButtons()
     ImGui.Separator()
     ImGui.Spacing()
-    if (ImGui.Button("Make Legendary", Style.Size.QuickhackTab.Button.Width, Style.Size.QuickhackTab.Button.Height)) then
+    if (ImGui.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
         QuickhacksTab.DoUpgrade()
     end
-    ImGui.SameLine(Style.Size.QuickhackTab.Button.Width + Style.Size.ColSpacer)
-    if (ImGui.Button("Give Endgame Mods", Style.Size.QuickhackTab.Button.Width, Style.Size.QuickhackTab.Button.Height)) then
+    ImGui.SameLine(Style.Size.QuickhacksTab.Button.Width + Style.Size.ColSpacer)
+    if (ImGui.Button("Give Endgame Mods", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
         QuickhacksTab.DoGiveMods()
     end
     ImGui.Spacing()

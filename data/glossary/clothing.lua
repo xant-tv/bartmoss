@@ -1,23 +1,25 @@
 -- Recipes for clothing, weapons, mods all contained here.
-local Recipes = {
+local Clothing = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
 -- TODO: Lots of work required to fill this out.
 
-Recipes = {
-    Weapons = {
-        Ranged = {
-        },
-        Melee = {
-        },
+Clothing = {
+    Head = {
     },
-    Clothing = {
+    Face = {
     },
-    Quickhacks = {
+    InnerTorso = {
     },
-    Mods = {
+    OuterTorso = {
+    },
+    Legs = {
+    },
+    Feet = {
+    },
+    Outfit = {
     }
 }
 
-return Recipes
+return Clothing
