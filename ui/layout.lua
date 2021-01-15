@@ -79,6 +79,16 @@ Layout = {
                     Name = "CritDamage",
                     Display = "Critical Damage",
                     Type = "Float"
+                },
+                {
+                    Name = "IsItemIconic",
+                    Display = "Is Iconic",
+                    Type = "Boolean"
+                },
+                {
+                    Name = "IsItemCrafted",
+                    Display = "Is Crafted",
+                    Type = "Boolean"
                 }
             }
         },
@@ -97,6 +107,21 @@ Layout = {
                 {
                     Name = "BonusRicochetDamage",
                     Display = "Bonus Damage",
+                    Type = "Float"
+                },
+                {
+                    Name = "RicochetMinAngle",
+                    Display = "Min Angle",
+                    Type = "Float"
+                },
+                {
+                    Name = "RicochetMaxAngle",
+                    Display = "Max Angle",
+                    Type = "Float"
+                },
+                {
+                    Name = "RicochetTargetSearchAngle",
+                    Display = "Search Angle",
                     Type = "Float"
                 }
             },
@@ -125,6 +150,13 @@ Layout = {
                     Column = 3,
                     Type = "Float"
                 },
+                {
+                    Name = "SmartGunAdsMaxLockedTargets",
+                    Copy = "SmartGunHipMaxLockedTargets",
+                    Display = "Max Targets",
+                    Column = 3,
+                    Type = "Float"
+                },
                 -- Smart guns need more research!
                 -- Appears as though a lot of the behaviour is controlled by something other than simple modifiers.
                 {
@@ -136,6 +168,10 @@ Layout = {
             }
         }
     }
+}
+Layout.WeaponsTab.Sections = {
+    Layout.WeaponsTab.Basic,
+    Layout.WeaponsTab.Advanced
 }
 
 return Layout

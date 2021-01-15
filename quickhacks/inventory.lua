@@ -3,8 +3,8 @@ local Inventory = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local ItemHandler = require(Inventory.rootPath .. "cheats.itemhandler")
-local EquipmentHandler = require(Inventory.rootPath .. "cheats.equipmenthandler")
+local ItemHandler = require(Inventory.rootPath .. "handler.item")
+local EquipmentHandler = require(Inventory.rootPath .. "handler.equipment")
 local Glossary = require(Inventory.rootPath .. "data.glossary")
 
 function Inventory.GiveEndgameMods()

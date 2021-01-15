@@ -37,4 +37,6 @@ Bartmoss = GetMod("bartmoss")
 All [interfaces](docs/INTERFACE.md) will now be available.
 
 ## Credits
-Huge thanks to the community of amazing netrunners working on [CET](https://github.com/yamashi/CyberEngineTweaks), [RED4ext](https://github.com/WopsS/RED4ext) and not [one](https://github.com/PixelRick/CyberpunkSaveEditor), but [two](https://github.com/WolvenKit/CyberCAT) save editors. Without you, this would not have been possible. Check out the modding [Discord](https://discord.gg/cp77modding).
+Huge thanks to the community of amazing netrunners working on [CET](https://github.com/yamashi/CyberEngineTweaks), [RED4ext](https://github.com/WopsS/RED4ext) and not [one](https://github.com/PixelRick/CyberpunkSaveEditor), but [two](https://github.com/WolvenKit/CyberCAT) save editors. 
+Without you, this would not have been possible. 
+Check out the modding [Discord](https://discord.gg/cp77modding).

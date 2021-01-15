@@ -3,7 +3,7 @@ local Outfits = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local ItemHandler = require(Outfits.rootPath .. "cheats.itemhandler")
+local ItemHandler = require(Outfits.rootPath .. "handler.item")
 local Glossary = require(Outfits.rootPath .. "data.glossary")
 
 function Outfits.GiveFemaleNomadCustomOutfit()

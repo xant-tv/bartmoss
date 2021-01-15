@@ -47,25 +47,25 @@ Bartmoss.Utility.Describe("Glossary.Weapons.Ranged.Dian") -- By pathstring (with
 >> └── Trauma
 ```
 
-## Cheats.Items
-Lower-level access to item-related cheats.
+## Handler.Items
+Lower-level access to item-related functionality.
 ```lua
 -- Give the player items.
 -- Item names can be obtained from glossaries.
 -- If level is not provided, item will scale to character level.
 -- Some items will be forced to certain qualities or levels.
-Bartmoss.Cheats.Items.Give(item, quality, level)
-Bartmoss.Cheats.Items.GiveN(item, quantity, quality, level)
+Bartmoss.Handler.Items.Give(item, quality, level)
+Bartmoss.Handler.Items.GiveN(item, quantity, quality, level)
 
 -- Set level, quality or add any other modifier to underlying item data.
-Bartmoss.Cheats.Items.SetLevel(itemdata, level)
-Bartmoss.Cheats.Items.SetQuality(itemdata, quality)
-Bartmoss.Cheats.Items.AddModifier(itemdata, modtype, calc, val)
+Bartmoss.Handler.Items.SetLevel(itemdata, level)
+Bartmoss.Handler.Items.SetQuality(itemdata, quality)
+Bartmoss.Handler.Items.AddModifier(itemdata, modtype, calc, val)
 ```
 
-## Cheats.Equipment
-Lower-level access to equipment-related cheats. Similar functionality but focused on what you already have.
+## Handler.Equipment
+Lower-level access to equipment-related functionality. Similar to items but focused on what you already have.
 ```lua
 -- Quickly return item data in a particular equip slot.
-itemdata = Bartmoss.Cheats.Equipment.GetItemDataInSlot(slot, index)
+itemdata = Bartmoss.Handler.Equipment.GetItemDataInSlot(slot, index)
 ```

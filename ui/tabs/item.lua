@@ -9,7 +9,7 @@ local Table = require(ItemCheatsTab.rootPath .. "utility.table")
 local Widget = require(ItemCheatsTab.rootPath .. "utility.widget")
 local Utility = require(ItemCheatsTab.rootPath .. "utility.utility")
 local Glossary = require(ItemCheatsTab.rootPath .. "data.glossary")
-local ItemHandler = require(ItemCheatsTab.rootPath .. "cheats.itemhandler")
+local ItemHandler = require(ItemCheatsTab.rootPath .. "handler.item")
 
 function ItemCheatsTab.DoGlossary()
     -- Strings are automatically null-padded to buffer length for the input. Need to trim down.

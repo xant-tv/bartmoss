@@ -5,7 +5,7 @@ local EquipmentHandler = {
 
 local System = require(EquipmentHandler.rootPath .. "game.system")
 local Glossary = require(EquipmentHandler.rootPath .. "data.glossary")
-local ItemHandler = require(EquipmentHandler.rootPath .. "cheats.itemhandler")
+local ItemHandler = require(EquipmentHandler.rootPath .. "handler.item")
 
 function EquipmentHandler.GetItemDataInSlot(name, id)
     local player = System.Player()

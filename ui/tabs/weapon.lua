@@ -7,8 +7,8 @@ local Layout = require(WeaponCheatsTab.rootPath .. "ui.layout")
 local State = require(WeaponCheatsTab.rootPath .. "ui.state")
 local Widget = require(WeaponCheatsTab.rootPath .. "utility.widget")
 local Glossary = require(WeaponCheatsTab.rootPath .. "data.glossary")
-local ItemHandler = require(WeaponCheatsTab.rootPath .. "cheats.itemhandler")
-local EquipmentHandler = require(WeaponCheatsTab.rootPath .. "cheats.equipmenthandler")
+local ItemHandler = require(WeaponCheatsTab.rootPath .. "handler.item")
+local EquipmentHandler = require(WeaponCheatsTab.rootPath .. "handler.equipment")
 
 function WeaponCheatsTab.SetState(element, value, ltype)
     local set = value
@@ -42,18 +42,15 @@ function WeaponCheatsTab.Inspect()
     if State.WeaponsTab.ItemData then
         stats = ItemHandler.Inspect(State.WeaponsTab.ItemData)
     end
-    for _, column in ipairs(Layout.WeaponsTab.Basic) do
-        for _, layout in ipairs(column) do
-            -- Disgusting nested for loops.
-            WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
-        end
-    end
-    WeaponCheatsTab.SetState(State.WeaponsTab.IsItemIconic, stats[Glossary.Stats.IsItemIconic], "Boolean")
-    WeaponCheatsTab.SetState(State.WeaponsTab.IsItemCrafted, stats[Glossary.Stats.IsItemCrafted], "Boolean")
-    for _, column in ipairs(Layout.WeaponsTab.Advanced) do
-        for _, layout in ipairs(column) do
-            -- More disgusting nested loops.
-            WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
+    for _, section in ipairs(Layout.WeaponsTab.Sections) do
+        for _, column in ipairs(section) do
+            for _, layout in ipairs(column) do
+                -- Disgusting nested for loops.
+                WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
+                if layout.Copy then
+                    WeaponCheatsTab.SetState(State.WeaponsTab[layout.Copy], stats[Glossary.Stats[layout.Copy]], layout.Type)
+                end
+            end
         end
     end
 end
@@ -62,16 +59,15 @@ function WeaponCheatsTab.DoModifiers()
     if not State.WeaponsTab.ItemData then
         return
     end
-    for _, column in ipairs(Layout.WeaponsTab.Basic) do
-        for _, layout in ipairs(column) do
-            WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
-        end
-    end
-    WeaponCheatsTab.SetModifier(State.WeaponsTab.IsItemIconic, Glossary.Stats.IsItemIconic, "Boolean")
-    WeaponCheatsTab.SetModifier(State.WeaponsTab.IsItemCrafted, Glossary.Stats.IsItemCrafted, "Boolean")
-    for _, column in ipairs(Layout.WeaponsTab.Advanced) do
-        for _, layout in ipairs(column) do
-            WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+    for _, section in ipairs(Layout.WeaponsTab.Sections) do
+        for _, column in ipairs(section) do
+            for _, layout in ipairs(column) do
+                WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+                if layout.Copy then
+                    State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
+                    WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
+                end
+            end
         end
     end
 end
@@ -114,6 +110,7 @@ function WeaponCheatsTab.BuildBasicModifiers()
     ImGui.Separator()
     ImGui.Spacing()
     ImGui.Text("Basic Modifiers")
+    ImGui.Text(" - Set weapon flags.")
     ImGui.Text(" - Edit generic weapon attributes or values.")
     ImGui.Columns(ncols)
     for col = 1, ncols do
@@ -125,9 +122,6 @@ function WeaponCheatsTab.BuildBasicModifiers()
         ImGui.NextColumn()
     end
     ImGui.Columns(1)
-    ImGui.Text(" - Set weapon flags.")
-    State.WeaponsTab.IsItemIconic.Value = ImGui.Checkbox("Iconic", State.WeaponsTab.IsItemIconic.Value)
-    State.WeaponsTab.IsItemCrafted.Value = ImGui.Checkbox("Crafted", State.WeaponsTab.IsItemCrafted.Value)
     ImGui.Spacing()
 end
 

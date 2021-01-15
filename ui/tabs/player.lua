@@ -5,7 +5,7 @@ local PlayerCheatsTab = {
 local Style = require(PlayerCheatsTab.rootPath .. "ui.style")
 local State = require(PlayerCheatsTab.rootPath .. "ui.state")
 local Widget = require(PlayerCheatsTab.rootPath .. "utility.widget")
-local PlayerHandler = require(PlayerCheatsTab.rootPath .. "cheats.playerhandler")
+local PlayerHandler = require(PlayerCheatsTab.rootPath .. "handler.player")
 
 function PlayerCheatsTab.DoExperience()
     local amount = State.PlayerTab.ExpAmount

@@ -6,8 +6,8 @@ local ItemHandler = {
 local System = require(ItemHandler.rootPath .. "game.system")
 local Table = require(ItemHandler.rootPath .. "utility.table")
 local Math = require(ItemHandler.rootPath .. "utility.math")
-local GameHandler = require(ItemHandler.rootPath .. "cheats.gamehandler")
-local PlayerHandler = require(ItemHandler.rootPath .. "cheats.playerhandler")
+local GameHandler = require(ItemHandler.rootPath .. "handler.game")
+local PlayerHandler = require(ItemHandler.rootPath .. "handler.player")
 local Glossary = require(ItemHandler.rootPath .. "data.glossary")
 
 function ItemHandler.IsStackable(item)

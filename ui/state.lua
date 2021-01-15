@@ -48,12 +48,17 @@ State.WeaponsTab.Modifiers = {
     RicochetChance = 0,
     RicochetCount = 0,
     BonusRicochetDamage = 0,
+    RicochetMinAngle = 0,
+    RicochetMaxAngle = 0,
+    RicochetTargetSearchAngle = 0,
     TechPierceEnabled = false,
     TechPierceChargeLevel = 0,
     ChargeMultiplier = 0,
     ChargeFullMultiplier = 0,
     HasSmartLink = false,
     SmartGunHitProbability = 0,
+    SmartGunAdsMaxLockedTargets = 0,
+    SmartGunHipMaxLockedTargets = 0, -- This item is just a copy.
     SmartGunTrackAllBodyparts = false
 }
 for key, item in pairs(State.WeaponsTab.Modifiers) do

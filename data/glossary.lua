@@ -95,6 +95,8 @@ Glossary.Stats = {
     BurnChance = "BurningApplicationRate",
     Charge = "Charge", -- Not entirely sure what this represents.
     BaseChargeTime = "BaseChargeTime", -- Appears to be in seconds.
+    CanWeaponCriticallyHit = "CanWeaponCriticallyHit",
+    CanWeaponIgnoreArmor = "CanWeaponIgnoreArmor",
     ChargeTime = "ChargeTime", -- Pure value seen on weapon. Likely to be seconds to maximum charge.
     ChargeMaxTimeInChargedState = "ChargeMaxTimeInChargedState", -- Time before automatic discharge.
     ChargeDischargeTime = "ChargeDischargeTime", -- Cooldown until can be charged again?
@@ -104,6 +106,7 @@ Glossary.Stats = {
     ChemicalDamage = "ChemicalDamage",
     ChemicalDamageMin = "ChemicalDamageMin",
     ChemicalDamageMax = "ChemicalDamageMax",
+    ChemicalResistance = "ChemicalResistance",
     CycleTimeBase = "CycleTimeBase", -- Unsure what this refers to. Time between shots for pump actions, perhaps?
     CycleTimeBonus = "CycleTimeBonus",
     CycleTime = "CycleTime",
@@ -132,6 +135,7 @@ Glossary.Stats = {
     ElectricalDamage = "ElectricDamage",
     ElectricalDamageMin = "ElectricDamageMin",
     ElectricalDamageMax = "ElectricDamageMax",
+    ElectricalResistance = "ElectricResistance",
     ShockChance = "ElectrocutedApplicationRate",
     EmptyReloadTime = "EmptyReloadTime", -- Self-explanatory, really.
     EquipDuration = "EquipDuration", -- No idea what these are used for.
@@ -157,6 +161,7 @@ Glossary.Stats = {
     PhysicalDamageMin = "PhysicalDamageMin",
     PhysicalDamageMax = "PhysicalDamageMax",
     PhysicalImpulse = "PhysicalImpulse", -- Physics value for other ragdolling? Sounds fun!
+    PhysicalResistance = "PhysicalResistance",
     PoisonChance = "PoisonedApplicationRate",
     PowerLevel = "PowerLevel",
     ProjectilesPerShotBase = "ProjectilesPerShotBase", -- Tech weapons or shotguns use this.
@@ -296,6 +301,7 @@ Glossary.Stats = {
     ThermalDamage = "ThermalDamage",
     ThermalDamageMin = "ThermalDamageMin",
     ThermalDamageMax = "ThermalDamageMax",
+    ThermalResistance = "ThermalResistance",
     UnequipDuration = "UnequipDuration",
     WasItemUpgraded = "WasItemUpgraded", -- Boolean or counter that tracks how to scale upgrade recipe?
     Weight = "Weight",
@@ -325,18 +331,24 @@ Glossary.Inspect = {
     Glossary.Stats.RicochetChance,
     Glossary.Stats.RicochetCount,
     Glossary.Stats.BonusRicochetDamage,
+    Glossary.Stats.RicochetMinAngle,
+    Glossary.Stats.RicochetMaxAngle,
+    Glossary.Stats.RicochetTargetSearchAngle,
     Glossary.Stats.TechPierceEnabled,
     Glossary.Stats.TechPierceChargeLevel,
     Glossary.Stats.ChargeMultiplier,
     Glossary.Stats.ChargeFullMultiplier,
     Glossary.Stats.HasSmartLink,
     Glossary.Stats.SmartGunHitProbability,
+    Glossary.Stats.SmartGunAdsMaxLockedTargets,
+    Glossary.Stats.SmartGunHipMaxLockedTargets,
     Glossary.Stats.SmartGunTrackAllBodyparts
 }
 
 Glossary.Calculation = {
     Additive = "Additive",
-    Multiplicative = "Multiply"
+    Multiplicative = "Multiply",
+    Both = "AdditiveMultiplier"
 }
 
 Glossary.Tags = {

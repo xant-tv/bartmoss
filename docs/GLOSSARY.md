@@ -4,7 +4,7 @@ Contains a variety of dictionaries and property lookups to make your life easier
 All glossary items can be used internally and when calling other functions.
 ```lua
 -- I want some Armadillo mods!
-Bartmoss.Cheats.Items.GiveItem(Bartmoss.Glossary.Mods.Clothing.Armadillo, 20, "Legendary")
+Bartmoss.Handler.Items.GiveItem(Bartmoss.Glossary.Mods.Clothing.Armadillo, 20, "Legendary")
 ```
 Glossaries are currently still a work in progress.
 

@@ -1,9 +1,15 @@
 -- Interface to access the entire Bartmoss suite.
 Bartmoss = {
     name = "Bartmoss",
-    version = "0.6.0",
+    version = "0.6.1",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
+
+for k, _ in pairs(package.loaded) do
+    if string.match(k, Bartmoss.rootPath .. ".*") then
+        package.loaded[k] = nil
+    end
+end
 
 local Global = require(Bartmoss.rootPath .. "game.global")
 
@@ -35,11 +41,11 @@ function Bartmoss:new()
     Interface.System = require(Bartmoss.rootPath .. "game.system")
     Interface.Utility = require(Bartmoss.rootPath .. "utility.utility")
     Interface.Glossary = require(Bartmoss.rootPath .. "data.glossary")
-    Interface.Cheats = {
-        Game = require(Bartmoss.rootPath .. "cheats.gamehandler"),
-        Player = require(Bartmoss.rootPath .. "cheats.playerhandler"),
-        Items = require(Bartmoss.rootPath .. "cheats.itemhandler"),
-        Equipment = require(Bartmoss.rootPath .. "cheats.equipmenthandler")
+    Interface.Handler = {
+        Game = require(Bartmoss.rootPath .. "handler.game"),
+        Player = require(Bartmoss.rootPath .. "handler.player"),
+        Items = require(Bartmoss.rootPath .. "handler.item"),
+        Equipment = require(Bartmoss.rootPath .. "handler.equipment")
     }
     Interface.Quickhacks = {
         Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits"),

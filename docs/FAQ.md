@@ -29,7 +29,7 @@ Until then the item will not be available via the user interface.
 You can still use any raw item string with Bartmoss commands.
 ```lua
 Bartmoss = GetMod("bartmoss")
-Bartmoss.Cheats.Items.GiveN("Items.item_not_in_glossary", 1, "Legendary", 50)
+Bartmoss.Handler.Items.GiveN("Items.item_not_in_glossary", 1, "Legendary", 50)
 ```
 
 Items added this way will not undergo the typical quality or level force checks.
