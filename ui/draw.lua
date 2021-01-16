@@ -30,7 +30,7 @@ function Draw.BuildTabs()
         PlayerCheatsTab.Build()
         ItemCheatsTab.Build()
         WeaponCheatsTab.Build()
-        -- ArmorCheatsTab.Build()
+        ArmorCheatsTab.Build()
         ImGui.EndTabBar()
     end
 end

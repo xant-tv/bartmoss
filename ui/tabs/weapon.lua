@@ -13,16 +13,16 @@ local EquipmentHandler = require(WeaponCheatsTab.rootPath .. "handler.equipment"
 function WeaponCheatsTab.SetState(element, value, ltype)
     local set = value
     if not set then
-        set = element.Default
+        element.Value = element.Default
+    else
+        element.Value = Widget.ParseRawIntoView(set, ltype)
     end
     -- Set current value and "last read" property.
-    element.Value = Widget.ParseRawIntoView(set, ltype)
     element.Read = element.Value
 end
 
 function WeaponCheatsTab.SetModifier(element, modtype, ltype)
-    -- If value has not been changed, then no need to set.
-    if element.Value == element.Read then
+    if not Widget.CheckValue(element, ltype) then
         return
     end
     local itemdata = State.WeaponsTab.ItemData

@@ -81,6 +81,7 @@ Glossary.Stats = {
     AimOffset = "AimOffset",
     AimInTime = "AimInTime", -- Value expected to be negative on order of ~0.02.
     AimOutTime = "AimOutTime",
+    Armor = "Armor",
     AttacksPerSecondBase = "AttacksPerSecondBase", -- Probably inherited from weapon type. Recommend not modifying this one.
     AttacksPerSecond = "AttacksPerSecond",
     AttackPenetration = "AttackPenetration", -- Is this a resistance or armour penetration value?
@@ -148,6 +149,7 @@ Glossary.Stats = {
     IconicItemUpgraded = "IconicItemUpgraded", -- Checks if this iconic weapon is the result of a previous upgrade?
     IsItemCrafted = "IsItemCrafted", -- Booleans to set or unset craft flag.
     IsItemIconic = "IsItemIconic", -- Similar for iconic flag.
+    ItemArmor = "ItemArmor",
     ItemLevel = "ItemLevel",
     ItemRequiresSmartLink = "ItemRequiresSmartLink", -- This is a boolean value.
     KnockdownImpulse = "KnockdownImpulse", -- Physics value for knockdowns? Sounds fun!
@@ -157,6 +159,7 @@ Glossary.Stats = {
     MagazineCapacity = "MagazineCapacity", -- Might be a computed value. Try modifying bonus.
     NumShotsInBurstMaxCharge = "NumShotsInBurstMaxCharge", -- For tech weapons with burst fire on charge.
     NumShotsToFire = "NumShotsToFire", -- For normal burst weapons.
+    PartArmor = "PartArmor", -- Armor value from clothing mods. Typically composed of a base additive and an additive multiplier.
     PhysicalDamage = "PhysicalDamage",
     PhysicalDamageMin = "PhysicalDamageMin",
     PhysicalDamageMax = "PhysicalDamageMax",
@@ -314,6 +317,9 @@ Glossary.Inspect = {
     Glossary.Stats.PowerLevel,
     Glossary.Stats.IsItemIconic,
     Glossary.Stats.IsItemCrafted,
+    Glossary.Stats.Armor,
+    Glossary.Stats.ItemArmor,
+    Glossary.Stats.PartArmor,
     Glossary.Stats.PhysicalDamage,
     Glossary.Stats.BleedChance,
     Glossary.Stats.ThermalDamage,
@@ -387,7 +393,7 @@ Glossary.ClothingSlotsInv = {
     ["Inner Torso"] = "InnerChest",
     ["Outer Torso"] = "OuterChest",
     ["Legs"] = "Legs",
-    ["Feet"] = "feet"
+    ["Feet"] = "Feet"
 }
 
 -- Property Lookups

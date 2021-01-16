@@ -9,71 +9,71 @@ local Glossary = require(Outfits.rootPath .. "data.glossary")
 function Outfits.GiveFemaleNomadCustomOutfit()
     local itemspecs = {
         {
-            item = "Items.Jacket_14_basic_01", 
+            item = "Items.Jacket_14_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Undershirt_02_basic_01", 
+            item = "Items.Undershirt_02_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Glasses_01_basic_01", 
+            item = "Items.Glasses_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_basic_01", 
+            item = "Items.Shorts_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_rich_01", 
+            item = "Items.Shorts_01_rich_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_01_basic_01", 
+            item = "Items.Boots_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_02_basic_02", 
+            item = "Items.Boots_02_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_basic_01", 
+            item = "Items.Boots_09_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_basic_01", 
+            item = "Items.Pants_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_basic_02", 
+            item = "Items.Pants_01_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_rich_02", 
+            item = "Items.Pants_01_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_basic_01", 
+            item = "Items.Pants_03_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_basic_02", 
+            item = "Items.Pants_03_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_rich_03", 
+            item = "Items.Pants_03_rich_03",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_05_rich_02", 
+            item = "Items.Pants_05_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Q001_Pants", 
+            item = "Items.Q001_Pants",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Q001_Shoes", 
+            item = "Items.Q001_Shoes",
             quality = Glossary.Quality.Legendary
         }
     }
@@ -83,75 +83,83 @@ end
 function Outfits.GiveFemaleCorpoCustomOutfit()
     local itemspecs = {
         {
-            item = "Items.Fixer_01_Set_Glasses", 
+            item = "Items.Fixer_01_Set_Glasses",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.TightJumpsuit_01_basic_01", 
+            item = "Items.TightJumpsuit_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.TightJumpsuit_01_rich_01", 
+            item = "Items.TightJumpsuit_01_rich_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Jacket_11_basic_02", 
+            item = "Items.Jacket_11_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Vest_19_rich_02", 
+            item = "Items.Jacket_17_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Vest_19_basic_02", 
+            item = "Items.Vest_19_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_basic_01", 
+            item = "Items.Vest_19_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_rich_01", 
+            item = "Items.Shorts_01_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Dress_02_basic_01", 
+            item = "Items.Pants_03_rich_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_01_basic_02", 
+            item = "Items.Dress_02_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_01_rich_02", 
+            item = "Items.FormalSkirt_01_basic_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_basic_01", 
+            item = "Items.FormalSkirt_01_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_basic_03", 
+            item = "Items.FormalSkirt_02_basic_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_rich_01", 
+            item = "Items.FormalSkirt_02_basic_03",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_rich_02", 
+            item = "Items.FormalSkirt_02_rich_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_basic_01", 
+            item = "Items.FormalSkirt_02_rich_02",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_rich_03", 
+            item = "Items.Boots_09_old_01",
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalShoes_01_rich_01", 
+            item = "Items.Boots_09_basic_01",
+            quality = Glossary.Quality.Legendary
+        },
+        {
+            item = "Items.Boots_09_rich_03",
+            quality = Glossary.Quality.Legendary
+        },
+        {
+            item = "Items.FormalShoes_01_rich_01",
             quality = Glossary.Quality.Legendary
         }
     }

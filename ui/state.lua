@@ -70,5 +70,23 @@ for key, item in pairs(State.WeaponsTab.Modifiers) do
 end
 
 State.ArmorTab = {}
+State.ArmorTab.SlotOptions = Glossary.ClothingSlots
+State.ArmorTab.SlotSelect = 0
+State.ArmorTab.SlotActivated = false
+State.ArmorTab.ItemData = nil
+State.ArmorTab.Modifiers = {
+    Armor = 0,
+    ItemArmor = 0,
+    PartArmor = 0,
+    IsItemIconic = false,
+    IsItemCrafted = false
+}
+for key, item in pairs(State.ArmorTab.Modifiers) do
+    State.ArmorTab[key] = {
+        Default = item
+    }
+    State.ArmorTab[key].Value = State.ArmorTab[key].Default
+    State.ArmorTab[key].Read = State.ArmorTab[key].Value
+end
 
 return State

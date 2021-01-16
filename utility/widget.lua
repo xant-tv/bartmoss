@@ -12,6 +12,20 @@ function Widget.GetInputFlags()
     end
 end
 
+function Widget.CheckValue(element, ltype)
+    -- If value has not been changed, then no need to add.
+    if element.Value == element.Read then
+        return false
+    end
+    -- Basic sanity checking (cannot set values to negative).
+    if string.lower(ltype) ~= "boolean" then
+        if element.Value < 0 then
+            return false
+        end
+    end
+    return true
+end
+
 function Widget.ParseRawIntoView(raw, viewtype)
     if not viewtype then
         return raw

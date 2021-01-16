@@ -102,6 +102,12 @@ Style.Size.ArmorTab = {
     Button = {
         Width = Style.Size.Global.Button.Full.Width,
         Height = Style.Size.Global.Button.Full.Height
+    },
+    Text = {
+        Width = 100
+    },
+    Float = {
+        Width = 134
     }
 }
 
