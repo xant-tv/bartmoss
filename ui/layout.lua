@@ -7,6 +7,11 @@ Layout = {
         Basic = {
             [1] = {
                 {
+                    Name = "BaseDamage",
+                    Display = "Base Damage",
+                    Type = "Float"
+                },
+                {
                     Name = "PhysicalDamage",
                     Display = "Physical Damage",
                     Type = "Float"
@@ -55,6 +60,9 @@ Layout = {
                 -- }
             },
             [2] = {
+                {
+                    Type = "Skip"
+                },
                 {
                     Name = "BleedChance",
                     Display = "Bleed Chance",
@@ -133,8 +141,26 @@ Layout = {
                 },
                 {
                     Name = "TechPierceChargeLevel",
-                    Display = "Charge to Pierce",
+                    Display = "Pierce Charge",
                     Type = "Float"
+                },
+                {
+                    Name = "ChargeMultiplier",
+                    Copy = "ChargeFullMultiplier",
+                    Display = "Tech Multiplier",
+                    Type = "Float"
+                },
+                {
+                    Name = "ChargeTime",
+                    Display = "Charge Time",
+                    Type = "Float",
+                    Method = "Add"
+                },
+                {
+                    Name = "NumShotsInBurstMaxCharge",
+                    Display = "Charge Burst",
+                    Type = "Float",
+                    Method = "Add"
                 }
             },
             [3] = {

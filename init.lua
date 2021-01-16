@@ -1,7 +1,7 @@
 -- Interface to access the entire Bartmoss suite.
 Bartmoss = {
     name = "Bartmoss",
-    version = "0.6.2",
+    version = "0.6.3",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 

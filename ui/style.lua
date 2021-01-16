@@ -14,7 +14,7 @@ Style.Position = {
 Style.Size = {
     App = {
         Width = 730,
-        Height = 646
+        Height = 670
     },
     ColSpacer = 16,
     SmallColSpacer = 12

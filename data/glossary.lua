@@ -158,7 +158,7 @@ Glossary.Stats = {
     MagazineCapacityBonus = "MagazineCapacityBonus",
     MagazineCapacity = "MagazineCapacity", -- Might be a computed value. Try modifying bonus.
     NumShotsInBurstMaxCharge = "NumShotsInBurstMaxCharge", -- For tech weapons with burst fire on charge.
-    NumShotsToFire = "NumShotsToFire", -- For normal burst weapons.
+    NumShotsToFire = "NumShotsToFire", -- Does not do what you think it does.
     PartArmor = "PartArmor", -- Armor value from clothing mods. Typically composed of a base additive and an additive multiplier.
     PhysicalDamage = "PhysicalDamage",
     PhysicalDamageMin = "PhysicalDamageMin",
@@ -320,6 +320,7 @@ Glossary.Inspect = {
     Glossary.Stats.Armor,
     Glossary.Stats.ItemArmor,
     Glossary.Stats.PartArmor,
+    Glossary.Stats.BaseDamage,
     Glossary.Stats.PhysicalDamage,
     Glossary.Stats.BleedChance,
     Glossary.Stats.ThermalDamage,
@@ -344,6 +345,9 @@ Glossary.Inspect = {
     Glossary.Stats.TechPierceChargeLevel,
     Glossary.Stats.ChargeMultiplier,
     Glossary.Stats.ChargeFullMultiplier,
+    Glossary.Stats.BaseChargeTime,
+    Glossary.Stats.ChargeTime,
+    Glossary.Stats.NumShotsInBurstMaxCharge,
     Glossary.Stats.HasSmartLink,
     Glossary.Stats.SmartGunHitProbability,
     Glossary.Stats.SmartGunAdsMaxLockedTargets,

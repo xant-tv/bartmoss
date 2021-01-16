@@ -33,6 +33,35 @@ function WeaponCheatsTab.SetModifier(element, modtype, ltype)
     element.Read = element.Value
 end
 
+function WeaponCheatsTab.AddModifier(element, modtype, ltype)
+    if not Widget.CheckValue(element, ltype) then
+        return
+    end
+    local itemdata = State.WeaponsTab.ItemData
+    local calctype = Glossary.Calculation.Additive
+    local delta = element.Value - element.Read
+    local value = Widget.ParseViewIntoRaw(delta, ltype)
+    ItemHandler.AddModifier(itemdata, modtype, calctype, value)
+    -- Set "last read" value to match newly-updated value.
+    element.Read = element.Value
+end
+
+function WeaponCheatsTab.DoModifier(layout)
+    if layout.Method == "Add" then
+        WeaponCheatsTab.AddModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+        if layout.Copy then
+            State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
+            WeaponCheatsTab.AddModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
+        end
+    else
+        WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+        if layout.Copy then
+            State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
+            WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
+        end
+    end
+end
+
 function WeaponCheatsTab.Inspect()
     local slot = "Weapon"
     local id = State.WeaponsTab.SlotSelect
@@ -46,9 +75,11 @@ function WeaponCheatsTab.Inspect()
         for _, column in ipairs(section) do
             for _, layout in ipairs(column) do
                 -- Disgusting nested for loops.
-                WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
-                if layout.Copy then
-                    WeaponCheatsTab.SetState(State.WeaponsTab[layout.Copy], stats[Glossary.Stats[layout.Copy]], layout.Type)
+                if layout.Type ~= "Skip" then
+                    WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
+                    if layout.Copy then
+                        WeaponCheatsTab.SetState(State.WeaponsTab[layout.Copy], stats[Glossary.Stats[layout.Copy]], layout.Type)
+                    end
                 end
             end
         end
@@ -62,10 +93,8 @@ function WeaponCheatsTab.DoModifiers()
     for _, section in ipairs(Layout.WeaponsTab.Sections) do
         for _, column in ipairs(section) do
             for _, layout in ipairs(column) do
-                WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
-                if layout.Copy then
-                    State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
-                    WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
+                if layout.Type ~= "Skip" then
+                    WeaponCheatsTab.DoModifier(layout)
                 end
             end
         end
@@ -102,6 +131,8 @@ function WeaponCheatsTab.BuildModifierFromLayout(elem, maxcol)
         State.WeaponsTab[elem.Name].Value = ImGui.InputFloat(elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f", Widget.GetInputFlags())
     elseif elem.Type == "Boolean" then
         State.WeaponsTab[elem.Name].Value = ImGui.Checkbox(elem.Display, State.WeaponsTab[elem.Name].Value)
+    else
+        ImGui.Dummy(1, 19)
     end
 end
 
