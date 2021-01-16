@@ -87,7 +87,7 @@ function ItemHandler.SetQuality(itemdata, quality)
     -- If no quality, just exit.
     if not quality then
         local cquality = Math.SafeFloor(ss:GetStatValue(statsobjid, Glossary.Stats.Quality))
-        print("QUALITY_DEFAULT=" .. Glossary.QualityNum[cquality])
+        print("QUALITY_DEFAULT=" .. Glossary.QualityRank[cquality + 1])
         return
     end
 
