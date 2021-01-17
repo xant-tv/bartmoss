@@ -174,6 +174,7 @@ function ItemHandler.GiveItems(item, n, quality, level)
         level = 0
     end
 
+    local items = {}
     for i = 1, n do
         local seed = math.random(0, math.tointeger(2^32) - 1)
         local itemid = ItemID.new(tweakid, seed)
@@ -187,14 +188,16 @@ function ItemHandler.GiveItems(item, n, quality, level)
             ItemHandler.UnmarkQuest(itemdata)
             ItemHandler.SetLevel(itemdata, level)
             ItemHandler.SetQuality(itemdata, quality)
+            table.insert(items, itemdata)
         else
             print("ADD_FAIL")
         end
     end
+    return items
 end
 
 function ItemHandler.GiveResources(item, n)
-    Game.AddToInventory(item, n)
+    return Game.AddToInventory(item, n)
 end
 
 function ItemHandler.GiveN(item, n, quality, level)
@@ -203,9 +206,9 @@ function ItemHandler.GiveN(item, n, quality, level)
     end
     -- If item is a stackable (resource) we can use in-built developer function.
     if ItemHandler.IsStackable(item) then
-        ItemHandler.GiveResources(item, n)
+        return ItemHandler.GiveResources(item, n)
     else
-        ItemHandler.GiveItems(item, n, quality, level)
+        return ItemHandler.GiveItems(item, n, quality, level)
     end
 end
 
@@ -214,6 +217,7 @@ function ItemHandler.Give(item, quality, level)
 end
 
 function ItemHandler.GiveMultiple(itemspecs)
+    local items = {}
     for i = 1, #itemspecs do
         local itemspec = itemspecs[i]
         local item = itemspec["item"]
@@ -223,8 +227,9 @@ function ItemHandler.GiveMultiple(itemspecs)
         if not quantity then
             quantity = 1
         end
-        ItemHandler.GiveN(item, quantity, quality, level)
+        table.insert(items, ItemHandler.GiveN(item, quantity, quality, level))
     end
+    return items
 end
 
 return ItemHandler

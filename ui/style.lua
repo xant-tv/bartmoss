@@ -65,6 +65,14 @@ Style.Size.QuickhacksTab = {
         Width = Style.Size.Global.Button.Half.Width,
         Height = Style.Size.Global.Button.Half.Height
     },
+    SmallButton = {
+        Width = 124,
+        Offset = 10,
+        Height = Style.Size.Global.Button.Full.Height
+    }
+}
+Style.Size.QuickhacksTab.Text = {
+    Width = (Style.Size.App.Width - (Style.Size.QuickhacksTab.SmallButton.Width + Style.Size.QuickhacksTab.SmallButton.Offset + Style.Size.SmallColSpacer))
 }
 
 Style.Size.WeaponsTab = {

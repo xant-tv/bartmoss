@@ -47,18 +47,14 @@ function WeaponCheatsTab.AddModifier(element, modtype, ltype)
 end
 
 function WeaponCheatsTab.DoModifier(layout)
+    local Callable = WeaponCheatsTab.SetModifier
     if layout.Method == "Add" then
-        WeaponCheatsTab.AddModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
-        if layout.Copy then
-            State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
-            WeaponCheatsTab.AddModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
-        end
-    else
-        WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
-        if layout.Copy then
-            State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
-            WeaponCheatsTab.SetModifier(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
-        end
+        Callable = WeaponCheatsTab.AddModifier
+    end
+    Callable(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+    if layout.Copy then
+        State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
+        Callable(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
     end
 end
 
@@ -111,7 +107,7 @@ end
 function WeaponCheatsTab.BuildSelect()
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Select Slot")
+    ImGui.Text("1. Select Slot")
     ImGui.Text(" - Choose slot then load item values.")
     ImGui.PushItemWidth(Style.Size.WeaponsTab.Text.Width)
     State.WeaponsTab.SlotSelect = ImGui.Combo("##WeaponSlot", State.WeaponsTab.SlotSelect, State.WeaponsTab.SlotOptions, #State.WeaponsTab.SlotOptions)
@@ -140,7 +136,7 @@ function WeaponCheatsTab.BuildBasicModifiers()
     local ncols = 2
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Basic Modifiers")
+    ImGui.Text("2. Basic Modifiers")
     ImGui.Text(" - Set weapon flags.")
     ImGui.Text(" - Edit generic weapon attributes or values.")
     ImGui.Columns(ncols)
@@ -160,7 +156,7 @@ function WeaponCheatsTab.BuildComplexModifiers()
     local ncols = 3
     ImGui.Separator()
     ImGui.Spacing()
-    ImGui.Text("Advanced Modifiers")
+    ImGui.Text("3. Advanced Modifiers")
     ImGui.Text(" - Mix and match archetypical mods.")
     ImGui.Columns(ncols)
     for col = 1, ncols do

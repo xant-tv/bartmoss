@@ -1,7 +1,7 @@
 -- Interface to access the entire Bartmoss suite.
 Bartmoss = {
     name = "Bartmoss",
-    version = "0.6.4",
+    version = "0.6.5",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -49,7 +49,8 @@ function Bartmoss:new()
     }
     Interface.Quickhacks = {
         Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits"),
-        Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory")
+        Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory"),
+        Custom = require(Bartmoss.rootPath .. "quickhacks.custom")
     }
     Interface.UI = require(Bartmoss.rootPath .. "ui.ui")
 

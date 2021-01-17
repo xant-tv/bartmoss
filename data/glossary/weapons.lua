@@ -301,7 +301,7 @@ Weapons = {
             Pimp = "Items.Preset_Quasar_Pimp"
         },
         Saratoga = {
-            Arasoka = "Items.Preset_Saratoga_Arasaka_2020",
+            Arasaka = "Items.Preset_Saratoga_Arasaka_2020",
             Default = "Items.Preset_Saratoga_Default",
             Military = "Items.Preset_Saratoga_Military",
             Neon = "Items.Preset_Saratoga_Neon",

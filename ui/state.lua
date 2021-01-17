@@ -3,9 +3,12 @@ local State = {
 }
 
 local Glossary = require(State.rootPath .. "data.glossary")
+local Preset = require(State.rootPath .. "data.preset")
 local Table = require(State.rootPath .. "utility.table")
 
 State.QuickhackTab = {}
+State.QuickhackTab.PresetOptions = Preset.List
+State.QuickhackTab.PresetSelect = 0
 
 State.PlayerTab = {}
 State.PlayerTab.AttrOptions = Glossary.AttributesRank
