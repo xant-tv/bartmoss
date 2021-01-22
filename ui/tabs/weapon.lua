@@ -98,24 +98,23 @@ function WeaponCheatsTab.DoModifiers()
 end
 
 function WeaponCheatsTab.BuildDisplay()
-    ImGui.Spacing()
-    ImGui.Text("Modify weapons in your equip slots:")
-    ImGui.Text(" - Pick and edit properties from power, tech or smart weapons.")
-    ImGui.Spacing()
+    Widget.Spacing()
+    Widget.Text("Modify weapons in your equip slots:")
+    Widget.Text(" - Pick and edit properties from power, tech or smart weapons.")
+    Widget.Spacing()
 end
 
 function WeaponCheatsTab.BuildSelect()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("1. Select Slot")
-    ImGui.Text(" - Choose slot then load item values.")
-    ImGui.PushItemWidth(Style.Size.WeaponsTab.Text.Width)
-    State.WeaponsTab.SlotSelect = ImGui.Combo("##WeaponSlot", State.WeaponsTab.SlotSelect, State.WeaponsTab.SlotOptions, #State.WeaponsTab.SlotOptions)
-    ImGui.SameLine(Style.Size.WeaponsTab.Text.Width + Style.Size.SmallColSpacer)
-    if (ImGui.Button("Load")) then
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("1. Select Slot")
+    Widget.Text(" - Choose slot then load item values.")
+    State.WeaponsTab.SlotSelect = Widget.Combo("##WeaponSlot", State.WeaponsTab.SlotSelect, State.WeaponsTab.SlotOptions, nil, Style.Size.WeaponsTab.Text.Width)
+    Widget.SameLine(Style.Size.WeaponsTab.Text.Width + Style.Size.SmallColSpacer)
+    if (Widget.Button("Load")) then
         WeaponCheatsTab.Inspect()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function WeaponCheatsTab.BuildModifierFromLayout(elem, maxcol)
@@ -123,72 +122,71 @@ function WeaponCheatsTab.BuildModifierFromLayout(elem, maxcol)
         return
     end
     if elem.Type == "Float" then
-        ImGui.PushItemWidth(Style.Size.WeaponsTab.Float[maxcol].Width)
-        State.WeaponsTab[elem.Name].Value = ImGui.InputFloat(elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f", Widget.GetInputFlags())
+        State.WeaponsTab[elem.Name].Value = Widget.InputFloat(elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f", Style.Size.WeaponsTab.Float[maxcol].Width)
     elseif elem.Type == "Boolean" then
-        State.WeaponsTab[elem.Name].Value = ImGui.Checkbox(elem.Display, State.WeaponsTab[elem.Name].Value)
+        State.WeaponsTab[elem.Name].Value = Widget.Checkbox(elem.Display, State.WeaponsTab[elem.Name].Value)
     else
-        ImGui.Dummy(1, 19)
+        Widget.Dummy(1, 19)
     end
 end
 
 function WeaponCheatsTab.BuildBasicModifiers()
     local ncols = 2
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("2. Basic Modifiers")
-    ImGui.Text(" - Set weapon flags.")
-    ImGui.Text(" - Edit generic weapon attributes or values.")
-    ImGui.Columns(ncols)
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("2. Basic Modifiers")
+    Widget.Text(" - Set weapon flags.")
+    Widget.Text(" - Edit generic weapon attributes or values.")
+    Widget.Columns(ncols)
     for col = 1, ncols do
-        ImGui.BeginGroup()
+        Widget.BeginGroup()
         for _, element in ipairs(Layout.WeaponsTab.Basic[col]) do
             WeaponCheatsTab.BuildModifierFromLayout(element, ncols)
         end
-        ImGui.EndGroup()
-        ImGui.NextColumn()
+        Widget.EndGroup()
+        Widget.NextColumn()
     end
-    ImGui.Columns(1)
-    ImGui.Spacing()
+    Widget.Columns(1)
+    Widget.Spacing()
 end
 
 function WeaponCheatsTab.BuildComplexModifiers()
     local ncols = 3
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("3. Advanced Modifiers")
-    ImGui.Text(" - Mix and match archetypical mods.")
-    ImGui.Columns(ncols)
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("3. Advanced Modifiers")
+    Widget.Text(" - Mix and match archetypical mods.")
+    Widget.Columns(ncols)
     for col = 1, ncols do
-        ImGui.BeginGroup()
+        Widget.BeginGroup()
         for _, element in ipairs(Layout.WeaponsTab.Advanced[col]) do
             WeaponCheatsTab.BuildModifierFromLayout(element, ncols)
         end
-        ImGui.EndGroup()
-        ImGui.NextColumn()
+        Widget.EndGroup()
+        Widget.NextColumn()
     end
-    ImGui.Columns(1)
-    ImGui.Spacing()
+    Widget.Columns(1)
+    Widget.Spacing()
 end
 
 function WeaponCheatsTab.BuildDoModifiers()
-    ImGui.Separator()
-    ImGui.Spacing()
-    if (ImGui.Button("Save Modifiers", Style.Size.WeaponsTab.Button.Width, Style.Size.WeaponsTab.Button.Height)) then
+    Widget.Separator()
+    Widget.Spacing()
+    if (Widget.Button("Save Modifiers", Style.Size.WeaponsTab.Button.Width, Style.Size.WeaponsTab.Button.Height)) then
         WeaponCheatsTab.DoModifiers()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function WeaponCheatsTab.Build()
-    if (ImGui.BeginTabItem("Weapon")) then
+    if (Widget.BeginTabItem("Weapon")) then
         WeaponCheatsTab.BuildDisplay()
         WeaponCheatsTab.BuildSelect()
         WeaponCheatsTab.BuildBasicModifiers()
         WeaponCheatsTab.BuildComplexModifiers()
         WeaponCheatsTab.BuildDoModifiers()
-        ImGui.Separator()
-        ImGui.EndTabItem()
+        Widget.Separator()
+        Widget.EndTabItem()
     end
 end
 

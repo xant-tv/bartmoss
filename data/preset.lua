@@ -8,19 +8,23 @@ local Glossary = require(Preset.rootPath .. "data.glossary")
 Preset = {}
 Preset.Presets = {
     Weapon = {
-        Shredder = {
+        Rebound = {
+            -- Power weapon.
+            -- Fires quite fast. Multiple (four) projectiles per shot.
+            -- Bullets coated in rubber, ricochet many many times, much better at searching targets on ricochet.
+            -- You can effectively hit your targets by shooting anywhere.
             Base = Glossary.Weapons.Ranged.Saratoga.Pimp,
             Quality = Glossary.Quality.Legendary,
             Stats = {
                 {
                     Stat = Glossary.Stats.PhysicalDamage,
-                    Value = 24,
+                    Value = 28,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 },
                 {
                     Stat = Glossary.Stats.BleedChance,
-                    Value = 20,
+                    Value = 0,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 },
@@ -94,7 +98,7 @@ Preset.Presets = {
                 {
                     -- Increases rate of fire by 40% of base value.
                     Stat = Glossary.Stats.CycleTimeBonus,
-                    Value = -0.4, 
+                    Value = -0.4,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 },
@@ -141,12 +145,564 @@ Preset.Presets = {
                     Method = "Set"
                 }
             }
+        },
+        Shredder = {
+            -- Smart weapon (no inbuilt link).
+            -- Fires insanely fast. Multiple (three) projectiles per shot.
+            -- Bullets are designed to cause bleeding.
+            Base = Glossary.Weapons.Ranged.Dian.Pimp,
+            Quality = Glossary.Quality.Legendary,
+            Stats = {
+                {
+                    Stat = Glossary.Stats.PhysicalDamage,
+                    Value = 12,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BleedChance,
+                    Value = 35,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ThermalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BurnChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ElectricalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ShockChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ChemicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PoisonChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritChance,
+                    Value = 50,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritDamage,
+                    Value = 50,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.HeadshotDamageMultiplier,
+                    Value = 3,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    -- Straight up multiplier to the size of the magazine.
+                    Stat = Glossary.Stats.MagazineCapacityBonus,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Add"
+                },
+                {
+                    Stat = Glossary.Stats.ProjectilesPerShot,
+                    Value = 3,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CycleTimeBonus,
+                    Value = -0.9,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunAdsMaxLockedTargets,
+                    Value = 3,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunHipMaxLockedTargets,
+                    Value = 3,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunHitProbability,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunMissRadius,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunAdsTimeToLock,
+                    Value = 0.2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunHipTimeToLock,
+                    Value = 0.2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunUseTimeBasedAccuracy,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunPlayerProjectileVelocity,
+                    Value = 25,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Add"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunTrackAllBodyparts,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.IsItemIconic,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                }
+            }
+        },
+        Heatseeker = {
+            -- Smart weapon (with inbuilt link).
+            -- Bullets can penetrate through walls.
+            -- Can continue tracking enemies through walls after they have been marked. Does this via calibrating body heat - such lore!
+            -- Sadly no way to allow target locking through walls as well.
+            -- Burns enemies on impact.
+            Base =  Glossary.Weapons.Ranged.Sidewinder.Pimp,
+            Quality = Glossary.Quality.Legendary,
+            Stats = {
+                {
+                    Stat = Glossary.Stats.PhysicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BleedChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ThermalDamage,
+                    Value = 128,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BurnChance,
+                    Value = 50,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ElectricalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ShockChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ChemicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PoisonChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritChance,
+                    Value = 30,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritDamage,
+                    Value = 20,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.HeadshotDamageMultiplier,
+                    Value = 4,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    -- Straight up multiplier to the size of the magazine.
+                    Stat = Glossary.Stats.MagazineCapacityBonus,
+                    Value = 0.5,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Add"
+                },
+                {
+                    Stat = Glossary.Stats.TechPierceEnabled,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.TechPierceChargeLevel,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    -- Seconds before target is removed from lock after they are no longer in sight.
+                    Stat = Glossary.Stats.SmartGunTimeToRemoveOccludedTarget,
+                    Value = 30,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunHitProbability,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunMissRadius,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunAdsTimeToLock,
+                    Value = 0.2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunHipTimeToLock,
+                    Value = 0.2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunUseTimeBasedAccuracy,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunPlayerProjectileVelocity,
+                    Value = 175,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Add"
+                },
+                {
+                    Stat = Glossary.Stats.SmartGunTrackAllBodyparts,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    -- Heatseeker should have built-in smart link.
+                    Stat = Glossary.Stats.HasSmartLink,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.IsItemIconic,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                }
+            }
+        },
+        Mikoto = {
+            -- Power weapon.
+            -- Multiple (two) projectiles per shot.
+            -- Bullets are magnetically accelerated and retain enough charge to shock enemies. Can penetrate walls. Bullets cannot ricochet at all.
+            -- Yes, this is an anime reference. I have literally never watched this show at all.
+            Base = Glossary.Weapons.Ranged.Sor22.Pimp,
+            Quality = Glossary.Quality.Legendary,
+            Stats = {
+                {
+                    Stat = Glossary.Stats.PhysicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BleedChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ThermalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BurnChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ElectricalDamage,
+                    Value = 400,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ShockChance,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ChemicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PoisonChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritChance,
+                    Value = 60,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritDamage,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.HeadshotDamageMultiplier,
+                    Value = 5,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ProjectilesPerShot,
+                    Value = 2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.RicochetChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.RicochetCount,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BonusRicochetDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.TechPierceEnabled,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.TechPierceChargeLevel,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.IsItemIconic,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                }
+            }
+        },
+        TractorCannon = {
+            -- Tech weapon.
+            -- Fires an absurd amount of projectiles (forty) per shot.
+            -- Bullets have insane knockdown and physical impulse (also increased "reaction" factor).
+            -- This seems to be an entirely scripted animation and not physics-based at all. So disappointing!
+            Base = Glossary.Weapons.Ranged.Satara.Pimp,
+            Quality = Glossary.Quality.Legendary,
+            Stats = {
+                {
+                    Stat = Glossary.Stats.PhysicalDamage,
+                    Value = 30,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BleedChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ThermalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BurnChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ElectricalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ShockChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ChemicalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PoisonChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritChance,
+                    Value = 20,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritDamage,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.HeadshotDamageMultiplier,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ProjectilesPerShot,
+                    Value = 40,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.NumShotsToFire,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.MagazineCapacityBonus,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.KnockdownImpulse,
+                    Value = 150,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PhysicalImpulse,
+                    Value = 120,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.HitReactionFactor,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.IsItemIconic,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                }
+            }
         }
     }
 }
 
 Preset.List = {
+    "Weapon.Heatseeker",
+    "Weapon.Mikoto",
+    "Weapon.Rebound",
     "Weapon.Shredder",
+    "Weapon.TractorCannon"
 }
 
 return Preset

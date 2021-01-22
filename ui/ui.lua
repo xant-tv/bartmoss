@@ -14,7 +14,6 @@ end
 function UI.Draw(app)
     Draw.SetWindowSize()
     if (UI.DrawWindow) then
-        Draw.ApplyStyle()
         Draw.Build(app)
     end
 end

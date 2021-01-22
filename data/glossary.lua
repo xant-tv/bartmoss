@@ -201,6 +201,7 @@ Glossary.Stats = {
     RecoilTime = "RecoilTime",
     RecoilTimeADS = "RecoilTimeADS",
     RecoilUseDifferentStatsInADS = "RecoilUseDifferentStatsInADS", -- Boolean flag. Usually for rifles like snipers.
+    ReloadAmount = "ReloadAmount", -- For shotguns or items loaded shot-by-shot.
     ReloadTimeBase = "ReloadTimeBase", -- Likely should modify base or bonus values. Only affects non-empty magazine reloads?
     ReloadTimeBonus = "ReloadTimeBonus",
     ReloadTime = "ReloadTime",

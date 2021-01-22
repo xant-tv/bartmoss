@@ -16,37 +16,35 @@ function PlayerCheatsTab.DoExperience()
 end
 
 function PlayerCheatsTab.BuildExpGiver()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("Experience")
-    ImGui.Text(" - Select attribute and amount.")
-    ImGui.PushItemWidth(Style.Size.PlayerTab.Text.Width)
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("Experience")
+    Widget.Text(" - Select attribute and amount.")
     -- Return value is the index of the chosen element.
-    State.PlayerTab.AttrSelect = ImGui.Combo("##Attribute", State.PlayerTab.AttrSelect, State.PlayerTab.AttrOptions, #State.PlayerTab.AttrOptions)
-    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.SmallColSpacer)
-    ImGui.PushItemWidth(Style.Size.PlayerTab.Integer.Width)
-    State.PlayerTab.ExpAmount = ImGui.InputInt("##Amount", State.PlayerTab.ExpAmount, 1000, 1000, Widget.GetInputFlags())
-    ImGui.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.PlayerTab.Integer.Width + Style.Size.PlayerTab.Integer.Offset + Style.Size.SmallColSpacer)
-    if (ImGui.Button("Add XP")) then
+    State.PlayerTab.AttrSelect = Widget.Combo("##Attribute", State.PlayerTab.AttrSelect, State.PlayerTab.AttrOptions, nil, Style.Size.PlayerTab.Text.Width)
+    Widget.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.SmallColSpacer)
+    State.PlayerTab.ExpAmount = Widget.InputInt("##Amount", State.PlayerTab.ExpAmount, 1000, 1000, Style.Size.PlayerTab.Integer.Width)
+    Widget.SameLine(Style.Size.PlayerTab.Text.Width + Style.Size.PlayerTab.Integer.Width + Style.Size.PlayerTab.Integer.Offset + Style.Size.SmallColSpacer)
+    if (Widget.Button("Add XP")) then
         PlayerCheatsTab.DoExperience()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function PlayerCheatsTab.BuildDisplay()
-    ImGui.Spacing()
-    ImGui.Text("Lets the player:")
-    ImGui.Text(" - Add experience to levels or attributes.")
-    ImGui.Text(" - Probably some other stuff later...")
-    ImGui.Spacing()
+    Widget.Spacing()
+    Widget.Text("Lets the player:")
+    Widget.Text(" - Add experience to levels or attributes.")
+    Widget.Text(" - Probably some other stuff later...")
+    Widget.Spacing()
 end
 
 function PlayerCheatsTab.Build()
-    if (ImGui.BeginTabItem("Player")) then
+    if (Widget.BeginTabItem("Player")) then
         PlayerCheatsTab.BuildDisplay()
         PlayerCheatsTab.BuildExpGiver()
-        ImGui.Separator()
-        ImGui.EndTabItem()
+        Widget.Separator()
+        Widget.EndTabItem()
     end
 end
 

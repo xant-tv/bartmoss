@@ -5,6 +5,7 @@ local QuickhacksTab = {
 local Style = require(QuickhacksTab.rootPath .. "ui.style")
 local State = require(QuickhacksTab.rootPath .. "ui.state")
 local String = require(QuickhacksTab.rootPath .. "utility.string")
+local Widget = require(QuickhacksTab.rootPath .. "utility.widget")
 local Preset = require(QuickhacksTab.rootPath .. "data.preset")
 local Quickhacks = {
     Outfits = require(QuickhacksTab.rootPath .. "quickhacks.outfits"),
@@ -31,51 +32,50 @@ function QuickhacksTab.DoPreset()
 end
 
 function QuickhacksTab.BuildDisplay()
-    ImGui.Spacing()
-    ImGui.Text("Shortcuts for quick user action:")
+    Widget.Spacing()
+    Widget.Text("Shortcuts for quick user action:")
     -- Manual text bulleting like this looks better than using ImGui.BulletText(text) in my opinion.
-    ImGui.Text(" - Select and give yourself custom mod-creator item presets.")
-    ImGui.Text(" - One-click buttons for other generic functionality.")
-    ImGui.Spacing()
+    Widget.Text(" - Select and give yourself custom mod-creator item presets.")
+    Widget.Text(" - One-click buttons for other generic functionality.")
+    Widget.Spacing()
 end
 
 function QuickhacksTab.BuildButtons()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("2. Generic Actions")
-    ImGui.Text(" - Helpful stuff that basically every mod does.")
-    if (ImGui.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("2. Generic Actions")
+    Widget.Text(" - Helpful stuff that basically every mod does.")
+    if (Widget.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
         QuickhacksTab.DoUpgrade()
     end
-    ImGui.SameLine(Style.Size.QuickhacksTab.Button.Width + Style.Size.ColSpacer)
-    if (ImGui.Button("Give Endgame Mods", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
+    Widget.SameLine(Style.Size.QuickhacksTab.Button.Width + Style.Size.ColSpacer)
+    if (Widget.Button("Give Endgame Mods", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
         QuickhacksTab.DoGiveMods()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function QuickhacksTab.BuildPresets()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("1. Bartmoss Presets")
-    ImGui.Text(" - Select desired item preset.")
-    ImGui.PushItemWidth(Style.Size.QuickhacksTab.Text.Width)
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("1. Bartmoss Presets")
+    Widget.Text(" - Select desired item preset.")
     -- Return value is the index of the chosen element.
-    State.QuickhackTab.PresetSelect = ImGui.Combo("##Preset", State.QuickhackTab.PresetSelect, State.QuickhackTab.PresetOptions, #State.QuickhackTab.PresetOptions)
-    ImGui.SameLine(Style.Size.QuickhacksTab.Text.Width + Style.Size.SmallColSpacer)
-    if (ImGui.Button("Give Item", Style.Size.QuickhacksTab.SmallButton.Width, Style.Size.QuickhacksTab.SmallButton.Height)) then
+    State.QuickhackTab.PresetSelect = Widget.Combo("##Preset", State.QuickhackTab.PresetSelect, State.QuickhackTab.PresetOptions, nil, Style.Size.QuickhacksTab.Text.Width)
+    Widget.SameLine(Style.Size.QuickhacksTab.Text.Width + Style.Size.SmallColSpacer)
+    if (Widget.Button("Give Item", Style.Size.QuickhacksTab.SmallButton.Width, Style.Size.QuickhacksTab.SmallButton.Height)) then
         QuickhacksTab.DoPreset()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function QuickhacksTab.Build()
-    if (ImGui.BeginTabItem("Quickhacks")) then
+    if (Widget.BeginTabItem("Quickhacks")) then
         QuickhacksTab.BuildDisplay()
         QuickhacksTab.BuildPresets()
         QuickhacksTab.BuildButtons()
-        ImGui.Separator()
-        ImGui.EndTabItem()
+        Widget.Separator()
+        Widget.EndTabItem()
     end
 end
 

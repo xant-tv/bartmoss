@@ -78,57 +78,55 @@ function ArmorCheatsTab.DoModifiers()
 end
 
 function ArmorCheatsTab.BuildDisplay()
-    ImGui.Spacing()
-    ImGui.Text("Modify armor in your equip slots:")
-    ImGui.Text(" - Pick and edit properties.")
-    ImGui.Spacing()
+    Widget.Spacing()
+    Widget.Text("Modify armor in your equip slots:")
+    Widget.Text(" - Pick and edit properties.")
+    Widget.Spacing()
 end
 
 function ArmorCheatsTab.BuildSelect()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("1. Select Slot")
-    ImGui.Text(" - Choose slot then load item values.")
-    ImGui.PushItemWidth(Style.Size.ArmorTab.Text.Width)
-    State.ArmorTab.SlotSelect = ImGui.Combo("##WeaponSlot", State.ArmorTab.SlotSelect, State.ArmorTab.SlotOptions, #State.ArmorTab.SlotOptions)
-    ImGui.SameLine(Style.Size.ArmorTab.Text.Width + Style.Size.SmallColSpacer)
-    if (ImGui.Button("Load")) then
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("1. Select Slot")
+    Widget.Text(" - Choose slot then load item values.")
+    State.ArmorTab.SlotSelect = Widget.Combo("##WeaponSlot", State.ArmorTab.SlotSelect, State.ArmorTab.SlotOptions, nil, Style.Size.ArmorTab.Text.Width)
+    Widget.SameLine(Style.Size.ArmorTab.Text.Width + Style.Size.SmallColSpacer)
+    if (Widget.Button("Load")) then
         ArmorCheatsTab.Inspect()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 function ArmorCheatsTab.BuildEditModifiers()
-    ImGui.Separator()
-    ImGui.Spacing()
-    ImGui.Text("2. Basic Properties")
-    ImGui.Text(" - Set item flags.")
-    ImGui.Text(" - Edit clothing attributes.")
-    ImGui.PushItemWidth(Style.Size.ArmorTab.Float.Width)
-    State.ArmorTab.Armor.Value = ImGui.InputFloat("Armor", State.ArmorTab.Armor.Value, 1, 100, "%.4f", Widget.GetInputFlags())
-    State.ArmorTab.IsItemIconic.Value = ImGui.Checkbox("Is Iconic", State.ArmorTab.IsItemIconic.Value)
-    State.ArmorTab.IsItemCrafted.Value = ImGui.Checkbox("Is Crafted", State.ArmorTab.IsItemCrafted.Value)
-    ImGui.Spacing()
+    Widget.Separator()
+    Widget.Spacing()
+    Widget.Text("2. Basic Properties")
+    Widget.Text(" - Set item flags.")
+    Widget.Text(" - Edit clothing attributes.")
+    State.ArmorTab.Armor.Value = Widget.InputFloat("Armor", State.ArmorTab.Armor.Value, 1, 100, "%.4f", Style.Size.ArmorTab.Float.Width)
+    State.ArmorTab.IsItemIconic.Value = Widget.Checkbox("Is Iconic", State.ArmorTab.IsItemIconic.Value)
+    State.ArmorTab.IsItemCrafted.Value = Widget.Checkbox("Is Crafted", State.ArmorTab.IsItemCrafted.Value)
+    Widget.Spacing()
 end
 
 function ArmorCheatsTab.BuildDoModifiers()
-    ImGui.Separator()
-    ImGui.Spacing()
-    if (ImGui.Button("Save Modifiers", Style.Size.ArmorTab.Button.Width, Style.Size.ArmorTab.Button.Height)) then
+    Widget.Separator()
+    Widget.Spacing()
+    if (Widget.Button("Save Modifiers", Style.Size.ArmorTab.Button.Width, Style.Size.ArmorTab.Button.Height)) then
         ArmorCheatsTab.DoModifiers()
     end
-    ImGui.Spacing()
+    Widget.Spacing()
 end
 
 
 function ArmorCheatsTab.Build()
-    if (ImGui.BeginTabItem("Clothing")) then
+    if (Widget.BeginTabItem("Clothing")) then
         ArmorCheatsTab.BuildDisplay()
         ArmorCheatsTab.BuildSelect()
         ArmorCheatsTab.BuildEditModifiers()
         ArmorCheatsTab.BuildDoModifiers()
-        ImGui.Separator()
-        ImGui.EndTabItem()
+        Widget.Separator()
+        Widget.EndTabItem()
     end
 end
 
