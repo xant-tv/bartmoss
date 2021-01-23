@@ -4,13 +4,11 @@ local Widget = {
 
 local Types = require(Widget.rootPath .. "utility.types")
 
-function Widget.GetInputFlags()
-    if (not IsTrapInputInImGui()) then
-        return ImGuiInputTextFlags.ReadOnly
-    else
-        return ImGuiInputTextFlags.None
-    end
-end
+Widget.Color = {
+    White  = {1.00, 1.00, 1.00, 1.00},
+    Yellow = {1.00, 1.00, 0.00, 1.00},
+    Red    = {1.00, 0.00, 0.00, 1.00}
+}
 
 function Widget.CheckValue(element, ltype)
     -- If value has not been changed, then no need to add.
@@ -110,6 +108,17 @@ function Widget.PushItemWidth(width)
     return ImGui.PushItemWidth(width)
 end
 
+function Widget.PushStyleColor(style, clr)
+    return ImGui.PushStyleColor(style, clr[1], clr[2], clr[3], clr[4])
+end
+
+function Widget.PopStyleColor(n)
+    if n then
+        return ImGui.PopStyleColor(n)
+    end
+    return ImGui.PopStyleColor()
+end
+
 function Widget.Dummy(width, height)
     return ImGui.Dummy(width, height)
 end
@@ -125,29 +134,43 @@ function Widget.Button(label, width, height)
     return ImGui.Button(label, width, height)
 end
 
-function Widget.Checkbox(label, var)
-    return ImGui.Checkbox(label, var)
+function Widget.Checkbox(label, var, highlight)
+    local clr = Widget.Color.White
+    if highlight then
+        clr = Widget.Color.Yellow
+    end
+    Widget.PushStyleColor(ImGuiCol.Text, clr)
+    local rvar, active = ImGui.Checkbox(label, var)
+    Widget.PopStyleColor()
+    return rvar, active
 end
 
 function Widget.InputTextWithHint(label, hint, var, buffer, width)
     if width then
         Widget.PushItemWidth(width)
     end
-    return ImGui.InputTextWithHint(label, hint, var, buffer, Widget.GetInputFlags())
+    return ImGui.InputTextWithHint(label, hint, var, buffer)
 end
 
 function Widget.InputInt(label, var, step, quickstep, width)
     if width then
         Widget.PushItemWidth(width)
     end
-    return ImGui.InputInt(label, var, step, quickstep, Widget.GetInputFlags())
+    return ImGui.InputInt(label, var, step, quickstep)
 end
 
-function Widget.InputFloat(label, var, step, quickstep, format, width)
+function Widget.InputFloat(label, var, step, quickstep, format, width, highlight)
     if width then
         Widget.PushItemWidth(width)
     end
-    return ImGui.InputFloat(label, var, step, quickstep, format, Widget.GetInputFlags())
+    local clr = Widget.Color.White
+    if highlight then
+        clr = Widget.Color.Yellow
+    end
+    Widget.PushStyleColor(ImGuiCol.Text, clr)
+    local rvar, active = ImGui.InputFloat(label, var, step, quickstep, format)
+    Widget.PopStyleColor()
+    return rvar, active
 end
 
 function Widget.Combo(label, var, options, max, width)

@@ -1,7 +1,7 @@
 -- Interface to access the entire Bartmoss suite.
 Bartmoss = {
-    name = "Bartmoss",
-    version = "0.6.5",
+    name = "Bartmoss Suite",
+    version = "0.7.0",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -60,9 +60,10 @@ function Bartmoss:new()
     -- Attach user interface events.
     registerForEvent("onInit", OverloadInit)
     registerForEvent("onUpdate", Interface.UI.Update)
-    registerForEvent("onConsoleOpen", Interface.UI.ConsoleOpen)
-    registerForEvent("onConsoleClose", Interface.UI.ConsoleClose)
+    registerForEvent("onOverlayOpen", Interface.UI.Open)
+    registerForEvent("onOverlayClose", Interface.UI.Close)
     registerForEvent("onDraw", OverloadDraw)
+    registerForEvent("onShutdown", Interface.UI.Shutdown)
 
     return Interface
 end

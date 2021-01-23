@@ -18,14 +18,17 @@ function UI.Draw(app)
     end
 end
 
-function UI.ConsoleOpen()
+function UI.Open()
     UI.DrawConsole = true
     UI.DrawWindow = true
 end
 
-function UI.ConsoleClose()
+function UI.Close()
     UI.DrawConsole = false
     UI.DrawWindow = false
+end
+
+function UI.Shutdown()
 end
 
 return UI

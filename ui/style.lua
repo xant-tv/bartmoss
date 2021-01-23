@@ -7,7 +7,7 @@ local Style = {
 Style.Position = {
     App = {
         X = 0,
-        Y = 326
+        Y = 410
     }
 }
 

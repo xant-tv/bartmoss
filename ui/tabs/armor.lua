@@ -11,7 +11,6 @@ local EquipmentHandler = require(ArmorCheatsTab.rootPath .. "handler.equipment")
 
 function ArmorCheatsTab.SetState(element, value, ltype)
     local set = value
-    print(set)
     if not set then
         element.Value = element.Default
     else
@@ -103,9 +102,19 @@ function ArmorCheatsTab.BuildEditModifiers()
     Widget.Text("2. Basic Properties")
     Widget.Text(" - Set item flags.")
     Widget.Text(" - Edit clothing attributes.")
-    State.ArmorTab.Armor.Value = Widget.InputFloat("Armor", State.ArmorTab.Armor.Value, 1, 100, "%.4f", Style.Size.ArmorTab.Float.Width)
-    State.ArmorTab.IsItemIconic.Value = Widget.Checkbox("Is Iconic", State.ArmorTab.IsItemIconic.Value)
-    State.ArmorTab.IsItemCrafted.Value = Widget.Checkbox("Is Crafted", State.ArmorTab.IsItemCrafted.Value)
+    State.ArmorTab.Armor.Value = Widget.InputFloat(
+        "Armor", State.ArmorTab.Armor.Value, 1, 100, "%.4f",
+        Style.Size.ArmorTab.Float.Width,
+        State.ArmorTab.Armor.Value ~= State.ArmorTab.Armor.Read
+    )
+    State.ArmorTab.IsItemIconic.Value = Widget.Checkbox(
+        "Is Iconic", State.ArmorTab.IsItemIconic.Value,
+        State.ArmorTab.IsItemIconic.Value ~= State.ArmorTab.IsItemIconic.Read
+    )
+    State.ArmorTab.IsItemCrafted.Value = Widget.Checkbox(
+        "Is Crafted", State.ArmorTab.IsItemCrafted.Value,
+        State.ArmorTab.IsItemCrafted.Value ~= State.ArmorTab.IsItemCrafted.Read
+    )
     Widget.Spacing()
 end
 

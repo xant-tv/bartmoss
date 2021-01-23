@@ -122,9 +122,16 @@ function WeaponCheatsTab.BuildModifierFromLayout(elem, maxcol)
         return
     end
     if elem.Type == "Float" then
-        State.WeaponsTab[elem.Name].Value = Widget.InputFloat(elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f", Style.Size.WeaponsTab.Float[maxcol].Width)
+        State.WeaponsTab[elem.Name].Value = Widget.InputFloat(
+            elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f",
+            Style.Size.WeaponsTab.Float[maxcol].Width,
+            State.WeaponsTab[elem.Name].Value ~= State.WeaponsTab[elem.Name].Read
+        )
     elseif elem.Type == "Boolean" then
-        State.WeaponsTab[elem.Name].Value = Widget.Checkbox(elem.Display, State.WeaponsTab[elem.Name].Value)
+        State.WeaponsTab[elem.Name].Value = Widget.Checkbox(
+            elem.Display, State.WeaponsTab[elem.Name].Value,
+            State.WeaponsTab[elem.Name].Value ~= State.WeaponsTab[elem.Name].Read
+        )
     else
         Widget.Dummy(1, 19)
     end

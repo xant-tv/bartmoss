@@ -27,7 +27,8 @@ function Draw.BuildTabs()
 end
 
 function Draw.Build(app)
-    if (Widget.Begin(app.name .. " (" .. app.version .. ") UI")) then
+    -- Avoid changing application name because this is used as the key to store layout.
+    if (Widget.Begin(app.name)) then
         Draw.BuildTabs()
         Widget.End()
     end
