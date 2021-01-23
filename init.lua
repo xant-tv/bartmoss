@@ -60,8 +60,8 @@ function Bartmoss:new()
     -- Attach user interface events.
     registerForEvent("onInit", OverloadInit)
     registerForEvent("onUpdate", Interface.UI.Update)
-    registerForEvent("onOverlayOpen", Interface.UI.ConsoleOpen)
-    registerForEvent("onOverlayClose", Interface.UI.ConsoleClose)
+    registerForEvent("onConsoleOpen", Interface.UI.ConsoleOpen)
+    registerForEvent("onConsoleClose", Interface.UI.ConsoleClose)
     registerForEvent("onDraw", OverloadDraw)
 
     return Interface
