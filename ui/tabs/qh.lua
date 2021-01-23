@@ -21,6 +21,10 @@ function QuickhacksTab.DoGiveMods()
     Quickhacks.Inventory.GiveEndgameMods()
 end
 
+function QuickhacksTab.DoGiveAmmo()
+    Quickhacks.Inventory.GiveAmmo()
+end
+
 function QuickhacksTab.DoPreset()
     local path = State.QuickhackTab.PresetOptions[State.QuickhackTab.PresetSelect + 1]
     local splits = String.Split(path, ".")
@@ -35,7 +39,7 @@ function QuickhacksTab.BuildDisplay()
     Widget.Spacing()
     Widget.Text("Shortcuts for quick user action:")
     -- Manual text bulleting like this looks better than using ImGui.BulletText(text) in my opinion.
-    Widget.Text(" - Select and give yourself custom mod-creator item presets.")
+    Widget.Text(" - Select and give yourself custom item presets.")
     Widget.Text(" - One-click buttons for other generic functionality.")
     Widget.Spacing()
 end
@@ -45,12 +49,16 @@ function QuickhacksTab.BuildButtons()
     Widget.Spacing()
     Widget.Text("2. Generic Actions")
     Widget.Text(" - Helpful stuff that basically every mod does.")
-    if (Widget.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
-        QuickhacksTab.DoUpgrade()
+    if (Widget.Button("Refill Ammo", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
+        QuickhacksTab.DoGiveAmmo()
     end
     Widget.SameLine(Style.Size.QuickhacksTab.Button.Width + Style.Size.ColSpacer)
     if (Widget.Button("Give Endgame Mods", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
         QuickhacksTab.DoGiveMods()
+    end
+    Widget.SameLine(2 * (Style.Size.QuickhacksTab.Button.Width) + 1.5 * (Style.Size.ColSpacer))
+    if (Widget.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
+        QuickhacksTab.DoUpgrade()
     end
     Widget.Spacing()
 end

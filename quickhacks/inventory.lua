@@ -119,6 +119,33 @@ function Inventory.GiveEndgameMods()
     ItemHandler.GiveMultiple(itemspecs)
 end
 
+function Inventory.GiveAmmo()
+    local itemspecs = {
+        {
+            item = Glossary.Resources.Ammo.Handgun,
+            quantity = 1000
+        },
+        {
+            item = Glossary.Resources.Ammo.Rifle,
+            quantity = 1000,
+        },
+        {
+            item = Glossary.Resources.Ammo.Shotgun,
+            quantity = 1000
+        },
+        {
+            item = Glossary.Resources.Ammo.SniperRifle,
+            quantity = 1000,
+        },
+        {
+            item = Glossary.Resources.Ammo.Special,
+            quantity = 1000,
+        }
+    }
+    ItemHandler.GiveMultiple(itemspecs)
+    print('AMMO_REFILL')
+end
+
 function Inventory.MakeMeLegendary()
     EquipmentHandler.MakeEquippedItemsLegendary()
 end

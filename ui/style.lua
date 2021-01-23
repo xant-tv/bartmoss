@@ -29,6 +29,10 @@ Style.Size.Global = {
         Half = {
             Width = ((Style.Size.App.Width / 2) - 13),
             Height = 19
+        },
+        Third = {
+            Width = ((Style.Size.App.Width / 3) - 11),
+            Height = 19
         }
     }
 }
@@ -62,8 +66,8 @@ Style.Size.PlayerTab = {
 
 Style.Size.QuickhacksTab = {
     Button = {
-        Width = Style.Size.Global.Button.Half.Width,
-        Height = Style.Size.Global.Button.Half.Height
+        Width = Style.Size.Global.Button.Third.Width,
+        Height = Style.Size.Global.Button.Third.Height
     },
     SmallButton = {
         Width = 124,

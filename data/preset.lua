@@ -693,12 +693,106 @@ Preset.Presets = {
                     Method = "Set"
                 }
             }
+        },
+        KunaiWithChain = {
+            -- Melee weapon (sort of).
+            -- This is what happens when you increase the range of melee attacks from 2m to 30m. Pretend it's throwable or something.
+            -- Famous reference: https://www.youtube.com/watch?v=kU5KxBYYneA
+            Base = Glossary.Weapons.Melee.Machete.Default,
+            Quality = Glossary.Quality.Legendary,
+            Stats = {
+                {
+                    Stat = Glossary.Stats.BaseDamage,
+                    Value = 260,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PhysicalDamage,
+                    Value = 120,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BleedChance,
+                    Value = 20,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ThermalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.BurnChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ElectricalDamage,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ShockChance,
+                    Value = 0,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.ChemicalDamage,
+                    Value = 240,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.PoisonChance,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritChance,
+                    Value = 60,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.CritDamage,
+                    Value = 100,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.AttackSpeed,
+                    Value = 2,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.Range,
+                    Value = 30,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                },
+                {
+                    Stat = Glossary.Stats.IsItemIconic,
+                    Value = 1,
+                    Calculation = Glossary.Calculation.Additive,
+                    Method = "Set"
+                }
+            }
         }
     }
 }
 
 Preset.List = {
     "Weapon.Heatseeker",
+    "Weapon.KunaiWithChain",
     "Weapon.Mikoto",
     "Weapon.Rebound",
     "Weapon.Shredder",
