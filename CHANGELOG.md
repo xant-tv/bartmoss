@@ -9,6 +9,7 @@ Three primary focuses for this release:
 
 Change notes:
  - Refactor of interfaces, handlers into objects. This changes how many elements are [interfaced](docs/INTERFACE.md) with.
+ - Mod now logs into a `bartmoss.log` file within the mod folder instead of console. Will create a method for configuration later.
  - Almost complete clothing glossary. Currently missing `InnerTorso` and `Legs` items.
  - Discovered method for inspecting item tags. Can be used to remove `BlockUnequip` flags on items without save editing.
  - Fixed mod/attachment slot issues on upgrading items introduced by recent patch. 
