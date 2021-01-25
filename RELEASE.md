@@ -8,7 +8,7 @@ Three primary focuses for this release:
  - Additional fixes and improvement after CB2077 Patch 1.1 release.
 
 Change notes:
- - Refactor of interfaces, handlers into objects. This changes how they are [interfaced](docs/INTERFACE.md) with.
+ - Refactor of interfaces, handlers into objects. This changes how many elements are [interfaced](docs/INTERFACE.md) with.
  - Almost complete clothing glossary. Currently missing `InnerTorso` and `Legs` items.
  - Discovered method for inspecting item tags. Can be used to remove `BlockUnequip` flags on items without save editing.
  - Fixed mod/attachment slot issues on upgrading items introduced by recent patch. 
