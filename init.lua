@@ -1,7 +1,7 @@
 -- Interface to access the entire Bartmoss suite.
-Bartmoss = {
+local Bartmoss = {
     name = "Bartmoss Suite",
-    version = "0.7.1",
+    version = "0.8.0",
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -11,61 +11,86 @@ for k, _ in pairs(package.loaded) do
     end
 end
 
+local Logger = require(Bartmoss.rootPath .. "utility.logger")
 local Global = require(Bartmoss.rootPath .. "game.global")
+local System = require(Bartmoss.rootPath .. "game.system")
+local GameHandler = require(Bartmoss.rootPath .. "handler.game")
+local PlayerHandler = require(Bartmoss.rootPath .. "handler.player")
+local ItemHandler = require(Bartmoss.rootPath .. "handler.item")
+local EquipmentHandler = require(Bartmoss.rootPath .. "handler.equipment")
+local Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits")
+local Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory")
+local Custom = require(Bartmoss.rootPath .. "quickhacks.custom")
+local UI = require(Bartmoss.rootPath .. "ui.ui")
 
-local function AppConfig()
-    local app = {
-        name = Bartmoss.name,
-        version = Bartmoss.version
-    }
-    return app
-end
+function Bartmoss:New()
 
-local function OverloadInit()
-    local app = AppConfig()
-    Interface.UI.Init(app)
-end
-
-local function OverloadDraw()
-    local app = AppConfig()
-    Interface.UI.Draw(app)
-end
-
-function Bartmoss:new()
-    Interface = {}
-
-    setmetatable(Interface, self)
+    -- Creating metatable index.
+    local I = {}
+    setmetatable(I, self)
     self.__index = self
 
+    -- Inherit configuration.
+    I.app = {
+        name = self.name,
+        version = self.version
+    }
+
     -- Load modules into memory.
-    Interface.System = require(Bartmoss.rootPath .. "game.system")
-    Interface.Utility = require(Bartmoss.rootPath .. "utility.utility")
-    Interface.Glossary = require(Bartmoss.rootPath .. "data.glossary")
-    Interface.Handler = {
-        Game = require(Bartmoss.rootPath .. "handler.game"),
-        Player = require(Bartmoss.rootPath .. "handler.player"),
-        Items = require(Bartmoss.rootPath .. "handler.item"),
-        Equipment = require(Bartmoss.rootPath .. "handler.equipment")
+    I.Logger = Logger:New(spdlog)
+    I.System = System:New(I.Logger)
+    I.Utility = require(self.rootPath .. "utility.utility")
+    I.Glossary = require(self.rootPath .. "data.glossary")
+    I.Handler = {
+        Game = GameHandler:New(I.Logger),
+        Player = PlayerHandler:New(I.Logger),
+        Items = ItemHandler:New(I.Logger),
+        Equipment = EquipmentHandler:New(I.Logger)
     }
-    Interface.Quickhacks = {
-        Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits"),
-        Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory"),
-        Custom = require(Bartmoss.rootPath .. "quickhacks.custom")
+    I.Quickhacks = {
+        Outfits = Outfits:New(I.Logger),
+        Inventory = Inventory:New(I.Logger),
+        Custom = Custom:New(I.Logger)
     }
-    Interface.UI = require(Bartmoss.rootPath .. "ui.ui")
+    I.UI = UI:New(I.app, I.Logger)
 
     -- Run any initialisation functions.
     Global.OnLoad()
 
-    -- Attach user interface events.
-    registerForEvent("onInit", OverloadInit)
-    registerForEvent("onUpdate", Interface.UI.Update)
-    registerForEvent("onOverlayOpen", Interface.UI.Open)
-    registerForEvent("onOverlayClose", Interface.UI.Close)
-    registerForEvent("onDraw", OverloadDraw)
-    registerForEvent("onShutdown", Interface.UI.Shutdown)
+    -- Local overload functions.
+    local function OverloadInit()
+        I.UI:Init()
+    end
 
-    return Interface
+    local function OverloadUpdate(delta)
+        I.UI:Update(delta)
+    end
+
+    local function OverloadOpen()
+        I.UI:Open()
+    end
+
+    local function OverloadClose()
+        I.UI:Close()
+    end
+
+    local function OverloadDraw()
+        I.UI:Draw()
+    end
+
+    local function OverloadShutdown()
+        I.UI:Shutdown()
+    end
+
+    -- Attach user ifc events.
+    registerForEvent("onInit", OverloadInit)
+    registerForEvent("onUpdate", OverloadUpdate)
+    registerForEvent("onOverlayOpen", OverloadOpen)
+    registerForEvent("onOverlayClose", OverloadClose)
+    registerForEvent("onDraw", OverloadDraw)
+    registerForEvent("onShutdown", OverloadShutdown)
+
+    return I
 end
 
-return Bartmoss:new()
+return Bartmoss:New()

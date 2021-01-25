@@ -3,10 +3,11 @@ local Outfits = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local ItemHandler = require(Outfits.rootPath .. "handler.item")
+local Logger = require(Outfits.rootPath .. "utility.logger")
 local Glossary = require(Outfits.rootPath .. "data.glossary")
+local ItemHandler = require(Outfits.rootPath .. "handler.item")
 
-function Outfits.GiveFemaleNomadCustomOutfit()
+function Outfits:GiveFemaleNomadCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Jacket_14_basic_01",
@@ -77,10 +78,10 @@ function Outfits.GiveFemaleNomadCustomOutfit()
             quality = Glossary.Quality.Legendary
         }
     }
-    ItemHandler.GiveMultiple(itemspecs)
+    self.itemhandler:GiveMultiple(itemspecs)
 end
 
-function Outfits.GiveFemaleCorpoCustomOutfit()
+function Outfits:GiveFemaleCorpoCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Fixer_01_Set_Glasses",
@@ -163,7 +164,23 @@ function Outfits.GiveFemaleCorpoCustomOutfit()
             quality = Glossary.Quality.Legendary
         }
     }
-    ItemHandler.GiveMultiple(itemspecs)
+    self.itemhandler:GiveMultiple(itemspecs)
+end
+
+function Outfits:New(parent)
+
+    local I = {}
+    setmetatable(I, self)
+    self.__index = self
+
+    I.module = "OutfitHack"
+    I.logger = Logger:New(parent.writer, I.module)
+    I.handler = {
+        item = ItemHandler:New(I.logger)
+    }
+
+    return I
+
 end
 
 return Outfits

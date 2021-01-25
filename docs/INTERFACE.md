@@ -1,31 +1,33 @@
 # Interfaces
-The following interfaces are available.
+The following interfaces are available. Note that most functional interfaces are treated as [objects](https://www.lua.org/pil/16.html).
 
 ## Quickhacks
+Command-line equivalent of quickhacks available in the user interface.
 ```lua
 -- Gives a mix of desirable endgame mods at your current character level.
-Bartmoss.Quickhacks.Inventory.GiveEndgameMods() 
+Bartmoss.Quickhacks.Inventory:GiveEndgameMods() 
 
--- Scales to level and makes all of your equipped items legendary.
-Bartmoss.Quickhacks.Inventory.MakeMeLegendary()
+-- Scales to level and makes all of your equipped (and some inventory) items legendary.
+-- Note that to avoid bugs, this refunds all slotted mods into your inventory.
+Bartmoss.Quickhacks.Inventory:UpgradeMe()
 ```
 
 ## System
 Shortcuts to easily gain access to certain game entities or systems.
 ```lua
 -- Returns player entity.
-p = Bartmoss.System.Player()
-pd = Bartmoss.System.PlayerData()
+p = Bartmoss.System:Player()
+pd = Bartmoss.System:PlayerData()
 
 -- Access various low-level systems.
-ts = Bartmoss.System.Transaction()
-cs = Bartmoss.System.Crafting()
-es = Bartmoss.System.Equipment()
-ssc = Bartmoss.System.ScriptableSystemsContainer()
+ts = Bartmoss.System:Transaction()
+cs = Bartmoss.System:Crafting()
+es = Bartmoss.System:Equipment()
+ssc = Bartmoss.System:ScriptableSystemsContainer()
 ```
 
 ## Utilities
-Helpful functions to find/navigate the glossary from console.
+Helpful functions to find/navigate the glossary from console. Note that utility interfaces are **not** objects.
 ```lua
 -- Find an item or glossary element you are looking for.
 -- Output can also be captured as an array.
@@ -54,18 +56,18 @@ Lower-level access to item-related functionality.
 -- Item names can be obtained from glossaries.
 -- If level is not provided, item will scale to character level.
 -- Some items will be forced to certain qualities or levels.
-Bartmoss.Handler.Items.Give(item, quality, level)
-Bartmoss.Handler.Items.GiveN(item, quantity, quality, level)
+Bartmoss.Handler.Items:Give(item, quality, level)
+Bartmoss.Handler.Items:GiveN(item, quantity, quality, level)
 
 -- Set level, quality or add any other modifier to underlying item data.
-Bartmoss.Handler.Items.SetLevel(itemdata, level)
-Bartmoss.Handler.Items.SetQuality(itemdata, quality)
-Bartmoss.Handler.Items.AddModifier(itemdata, modtype, calc, val)
+Bartmoss.Handler.Items:SetLevel(itemdata, level)
+Bartmoss.Handler.Items:SetQuality(itemdata, quality)
+Bartmoss.Handler.Items:AddModifier(itemdata, modtype, calc, val)
 ```
 
 ## Handler.Equipment
 Lower-level access to equipment-related functionality. Similar to items but focused on what you already have.
 ```lua
 -- Quickly return item data in a particular equip slot.
-itemdata = Bartmoss.Handler.Equipment.GetItemDataInSlot(slot, index)
+itemdata = Bartmoss.Handler.Equipment:GetItemDataInSlot(slot, index)
 ```

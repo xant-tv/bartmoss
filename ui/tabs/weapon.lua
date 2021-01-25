@@ -2,15 +2,16 @@ local WeaponCheatsTab = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
+local Logger = require(WeaponCheatsTab.rootPath .. "utility.logger")
+local Widget = require(WeaponCheatsTab.rootPath .. "utility.widget")
 local Style = require(WeaponCheatsTab.rootPath .. "ui.style")
 local Layout = require(WeaponCheatsTab.rootPath .. "ui.layout")
 local State = require(WeaponCheatsTab.rootPath .. "ui.state")
-local Widget = require(WeaponCheatsTab.rootPath .. "utility.widget")
 local Glossary = require(WeaponCheatsTab.rootPath .. "data.glossary")
 local ItemHandler = require(WeaponCheatsTab.rootPath .. "handler.item")
 local EquipmentHandler = require(WeaponCheatsTab.rootPath .. "handler.equipment")
 
-function WeaponCheatsTab.SetState(element, value, ltype)
+function WeaponCheatsTab:SetState(element, value, ltype)
     local set = value
     if not set then
         element.Value = element.Default
@@ -21,60 +22,76 @@ function WeaponCheatsTab.SetState(element, value, ltype)
     element.Read = element.Value
 end
 
-function WeaponCheatsTab.SetModifier(element, modtype, ltype)
+function WeaponCheatsTab:SetModifier(element, modtype, ltype)
     if not Widget.CheckValue(element, ltype) then
         return
     end
-    local itemdata = State.WeaponsTab.ItemData
+    local itemdata = self.state.ItemData
     local calctype = Glossary.Calculation.Additive
     local value = Widget.ParseViewIntoRaw(element.Value, ltype)
-    ItemHandler.SetModifier(itemdata, modtype, calctype, value)
+    self.handler.item:SetModifier(itemdata, modtype, calctype, value)
     -- Set "last read" value to match newly-updated value.
     element.Read = element.Value
 end
 
-function WeaponCheatsTab.AddModifier(element, modtype, ltype)
+function WeaponCheatsTab:AddModifier(element, modtype, ltype)
     if not Widget.CheckValue(element, ltype) then
         return
     end
-    local itemdata = State.WeaponsTab.ItemData
+    local itemdata = self.state.ItemData
     local calctype = Glossary.Calculation.Additive
     local delta = element.Value - element.Read
     local value = Widget.ParseViewIntoRaw(delta, ltype)
-    ItemHandler.AddModifier(itemdata, modtype, calctype, value)
+    self.handler.item:AddModifier(itemdata, modtype, calctype, value)
     -- Set "last read" value to match newly-updated value.
     element.Read = element.Value
 end
 
-function WeaponCheatsTab.DoModifier(layout)
-    local Callable = WeaponCheatsTab.SetModifier
+function WeaponCheatsTab:DoModifier(layout)
+    local Callable = self.SetModifier
     if layout.Method == "Add" then
-        Callable = WeaponCheatsTab.AddModifier
+        Callable = self.AddModifier
     end
-    Callable(State.WeaponsTab[layout.Name], Glossary.Stats[layout.Name], layout.Type)
+    Callable(self, self.state[layout.Name], Glossary.Stats[layout.Name], layout.Type)
     if layout.Copy then
-        State.WeaponsTab[layout.Copy].Value = State.WeaponsTab[layout.Name].Value
-        Callable(State.WeaponsTab[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
+        self.state[layout.Copy].Value = self.state[layout.Name].Value
+        Callable(self, self.state[layout.Copy], Glossary.Stats[layout.Copy], layout.Type)
     end
 end
 
-function WeaponCheatsTab.Inspect()
+function WeaponCheatsTab:DoModifiers()
+    if not self.state.ItemData then
+        return
+    end
+    for _, section in ipairs(Layout.WeaponsTab.Sections) do
+        for _, column in ipairs(section) do
+            for _, layout in ipairs(column) do
+                if layout.Type ~= "Skip" then
+                    self:DoModifier(layout)
+                end
+            end
+        end
+    end
+end
+
+
+function WeaponCheatsTab:Inspect()
     local slot = "Weapon"
-    local id = State.WeaponsTab.SlotSelect
+    local id = self.state.SlotSelect
     local stats = {}
-    print("WEAPON_INSPECT=" .. slot .. id + 1)
-    State.WeaponsTab.ItemData = EquipmentHandler.GetItemDataInSlot(slot, id)
-    if State.WeaponsTab.ItemData then
-        stats = ItemHandler.Inspect(State.WeaponsTab.ItemData)
+    self.logger:Debug("InspectWeapon: " .. slot .. id + 1)
+    self.state.ItemData = self.handler.equipment:GetItemDataInSlot(slot, id)
+    if self.state.ItemData then
+        stats = self.handler.item:Inspect(self.state.ItemData)
     end
     for _, section in ipairs(Layout.WeaponsTab.Sections) do
         for _, column in ipairs(section) do
             for _, layout in ipairs(column) do
                 -- Disgusting nested for loops.
                 if layout.Type ~= "Skip" then
-                    WeaponCheatsTab.SetState(State.WeaponsTab[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
+                    self:SetState(self.state[layout.Name], stats[Glossary.Stats[layout.Name]], layout.Type)
                     if layout.Copy then
-                        WeaponCheatsTab.SetState(State.WeaponsTab[layout.Copy], stats[Glossary.Stats[layout.Copy]], layout.Type)
+                        self:SetState(self.state[layout.Copy], stats[Glossary.Stats[layout.Copy]], layout.Type)
                     end
                 end
             end
@@ -82,62 +99,47 @@ function WeaponCheatsTab.Inspect()
     end
 end
 
-function WeaponCheatsTab.DoModifiers()
-    if not State.WeaponsTab.ItemData then
-        return
-    end
-    for _, section in ipairs(Layout.WeaponsTab.Sections) do
-        for _, column in ipairs(section) do
-            for _, layout in ipairs(column) do
-                if layout.Type ~= "Skip" then
-                    WeaponCheatsTab.DoModifier(layout)
-                end
-            end
-        end
-    end
-end
-
-function WeaponCheatsTab.BuildDisplay()
+function WeaponCheatsTab:BuildDisplay()
     Widget.Spacing()
     Widget.Text("Modify weapons in your equip slots:")
     Widget.Text(" - Pick and edit properties from power, tech or smart weapons.")
     Widget.Spacing()
 end
 
-function WeaponCheatsTab.BuildSelect()
+function WeaponCheatsTab:BuildSelect()
     Widget.Separator()
     Widget.Spacing()
     Widget.Text("1. Select Slot")
     Widget.Text(" - Choose slot then load item values.")
-    State.WeaponsTab.SlotSelect = Widget.Combo("##WeaponSlot", State.WeaponsTab.SlotSelect, State.WeaponsTab.SlotOptions, nil, Style.Size.WeaponsTab.Text.Width)
+    self.state.SlotSelect = Widget.Combo("##WeaponSlot", self.state.SlotSelect, self.state.SlotOptions, nil, Style.Size.WeaponsTab.Text.Width)
     Widget.SameLine(Style.Size.WeaponsTab.Text.Width + Style.Size.SmallColSpacer)
     if (Widget.Button("Load")) then
-        WeaponCheatsTab.Inspect()
+        self:Inspect()
     end
     Widget.Spacing()
 end
 
-function WeaponCheatsTab.BuildModifierFromLayout(elem, maxcol)
+function WeaponCheatsTab:BuildModifierFromLayout(elem, maxcol)
     if not elem.Type then
         return
     end
     if elem.Type == "Float" then
-        State.WeaponsTab[elem.Name].Value = Widget.InputFloat(
-            elem.Display, State.WeaponsTab[elem.Name].Value, 1, 100, "%.4f",
+        self.state[elem.Name].Value = Widget.InputFloat(
+            elem.Display, self.state[elem.Name].Value, 1, 100, "%.4f",
             Style.Size.WeaponsTab.Float[maxcol].Width,
-            State.WeaponsTab[elem.Name].Value ~= State.WeaponsTab[elem.Name].Read
+            self.state[elem.Name].Value ~= self.state[elem.Name].Read
         )
     elseif elem.Type == "Boolean" then
-        State.WeaponsTab[elem.Name].Value = Widget.Checkbox(
-            elem.Display, State.WeaponsTab[elem.Name].Value,
-            State.WeaponsTab[elem.Name].Value ~= State.WeaponsTab[elem.Name].Read
+        self.state[elem.Name].Value = Widget.Checkbox(
+            elem.Display, self.state[elem.Name].Value,
+            self.state[elem.Name].Value ~= self.state[elem.Name].Read
         )
     else
         Widget.Dummy(1, 19)
     end
 end
 
-function WeaponCheatsTab.BuildBasicModifiers()
+function WeaponCheatsTab:BuildBasicModifiers()
     local ncols = 2
     Widget.Separator()
     Widget.Spacing()
@@ -148,7 +150,7 @@ function WeaponCheatsTab.BuildBasicModifiers()
     for col = 1, ncols do
         Widget.BeginGroup()
         for _, element in ipairs(Layout.WeaponsTab.Basic[col]) do
-            WeaponCheatsTab.BuildModifierFromLayout(element, ncols)
+            self:BuildModifierFromLayout(element, ncols)
         end
         Widget.EndGroup()
         Widget.NextColumn()
@@ -157,7 +159,7 @@ function WeaponCheatsTab.BuildBasicModifiers()
     Widget.Spacing()
 end
 
-function WeaponCheatsTab.BuildComplexModifiers()
+function WeaponCheatsTab:BuildComplexModifiers()
     local ncols = 3
     Widget.Separator()
     Widget.Spacing()
@@ -167,7 +169,7 @@ function WeaponCheatsTab.BuildComplexModifiers()
     for col = 1, ncols do
         Widget.BeginGroup()
         for _, element in ipairs(Layout.WeaponsTab.Advanced[col]) do
-            WeaponCheatsTab.BuildModifierFromLayout(element, ncols)
+            self:BuildModifierFromLayout(element, ncols)
         end
         Widget.EndGroup()
         Widget.NextColumn()
@@ -176,25 +178,43 @@ function WeaponCheatsTab.BuildComplexModifiers()
     Widget.Spacing()
 end
 
-function WeaponCheatsTab.BuildDoModifiers()
+function WeaponCheatsTab:BuildDoModifiers()
     Widget.Separator()
     Widget.Spacing()
     if (Widget.Button("Save Modifiers", Style.Size.WeaponsTab.Button.Width, Style.Size.WeaponsTab.Button.Height)) then
-        WeaponCheatsTab.DoModifiers()
+        self:DoModifiers()
     end
     Widget.Spacing()
 end
 
-function WeaponCheatsTab.Build()
+function WeaponCheatsTab:Build()
     if (Widget.BeginTabItem("Weapon")) then
-        WeaponCheatsTab.BuildDisplay()
-        WeaponCheatsTab.BuildSelect()
-        WeaponCheatsTab.BuildBasicModifiers()
-        WeaponCheatsTab.BuildComplexModifiers()
-        WeaponCheatsTab.BuildDoModifiers()
+        self:BuildDisplay()
+        self:BuildSelect()
+        self:BuildBasicModifiers()
+        self:BuildComplexModifiers()
+        self:BuildDoModifiers()
         Widget.Separator()
         Widget.EndTabItem()
     end
+end
+
+function WeaponCheatsTab:New(parent)
+
+    local I = {}
+    setmetatable(I, self)
+    self.__index = self
+
+    I.module = "WeaponCheats"
+    I.logger = Logger:New(parent.writer, I.module)
+    I.state = State.WeaponsTab
+    I.handler = {
+        item = ItemHandler:New(I.logger),
+        equipment = EquipmentHandler:New(I.logger)
+    }
+
+    return I
+
 end
 
 return WeaponCheatsTab

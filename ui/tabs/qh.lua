@@ -2,40 +2,39 @@ local QuickhacksTab = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Style = require(QuickhacksTab.rootPath .. "ui.style")
-local State = require(QuickhacksTab.rootPath .. "ui.state")
+local Logger = require(QuickhacksTab.rootPath .. "utility.logger")
 local String = require(QuickhacksTab.rootPath .. "utility.string")
 local Widget = require(QuickhacksTab.rootPath .. "utility.widget")
+local Style = require(QuickhacksTab.rootPath .. "ui.style")
+local State = require(QuickhacksTab.rootPath .. "ui.state")
 local Preset = require(QuickhacksTab.rootPath .. "data.preset")
-local Quickhacks = {
-    Outfits = require(QuickhacksTab.rootPath .. "quickhacks.outfits"),
-    Inventory = require(QuickhacksTab.rootPath .. "quickhacks.inventory"),
-    Custom = require(QuickhacksTab.rootPath .. "quickhacks.custom")
-}
+local Outfits = require(QuickhacksTab.rootPath .. "quickhacks.outfits")
+local Inventory = require(QuickhacksTab.rootPath .. "quickhacks.inventory")
+local Custom = require(QuickhacksTab.rootPath .. "quickhacks.custom")
 
-function QuickhacksTab.DoUpgrade()
-    Quickhacks.Inventory.MakeMeLegendary()
+function QuickhacksTab:DoUpgrade()
+    self.hacks.inventory:UpgradeMe()
 end
 
-function QuickhacksTab.DoGiveMods()
-    Quickhacks.Inventory.GiveEndgameMods()
+function QuickhacksTab:DoGiveMods()
+    self.hacks.inventory:GiveEndgameMods()
 end
 
-function QuickhacksTab.DoGiveAmmo()
-    Quickhacks.Inventory.GiveAmmo()
+function QuickhacksTab:DoGiveAmmo()
+    self.hacks.inventory:GiveAmmo()
 end
 
-function QuickhacksTab.DoPreset()
-    local path = State.QuickhackTab.PresetOptions[State.QuickhackTab.PresetSelect + 1]
+function QuickhacksTab:DoPreset()
+    local path = self.state.PresetOptions[self.state.PresetSelect + 1]
     local splits = String.Split(path, ".")
     local preset = Preset.Presets
     for _, split in ipairs(splits) do
         preset = preset[split]
     end
-    Quickhacks.Custom.GiveCustomGear(preset)
+    self.hacks.custom:GiveCustomGear(preset)
 end
 
-function QuickhacksTab.BuildDisplay()
+function QuickhacksTab:BuildDisplay()
     Widget.Spacing()
     Widget.Text("Shortcuts for quick user action:")
     -- Manual text bulleting like this looks better than using ImGui.BulletText(text) in my opinion.
@@ -44,47 +43,66 @@ function QuickhacksTab.BuildDisplay()
     Widget.Spacing()
 end
 
-function QuickhacksTab.BuildButtons()
+function QuickhacksTab:BuildButtons()
     Widget.Separator()
     Widget.Spacing()
     Widget.Text("2. Generic Actions")
     Widget.Text(" - Helpful stuff that basically every mod does.")
     if (Widget.Button("Refill Ammo", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
-        QuickhacksTab.DoGiveAmmo()
+        self:DoGiveAmmo()
     end
     Widget.SameLine(Style.Size.QuickhacksTab.Button.Width + Style.Size.ColSpacer)
     if (Widget.Button("Give Endgame Mods", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
-        QuickhacksTab.DoGiveMods()
+        self:DoGiveMods()
     end
     Widget.SameLine(2 * (Style.Size.QuickhacksTab.Button.Width) + 1.5 * (Style.Size.ColSpacer))
-    if (Widget.Button("Make Legendary", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
-        QuickhacksTab.DoUpgrade()
+    if (Widget.Button("Upgrade Items", Style.Size.QuickhacksTab.Button.Width, Style.Size.QuickhacksTab.Button.Height)) then
+        self:DoUpgrade()
     end
     Widget.Spacing()
 end
 
-function QuickhacksTab.BuildPresets()
+function QuickhacksTab:BuildPresets()
     Widget.Separator()
     Widget.Spacing()
     Widget.Text("1. Bartmoss Presets")
     Widget.Text(" - Select desired item preset.")
     -- Return value is the index of the chosen element.
-    State.QuickhackTab.PresetSelect = Widget.Combo("##Preset", State.QuickhackTab.PresetSelect, State.QuickhackTab.PresetOptions, nil, Style.Size.QuickhacksTab.Text.Width)
+    self.state.PresetSelect = Widget.Combo("##Preset", self.state.PresetSelect, self.state.PresetOptions, nil, Style.Size.QuickhacksTab.Text.Width)
     Widget.SameLine(Style.Size.QuickhacksTab.Text.Width + Style.Size.SmallColSpacer)
     if (Widget.Button("Give Item", Style.Size.QuickhacksTab.SmallButton.Width, Style.Size.QuickhacksTab.SmallButton.Height)) then
-        QuickhacksTab.DoPreset()
+        self:DoPreset()
     end
     Widget.Spacing()
 end
 
-function QuickhacksTab.Build()
+function QuickhacksTab:Build()
     if (Widget.BeginTabItem("Quickhacks")) then
-        QuickhacksTab.BuildDisplay()
-        QuickhacksTab.BuildPresets()
-        QuickhacksTab.BuildButtons()
+        self:BuildDisplay()
+        self:BuildPresets()
+        self:BuildButtons()
         Widget.Separator()
         Widget.EndTabItem()
     end
+end
+
+function QuickhacksTab:New(parent)
+
+    local I = {}
+    setmetatable(I, self)
+    self.__index = self
+
+    I.module = "QuickhackCheats"
+    I.logger = Logger:New(parent.writer, I.module)
+    I.state = State.QuickhackTab
+    I.hacks = {
+        outfit = Outfits:New(I.logger),
+        inventory = Inventory:New(I.logger),
+        custom = Custom:New(I.logger)
+    }
+
+    return I
+
 end
 
 return QuickhacksTab

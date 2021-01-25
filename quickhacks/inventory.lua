@@ -3,11 +3,12 @@ local Inventory = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
+local Logger = require(Inventory.rootPath .. "utility.logger")
+local Glossary = require(Inventory.rootPath .. "data.glossary")
 local ItemHandler = require(Inventory.rootPath .. "handler.item")
 local EquipmentHandler = require(Inventory.rootPath .. "handler.equipment")
-local Glossary = require(Inventory.rootPath .. "data.glossary")
 
-function Inventory.GiveEndgameMods()
+function Inventory:GiveEndgameMods()
     local itemspecs = {
         {
             item = Glossary.Mods.Clothing.AntiVenom,
@@ -116,10 +117,10 @@ function Inventory.GiveEndgameMods()
             quantity = 7
         }
     }
-    ItemHandler.GiveMultiple(itemspecs)
+    self.handler.item:GiveMultiple(itemspecs)
 end
 
-function Inventory.GiveAmmo()
+function Inventory:GiveAmmo()
     local itemspecs = {
         {
             item = Glossary.Resources.Ammo.Handgun,
@@ -142,12 +143,29 @@ function Inventory.GiveAmmo()
             quantity = 1000,
         }
     }
-    ItemHandler.GiveMultiple(itemspecs)
-    print('AMMO_REFILL')
+    self.handler.item:GiveMultiple(itemspecs)
 end
 
-function Inventory.MakeMeLegendary()
-    EquipmentHandler.MakeEquippedItemsLegendary()
+function Inventory:UpgradeMe()
+    self.handler.equipment:UpgradeEquipped()
+    self.handler.equipment:UpgradeInventory()
+end
+
+function Inventory:New(parent)
+
+    local I = {}
+    setmetatable(I, self)
+    self.__index = self
+
+    I.module = "InventoryHack"
+    I.logger = Logger:New(parent.writer, I.module)
+    I.handler = {
+        item = ItemHandler:New(I.logger),
+        equipment = EquipmentHandler:New(I.logger)
+    }
+
+    return I
+
 end
 
 return Inventory
