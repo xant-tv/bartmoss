@@ -169,7 +169,7 @@ function ItemHandler:RemovePart(itemdata, slot, keep)
     local ts = self.system:Transaction()
     local parts = self:GetParts(itemdata)
     if itemdata:HasPartInSlot(slot) then
-        -- We can't trust the output removed part output!
+        -- We can't trust the removed part output!
         -- Seems to return the same part multiple times.
         -- Not sure what mess CDPR have cooked up here.
         ts:RemovePart(player, itemdata:GetID(), slot, true)
@@ -190,7 +190,7 @@ end
 
 function ItemHandler:ClearSlots(itemdata, keep)
     -- Rewrite the crafting system function to actually ignore dummy attachment mods.
-    -- This refunds all (valid) mods slotted into an item.    
+    -- This refunds all (valid) mods slotted into an item.
     local modslots = self.handler.game:GetModSlotIDs(itemdata:GetItemType())
     local attslots = self.handler.game:GetAttachmentSlotIDs()
     for _, modslot in ipairs(modslots) do

@@ -1,7 +1,9 @@
 -- Interface to access the entire Bartmoss suite.
 local Bartmoss = {
-    name = "Bartmoss Suite",
-    version = "0.8.0",
+    app = {
+        name = "Bartmoss Suite",
+        version = "0.8.1"
+    },
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
@@ -25,16 +27,10 @@ local UI = require(Bartmoss.rootPath .. "ui.ui")
 
 function Bartmoss:New()
 
-    -- Creating metatable index.
+    -- Do inheritance things.
     local I = {}
     setmetatable(I, self)
     self.__index = self
-
-    -- Inherit configuration.
-    I.app = {
-        name = self.name,
-        version = self.version
-    }
 
     -- Load modules into memory.
     I.Logger = Logger:New(spdlog)
@@ -52,7 +48,7 @@ function Bartmoss:New()
         Inventory = Inventory:New(I.Logger),
         Custom = Custom:New(I.Logger)
     }
-    I.UI = UI:New(I.app, I.Logger)
+    I.UI = UI:New(self.app, I.Logger)
 
     -- Run any initialisation functions.
     Global.OnLoad()
