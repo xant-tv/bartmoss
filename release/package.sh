@@ -2,8 +2,8 @@ cd ..
 rm -f release/bartmoss.zip
 zip -r release/bartmoss.zip . -x 'docs*' -x 'release*' -x @.gitignore -x *.gitignore -x *.sh -x *.md
 cd release
-mkdir -p 'x64/bin/plugins/cyber_engine_tweaks/mods/bartmoss'
-unzip bartmoss.zip -d 'x64/bin/plugins/cyber_engine_tweaks/mods/bartmoss'
+mkdir -p 'bin/x64/plugins/cyber_engine_tweaks/mods/bartmoss'
+unzip bartmoss.zip -d 'bin/x64/plugins/cyber_engine_tweaks/mods/bartmoss'
 rm -f bartmoss.zip
-zip -r bartmoss.zip . -x *.sh
-rm -rf 'x64'
+zip -r bartmoss.zip . -x *.sh -x *.zip
+rm -rf 'bin'
