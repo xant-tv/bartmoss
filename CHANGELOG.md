@@ -19,3 +19,7 @@ Personal comments:
  - I can't emphasize enough how unreliable many of this game's inbuilt scripting functions are.
  - Correctly clearing slots required rewriting the `Crafting:ClearNonIconicSlots` method.
  - This needed a workaround for the `Transaction:RemovePart` method which appears to regularly return the _incorrect_ part.
+
+## 0.8.1
+Minor code changes and preparation for proper releases:
+ - Run `package.sh` to create mod archive.
