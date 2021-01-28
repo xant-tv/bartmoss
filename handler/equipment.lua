@@ -11,7 +11,7 @@ local ItemHandler = require(EquipmentHandler.rootPath .. "handler.item")
 function EquipmentHandler:GetItemDataInSlot(name, id)
     local player = self.system:Player()
     local ts = self.system:Transaction()
-    local espd = self.system:PlayerData()
+    local espd = self.system:PlayerEquipmentData()
     local itemid = espd:GetItemInEquipSlot(name, id)
     -- Skip empty slots.
     if itemid.tdbid.hash ~= 0 then
@@ -67,7 +67,7 @@ end
 function EquipmentHandler:UpgradeEquipped()
     local player = self.system:Player()
     local ts = self.system:Transaction()
-    local espd = self.system:PlayerData()
+    local espd = self.system:PlayerEquipmentData()
     for k, v in pairs(Glossary.EquipSlots) do
         for i = 1, v do
             local itemid = espd:GetItemInEquipSlot(k, i - 1)

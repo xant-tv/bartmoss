@@ -37,7 +37,8 @@ Resources = {
             Capacity = "Items.CarryCapacityBooster",
             Health = "Items.HealthBooster",
             Oxygen = "Items.OxyBooster",
-            Stamina = "Items.StaminaBooster"
+            Stamina = "Items.StaminaBooster",
+            Armor = "Items.BlackLaceV0"
         }
     },
     Medicine = {

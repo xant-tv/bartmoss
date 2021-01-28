@@ -2,7 +2,7 @@
 local Bartmoss = {
     app = {
         name = "Bartmoss Suite",
-        version = "0.8.1"
+        version = "0.8.2"
     },
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }

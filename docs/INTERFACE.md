@@ -17,7 +17,7 @@ Shortcuts to easily gain access to certain game entities or systems.
 ```lua
 -- Returns player entity.
 p = Bartmoss.System:Player()
-pd = Bartmoss.System:PlayerData()
+espd = Bartmoss.System:PlayerEquipmentData()
 
 -- Access various low-level systems.
 ts = Bartmoss.System:Transaction()
@@ -70,4 +70,11 @@ Lower-level access to equipment-related functionality. Similar to items but focu
 ```lua
 -- Quickly return item data in a particular equip slot.
 itemdata = Bartmoss.Handler.Equipment:GetItemDataInSlot(slot, index)
+```
+
+## Handler.Player
+Lower-level access to player-related functionality.
+```lua
+-- Give the player a specific perk.
+Bartmoss.Handler.Player:GivePerk(perk)
 ```

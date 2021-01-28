@@ -81,6 +81,23 @@ function ItemHandler:GetParts(itemdata)
     return parts
 end
 
+function ItemHandler:GetSlots(itemdata)
+    -- Similar to parts but keep the slots themselves.
+    -- Be aware - this returns more than just user-facing mod slots!
+    -- It appears that weapons all have slots for "parts" that determines which physical models are used.
+    -- Not recommended to remove these parts (unless you like invisible guns).
+    -- Tech and smart weapons also have an archetype slot that does things like set tech damage multiplier.
+    local slots = {}
+    local gi = GetSingleton("gameInnerItemData")
+    local inners = itemdata:GetItemParts()
+    for _, inner in ipairs(inners) do
+        local slotid = gi:GetSlotID(inner)
+        slots[slotid.hash] = slotid
+    end
+    return slots
+end
+
+
 function ItemHandler:Inspect(itemdata)
     local result = {}
     for _, mod in ipairs(Glossary.Inspect) do
@@ -219,7 +236,7 @@ function ItemHandler:GiveItems(item, n, quality, level)
     -- Force default quality for certain items!
     local default = self:GetDefaultQuality(item)
     if default then
-        quality = default
+        quality = nil
     end
 
     -- Force level for certain items!
@@ -245,7 +262,7 @@ function ItemHandler:GiveItems(item, n, quality, level)
             self:SetQuality(itemdata, quality)
             table.insert(items, itemdata)
         else
-            self.logger:Error("GiveItems: Failed")
+            self.logger:Error("GiveItems: Failed!")
         end
     end
     return items

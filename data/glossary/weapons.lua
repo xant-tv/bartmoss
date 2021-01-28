@@ -169,7 +169,7 @@ Weapons = {
         Liberty = {
             Default = "Items.Preset_Liberty_Default",
             Iconic = {
-                Konguo = {
+                Kongou = {
                     Rare = "Items.Preset_Liberty_Yorinobu",
                     Epic = "Items.Preset_Liberty_Yorinobu_Epic",
                     Legendary = "Items.Preset_Liberty_Yorinobu_Legendary"
@@ -312,7 +312,7 @@ Weapons = {
                     Epic = "Items.Preset_Saratoga_Maelstrom_Epic",
                     Legendary = "Items.Preset_Saratoga_Maelstrom_Legendary"
                 },
-                Raffen = {
+                ProblemSolver = {
                     Rare = "Items.Preset_Saratoga_Raffen",
                     Epic = "Items.Preset_Saratoga_Raffen_Epic",
                     Legendary = "Items.Preset_Saratoga_Raffen_Legendary"
@@ -584,7 +584,8 @@ Weapons = {
         Recon = {
             Regular = "Items.GrenadeReconRegular",
             Sticky = "Items.GrenadeReconSticky"
-        }
+        },
+        Ozob = "Items.GrenadeOzobsNose"
     }
 }
 

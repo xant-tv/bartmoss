@@ -42,13 +42,64 @@ Mods = {
         Phantom = "Items.WraithsRangedWeaponMod",
         Pulverize = "Items.SimpleWeaponMod12",
         Vendetta = "Items.ValentinosRangedWeaponMod",
-        Weaken = "Items.SimpleWeaponMod13"
+        Weaken = "Items.SimpleWeaponMod13",
+        Iconic = {
+            -- These weapon mods can be added to inventory but are unable to be manually socketed.
+            -- However, we can probably force these into special weapon slots.
+            Archangel = "Items.KerryWeaponMod",
+            Amnesty = "Items.CassidyWeaponMod",
+            Apparition = "Items.FrankWeaponMod",
+            BaXingChong = "Items.ZhuoEightStarWeaponMod",
+            Breakthrough = "Items.NekomataBreakthroughWeaponMod",
+            Buzzsaw = "Items.PulsarBuzzsawWeaponMod",
+            Chaos = "Items.RoyceWeaponMod",
+            ChingonaDorada = "Items.JackieNueWeaponMod",
+            ComradesHammer = "Items.BuryaHammerWeaponMod",
+            Crash = "Items.RiverWeaponMod",
+            DeathTaxes = "Items.MaikoNueWeaponMod",
+            DividedWeStand = "Items.SidewinderDividedWeaponMod",
+            DoomDoom = "Items.DoomDoomWeaponMod",
+            DyingNight = "Items.WilsonWeaponMod",
+            Fenrir = "Items.SaratogaMaelstromWeaponMod",
+            Genjiroh = "YukimuraKijiWeaponMod",
+            Headsman = "Items.TacticianHeadsmanWeaponMod",
+            Kongou = "Items.YorinobuLibertyWeaponMod",
+            Lizzie = "Items.SuzieWeaponMod",
+            MoronLabe = "Items.AjaxMoronWeaponMod",
+            Mox = "Items.MoxCarnageWeaponMod",
+            OFive = "Items.BuckWeaponMod",
+            Overwatch = "Items.PanamWeaponMod",
+            PlanB = "Items.DexLibertyWeaponMod",
+            Prejudice = "Items.RogueMasamuneWeaponMod",
+            Pride = "Items.RogueLibertyWeaponMod",
+            Psalm = "Items.CopperheadGenesisWeaponMod",
+            ProblemSolver = "Items.RaffenSaratogaWeaponMod",
+            -- Skippy = "", -- Doesn't appear to have an iconic weapon mod associated with it.
+            Shingen = "Items.PrototypeShingenWeaponMod",
+            Sovereign = "Items.IglaSovereignWeaponMod",
+            WidowMaker = "Items.NashWeaponMod",
+            YingLong = "Items.DianYinglongWeaponMod",
+        }
     },
     Melee = {
         ColdShoulder = "Items.ValentinosMeleeWeaponMod",
         Kunai = "Items.ArasakaMeleeWeaponMod",
         Scourge = "Items.WraithsMeleeWeaponMod",
         WhiteKnuckled = "Items.TygerMeleeWeaponMod",
+        Iconic = {
+            -- Similar to ranged weapon mods but melee weapons do actually allow these mods to be manually socketed.
+            Caretaker = "Items.CyberspadeWeaponMod",
+            Cocktail = "Items.CocktailStickWeaponMod",
+            Cottonmouth = "Items.FingersCaneWeaponMod",
+            GoldPlated = "Items.DennysBatWeaponMod",
+            JinchuMaru = "Items.TakemuraKatanaWeaponMod",
+            Phallustiff = "Items.DildoWeaponMod",
+            Satori = "Items.SaburoKatanaWeaponMod",
+            Scalpel = "Items.SurgeonKatanaWeaponMod",
+            Stinger = "Items.ScorpionKnifeWeaponMod",
+            TinkerBell = "Items.TinkerBellWeaponMod",
+            Tsumetogi = "Items.HiromiKatanaWeaponMod"
+        }
     },
     Cyberware = {
         -- This needs to be filled out to contain all the cyberdeck, eyes and arms mods.

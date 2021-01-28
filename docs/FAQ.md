@@ -11,6 +11,11 @@ Bartmoss lets you:
 ![bartmoss_items_ui](images/item.png)
 ![bartmoss_weapons_ui](images/weapon.png)
 
+## Any important things I should know?
+Giving yourself certain items or invoking certain scripted functionality will sometimes immediately trigger an autosave. 
+
+This mod will often further modify items after this autosave but will unable to automatically do so if such a save is reloaded. To minimise issues, try to avoid loading these autosaves if possible. Manually save before and after instead.
+
 ## Why should I use this mod?
 Item generation in Cyberpunk 2077 is a very complicated process that has a lot of unseen steps which other mods or simple commands may not follow. Simple commands for upgrading item level or quality [can have unintended side-effects](https://www.youtube.com/watch?v=l13OkxImayk).
 
@@ -29,7 +34,7 @@ Until then the item will not be available via the user interface.
 You can still use any raw item string with Bartmoss commands.
 ```lua
 Bartmoss = GetMod("bartmoss")
-Bartmoss.Handler.Items.GiveN("Items.item_not_in_glossary", 1, "Legendary", 50)
+Bartmoss.Handler.Items:GiveN("Items.item_not_in_glossary", 1, "Legendary", 50)
 ```
 
 Items added this way will not undergo the typical quality or level force checks.

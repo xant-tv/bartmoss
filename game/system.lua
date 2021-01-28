@@ -21,6 +21,11 @@ function System:Targeting()
     return Game.GetTargetingSystem()
 end
 
+
+function System:Vehicle()
+    return Game.GetVehicleSystem()
+end
+
 function System:ScriptableSystemsContainer()
     return Game.GetScriptableSystemsContainer()
 end
@@ -38,7 +43,7 @@ function System:Equipment()
     return es
 end
 
-function System:PlayerData()
+function System:PlayerEquipmentData()
     local player = self:Player()
     local es = self:Equipment()
     local espd = es:GetPlayerData(player)
@@ -46,8 +51,21 @@ function System:PlayerData()
     return espd
 end
 
+function System:Development()
+    local ssc = self:ScriptableSystemsContainer()
+    local ds = ssc:Get(CName.new("PlayerDevelopmentSystem"))
+    return ds
+end
+
+function System:PlayerDevelopmentData()
+    local player = self:Player()
+    local ds = self:Development()
+    local dspd = ds:GetDevelopmentData(player)
+    return dspd
+end
+
 function System:InventoryManager()
-    local espd = self:PlayerData()
+    local espd = self:PlayerEquipmentData()
     local imgr = espd:GetInventoryManager()
     return imgr
 end

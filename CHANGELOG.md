@@ -23,3 +23,14 @@ Personal comments:
 ## 0.8.1
 Minor code changes and preparation for proper releases:
  - Run `package.sh` to create mod archive.
+
+## 0.8.2
+Focus of this release:
+ - Further glossary expansions.
+ - Early exploratory work into perks and vehicles.
+
+Change notes:
+ - Discovered all iconic weapon mod identifiers and added to glossary. These mods aren't intended for manual use. Proper support will come soon.
+ - Began building perk and vehicle glossary sections.
+ - Support for `Development` and `DevelopmentData` systems. These are used for perk interaction among other things.
+ - New `PlayerHandler` functions for adding or removing perks. Proper interface planned for next major version.
