@@ -12,6 +12,9 @@ Glossary.Quickhacks = require(Glossary.rootPath .. "data.glossary.quickhacks")
 Glossary.Mods = require(Glossary.rootPath .. "data.glossary.mods")
 Glossary.Attachments = require(Glossary.rootPath .. "data.glossary.attachments")
 Glossary.Recipes = require(Glossary.rootPath .. "data.glossary.recipes")
+Glossary.Perks = require(Glossary.rootPath .. "data.glossary.perks")
+Glossary.Traits = require(Glossary.rootPath .. "data.glossary.traits")
+Glossary.Vehicles = require(Glossary.rootPath .. "data.glossary.vehicles")
 
 -- Enumerations.
 Glossary.Attributes = {
@@ -419,6 +422,86 @@ Glossary.ClothingSlotsInv = {
     ["Feet"] = "Feet"
 }
 
+Glossary.PartSlots = {
+    Weapon = {
+        Generic = {
+            Ranged = {
+                "AttachmentSlots.GenericWeaponMod1",
+                "AttachmentSlots.GenericWeaponMod2",
+                "AttachmentSlots.GenericWeaponMod3",
+                "AttachmentSlots.GenericWeaponMod4"
+            },
+            Melee = {
+                "AttachmentSlots.MeleeWeaponMod1",
+                "AttachmentSlots.MeleeWeaponMod2",
+                "AttachmentSlots.MeleeWeaponMod3"
+            }
+        },
+        Scope = {
+            Small = "AttachmentSlots.Scope",
+            Rail = "AttachmentSlots.ScopeRail"
+        },
+        Muzzle = "AttachmentSlots.PowerModule",
+        Iconic = {
+            Melee = "AttachmentSlots.IconicMeleeWeaponMod1",
+            Ranged = "AttachmentSlots.IconicWeaponModLegendary"
+        },
+        Power = {
+            Rare = "AttachmentSlots.PowerWeaponModRare",
+            Epic = "AttachmentSlots.PowerWeaponModEpic",
+            Legendary = "AttachmentSlots.PowerWeaponModLegendary"
+        },
+        Tech = {
+            Rare = "AttachmentSlots.TechWeaponModRare",
+            Epic = "AttachmentSlots.TechWeaponModEpic",
+            Legendary = "AttachmentSlots.TechWeaponModLegendary"
+        },
+        Smart = {
+            Rare = "AttachmentSlots.SmartWeaponModRare",
+            Epic = "AttachmentSlots.SmartWeaponModEpic",
+            Legendary = "AttachmentSlots.SmartWeaponModLegendary"
+        }
+    },
+    Clothing = {
+        Face = {
+            "AttachmentSlots.FaceFabricEnhancer1",
+            "AttachmentSlots.FaceFabricEnhancer2",
+            "AttachmentSlots.FaceFabricEnhancer3",
+            "AttachmentSlots.FaceFabricEnhancer4"
+        },
+        Feet = {
+            "AttachmentSlots.FootFabricEnhancer1",
+            "AttachmentSlots.FootFabricEnhancer2",
+            "AttachmentSlots.FootFabricEnhancer3",
+            "AttachmentSlots.FootFabricEnhancer4"
+        },
+        Head = {
+            "AttachmentSlots.HeadFabricEnhancer1",
+            "AttachmentSlots.HeadFabricEnhancer2",
+            "AttachmentSlots.HeadFabricEnhancer3",
+            "AttachmentSlots.HeadFabricEnhancer4"
+        },
+        InnerChest = {
+            "AttachmentSlots.InnerChestFabricEnhancer1",
+            "AttachmentSlots.InnerChestFabricEnhancer2",
+            "AttachmentSlots.InnerChestFabricEnhancer3",
+            "AttachmentSlots.InnerChestFabricEnhancer4"
+        },
+        Legs = {
+            "AttachmentSlots.LegsFabricEnhancer1",
+            "AttachmentSlots.LegsFabricEnhancer2",
+            "AttachmentSlots.LegsFabricEnhancer3",
+            "AttachmentSlots.LegsFabricEnhancer4"
+        },
+        OuterChest = {
+            "AttachmentSlots.OuterChestFabricEnhancer1",
+            "AttachmentSlots.OuterChestFabricEnhancer2",
+            "AttachmentSlots.OuterChestFabricEnhancer3",
+            "AttachmentSlots.OuterChestFabricEnhancer4"
+        }
+    }
+}
+
 -- Property Lookups
 Glossary.ForcedQuality = {
     -- Keys should match those in item quality.
@@ -754,6 +837,17 @@ Glossary.ForcedQuality = {
         Glossary.Mods.Ranged.Iconic.Sovereign,
         Glossary.Mods.Ranged.Iconic.WidowMaker,
         Glossary.Mods.Ranged.Iconic.YingLong,
+        Glossary.Mods.Melee.Iconic.Caretaker,
+        Glossary.Mods.Melee.Iconic.Cocktail,
+        Glossary.Mods.Melee.Iconic.Cottonmouth,
+        Glossary.Mods.Melee.Iconic.GoldPlated,
+        Glossary.Mods.Melee.Iconic.JinchuMaru,
+        Glossary.Mods.Melee.Iconic.Phallustiff,
+        Glossary.Mods.Melee.Iconic.Satori,
+        Glossary.Mods.Melee.Iconic.Scalpel,
+        Glossary.Mods.Melee.Iconic.Stinger,
+        Glossary.Mods.Melee.Iconic.TinkerBell,
+        Glossary.Mods.Melee.Iconic.Tsumetogi,
         Glossary.Mods.Cyberware.Arms.GorillaArms.Battery.High,
         Glossary.Mods.Cyberware.Arms.GorillaArms.Battery.Medium,
         Glossary.Mods.Cyberware.Arms.MantisBlades.Rotor.Fast,
@@ -1004,6 +1098,7 @@ Glossary.ForcedQuality = {
     }
 }
 
+-- This also implies the item cannot be levelled.
 Glossary.IsStackable = {
     Glossary.Resources.Money,
     Glossary.Resources.Ammo.Handgun,
@@ -1033,7 +1128,24 @@ Glossary.IsStackable = {
     Glossary.Resources.Medicine.MaxDoc.Epic,
     Glossary.Resources.Medicine.BounceBack.Common,
     Glossary.Resources.Medicine.BounceBack.Uncommon,
-    Glossary.Resources.Medicine.BounceBack.Rare
+    Glossary.Resources.Medicine.BounceBack.Rare,
+    Glossary.Weapons.Grenades.Biohazard.Homing,
+    Glossary.Weapons.Grenades.Biohazard.Regular,
+    Glossary.Weapons.Grenades.EMP.Homing,
+    Glossary.Weapons.Grenades.EMP.Regular,
+    Glossary.Weapons.Grenades.EMP.Sticky,
+    Glossary.Weapons.Grenades.Flash.Homing,
+    Glossary.Weapons.Grenades.Flash.Regular,
+    Glossary.Weapons.Grenades.Frag.Homing,
+    Glossary.Weapons.Grenades.Frag.Regular,
+    Glossary.Weapons.Grenades.Frag.Sticky,
+    Glossary.Weapons.Grenades.Gash,
+    Glossary.Weapons.Grenades.Incendiary.Homing,
+    Glossary.Weapons.Grenades.Incendiary.Regular,
+    Glossary.Weapons.Grenades.Incendiary.Sticky,
+    Glossary.Weapons.Grenades.Recon.Regular,
+    Glossary.Weapons.Grenades.Recon.Sticky,
+    Glossary.Weapons.Grenades.Ozob
 }
 
 Glossary.CannotBeLevelled = {
