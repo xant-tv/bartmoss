@@ -34,3 +34,21 @@ Change notes:
  - Began building perk and vehicle glossary sections.
  - Support for `Development` and `DevelopmentData` systems. These are used for perk interaction among other things.
  - New `PlayerHandler` functions for adding or removing perks. Proper interface planned for next major version.
+
+ ## 0.8.3 - 30/01/2021
+Focus of this release:
+ - Additional part-related functionality.
+ - Complete perk (and traits) glossary and research.
+
+Change notes:
+ - Discovered and recorded all mod and attachment (part) slot identifiers in glossary.
+ - Created an `AddPart` function within `ItemHandler` which enables parts to be inserted into weapons.
+ - Presets generated via `CustomHack` now support part specifications.
+ - Finished documenting all perks. Create a handy `InspectTool` to help with this task. May expand later as needed. 
+ - Discovered traits (the "ultimate" perk) which have to be handled separately. 
+ - Polished perk-related functions in `PlayerHandler` and created equivalents for traits. Note that these are not entirely functional!
+ - Fixed an issue that allowed repeated "snowballing" of armor values.
+
+Personal comments:
+ - Note that locking and unlocking perk areas is only temporary. Reloading the character menu will re-evaluate locks properly.
+ - While an area is locked perks will show as unobtained but they are actually still allocated. Test this yourself with craftsman perks.

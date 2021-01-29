@@ -2,7 +2,7 @@
 local Bartmoss = {
     app = {
         name = "Bartmoss Suite",
-        version = "0.8.3-alpha"
+        version = "0.8.3"
     },
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
@@ -20,9 +20,10 @@ local GameHandler = require(Bartmoss.rootPath .. "handler.game")
 local PlayerHandler = require(Bartmoss.rootPath .. "handler.player")
 local ItemHandler = require(Bartmoss.rootPath .. "handler.item")
 local EquipmentHandler = require(Bartmoss.rootPath .. "handler.equipment")
-local Outfits = require(Bartmoss.rootPath .. "quickhacks.outfits")
-local Inventory = require(Bartmoss.rootPath .. "quickhacks.inventory")
-local Custom = require(Bartmoss.rootPath .. "quickhacks.custom")
+local OutfitHack = require(Bartmoss.rootPath .. "quickhacks.outfits")
+local InventoryHack = require(Bartmoss.rootPath .. "quickhacks.inventory")
+local CustomHack = require(Bartmoss.rootPath .. "quickhacks.custom")
+local InspectTool = require(Bartmoss.rootPath .. "tools.inspect")
 local UI = require(Bartmoss.rootPath .. "ui.ui")
 
 function Bartmoss:New()
@@ -44,9 +45,12 @@ function Bartmoss:New()
         Equipment = EquipmentHandler:New(I.Logger)
     }
     I.Quickhacks = {
-        Outfits = Outfits:New(I.Logger),
-        Inventory = Inventory:New(I.Logger),
-        Custom = Custom:New(I.Logger)
+        Outfit = OutfitHack:New(I.Logger),
+        Inventory = InventoryHack:New(I.Logger),
+        Custom = CustomHack:New(I.Logger)
+    }
+    I.Tools = {
+        Inspect = InspectTool:New(I.Logger)
     }
     I.UI = UI:New(self.app, I.Logger)
 
