@@ -181,6 +181,20 @@ function ItemHandler:AllowUnequip(itemdata)
     end
 end
 
+function ItemHandler:AddPart(itemdata, partdata, slot)
+    local player = self.system:Player()
+    local ts = self.system:Transaction()
+    local itemid = itemdata:GetID()
+    local partid = partdata:GetID()
+    local result = ts:ForcePartInSlot(player, itemid, partid, slot)
+    if result then
+        self.logger:Debug("AddPart: Success! | " .. tostring(partid) .. " --> " .. tostring(itemid) .. " @ " .. tostring(slot))
+    else
+        self.logger:Debug("AddPart: Failed!")
+    end
+    return result
+end
+
 function ItemHandler:RemovePart(itemdata, slot, keep)
     local player = self.system:Player()
     local ts = self.system:Transaction()
