@@ -48,32 +48,25 @@ function PlayerHandler:GetPerkAreaOfPerk(perk)
 end
 
 function PlayerHandler:IsPerkAreaUnlocked(area)
-    local dspd = self.system:IsPerkAreaUnlocked(area)
+    local dspd = self.system:PlayerDevelopmentData()
     local unlocked = dspd:IsPerkAreaUnlocked(area)
     return unlocked
 end
 
 function PlayerHandler:UnlockPerkArea(area)
-    -- Need to test if this obeys unlock requirements.
-    local dspd = self.system:IsPerkAreaUnlocked(area)
-    local result = dspd:UnlockPerkArea(area)
-    if not result then
-        self.logger:Debug("UnlockPerkArea: Failed!")
-    else
-        self.logger:Debug("UnlockPerkArea: Success!")
-    end
-    return result
+    -- Forced unlock of perk areas does not appear to work.
+    -- Inbult script modifies the development data attribute directly which seems to not do anything.
+    local dspd = self.system:PlayerDevelopmentData()
+    dspd:UnlockPerkArea(area)
+    return
 end
 
 function PlayerHandler:LockPerkArea(area)
+    -- Forced lock of perk areas does not appear to work.
+    -- Inbult script modifies the development data attribute directly which seems to not do anything.
     local dspd = self.system:IsPerkAreaUnlocked(area)
-    local result = dspd:LockPerkArea(area)
-    if not result then
-        self.logger:Debug("LockPerkArea: Failed!")
-    else
-        self.logger:Debug("LockPerkArea: Success!")
-    end
-    return result
+    dspd:LockPerkArea(area)
+    return
 end
 
 function PlayerHandler:HasPerk(perk)
@@ -111,24 +104,69 @@ function PlayerHandler:GivePerk(perk)
     local area = self:GetPerkAreaOfPerk(perk)
     local unlocked = self:IsPerkAreaUnlocked(area)
     if not unlocked then
-        local result = self:UnlockPerkArea(area)
-        if not result then
-            -- Exit if this fails for some reason.
-            return
-        end
+        self:UnlockPerkArea(area)
     end
     -- Give a perk point.
     self:GivePoints(Glossary.DevelopmentTypes.Primary, 1)
     -- Purchase the perk correctly.
     self:BuyPerk(perk)
-    -- Result lock status of area.
+    -- Reset lock status if needed.
     if not unlocked then
-        local result = self:LockPerkArea(area)
-        if not result then
-            -- Kind of too late to do anything about it, really.
-            -- Need to test to make sure this doesn't break any saves.
-            return
-        end
+        self:LockPerkArea(area)
+    end
+    return
+end
+
+function PlayerHandler:IsTraitUnlocked(trait)
+    local dspd = self.system:PlayerDevelopmentData()
+    return dspd:IsTraitUnlocked(trait)
+end
+
+function PlayerHandler:UnlockTrait(trait)
+    -- This is currently not functional!
+    -- Unfortunately, there is no native scripting function to do this.
+    -- Unlocking traits would therefore require setting the property manually but CET does not support this.
+    local dspd = self.system:PlayerDevelopmentData()
+    -- This returns the index for a "proper" language that starts at zero.
+    local traitidx = dspd:GetTraitIndex(trait)
+    dspd.traits[traitidx + 1].unlocked = true
+end
+
+function PlayerHandler:LockTrait(trait)
+    -- As with unlocking, this is also not functional.
+    local dspd = self.system:PlayerDevelopmentData()
+    local traitidx = dspd:GetTraitIndex(trait)
+    dspd.traits[traitidx + 1].unlocked = false
+end
+
+function PlayerHandler:IncreaseTrait(trait)
+    -- Add level to a trait (the ultimate "infinite" perk in each attribute).
+    -- There is unfortunately no way to force this.
+    -- Unlike perks, the data system has no inbuilt functions to unlock traits.
+    local dspd = self.system:PlayerDevelopmentData()
+    local increased = dspd:IncreaseTraitLevel(trait)
+    if not increased then
+        self.logger:Debug("IncreaseTrait: Failed! | " .. trait)
+    else
+        self.logger:Debug("IncreaseTrait: Success! | " .. trait)
+    end
+    return increased
+end
+
+function PlayerHandler:GiveTrait(trait)
+    -- Custom method to force "purchase" of a trait. 
+    -- Non-functional (see comments in lock/unlock methods).
+    local unlocked = self:IsTraitUnlocked(trait)
+    if not unlocked then
+        self:UnlockTrait(trait)
+    end
+    -- Give a perk point.
+    self:GivePoints(Glossary.DevelopmentTypes.Primary, 1)
+    -- Purchase the perk correctly.
+    self:IncreaseTrait(trait)
+    -- Reset lock status if needed.
+    if not unlocked then
+        self:LockTrait(trait)
     end
     return
 end
@@ -140,7 +178,7 @@ end
 
 function PlayerHandler:GivePoints(ptype, amount)
     Game.GiveDevPoints(ptype, 1)
-    self.logger:Debug("GivePerkPoints: " .. ptype .. " | " .. amount)
+    self.logger:Debug("GivePoints: " .. ptype .. " | " .. amount)
 end
 
 function PlayerHandler:New(parent)
