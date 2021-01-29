@@ -8,9 +8,9 @@ local Widget = require(QuickhacksTab.rootPath .. "utility.widget")
 local Style = require(QuickhacksTab.rootPath .. "ui.style")
 local State = require(QuickhacksTab.rootPath .. "ui.state")
 local Preset = require(QuickhacksTab.rootPath .. "data.preset")
-local Outfits = require(QuickhacksTab.rootPath .. "quickhacks.outfits")
-local Inventory = require(QuickhacksTab.rootPath .. "quickhacks.inventory")
-local Custom = require(QuickhacksTab.rootPath .. "quickhacks.custom")
+local OutfitHack = require(QuickhacksTab.rootPath .. "quickhacks.outfits")
+local InventoryHack = require(QuickhacksTab.rootPath .. "quickhacks.inventory")
+local CustomHack = require(QuickhacksTab.rootPath .. "quickhacks.custom")
 
 function QuickhacksTab:DoUpgrade()
     self.hacks.inventory:UpgradeMe()
@@ -96,9 +96,9 @@ function QuickhacksTab:New(parent)
     I.logger = Logger:New(parent.writer, I.module)
     I.state = State.QuickhackTab
     I.hacks = {
-        outfit = Outfits:New(I.logger),
-        inventory = Inventory:New(I.logger),
-        custom = Custom:New(I.logger)
+        outfit = OutfitHack:New(I.logger),
+        inventory = InventoryHack:New(I.logger),
+        custom = CustomHack:New(I.logger)
     }
 
     return I

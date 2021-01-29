@@ -26,19 +26,19 @@ function System:Vehicle()
     return Game.GetVehicleSystem()
 end
 
-function System:ScriptableSystemsContainer()
+function System:Scriptable()
     return Game.GetScriptableSystemsContainer()
 end
 
 function System:Crafting()
-    local ssc = self:ScriptableSystemsContainer()
+    local ssc = self:Scriptable()
     local cs = ssc:Get(CName.new("CraftingSystem"))
     cs["SetItemLevel"] = cs["SetItemLevel;gameItemData"]
     return cs
 end
 
 function System:Equipment()
-    local ssc = self:ScriptableSystemsContainer()
+    local ssc = self:Scriptable()
     local es = ssc:Get(CName.new("EquipmentSystem"))
     return es
 end
@@ -52,7 +52,7 @@ function System:PlayerEquipmentData()
 end
 
 function System:Development()
-    local ssc = self:ScriptableSystemsContainer()
+    local ssc = self:Scriptable()
     local ds = ssc:Get(CName.new("PlayerDevelopmentSystem"))
     return ds
 end

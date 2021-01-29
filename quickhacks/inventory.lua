@@ -1,14 +1,14 @@
 -- Pre-built inventory quickhacks for easy use.
-local Inventory = {
+local InventoryHack = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Logger = require(Inventory.rootPath .. "utility.logger")
-local Glossary = require(Inventory.rootPath .. "data.glossary")
-local ItemHandler = require(Inventory.rootPath .. "handler.item")
-local EquipmentHandler = require(Inventory.rootPath .. "handler.equipment")
+local Logger = require(InventoryHack.rootPath .. "utility.logger")
+local Glossary = require(InventoryHack.rootPath .. "data.glossary")
+local ItemHandler = require(InventoryHack.rootPath .. "handler.item")
+local EquipmentHandler = require(InventoryHack.rootPath .. "handler.equipment")
 
-function Inventory:GiveEndgameMods()
+function InventoryHack:GiveEndgameMods()
     local itemspecs = {
         {
             item = Glossary.Mods.Clothing.AntiVenom,
@@ -120,7 +120,7 @@ function Inventory:GiveEndgameMods()
     self.handler.item:GiveMultiple(itemspecs)
 end
 
-function Inventory:GiveAmmo()
+function InventoryHack:GiveAmmo()
     local itemspecs = {
         {
             item = Glossary.Resources.Ammo.Handgun,
@@ -146,12 +146,12 @@ function Inventory:GiveAmmo()
     self.handler.item:GiveMultiple(itemspecs)
 end
 
-function Inventory:UpgradeMe()
+function InventoryHack:UpgradeMe()
     self.handler.equipment:UpgradeEquipped()
     self.handler.equipment:UpgradeInventory()
 end
 
-function Inventory:New(parent)
+function InventoryHack:New(parent)
 
     local I = {}
     setmetatable(I, self)
@@ -168,4 +168,4 @@ function Inventory:New(parent)
 
 end
 
-return Inventory
+return InventoryHack

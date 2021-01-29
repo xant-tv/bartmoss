@@ -1,12 +1,12 @@
 -- Pre-built custom gear quickhacks for easy use.
-local Custom = {
+local CustomHack = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Logger = require(Custom.rootPath .. "utility.logger")
-local ItemHandler = require(Custom.rootPath .. "handler.item")
+local Logger = require(CustomHack.rootPath .. "utility.logger")
+local ItemHandler = require(CustomHack.rootPath .. "handler.item")
 
-function Custom:ApplyStat(itemdata, statset)
+function CustomHack:ApplyStat(itemdata, statset)
     local modtype = statset.Stat
     local value = statset.Value
     local calctype = statset.Calculation
@@ -18,19 +18,32 @@ function Custom:ApplyStat(itemdata, statset)
     Callable(self.handler.item, itemdata, modtype, calctype, value)
 end
 
-function Custom:GiveCustomGear(preset)
+function CustomHack:ApplyPart(itemdata, partset)
+    local partslot = TweakDBID.new(partset.Slot)
+    local parts = self.handler.item:GiveN(partset.Part, 1, partset.Quality, 0)
+    for _, part in ipairs(parts) do
+        self.handler.item:AddPart(itemdata, part, partslot)
+    end
+end
+
+function CustomHack:GiveCustomGear(preset)
     local itemname = preset.Base
     local quality = preset.Quality
     local stats = preset.Stats
+    local parts = preset.Parts
     local items = self.handler.item:GiveN(itemname, 1, quality, 0) -- List of item data for all items generated.
     for _, item in ipairs(items) do
+        -- Apply parts first then overwrite modifiers.
+        for _, part in ipairs(parts) do
+            self:ApplyPart(item, part)
+        end
         for _, stat in ipairs(stats) do
             self:ApplyStat(item, stat)
         end
     end
 end
 
-function Custom:New(parent)
+function CustomHack:New(parent)
 
     local I = {}
     setmetatable(I, self)
@@ -46,4 +59,4 @@ function Custom:New(parent)
 
 end
 
-return Custom
+return CustomHack

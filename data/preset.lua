@@ -144,6 +144,8 @@ Preset.Presets = {
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 }
+            },
+            Parts = {
             }
         },
         Shredder = {
@@ -297,6 +299,13 @@ Preset.Presets = {
                     Value = 1,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
+                }
+            },
+            Parts = {
+                {
+                    Slot = Glossary.PartSlots.Weapon.Iconic.Ranged,
+                    Part = Glossary.Mods.Ranged.Iconic.BaXingChong,
+                    Quality = Glossary.Quality.Epic
                 }
             }
         },
@@ -456,6 +465,8 @@ Preset.Presets = {
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 }
+            },
+            Parts = {
             }
         },
         Mikoto = {
@@ -573,6 +584,13 @@ Preset.Presets = {
                     Value = 1,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
+                }
+            },
+            Parts = {
+                {
+                    Slot = Glossary.PartSlots.Weapon.Iconic.Ranged,
+                    Part = Glossary.Mods.Ranged.Iconic.YingLong,
+                    Quality = Glossary.Quality.Epic
                 }
             }
         },
@@ -692,6 +710,8 @@ Preset.Presets = {
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 }
+            },
+            Parts = {
             }
         },
         KunaiWithChain = {
@@ -785,6 +805,8 @@ Preset.Presets = {
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 }
+            },
+            Parts = {
             }
         }
     }

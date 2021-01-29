@@ -1,13 +1,13 @@
 -- Pre-built outfit quickhacks for easy use. Mostly just things I like personally.
-local Outfits = {
+local OutfitHack = {
     rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
 }
 
-local Logger = require(Outfits.rootPath .. "utility.logger")
-local Glossary = require(Outfits.rootPath .. "data.glossary")
-local ItemHandler = require(Outfits.rootPath .. "handler.item")
+local Logger = require(OutfitHack.rootPath .. "utility.logger")
+local Glossary = require(OutfitHack.rootPath .. "data.glossary")
+local ItemHandler = require(OutfitHack.rootPath .. "handler.item")
 
-function Outfits:GiveFemaleNomadCustomOutfit()
+function OutfitHack:GiveFemaleNomadCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Jacket_14_basic_01",
@@ -81,7 +81,7 @@ function Outfits:GiveFemaleNomadCustomOutfit()
     self.itemhandler:GiveMultiple(itemspecs)
 end
 
-function Outfits:GiveFemaleCorpoCustomOutfit()
+function OutfitHack:GiveFemaleCorpoCustomOutfit()
     local itemspecs = {
         {
             item = "Items.Fixer_01_Set_Glasses",
@@ -167,7 +167,7 @@ function Outfits:GiveFemaleCorpoCustomOutfit()
     self.itemhandler:GiveMultiple(itemspecs)
 end
 
-function Outfits:New(parent)
+function OutfitHack:New(parent)
 
     local I = {}
     setmetatable(I, self)
@@ -183,4 +183,4 @@ function Outfits:New(parent)
 
 end
 
-return Outfits
+return OutfitHack
