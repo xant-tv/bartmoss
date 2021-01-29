@@ -73,6 +73,7 @@ function ArmorCheatsTab:DoModifiers()
     -- Add this delta to the item armor state value.
     self.state.ItemArmor.Value = self.state.ItemArmor.Value + (self.state.Armor.Value - self.state.Armor.Read)
     self:AddModifier(self.state.ItemArmor, Glossary.Stats.ItemArmor, "Float")
+    self.state.Armor.Read = self.state.Armor.Value
     self:SetModifier(self.state.IsItemIconic, Glossary.Stats.IsItemIconic, "Boolean")
     self:SetModifier(self.state.IsItemCrafted, Glossary.Stats.IsItemCrafted, "Boolean")
 end
