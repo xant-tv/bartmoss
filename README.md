@@ -20,8 +20,8 @@ In future Bartmoss may let you:
  - [Frequently Asked Questions](docs/FAQ.md)
 
 ## Requirements
- - Cyberpunk 2077 (version 1.0.6)
- - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.9.2+)
+ - Cyberpunk 2077 (version 1.11.0)
+ - [CyberEngineTweaks](https://github.com/yamashi/CyberEngineTweaks) (version 1.9.5+)
 
 ## Installation
 ```bash

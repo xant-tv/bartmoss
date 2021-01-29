@@ -1,7 +1,7 @@
 # Release Notes
 Patch notes will go here until I track releases properly through Git - hopefully some time this year.
 
-## 0.8.0
+## 0.8.0 - 23/01/2021
 Three primary focuses for this release:
  - Shift to a more object-oriented paradigm (internally-facing only). 
  - Glossary and item tagging improvements.
@@ -20,11 +20,11 @@ Personal comments:
  - Correctly clearing slots required rewriting the `Crafting:ClearNonIconicSlots` method.
  - This needed a workaround for the `Transaction:RemovePart` method which appears to regularly return the _incorrect_ part.
 
-## 0.8.1
+## 0.8.1 - 26/01/2021
 Minor code changes and preparation for proper releases:
  - Run `package.sh` to create mod archive.
 
-## 0.8.2
+## 0.8.2 - 29/01/2021
 Focus of this release:
  - Further glossary expansions.
  - Early exploratory work into perks and vehicles.
