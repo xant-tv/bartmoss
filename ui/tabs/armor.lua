@@ -1,14 +1,13 @@
-local ArmorCheatsTab = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Tab for clothing-related interaction.
+local ArmorCheatsTab = {}
 
-local Logger = require(ArmorCheatsTab.rootPath .. "utility.logger")
-local Widget = require(ArmorCheatsTab.rootPath .. "utility.widget")
-local Style = require(ArmorCheatsTab.rootPath .. "ui.style")
-local State = require(ArmorCheatsTab.rootPath .. "ui.state")
-local Glossary = require(ArmorCheatsTab.rootPath .. "data.glossary")
-local ItemHandler = require(ArmorCheatsTab.rootPath .. "handler.item")
-local EquipmentHandler = require(ArmorCheatsTab.rootPath .. "handler.equipment")
+local Logger = require("utility/logger")
+local Widget = require("utility/widget")
+local Style = require("ui/style")
+local State = require("ui/state")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
+local EquipmentHandler = require("handler/equipment")
 
 function ArmorCheatsTab:SetState(element, value, ltype)
     local set = value

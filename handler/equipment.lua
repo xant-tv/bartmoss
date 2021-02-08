@@ -1,12 +1,10 @@
 -- Cheats interacting more-or-less directly with the equipment system.
-local EquipmentHandler = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local EquipmentHandler = {}
 
-local Logger = require(EquipmentHandler.rootPath .. "utility.logger")
-local System = require(EquipmentHandler.rootPath .. "game.system")
-local Glossary = require(EquipmentHandler.rootPath .. "data.glossary")
-local ItemHandler = require(EquipmentHandler.rootPath .. "handler.item")
+local Logger = require("utility/logger")
+local System = require("game/system")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
 
 function EquipmentHandler:GetItemDataInSlot(name, id)
     local player = self.system:Player()

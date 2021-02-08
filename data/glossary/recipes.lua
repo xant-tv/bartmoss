@@ -1,7 +1,5 @@
 -- Recipes for clothing, weapons, mods all contained here.
-local Recipes = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Recipes = {}
 
 -- TODO: Lots of work required to fill this out.
 

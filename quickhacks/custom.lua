@@ -1,10 +1,8 @@
 -- Pre-built custom gear quickhacks for easy use.
-local CustomHack = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local CustomHack = {}
 
-local Logger = require(CustomHack.rootPath .. "utility.logger")
-local ItemHandler = require(CustomHack.rootPath .. "handler.item")
+local Logger = require("utility/logger")
+local ItemHandler = require("handler/item")
 
 function CustomHack:ApplyStat(itemdata, statset)
     local modtype = statset.Stat

@@ -1,9 +1,7 @@
 -- Cheats interacting with the game object directly.
-local GameHandler = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local GameHandler = {}
 
-local Logger = require(GameHandler.rootPath .. "utility.logger")
+local Logger = require("utility/logger")
 
 function GameHandler:GetDisplayText(lockey)
     return Game.GetLocalizedText(lockey)

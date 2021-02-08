@@ -1,7 +1,5 @@
 -- Player trait mapping.
-local Traits = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Traits = {}
 
 -- Note that traits are not meant to be prefixed.
 Traits = {

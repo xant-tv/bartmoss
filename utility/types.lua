@@ -1,6 +1,5 @@
-local Types = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Explicit type conversion utilities.
+local Types = {}
 
 function Types.BoolToNum(value)
     return value == true and 1 or value == false and 0

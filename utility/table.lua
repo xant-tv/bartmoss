@@ -1,9 +1,7 @@
 -- Generic language utilities for table operations.
-local Table = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Table = {}
 
-local String = require(Table.rootPath .. "utility.string")
+local String = require("utility/string")
 
 function Table.SortedIndex(tab)
     local skeys = {}

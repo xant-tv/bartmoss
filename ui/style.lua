@@ -1,8 +1,6 @@
-local Style = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
-
+-- Styling configuration.
 -- Define intelligently to autosize from other properties as needed.
+local Style = {}
 
 Style.Position = {
     App = {

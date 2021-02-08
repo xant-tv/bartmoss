@@ -1,12 +1,11 @@
-local InspectTool = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Debug inspection tool.
+local InspectTool = {}
 
-local Logger = require(InspectTool.rootPath .. "utility.logger")
-local System = require(InspectTool.rootPath .. "game.system")
-local Glossary = require(InspectTool.rootPath .. "data.glossary")
-local GameHandler = require(InspectTool.rootPath .. "handler.game")
-local PlayerHandler = require(InspectTool.rootPath .. "handler.player")
+local Logger = require("utility/logger")
+local System = require("game/system")
+local Glossary = require("data/glossary")
+local GameHandler = require("handler/game")
+local PlayerHandler = require("handler/player")
 
 function InspectTool:ExaminePerks()
     local dspd = self.system:PlayerDevelopmentData()

@@ -1,9 +1,7 @@
 -- Printing utilities for command line output.
-local Printer = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Printer = {}
 
-local Table = require(Printer.rootPath .. "utility.table")
+local Table = require("utility/table")
 
 Printer.Trunk = "    "
 Printer.Branch = "+-- "

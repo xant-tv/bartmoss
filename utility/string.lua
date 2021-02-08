@@ -1,7 +1,5 @@
 -- Generic language utilities for string operations.
-local String = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local String = {}
 
 function String.Contains(subject, pattern, is_regex)
     local is_plain = not is_regex

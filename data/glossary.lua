@@ -1,20 +1,18 @@
 -- Internal glossary for enumeration, lookups, constants and so on.
-local Glossary = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Glossary = {}
 
 -- Dictionary.
-Glossary.Resources = require(Glossary.rootPath .. "data.glossary.resources")
-Glossary.Weapons = require(Glossary.rootPath .. "data.glossary.weapons")
-Glossary.Clothing = require(Glossary.rootPath .. "data.glossary.clothing")
-Glossary.Cyberware = require(Glossary.rootPath .. "data.glossary.cyberware")
-Glossary.Quickhacks = require(Glossary.rootPath .. "data.glossary.quickhacks")
-Glossary.Mods = require(Glossary.rootPath .. "data.glossary.mods")
-Glossary.Attachments = require(Glossary.rootPath .. "data.glossary.attachments")
-Glossary.Recipes = require(Glossary.rootPath .. "data.glossary.recipes")
-Glossary.Perks = require(Glossary.rootPath .. "data.glossary.perks")
-Glossary.Traits = require(Glossary.rootPath .. "data.glossary.traits")
-Glossary.Vehicles = require(Glossary.rootPath .. "data.glossary.vehicles")
+Glossary.Resources = require("data/glossary/resources")
+Glossary.Weapons = require("data/glossary/weapons")
+Glossary.Clothing = require("data/glossary/clothing")
+Glossary.Cyberware = require("data/glossary/cyberware")
+Glossary.Quickhacks = require("data/glossary/quickhacks")
+Glossary.Mods = require("data/glossary/mods")
+Glossary.Attachments = require("data/glossary/attachments")
+Glossary.Recipes = require("data/glossary/recipes")
+Glossary.Perks = require("data/glossary/perks")
+Glossary.Traits = require("data/glossary/traits")
+Glossary.Vehicles = require("data/glossary/vehicles")
 
 -- Enumerations.
 Glossary.Attributes = {

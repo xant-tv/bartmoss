@@ -1,16 +1,15 @@
-local ItemCheatsTab = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Interface tab for item and glossary cheats.
+local ItemCheatsTab = {}
 
-local Logger = require(ItemCheatsTab.rootPath .. "utility.logger")
-local String = require(ItemCheatsTab.rootPath .. "utility.string")
-local Table = require(ItemCheatsTab.rootPath .. "utility.table")
-local Widget = require(ItemCheatsTab.rootPath .. "utility.widget")
-local Utility = require(ItemCheatsTab.rootPath .. "utility.utility")
-local Style = require(ItemCheatsTab.rootPath .. "ui.style")
-local State = require(ItemCheatsTab.rootPath .. "ui.state")
-local Glossary = require(ItemCheatsTab.rootPath .. "data.glossary")
-local ItemHandler = require(ItemCheatsTab.rootPath .. "handler.item")
+local Logger = require("utility/logger")
+local String = require("utility/string")
+local Table = require("utility/table")
+local Widget = require("utility/widget")
+local Utility = require("utility/utility")
+local Style = require("ui/style")
+local State = require("ui/state")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
 
 function ItemCheatsTab:DoGlossary()
     -- Strings are automatically null-padded to buffer length for the input. Need to trim down.

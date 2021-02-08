@@ -1,7 +1,5 @@
 -- Weapon attachments glossary.
-local Attachments = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Attachments = {}
 
 Attachments = {
     Scope = {

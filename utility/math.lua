@@ -1,7 +1,5 @@
 -- Generic language utilities for mathematical operations.
-local Math = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Math = {}
 
 function Math.SafeFloor(x)
     -- Lots of game stats are stored/returned as floats (e.g. player level, item quality).

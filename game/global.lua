@@ -1,7 +1,5 @@
 -- Global initialisation on mod load.
-local Global = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Global = {}
 
 function Global.OnLoad()
     Game["CreateStatModifier"] = Game["gameRPGManager::CreateStatModifier;gamedataStatTypegameStatModifierTypeFloat"]

@@ -1,7 +1,5 @@
 -- Logging utilities for command line output.
-local Logger = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Logger = {}
 
 function Logger:Format(raw, simple)
     local module = self.module

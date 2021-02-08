@@ -1,16 +1,15 @@
-local QuickhacksTab = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Quickhack tab interface.
+local QuickhacksTab = {}
 
-local Logger = require(QuickhacksTab.rootPath .. "utility.logger")
-local String = require(QuickhacksTab.rootPath .. "utility.string")
-local Widget = require(QuickhacksTab.rootPath .. "utility.widget")
-local Style = require(QuickhacksTab.rootPath .. "ui.style")
-local State = require(QuickhacksTab.rootPath .. "ui.state")
-local Preset = require(QuickhacksTab.rootPath .. "data.preset")
-local OutfitHack = require(QuickhacksTab.rootPath .. "quickhacks.outfits")
-local InventoryHack = require(QuickhacksTab.rootPath .. "quickhacks.inventory")
-local CustomHack = require(QuickhacksTab.rootPath .. "quickhacks.custom")
+local Logger = require("utility/logger")
+local String = require("utility/string")
+local Widget = require("utility/widget")
+local Style = require("ui/style")
+local State = require("ui/state")
+local Preset = require("data/preset")
+local OutfitHack = require("quickhacks/outfits")
+local InventoryHack = require("quickhacks/inventory")
+local CustomHack = require("quickhacks/custom")
 
 function QuickhacksTab:DoUpgrade()
     self.hacks.inventory:UpgradeMe()

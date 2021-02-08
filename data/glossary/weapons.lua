@@ -1,7 +1,5 @@
 -- Weapons (ranged, melee, grenades) dictionary.
-local Weapons = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Weapons = {}
 
 Weapons = {
     Ranged = {

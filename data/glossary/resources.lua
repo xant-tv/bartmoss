@@ -1,7 +1,5 @@
 -- Resources (money, crafting, stackables) dictionary.
-local Resources = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Resources = {}
 
 Resources = {
     Money = "Items.money",

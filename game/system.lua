@@ -1,9 +1,7 @@
 -- Direct access to system (game) layer.
-local System = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local System = {}
 
-local Logger = require(System.rootPath .. "utility.logger")
+local Logger = require("utility/logger")
 
 function System:Player()
     return Game.GetPlayer()

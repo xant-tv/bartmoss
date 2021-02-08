@@ -1,7 +1,5 @@
 -- Cyberware items glossary. Cybermods are in the mods glossary.
-local Cyberware = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Cyberware = {}
 
 Cyberware = {
     Arms = {

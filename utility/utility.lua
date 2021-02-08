@@ -1,12 +1,10 @@
 -- Interface utilities for command line operation.
-local Utility = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Utility = {}
 
-local Table = require(Utility.rootPath .. "utility.table")
-local String = require(Utility.rootPath .. "utility.string")
-local Printer = require(Utility.rootPath .. "utility.printer")
-local Glossary = require(Utility.rootPath .. "data.glossary")
+local Table = require("utility/table")
+local String = require("utility/string")
+local Printer = require("utility/printer")
+local Glossary = require("data/glossary")
 
 function Utility.Describe(input)
     if type(input) ~= "table" then

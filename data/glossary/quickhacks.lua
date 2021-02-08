@@ -1,7 +1,5 @@
 -- Quickhack glossary.
-local Quickhacks = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Quickhacks = {}
 
 Quickhacks = {
     Contagion = {

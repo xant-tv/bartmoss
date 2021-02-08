@@ -1,10 +1,9 @@
-local State = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- State definition. Could switch to database in the future.
+local State = {}
 
-local Glossary = require(State.rootPath .. "data.glossary")
-local Preset = require(State.rootPath .. "data.preset")
-local Table = require(State.rootPath .. "utility.table")
+local Glossary = require("data/glossary")
+local Preset = require("data/preset")
+local Table = require("utility/table")
 
 State.QuickhackTab = {}
 State.QuickhackTab.PresetOptions = Preset.List

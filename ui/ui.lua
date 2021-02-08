@@ -1,12 +1,11 @@
-local UI = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Parent user interface object.
+local UI = {}
 
-local Logger = require(UI.rootPath .. "utility.logger")
-local DrawTool = require(UI.rootPath .. "ui.draw")
+local Logger = require("utility/logger")
+local DrawTool = require("ui/draw")
 
 function UI:Init()
-    self.logger:Debug("Init: " .. self.app.name .. " (" .. self.app.version .. ") successfully loaded!")
+    self.logger:Info("Init: " .. self.app.name .. " (" .. self.app.version .. ") successfully loaded!")
 end
 
 function UI:Update(delta)

@@ -1,12 +1,10 @@
 -- Pre-built inventory quickhacks for easy use.
-local InventoryHack = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local InventoryHack = {}
 
-local Logger = require(InventoryHack.rootPath .. "utility.logger")
-local Glossary = require(InventoryHack.rootPath .. "data.glossary")
-local ItemHandler = require(InventoryHack.rootPath .. "handler.item")
-local EquipmentHandler = require(InventoryHack.rootPath .. "handler.equipment")
+local Logger = require("utility/logger")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
+local EquipmentHandler = require("handler/equipment")
 
 function InventoryHack:GiveEndgameMods()
     local itemspecs = {

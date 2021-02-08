@@ -1,7 +1,5 @@
 -- Player perk mapping.
-local Perks = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Perks = {}
 
 -- Perks are separated by governing skill.
 -- They are grouped into areas - which has nothing to do with any practical aspects of the skill.

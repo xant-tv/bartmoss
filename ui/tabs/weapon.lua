@@ -1,15 +1,14 @@
-local WeaponCheatsTab = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Tab for weapons-related interaction.
+local WeaponCheatsTab = {}
 
-local Logger = require(WeaponCheatsTab.rootPath .. "utility.logger")
-local Widget = require(WeaponCheatsTab.rootPath .. "utility.widget")
-local Style = require(WeaponCheatsTab.rootPath .. "ui.style")
-local Layout = require(WeaponCheatsTab.rootPath .. "ui.layout")
-local State = require(WeaponCheatsTab.rootPath .. "ui.state")
-local Glossary = require(WeaponCheatsTab.rootPath .. "data.glossary")
-local ItemHandler = require(WeaponCheatsTab.rootPath .. "handler.item")
-local EquipmentHandler = require(WeaponCheatsTab.rootPath .. "handler.equipment")
+local Logger = require("utility/logger")
+local Widget = require("utility/widget")
+local Style = require("ui/style")
+local Layout = require("ui/layout")
+local State = require("ui/state")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
+local EquipmentHandler = require("handler/equipment")
 
 function WeaponCheatsTab:SetState(element, value, ltype)
     local set = value

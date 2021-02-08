@@ -1,15 +1,13 @@
 -- Cheats interacting with items and transactional systems.
-local ItemHandler = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local ItemHandler = {}
 
-local Logger = require(ItemHandler.rootPath .. "utility.logger")
-local Table = require(ItemHandler.rootPath .. "utility.table")
-local Math = require(ItemHandler.rootPath .. "utility.math")
-local System = require(ItemHandler.rootPath .. "game.system")
-local GameHandler = require(ItemHandler.rootPath .. "handler.game")
-local PlayerHandler = require(ItemHandler.rootPath .. "handler.player")
-local Glossary = require(ItemHandler.rootPath .. "data.glossary")
+local Logger = require("utility/logger")
+local Table = require("utility/table")
+local Math = require("utility/math")
+local System = require("game/system")
+local GameHandler = require("handler/game")
+local PlayerHandler = require("handler/player")
+local Glossary = require("data/glossary")
 
 function ItemHandler:IsStackable(item)
     return Table.HasValue(Glossary.IsStackable, item)

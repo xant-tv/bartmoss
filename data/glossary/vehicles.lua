@@ -1,7 +1,5 @@
 -- Vehicles glossary for anyone who wants to play with this.
-local Vehicles = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Vehicles = {}
 
 -- Mostly placeholder for now.
 Vehicles = {

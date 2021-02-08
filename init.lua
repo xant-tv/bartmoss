@@ -2,29 +2,22 @@
 local Bartmoss = {
     app = {
         name = "Bartmoss Suite",
-        version = "0.8.3"
-    },
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
+        version = "0.8.4-alpha"
+    }
 }
 
-for k, _ in pairs(package.loaded) do
-    if string.match(k, Bartmoss.rootPath .. ".*") then
-        package.loaded[k] = nil
-    end
-end
-
-local Logger = require(Bartmoss.rootPath .. "utility.logger")
-local Global = require(Bartmoss.rootPath .. "game.global")
-local System = require(Bartmoss.rootPath .. "game.system")
-local GameHandler = require(Bartmoss.rootPath .. "handler.game")
-local PlayerHandler = require(Bartmoss.rootPath .. "handler.player")
-local ItemHandler = require(Bartmoss.rootPath .. "handler.item")
-local EquipmentHandler = require(Bartmoss.rootPath .. "handler.equipment")
-local OutfitHack = require(Bartmoss.rootPath .. "quickhacks.outfits")
-local InventoryHack = require(Bartmoss.rootPath .. "quickhacks.inventory")
-local CustomHack = require(Bartmoss.rootPath .. "quickhacks.custom")
-local InspectTool = require(Bartmoss.rootPath .. "tools.inspect")
-local UI = require(Bartmoss.rootPath .. "ui.ui")
+local Logger = require("utility/logger")
+local Global = require("game/global")
+local System = require("game/system")
+local GameHandler = require("handler/game")
+local PlayerHandler = require("handler/player")
+local ItemHandler = require("handler/item")
+local EquipmentHandler = require("handler/equipment")
+local OutfitHack = require("quickhacks/outfits")
+local InventoryHack = require("quickhacks/inventory")
+local CustomHack = require("quickhacks/custom")
+local InspectTool = require("tools/inspect")
+local UI = require("ui/ui")
 
 function Bartmoss:New()
 
@@ -36,8 +29,8 @@ function Bartmoss:New()
     -- Load modules into memory.
     I.Logger = Logger:New(spdlog)
     I.System = System:New(I.Logger)
-    I.Utility = require(self.rootPath .. "utility.utility")
-    I.Glossary = require(self.rootPath .. "data.glossary")
+    I.Utility = require("utility/utility")
+    I.Glossary = require("data/glossary")
     I.Handler = {
         Game = GameHandler:New(I.Logger),
         Player = PlayerHandler:New(I.Logger),

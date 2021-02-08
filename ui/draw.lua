@@ -1,15 +1,14 @@
-local Draw = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Draw tool object to hold tabs.
+local Draw = {}
 
-local Logger = require(Draw.rootPath .. "utility.logger")
-local Widget = require(Draw.rootPath .. "utility.widget")
-local Style = require(Draw.rootPath .. "ui.style")
-local QuickhacksTab = require(Draw.rootPath .. "ui.tabs.qh")
-local PlayerCheatsTab = require(Draw.rootPath .. "ui.tabs.player")
-local ItemCheatsTab = require(Draw.rootPath .. "ui.tabs.item")
-local WeaponCheatsTab = require(Draw.rootPath .. "ui.tabs.weapon")
-local ArmorCheatsTab = require(Draw.rootPath .. "ui.tabs.armor")
+local Logger = require("utility/logger")
+local Widget = require("utility/widget")
+local Style = require("ui/style")
+local QuickhacksTab = require("ui/tabs/qh")
+local PlayerCheatsTab = require("ui/tabs/player")
+local ItemCheatsTab = require("ui/tabs/item")
+local WeaponCheatsTab = require("ui/tabs/weapon")
+local ArmorCheatsTab = require("ui/tabs/armor")
 
 function Draw:SetWindowSize()
     Widget.SetNextWindowPos(Style.Position.App.X, Style.Position.App.Y)

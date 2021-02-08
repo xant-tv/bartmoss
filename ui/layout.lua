@@ -1,6 +1,5 @@
-local Layout = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Complex layout configuration.
+local Layout = {}
 
 Layout = {
     WeaponsTab = {

@@ -1,12 +1,10 @@
 -- Cheats interacting with the player themselves.
-local PlayerHandler = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local PlayerHandler = {}
 
-local Logger = require(PlayerHandler.rootPath .. "utility.logger")
-local Math = require(PlayerHandler.rootPath .. "utility.math")
-local System = require(PlayerHandler.rootPath .. "game.system")
-local Glossary = require(PlayerHandler.rootPath .. "data.glossary")
+local Logger = require("utility/logger")
+local Math = require("utility/math")
+local System = require("game/system")
+local Glossary = require("data/glossary")
 
 function PlayerHandler:GetStat(stat)
     local player = self.system:Player()

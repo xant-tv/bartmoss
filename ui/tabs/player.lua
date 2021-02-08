@@ -1,12 +1,11 @@
-local PlayerCheatsTab = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Interface for direct interaction with player cheats.
+local PlayerCheatsTab = {}
 
-local Logger = require(PlayerCheatsTab.rootPath .. "utility.logger")
-local Widget = require(PlayerCheatsTab.rootPath .. "utility.widget")
-local Style = require(PlayerCheatsTab.rootPath .. "ui.style")
-local State = require(PlayerCheatsTab.rootPath .. "ui.state")
-local PlayerHandler = require(PlayerCheatsTab.rootPath .. "handler.player")
+local Logger = require("utility/logger")
+local Widget = require("utility/widget")
+local Style = require("ui/style")
+local State = require("ui/state")
+local PlayerHandler = require("handler/player")
 
 function PlayerCheatsTab:DoExperience()
     local amount = self.state.ExpAmount

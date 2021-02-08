@@ -1,9 +1,7 @@
 -- Pre-built custom gear presets.
-local Preset = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Preset = {}
 
-local Glossary = require(Preset.rootPath .. "data.glossary")
+local Glossary = require("data/glossary")
 
 Preset = {}
 Preset.Presets = {

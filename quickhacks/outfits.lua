@@ -1,11 +1,9 @@
 -- Pre-built outfit quickhacks for easy use. Mostly just things I like personally.
-local OutfitHack = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local OutfitHack = {}
 
-local Logger = require(OutfitHack.rootPath .. "utility.logger")
-local Glossary = require(OutfitHack.rootPath .. "data.glossary")
-local ItemHandler = require(OutfitHack.rootPath .. "handler.item")
+local Logger = require("utility/logger")
+local Glossary = require("data/glossary")
+local ItemHandler = require("handler/item")
 
 function OutfitHack:GiveFemaleNomadCustomOutfit()
     local itemspecs = {

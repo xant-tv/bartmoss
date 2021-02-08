@@ -1,7 +1,5 @@
 -- Mods for clothing, weapons, items, etc.
-local Mods = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local Mods = {}
 
 Mods = {
     Clothing = {

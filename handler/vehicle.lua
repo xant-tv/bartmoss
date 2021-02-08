@@ -1,11 +1,9 @@
 -- Cheats interacting with the vehicle system.
-local VehicleHandler = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+local VehicleHandler = {}
 
-local Logger = require(VehicleHandler.rootPath .. "utility.logger")
-local System = require(VehicleHandler.rootPath .. "game.system")
-local Glossary = require(VehicleHandler.rootPath .. "data.glossary")
+local Logger = require("utility/logger")
+local System = require("game/system")
+local Glossary = require("data/glossary")
 
 function VehicleHandler:EnableVehicle(vehicle)
     local vs = self.system:Vehicle()

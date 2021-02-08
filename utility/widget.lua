@@ -1,8 +1,7 @@
-local Widget = {
-    rootPath = "plugins.cyber_engine_tweaks.mods.bartmoss."
-}
+-- Widget wrapping user interface binds.
+local Widget = {}
 
-local Types = require(Widget.rootPath .. "utility.types")
+local Types = require("utility/types")
 
 Widget.Color = {
     White  = {1.00, 1.00, 1.00, 1.00},
