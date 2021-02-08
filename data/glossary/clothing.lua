@@ -775,6 +775,237 @@ Clothing = {
         }
     },
     Legs = {
+        FormalPants = {
+            Pleated = {
+                Sturdy = "Items.FormalPants_01_basic_01",
+                Classic = "Items.FormalPants_01_basic_02",
+                Durable = "Items.FormalPants_01_basic_03",
+                Puncture = "Items.FormalPants_01_old_01",
+                TactiCloth = "Items.FormalPants_01_old_02"
+            },
+            Corporate = {
+                Classic = "Items.FormalPants_02_basic_01",
+                Bordeaux = "Items.FormalPants_02_basic_02",
+                Flash = "Items.FormalPants_02_basic_03",
+                BaiLong = "Items.FormalPants_02_rich_01",
+                RoyalGray = "Items.FormalPants_02_rich_02",
+                GoldenHive = "Items.FormalPants_02_rich_03"
+            },
+            Office = {
+                Simple = "Items.FormalPants_03_basic_01",
+                Custom = "Items.FormalPants_03_old_01",
+                SpeedAddict = "Items.FormalPants_03_old_02",
+                Marble = "Items.FormalPants_03_rich_01",
+                Brass = "Items.FormalPants_03_rich_02"
+            }
+        },
+        FormalSkirt = {
+            Straight = {
+                Plaid = "Items.FormalSkirt_01_basic_01",
+                Classy = "Items.FormalSkirt_01_basic_02",
+                PowderPink = "Items.FormalSkirt_01_basic_03",
+                Bitch = "Items.FormalSkirt_01_basic_04",
+                Golden = "Items.FormalSkirt_01_rich_01",
+                Mosaic = "Items.FormalSkirt_01_rich_02",
+                Arasaka = "Items.FormalSkirt_01_rich_03"
+            },
+            Angled = {
+                TearResist = "Items.FormalSkirt_02_basic_01",
+                Burgundy = "Items.FormalSkirt_02_basic_02",
+                Saeko = "Items.FormalSkirt_02_basic_03",
+                Heise = "Items.FormalSkirt_02_rich_01",
+                Brass = "Items.FormalSkirt_02_rich_02",
+                Chich = "Items.FormalSkirt_02_rich_03"
+            }
+        },
+        Pants = {
+            SlimFit = {
+                Rocker = "Items.Pants_01_basic_01",
+                Azure = "Items.Pants_01_basic_02",
+                Sturdy = "Items.Pants_01_basic_03",
+                Spotted = "Items.Pants_01_old_01",
+                Camo = "Items.Pants_01_old_02",
+                Duoweave = "Items.Pants_01_old_03",
+                RosaEscarlata = "Items.Pants_01_rich_01",
+                Basilisk = "Items.Pants_01_rich_02",
+                Denkyoku = "Items.Pants_01_rich_03"
+            },
+            LooseFit = {
+                Smiley = "Items.Pants_02_basic_01",
+                YoruNoSamurai = "Items.Pants_02_basic_02",
+                StreetGlow = "Items.Pants_02_basic_03",
+                Duoweave = "Items.Pants_02_old_01",
+                Workplace = "Items.Pants_02_old_02",
+                Micromesh = "Items.Pants_02_old_03",
+                HolyRose = "Items.Pants_02_rich_01",
+                Chikurin = "Items.Pants_02_rich_02",
+                PurpleDragon = "Items.Pants_02_rich_03"
+            },
+            Jeans = {
+                Sturdy = "Items.Pants_03_basic_01",
+                Canine = "Items.Pants_03_basic_02",
+                Bitch = "Items.Pants_03_basic_03",
+                Frayed = "Items.Pants_03_old_01",
+                Patched = "Items.Pants_03_old_02",
+                Custom = "Items.Pants_03_old_03",
+                Saeko = "Items.Pants_03_rich_01",
+                DarkSapphire = "Items.Pants_03_rich_02",
+                Psycho = "Items.Pants_03_rich_03"
+            },
+            Cargo = {
+                Slim = {
+                    Geisha = "Items.Pants_04_basic_01",
+                    Mandarine = "Items.Pants_04_basic_02",
+                    Kancho = "Items.Pants_04_basic_03",
+                    Samurai = "Items.Pants_04_basic_04",
+                    Worn = "Items.Pants_04_old_01",
+                    SynFiber = "Items.Pants_04_old_02",
+                    Rubber = "Items.Pants_04_old_03",
+                    OroFloreciente = "Items.Pants_04_rich_01",
+                    SilverStar = "Items.Pants_04_rich_02",
+                    Cyano = "Items.Pants_04_rich_03"
+                },
+                Full = {
+                    ArmyStar = "Items.Pants_11_basic_01",
+                    Caution = "Items.Pants_11_basic_02",
+                    Phantom = "Items.Pants_11_basic_03",
+                    TactiCloth = "Items.Pants_11_old_01",
+                    Nomad = "Items.Pants_11_old_02",
+                    SixthStreet = "Items.Pants_11_old_03",
+                    Slant = "Items.Pants_11_rich_01",
+                    PurpleShock = "Items.Pants_11_rich_02",
+                    PowerFame = "Items.Pants_11_rich_03"
+                }
+            },
+            Racers = {
+                Punk = "Items.Pants_05_basic_01",
+                Padded = "Items.Pants_05_basic_02",
+                Military = "Items.Pants_05_old_01",
+                Psycho = "Items.Pants_05_old_02",
+                Candy = "Items.Pants_05_rich_01",
+                YoruNoSamurai = "Items.Pants_05_rich_02"
+            },
+            Straightcuts = {
+                Federalist = "Items.Pants_06_basic_01",
+                SombaRosa = "Items.Pants_06_basic_02",
+                Vintage = "Items.Pants_06_old_01",
+                TactiCloth = "Items.Pants_06_old_02",
+                Reinforced = "Items.Pants_06_old_03",
+                CraneoBrillante = "Items.Pants_06_rich_01",
+                Golpe = "Items.Pants_06_rich_02"
+            },
+            Tactical = {
+                SuichuYogan = "Items.Pants_07_basic_01",
+                Geisha = "Items.Pants_07_basic_02",
+                Comfy = "Items.Pants_07_basic_03",
+                Flazh = "Items.Pants_07_old_01",
+                KangTao = "Items.Pants_07_old_02",
+                Maelstrom = "Items.Pants_07_old_03",
+                BouletTurquoise = "Items.Pants_07_rich_01",
+                AtomicBlast = "Items.Pants_07_rich_02",
+                Decadencia = "Items.Pants_07_rich_03"
+            },
+            Neotac = {
+                Militech = "Items.Pants_08_basic_01",
+                Boostknit = "Items.Pants_08_basic_02",
+                Rubber = "Items.Pants_08_basic_03",
+                BananaJuice = "Items.Pants_08_old_01",
+                Maelstrom = "Items.Pants_08_old_02",
+                Wraiths = "Items.Pants_08_old_03",
+                GoldFury = "Items.Pants_08_rich_01",
+                UrbanLaser = "Items.Pants_08_rich_02",
+                Ocean = "Items.Pants_08_rich_03"
+            },
+            Utility = {
+                AmethySpeed = "Items.Pants_09_basic_01",
+                Midori = "Items.Pants_09_basic_02",
+                Wraiths = "Items.Pants_09_old_01",
+                Performance = "Items.Pants_09_old_02",
+                Composite = "Items.Pants_09_old_03",
+                ATAK = "Items.Pants_09_rich_01",
+                Tamashi = "Items.Pants_09_rich_02"
+            },
+            Shinos = {
+                SixthStreet = "Items.Pants_10_basic_01",
+                Cyan = "Items.Pants_10_basic_02",
+                HeatResist = "Items.Pants_10_old_01",
+                Cowboy = "Items.Pants_10_old_02",
+                Ten70 = "Items.Pants_10_rich_01",
+                StripeBlack = "Items.Pants_10_rich_02"
+            },
+            Windbreaker = {
+                Durable = "Items.Pants_12_basic_01",
+                SweetLicks = "Items.Pants_12_basic_02",
+                ATAK = "Items.Pants_12_basic_03",
+                MaxiWear = "Items.Pants_12_old_01",
+                Saeko = "Items.Pants_12_old_02",
+                RedDeath = "Items.Pants_12_old_03",
+                SudoClaws = "Items.Pants_12_rich_01",
+                TGTiger = "Items.Pants_12_rich_02",
+                Golden = "Items.Pants_12_rich_03"
+            },
+            Riding = {
+                VenomDye = "Items.Pants_13_basic_01",
+                Wraiths = "Items.Pants_13_basic_02",
+                Military = "Items.Pants_13_basic_03",
+                Ultra = "Items.Pants_13_old_01",
+                RottenJungle = "Items.Pants_13_old_02",
+                Maelstrom = "Items.Pants_13_old_03",
+                ComfyTrickster = "Items.Pants_13_rich_01",
+                Flamingo = "Items.Pants_13_rich_02"
+            },
+            Yoros = {
+                Psycho = "Items.Pants_14_basic_01",
+                Tiger = "Items.Pants_14_basic_02",
+                Simple = "Items.Pants_14_old_01",
+                YoruNoSamurai = "Items.Pants_14_old_02",
+                Midori = "Items.Pants_14_rich_01",
+                Ryu = "Items.Pants_14_rich_02"
+            },
+            Harem = {
+                Flexi = "Items.Pants_15_basic_01",
+                Sporty = "Items.Pants_15_basic_02",
+                Elastic = "Items.Pants_15_old_01",
+                PinkLagoon = "Items.Pants_15_rich_01"
+            }
+        },
+        Shorts = {
+            CutOff = {
+                Denim = "Items.Shorts_01_basic_01",
+                Composite = "Items.Shorts_01_old_01",
+                Puncture = "Items.Shorts_01_old_02",
+                Gold = "Items.Shorts_01_old_03",
+                Magenta = "Items.Shorts_01_rich_01"
+            },
+            Hotpants = {
+                Hybrid = "Items.Shorts_02_basic_01",
+                BlueBrick = "Items.Shorts_02_basic_02",
+                Trilayer = "Items.Shorts_02_old_01",
+                HeatResist = "Items.Shorts_02_old_02",
+                Golden = "Items.Shorts_02_rich_01",
+                KoJaga = "Items.Shorts_02_rich_02"
+            },
+            Athletic = {
+                Classic = "Items.Shorts_03_basic_01",
+                Aramid = "Items.Shorts_03_basic_02",
+                N54 = "Items.Shorts_03_basic_03",
+                Old = "Items.Shorts_03_old_01",
+                Green = "Items.Shorts_03_rich_01"
+            },
+            Jean = {
+                Composite = "Items.Shorts_04_old_01",
+                Frayed = "Items.Shorts_04_old_02",
+                Military = "Items.Shorts_04_old_03",
+                Faded = "Items.Shorts_04_old_04"
+            },
+            Mixed = {
+                Military = "Items.Shorts_05_old_01",
+                SynThreaded = "Items.Shorts_05_old_02",
+                Electro = "Items.Shorts_05_old_03",
+                Grauer = "Items.Shorts_05_old_04",
+                Comfy = "Items.Shorts_05_old_05"
+            }
+        },
         Special = {
             Police = "Items.Cop_01_Set_Pants",
             Corpo = "Items.Corporate_01_Set_Pants",
