@@ -78,7 +78,7 @@ function WeaponCheatsTab:Inspect()
     local slot = "Weapon"
     local id = self.state.SlotSelect
     local stats = {}
-    self.logger:Debug("InspectWeapon: " .. slot .. id + 1)
+    self.logger:Info("InspectWeapon: " .. slot .. id + 1)
     self.state.ItemData = self.handler.equipment:GetItemDataInSlot(slot, id)
     if self.state.ItemData then
         stats = self.handler.item:Inspect(self.state.ItemData)

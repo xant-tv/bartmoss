@@ -71,7 +71,7 @@ function EquipmentHandler:UpgradeEquipped()
             local itemid = espd:GetItemInEquipSlot(k, i - 1)
             -- Skip empty slots.
             if itemid.tdbid.hash ~= 0 then
-                self.logger:Debug("UpgradeEquipped: " .. k .. " | " .. (i - 1))
+                self.logger:Info("UpgradeEquipped: " .. k .. " | " .. (i - 1))
                 local itemdata = ts:GetItemData(player, itemid)
                 -- Sets quality and level (not provided will auto-scale to player).
                 self:Upgrade(itemdata, Glossary.Quality.Legendary)
@@ -93,7 +93,7 @@ function EquipmentHandler:UpgradeInventory()
         for key, item in pairs(tab) do
             local matches = self:FindInventoryItemsMatchingString(item)
             if #matches ~= 0 then
-                self.logger:Debug("UpgradeInventory: " .. key .. " | " .. #matches)
+                self.logger:Info("UpgradeInventory: " .. key .. " | " .. #matches)
             end
             for _, itemdata in ipairs(matches) do
                 -- Sets quality and level (not provided will auto-scale to player).

@@ -11,12 +11,12 @@ function InspectTool:ExaminePerks()
     local dspd = self.system:PlayerDevelopmentData()
     for skill, perks in pairs(Glossary.Perks) do
         for key, perk in pairs(perks) do
-            self.logger:Debug("ExaminePerk: " .. skill .. " > " .. key .. " | " .. perk)
+            self.logger:Info("ExaminePerk: " .. skill .. " > " .. key .. " | " .. perk)
             local perkrec = dspd:GetPerkRecord(perk)
             local name = self.handler.game:GetDisplayText(perkrec:Loc_name_key())
             local desc = self.handler.game:GetDisplayText(perkrec:Loc_desc_key())
-            self.logger:Debug("PerkName: " .. name)
-            self.logger:Debug("PerkDescription: " .. desc)
+            self.logger:Info("PerkName: " .. name)
+            self.logger:Info("PerkDescription: " .. desc)
         end
     end
 end

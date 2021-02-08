@@ -20,7 +20,7 @@ function ItemCheatsTab:DoGlossary()
         is_regex = true
         search = String.WildcardSearch(input)
     end
-    self.logger:Debug("GlossarySearch: " .. input)
+    self.logger:Info("GlossarySearch: " .. input)
     self.state.GlossaryOptions = Table.Filter(self.state.GlossaryPaths, search, is_regex)
     -- Reset any current selections.
     self.state.ItemSelect = 0
@@ -50,7 +50,7 @@ function ItemCheatsTab:DoGiveItem()
         -- This will scale item to player level.
         level = nil
     end
-    self.logger:Debug("GiveItems: " .. itempath .. " | Amount = " .. quantity .. " | Quality = " .. quality .. " | Level = " .. (level or "Auto"))
+    self.logger:Info("GiveItems: " .. itempath .. " | Amount = " .. quantity .. " | Quality = " .. quality .. " | Level = " .. (level or "Auto"))
     self.handler.item:GiveN(item, quantity, quality, level)
 end
 

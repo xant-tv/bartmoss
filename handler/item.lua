@@ -39,7 +39,7 @@ function ItemHandler:SetModifier(itemdata, modtype, calctype, val)
     ss:RemoveAllModifiers(statsobjid, modtype, true)
     local mod = self.handler.game:CreateStatModifier(modtype, calctype, val)
     ss:AddSavedModifier(statsobjid, mod)
-    self.logger:Debug("SetModifier: " .. modtype .. " | " .. calctype .. " | " .. val .. " --> " .. tostring(itemdata:GetID()))
+    self.logger:Info("SetModifier: " .. modtype .. " | " .. calctype .. " | " .. val .. " --> " .. tostring(itemdata:GetID()))
 end
 
 function ItemHandler:AddModifier(itemdata, modtype, calctype, val)
@@ -47,7 +47,7 @@ function ItemHandler:AddModifier(itemdata, modtype, calctype, val)
     local statsobjid = itemdata:GetStatsObjectID()
     local mod = self.handler.game:CreateStatModifier(modtype, calctype, val)
     ss:AddSavedModifier(statsobjid, mod)
-    self.logger:Debug("AddModifier: " .. modtype .. " | " .. calctype .. " | " .. val .. " --> " .. tostring(itemdata:GetID()))
+    self.logger:Info("AddModifier: " .. modtype .. " | " .. calctype .. " | " .. val .. " --> " .. tostring(itemdata:GetID()))
 end
 
 function ItemHandler:GetTags(itemid)
@@ -55,7 +55,7 @@ function ItemHandler:GetTags(itemid)
     local tagobjs = self.handler.game:GetItemRecord(itemid):Tags()
     for _, tagobj in ipairs(tagobjs) do
         if tagobj.value == Glossary.Tags.DummyPart then
-            self.logger:Debug("GetTags: Dummy <-- " .. tostring(itemid))
+            self.logger:Warning("GetTags: Dummy <-- " .. tostring(itemid))
         end
         table.insert(tags, tagobj.value)
     end
@@ -133,7 +133,7 @@ function ItemHandler:SetQuality(itemdata, quality)
     -- If no quality, just exit.
     if not quality then
         local cquality = Math.SafeFloor(self:GetModifier(itemdata, Glossary.Stats.Quality))
-        self.logger:Debug("SetQuality: Default | " .. Glossary.QualityRank[cquality + 1])
+        self.logger:Info("SetQuality: Default | " .. Glossary.QualityRank[cquality + 1])
         return
     end
 
@@ -186,9 +186,9 @@ function ItemHandler:AddPart(itemdata, partdata, slot)
     local partid = partdata:GetID()
     local result = ts:ForcePartInSlot(player, itemid, partid, slot)
     if result then
-        self.logger:Debug("AddPart: Success! | " .. tostring(partid) .. " --> " .. tostring(itemid) .. " @ " .. tostring(slot))
+        self.logger:Info("AddPart: Success! | " .. tostring(partid) .. " --> " .. tostring(itemid) .. " @ " .. tostring(slot))
     else
-        self.logger:Debug("AddPart: Failed!")
+        self.logger:Error("AddPart: Failed!")
     end
     return result
 end
@@ -205,13 +205,13 @@ function ItemHandler:RemovePart(itemdata, slot, keep)
         -- Instead we try to find the part separately.
         local removed = parts[slot.hash]
         if removed then
-            self.logger:Debug("ClearPart: " .. tostring(removed))
+            self.logger:Info("ClearPart: " .. tostring(removed))
             local taglist = self:GetTags(removed)
             if Table.HasValue(taglist, Glossary.Tags.DummyPart) or (not keep) then
                 -- Kind of hacky, as there doesn't seem to be a way to prevent return to player.
                 -- Instead, just remove any dummy items. Can also force part removal (e.g. for new items).
                 ts:RemoveItem(player, removed, 1)
-                self.logger:Debug("RemoveItem: " .. tostring(removed))
+                self.logger:Info("RemoveItem: " .. tostring(removed))
             end
         end
     end
@@ -265,7 +265,7 @@ function ItemHandler:GiveItems(item, n, quality, level)
         if result then
             -- Best way to do this for now until another method to get item data is found.
             -- This requires giving the "base" item to the player, then retrieving the item data from their inventory.
-            self.logger:Debug("GiveItems: Success! | " .. tostring(itemid))
+            self.logger:Info("GiveItems: Success! | " .. tostring(itemid))
             local itemdata = ts:GetItemData(player, itemid)
             self:UnmarkQuest(itemdata)
             self:AllowUnequip(itemdata)
@@ -282,7 +282,7 @@ end
 
 function ItemHandler:GiveResources(item, n)
     local r = self.handler.game:AddToInventory(item, n)
-    self.logger:Debug("GiveResources: Success!")
+    self.logger:Info("GiveResources: Success!")
     return r
 end
 

@@ -50,7 +50,7 @@ function ArmorCheatsTab:Inspect()
     local slot = Glossary.ClothingSlotsInv[slotname]
     local id = 0
     local stats = {}
-    self.logger:Debug("InspectArmor: " .. slot)
+    self.logger:Info("InspectArmor: " .. slot)
     self.state.ItemData = self.handler.equipment:GetItemDataInSlot(slot, id)
     if self.state.ItemData then
         stats = self.handler.item:Inspect(self.state.ItemData)

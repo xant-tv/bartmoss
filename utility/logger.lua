@@ -9,10 +9,19 @@ function Logger:Format(raw, simple)
     return self.template:format(module, tostring(raw))
 end
 
+function Logger:Info(raw)
+    if self.writer then
+        self.writer.info(self:Format(raw))
+        if not self.tee then
+            return
+        end
+    end
+    print(self:Format(raw, true))
+end
+
 function Logger:Debug(raw)
     if self.writer then
-        -- Use warning until low-level messages stop getting ignored.
-        self.writer.warning(self:Format(raw))
+        self.writer.debug(self:Format(raw))
         if not self.tee then
             return
         end
@@ -52,7 +61,7 @@ end
 
 function Logger:Tee(raw)
     if self.writer then
-        self.writer.debug(self:Format(raw))
+        self.writer.info(self:Format(raw))
     end
     print(self:Format(raw, true))
 end

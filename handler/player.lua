@@ -11,7 +11,7 @@ function PlayerHandler:GetStat(stat)
     local ss = self.system:Stats()
     local entity = player:GetEntityID()
     local value = ss:GetStatValue(entity, stat)
-    self.logger:Debug("GetStat: " .. stat .. " = " .. value)
+    self.logger:Info("GetStat: " .. stat .. " = " .. value)
     return value
 end
 
@@ -80,9 +80,9 @@ function PlayerHandler:BuyPerk(perk)
     local dspd = self.system:PlayerDevelopmentData()
     local bought = dspd:BuyPerk(perk)
     if not bought then
-        self.logger:Debug("BuyPerk: Failed! | " .. perk)
+        self.logger:Error("BuyPerk: Failed! | " .. perk)
     else
-        self.logger:Debug("BuyPerk: Success! | " .. perk)
+        self.logger:Info("BuyPerk: Success! | " .. perk)
     end
     return bought
 end
@@ -144,9 +144,9 @@ function PlayerHandler:IncreaseTrait(trait)
     local dspd = self.system:PlayerDevelopmentData()
     local increased = dspd:IncreaseTraitLevel(trait)
     if not increased then
-        self.logger:Debug("IncreaseTrait: Failed! | " .. trait)
+        self.logger:Error("IncreaseTrait: Failed! | " .. trait)
     else
-        self.logger:Debug("IncreaseTrait: Success! | " .. trait)
+        self.logger:Info("IncreaseTrait: Success! | " .. trait)
     end
     return increased
 end
@@ -171,12 +171,12 @@ end
 
 function PlayerHandler:GiveXP(attribute, amount)
     Game.AddExp(attribute, amount)
-    self.logger:Debug("GiveXP: " .. attribute .. " | " .. amount)
+    self.logger:Info("GiveXP: " .. attribute .. " | " .. amount)
 end
 
 function PlayerHandler:GivePoints(ptype, amount)
     Game.GiveDevPoints(ptype, 1)
-    self.logger:Debug("GivePoints: " .. ptype .. " | " .. amount)
+    self.logger:Info("GivePoints: " .. ptype .. " | " .. amount)
 end
 
 function PlayerHandler:New(parent)
