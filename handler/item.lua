@@ -318,18 +318,18 @@ function ItemHandler:GiveMultiple(itemspecs)
     return items
 end
 
-function ItemHandler:New(parent)
+function ItemHandler:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "ItemHandler"
-    I.logger = Logger:New(parent.writer, I.module)
-    I.system = System:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.system = System:New()
     I.handler = {
-        game = GameHandler:New(I.logger),
-        player = PlayerHandler:New(I.logger)
+        game = GameHandler:New(),
+        player = PlayerHandler:New()
     }
 
     return I

@@ -31,14 +31,14 @@ function GameHandler:AddToInventory(item, n)
     return Game.AddToInventory(item, n)
 end
 
-function GameHandler:New(parent)
+function GameHandler:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "GameHandler"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
 
     return I
 

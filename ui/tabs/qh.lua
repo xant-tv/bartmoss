@@ -85,19 +85,19 @@ function QuickhacksTab:Build()
     end
 end
 
-function QuickhacksTab:New(parent)
+function QuickhacksTab:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "QuickhackCheats"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.state = State.QuickhackTab
     I.hacks = {
-        outfit = OutfitHack:New(I.logger),
-        inventory = InventoryHack:New(I.logger),
-        custom = CustomHack:New(I.logger)
+        outfit = OutfitHack:New(),
+        inventory = InventoryHack:New(),
+        custom = CustomHack:New()
     }
 
     return I

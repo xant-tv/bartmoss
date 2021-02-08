@@ -66,13 +66,13 @@ function Logger:Tee(raw)
     print(self:Format(raw, true))
 end
 
-function Logger:New(writer, module, template, tee)
+function Logger:New(module, writer, template, tee)
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
-    I.writer = writer
+    I.writer = writer or spdlog
     I.module = module or "Bartmoss"
     I.template = template or "[%s] %s"
     I.tee = tee or false

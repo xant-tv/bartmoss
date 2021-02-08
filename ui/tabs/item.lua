@@ -125,17 +125,17 @@ function ItemCheatsTab:Build()
     end
 end
 
-function ItemCheatsTab:New(parent)
+function ItemCheatsTab:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "ItemCheats"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.state = State.ItemsTab
     I.handler = {
-        item = ItemHandler:New(I.logger)
+        item = ItemHandler:New()
     }
 
     return I

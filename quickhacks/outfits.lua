@@ -165,16 +165,16 @@ function OutfitHack:GiveFemaleCorpoCustomOutfit()
     self.itemhandler:GiveMultiple(itemspecs)
 end
 
-function OutfitHack:New(parent)
+function OutfitHack:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "OutfitHack"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.handler = {
-        item = ItemHandler:New(I.logger)
+        item = ItemHandler:New()
     }
 
     return I

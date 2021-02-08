@@ -5,7 +5,7 @@ local Logger = require("utility/logger")
 local DrawTool = require("ui/draw")
 
 function UI:Init()
-    self.logger:Info("Init: " .. self.app.name .. " (" .. self.app.version .. ") successfully loaded!")
+    spdlog.info("Init: " .. self.app.name .. " (" .. self.app.version .. ") successfully loaded!")
 end
 
 function UI:Update(delta)
@@ -29,7 +29,7 @@ end
 function UI:Shutdown()
 end
 
-function UI:New(app, parent)
+function UI:New(app)
 
     local I = {}
     setmetatable(I, self)
@@ -37,8 +37,8 @@ function UI:New(app, parent)
 
     I.module = "UI"
     I.app = app
-    I.logger = Logger:New(parent.writer, I.module)
-    I.drawtool = DrawTool:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.drawtool = DrawTool:New()
 
     return I
 

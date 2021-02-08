@@ -68,14 +68,14 @@ function System:InventoryManager()
     return imgr
 end
 
-function System:New(parent)
+function System:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "System"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
 
     return I
 

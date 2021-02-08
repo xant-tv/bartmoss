@@ -10,15 +10,15 @@ function VehicleHandler:EnableVehicle(vehicle)
     vs:EnablePlayerVehicle(vehicle, true, false)
 end
 
-function VehicleHandler:New(parent)
+function VehicleHandler:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "VehicleHandler"
-    I.logger = Logger:New(parent.writer, I.module)
-    I.system = System:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.system = System:New()
 
     return I
 

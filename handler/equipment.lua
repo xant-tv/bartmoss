@@ -103,17 +103,17 @@ function EquipmentHandler:UpgradeInventory()
     end
 end
 
-function EquipmentHandler:New(parent)
+function EquipmentHandler:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "EquipmentHandler"
-    I.logger = Logger:New(parent.writer, I.module)
-    I.system = System:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.system = System:New()
     I.handler = {
-        item = ItemHandler:New(I.logger)
+        item = ItemHandler:New()
     }
 
     return I

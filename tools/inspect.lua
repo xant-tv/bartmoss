@@ -21,18 +21,18 @@ function InspectTool:ExaminePerks()
     end
 end
 
-function InspectTool:New(parent)
+function InspectTool:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "InspectTool"
-    I.logger = Logger:New(parent.writer, I.module)
-    I.system = System:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.system = System:New()
     I.handler = {
-        game = GameHandler:New(parent.writer, I.module),
-        player = PlayerHandler:New(parent.writer, I.module)
+        game = GameHandler:New(),
+        player = PlayerHandler:New()
     }
 
     return I

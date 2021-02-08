@@ -149,17 +149,17 @@ function InventoryHack:UpgradeMe()
     self.handler.equipment:UpgradeInventory()
 end
 
-function InventoryHack:New(parent)
+function InventoryHack:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "InventoryHack"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.handler = {
-        item = ItemHandler:New(I.logger),
-        equipment = EquipmentHandler:New(I.logger)
+        item = ItemHandler:New(),
+        equipment = EquipmentHandler:New()
     }
 
     return I

@@ -27,25 +27,25 @@ function Bartmoss:New()
     self.__index = self
 
     -- Load modules into memory.
-    I.Logger = Logger:New(spdlog)
-    I.System = System:New(I.Logger)
+    I.Logger = Logger:New()
+    I.System = System:New()
     I.Utility = require("utility/utility")
     I.Glossary = require("data/glossary")
     I.Handler = {
-        Game = GameHandler:New(I.Logger),
-        Player = PlayerHandler:New(I.Logger),
-        Items = ItemHandler:New(I.Logger),
-        Equipment = EquipmentHandler:New(I.Logger)
+        Game = GameHandler:New(),
+        Player = PlayerHandler:New(),
+        Items = ItemHandler:New(),
+        Equipment = EquipmentHandler:New()
     }
     I.Quickhacks = {
-        Outfit = OutfitHack:New(I.Logger),
-        Inventory = InventoryHack:New(I.Logger),
-        Custom = CustomHack:New(I.Logger)
+        Outfit = OutfitHack:New(),
+        Inventory = InventoryHack:New(),
+        Custom = CustomHack:New()
     }
     I.Tools = {
-        Inspect = InspectTool:New(I.Logger)
+        Inspect = InspectTool:New()
     }
-    I.UI = UI:New(self.app, I.Logger)
+    I.UI = UI:New(self.app)
 
     -- Run any initialisation functions.
     Global.OnLoad()

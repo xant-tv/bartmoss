@@ -34,20 +34,20 @@ function Draw:Build(app)
     end
 end
 
-function Draw:New(parent)
+function Draw:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "DrawTool"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.tab = {
-        quickhacks = QuickhacksTab:New(I.logger),
-        player = PlayerCheatsTab:New(I.logger),
-        item = ItemCheatsTab:New(I.logger),
-        weapon = WeaponCheatsTab:New(I.logger),
-        armor = ArmorCheatsTab:New(I.logger)
+        quickhacks = QuickhacksTab:New(),
+        player = PlayerCheatsTab:New(),
+        item = ItemCheatsTab:New(),
+        weapon = WeaponCheatsTab:New(),
+        armor = ArmorCheatsTab:New()
     }
 
     return I

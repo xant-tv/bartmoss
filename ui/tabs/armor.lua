@@ -140,18 +140,18 @@ function ArmorCheatsTab:Build()
     end
 end
 
-function ArmorCheatsTab:New(parent)
+function ArmorCheatsTab:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "ArmorCheats"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.state = State.ArmorTab
     I.handler = {
-        item = ItemHandler:New(I.logger),
-        equipment = EquipmentHandler:New(I.logger)
+        item = ItemHandler:New(),
+        equipment = EquipmentHandler:New()
     }
 
     return I

@@ -179,15 +179,15 @@ function PlayerHandler:GivePoints(ptype, amount)
     self.logger:Info("GivePoints: " .. ptype .. " | " .. amount)
 end
 
-function PlayerHandler:New(parent)
+function PlayerHandler:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "PlayerHandler"
-    I.logger = Logger:New(parent.writer, I.module)
-    I.system = System:New(I.logger)
+    I.logger = Logger:New(I.module)
+    I.system = System:New()
 
     return I
 

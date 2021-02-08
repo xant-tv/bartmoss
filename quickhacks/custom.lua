@@ -41,16 +41,16 @@ function CustomHack:GiveCustomGear(preset)
     end
 end
 
-function CustomHack:New(parent)
+function CustomHack:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "CustomHack"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.handler = {
-        item = ItemHandler:New(I.logger)
+        item = ItemHandler:New()
     }
 
     return I

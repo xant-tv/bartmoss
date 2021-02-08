@@ -198,18 +198,18 @@ function WeaponCheatsTab:Build()
     end
 end
 
-function WeaponCheatsTab:New(parent)
+function WeaponCheatsTab:New()
 
     local I = {}
     setmetatable(I, self)
     self.__index = self
 
     I.module = "WeaponCheats"
-    I.logger = Logger:New(parent.writer, I.module)
+    I.logger = Logger:New(I.module)
     I.state = State.WeaponsTab
     I.handler = {
-        item = ItemHandler:New(I.logger),
-        equipment = EquipmentHandler:New(I.logger)
+        item = ItemHandler:New(),
+        equipment = EquipmentHandler:New()
     }
 
     return I
