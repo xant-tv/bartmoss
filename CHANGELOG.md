@@ -35,7 +35,7 @@ Change notes:
  - Support for `Development` and `DevelopmentData` systems. These are used for perk interaction among other things.
  - New `PlayerHandler` functions for adding or removing perks. Proper interface planned for next major version.
 
- ## 0.8.3 - 30/01/2021
+## 0.8.3 - 30/01/2021
 Focus of this release:
  - Additional part-related functionality.
  - Complete perk (and traits) glossary and research.
@@ -52,3 +52,9 @@ Change notes:
 Personal comments:
  - Note that locking and unlocking perk areas is only temporary. Reloading the character menu will re-evaluate locks properly.
  - While an area is locked perks will show as unobtained but they are actually still allocated. Test this yourself with craftsman perks.
+
+## 0.8.4 - 08/02/2021
+Minor release to support latest CET release. Hopefully this is the last of the breaking changes. :weary:
+ - All `require` paths now relative to mod location and use `/` separators.
+ - No longer need to manually reset loaded packages cache.
+ - Switch log messages to mostly use `info` instead of `warning` unless there is need.
