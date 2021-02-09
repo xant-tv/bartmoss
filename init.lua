@@ -2,7 +2,7 @@
 local Bartmoss = {
     app = {
         name = "Bartmoss Suite",
-        version = "0.8.5-alpha"
+        version = "0.8.5"
     }
 }
 

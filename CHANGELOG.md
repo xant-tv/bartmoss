@@ -58,3 +58,12 @@ Minor release to support latest CET release. Hopefully this is the last of the b
  - All `require` paths now relative to mod location and use `/` separators.
  - No longer need to manually reset loaded packages cache.
  - Switch log messages to mostly use `info` instead of `warning` unless there is need.
+
+## 0.8.5 - TBD
+Focus of this release:
+ - Complete clothing glossary.
+
+Change notes:
+ - Completed legs and inner torso glossaries!
+ - Fixed a bug with outfit quickhacks trying to call the `ItemHandler` incorrectly.
+ - Changed logger construction now that `spdlog` is properly supported in sandbox context (no difference for an end user).
