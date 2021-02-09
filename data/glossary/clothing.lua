@@ -1,8 +1,6 @@
 -- Recipes for clothing, weapons, mods all contained here.
 local Clothing = {}
 
--- TODO: Lots of work required to fill this out.
-
 Clothing = {
     Head = {
         Balaclava = {
@@ -289,6 +287,208 @@ Clothing = {
         }
     },
     InnerTorso = {
+        FormalShirt = {
+            WithVest = {
+                Office = "Items.FormalShirt_01_basic_01",
+                Reinforced = "Items.FormalShirt_01_basic_02",
+                Stylish = "Items.FormalShirt_01_basic_03",
+                Cowboy = "Items.FormalShirt_01_old_01",
+                Classy = "Items.FormalShirt_01_old_02",
+                Penguin = "Items.FormalShirt_01_old_03",
+                Dandy = "Items.FormalShirt_01_rich_01",
+                Abrasion = "Items.FormalShirt_01_rich_02",
+                MallowBreeze = "Items.FormalShirt_01_rich_03",
+                ElDorado = "Items.FormalShirt_01_rich_04",
+                GinNo = "Items.FormalShirt_01_rich_05",
+                Paris = "Items.FormalShirt_01_rich_06"
+            },
+            ButtonUp = {
+                SemiFormal = "Items.FormalShirt_02_basic_01",
+                ArctiCombat = "Items.FormalShirt_02_basic_02",
+                RedLeopard = "Items.FormalShirt_02_basic_03",
+                Classic = "Items.FormalShirt_02_basic_04",
+                Linen = "Items.FormalShirt_02_old_01",
+                PurplePanther = "Items.FormalShirt_02_old_02",
+                Wrinkled = "Items.FormalShirt_02_old_03",
+                DesertCross = "Items.FormalShirt_02_rich_01",
+                Paisley = "Items.FormalShirt_02_rich_02",
+                LiquidShine = "Items.FormalShirt_02_rich_03"
+            }
+        },
+        Jumpsuit = {
+            Tactical = {
+                Animals = "Items.Jumpsuit_01_basic_01",
+                Polyamide = "Items.Jumpsuit_01_basic_02",
+                PurpleForce = "Items.Jumpsuit_01_basic_03",
+                Militech = "Items.Jumpsuit_01_old_01",
+                Ten70 = "Items.Jumpsuit_01_old_02",
+                Blend = "Items.Jumpsuit_01_old_03",
+                StreamExtreme = "Items.Jumpsuit_01_rich_01",
+                Emperatriz = "Items.Jumpsuit_01_rich_02"
+            },
+            Racing = {
+                YellowCobra = "Items.Jumpsuit_02_basic_01",
+                Rocker = "Items.Jumpsuit_02_basic_02",
+                Ten70 = "Items.Jumpsuit_02_old_01",
+                Motorcycle = "Items.Jumpsuit_02_old_02",
+                NightCity = "Items.Jumpsuit_02_rich_01",
+                Natsunoshio = "Items.Jumpsuit_02_rich_02",
+                Lightning = "Items.Jumpsuit_02_rich_03"
+            },
+            Hazmat = {
+                Arasaka = "Items.Jumpsuit_03_old_01",
+                NCPD = "Items.Jumpsuit_03_old_02",
+                Militech = "Items.Jumpsuit_03_old_03"
+            },
+            Netrunner = {
+                Military = "Items.TightJumpsuit_01_basic_01",
+                Elastomer = "Items.TightJumpsuit_01_basic_02",
+                Worn = "Items.TightJumpsuit_01_old_01",
+                Old = "Items.TightJumpsuit_01_old_02",
+                Arasaka = "Items.TightJumpsuit_01_rich_01",
+                RedAlert = "Items.TightJumpsuit_01_rich_02"
+            }
+        },
+        Shirt = {
+            LongSleeve = {
+                Braindance = "Items.Shirt_01_basic_01",
+                Psycho = "Items.Shirt_01_basic_02",
+                Cotton = "Items.Shirt_01_old_01",
+                Composite = "Items.Shirt_01_old_02",
+                Stylish = "Items.Shirt_01_rich_01",
+                Geisha = "Items.Shirt_01_rich_02"
+            },
+            Turtleneck = {
+                Darra = "Items.Shirt_02_basic_01",
+                Biker = "Items.Shirt_02_basic_02",
+                Arasaka = "Items.Shirt_02_basic_03",
+                Samurai = "Items.Shirt_02_basic_04",
+                Aramid = "Items.Shirt_02_old_01",
+                Tactical = "Items.Shirt_02_old_02",
+                Elastic = "Items.Shirt_02_old_03",
+                Punch = "Items.Shirt_02_rich_01",
+                ATAK = "Items.Shirt_02_rich_02",
+                VioletNebula = "Items.Shirt_02_rich_03"
+            },
+            Combat = {
+                Suichu = "Items.Shirt_03_basic_01",
+                Geisha = "Items.Shirt_03_basic_02",
+                SynFiber = "Items.Shirt_03_basic_03",
+                Flazh = "Items.Shirt_03_old_01",
+                Scav = "Items.Shirt_03_old_02",
+                Maelstrom = "Items.Shirt_03_old_03",
+                BouletTurquoise = "Items.Shirt_03_rich_01",
+                AtomicBlast = "Items.Shirt_03_rich_02",
+                Decadencia = "Items.Shirt_03_rich_03"
+            }
+        },
+        Tank = {
+            Standard = {
+                Basic = "Items.TShirt_01_basic_01",
+                Melting = "Items.TShirt_01_basic_02",
+                PurpleDragon = "Items.TShirt_01_basic_03",
+                SynFabric = "Items.TShirt_01_old_01",
+                Punk = {
+                    Basic = "Items.TShirt_01_old_02",
+                    Duolayer = "Items.TShirt_11_old_01"
+                },
+                OnceWeWereBoosted = "Items.TShirt_01_old_03",
+                Geisha = "Items.TShirt_01_rich_01",
+                Daemon = "Items.TShirt_01_rich_02",
+                SankakuNichibotsu = "Items.TShirt_01_rich_03",
+                DeadlyLagoon = "Items.TShirt_03_basic_01",
+                Stripped = "Items.TShirt_03_basic_02",
+                Canine = "Items.TShirt_03_basic_03",
+                Spotted = "Items.TShirt_03_old_01",
+                Tamashi = "Items.TShirt_03_old_02",
+                Mox = "Items.TShirt_03_old_03",
+                Neokitsch = "Items.TShirt_03_rich_01",
+                SantaMuerte = "Items.TShirt_03_rich_02",
+                TestedOnAnimals = "Items.TShirt_03_rich_03",
+                HighTensile = "Items.TShirt_04_old_01",
+                Frayed = "Items.TShirt_04_old_02",
+                BloodyPiggy = "Items.TShirt_04_old_03",
+                X = "Items.TShirt_04_old_04",
+                SpeedAddict = "Items.TShirt_04_old_05",
+                Sturdy = "Items.TShirt_04_old_06",
+                Camo = "Items.TShirt_09_basic_01",
+                Plaid = "Items.TShirt_09_basic_02",
+                Reinforced = "Items.TShirt_09_old_02",
+                FuckYou = "Items.TShirt_10_basic_01",
+                NuTek = "Items.TShirt_10_old_01",
+                Saeko = "Items.TShirt_10_rich_01",
+                Sporty = "Items.TShirt_11_basic_01",
+                Army = "Items.TShirt_11_rich_01"
+            },
+            Muscle = {
+                PurpleDragon = "Items.TShirt_06_rich_01",
+                BloodyPiggy = "Items.TShirt_06_old_01",
+                X = "Items.TShirt_06_rich_02",
+                Nippon = "Items.TShirt_06_basic_01",
+                Bermuda = "Items.TShirt_06_basic_02",
+                Emerald = "Items.TShirt_06_old_02",
+            },
+            Racerback = {
+                SantaMuerte = "Items.TShirt_07_rich_02",
+                Tamashi = "Items.TShirt_07_old_02",
+                GrayDecay = "Items.TShirt_07_basic_01",
+                NightCity = "Items.TShirt_07_basic_02",
+                Tactical = "Items.TShirt_07_old_01",
+                Psycho = "Items.TShirt_07_rich_01",
+            },
+            Knotted = {
+                ArmorWeave = "Items.TShirt_08_basic_01",
+                Reinforced = "Items.TShirt_08_basic_02",
+                Belted = "Items.TShirt_08_old_01",
+                Secondhand = "Items.TShirt_08_old_02",
+                Punk = "Items.TShirt_08_rich_01",
+                BloomingAmber = "Items.TShirt_08_rich_02"
+            }
+        },
+        TShirt = {
+            BurnCorpo = {
+                Normal = "Items.TShirt_02_basic_01",
+                Torn = "Items.TShirt_05_old_01"
+            },
+            Punch = "Items.TShirt_02_basic_02",
+            DedZed = "Items.TShirt_02_basic_03",
+            NUSA = "Items.TShirt_02_basic_04",
+            Samurai = "Items.TShirt_02_basic_05",
+            Life = "Items.TShirt_02_old_01",
+            Hex = "Items.TShirt_02_old_02",
+            Durable = "Items.TShirt_02_old_03",
+            Composite = "Items.TShirt_02_old_04",
+            Psycho = "Items.TShirt_02_rich_01",
+            BigFish = "Items.TShirt_02_rich_02",
+            Bitch = {
+                Composite = "Items.TShirt_02_rich_03",
+                Sturdy = "Items.TShirt_05_old_06"
+            },
+            YoruNoSamurai = {
+                Cotton = "Items.TShirt_02_rich_04",
+                Torn = "Items.TShirt_09_old_01"
+            },
+            Daemon = "Items.TShirt_05_old_02",
+            Polyamide = "Items.TShirt_05_old_03",
+            Blend = "Items.TShirt_05_old_04",
+            Sturdy = "Items.TShirt_05_old_05"
+        },
+        Undershirt = {
+            Bra = {
+                Spotted = "Items.Undershirt_02_basic_01",
+                Leather = "Items.Undershirt_02_basic_02",
+                AmandeRose = "Items.Undershirt_02_rich_01",
+                DenkiHachi = "Items.Undershirt_02_rich_02"
+            },
+            Bustier = {
+                Simple = "Items.Undershirt_03_basic_01",
+                BaraKaika = "Items.Undershirt_03_basic_02",
+                AtomicBlast = "Items.Undershirt_03_basic_03",
+                Spotted = "Items.Undershirt_03_basic_04",
+                JasminDoucet = "Items.Undershirt_03_rich_01",
+                ReineDeAbeilles = "Items.Undershirt_03_rich_02"
+            }
+        },
         Special = {
             Corpo = "Items.Corporate_01_Set_FormalShirt",
             Fixer = "Items.Fixer_01_Set_TShirt",
@@ -298,6 +498,8 @@ Clothing = {
             Rocker = "Items.Rockerboy_01_Set_TShirt",
             Solo = "Items.Solo_01_Set_TShirt",
             Techie = "Items.Techie_01_Set_TShirt",
+            Wraith = "Items.SQ021_Wraiths_Vest",
+            FourthWall = "Items.SQ023_Switchblade_Shirt",
             Samurai = "Items.SamuraiWorldTour_TShirt",
             Hospital = "Items.Q201_SpaceHospitalShirt",
             River = "Items.SQ029_River_Romance_Shirt",
@@ -390,7 +592,7 @@ Clothing = {
                 Polyamide = "Items.FormalJacket_01_basic_01",
                 Wool = "Items.FormalJacket_01_basic_02",
                 SynFabric = "Items.FormalJacket_01_old_01",
-                AramidWeave = "Items.FormalJacket_01_old_02",
+                Aramid = "Items.FormalJacket_01_old_02",
                 MarbreDore = "Items.FormalJacket_01_rich_01",
                 Mosaic = "Items.FormalJacket_01_rich_02"
             },

@@ -8,161 +8,161 @@ local ItemHandler = require("handler/item")
 function OutfitHack:GiveFemaleNomadCustomOutfit()
     local itemspecs = {
         {
-            item = "Items.Jacket_14_basic_01",
+            item = Glossary.Clothing.OuterTorso.Jacket.BoleroBomber.Rubber,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Undershirt_02_basic_01",
+            item = Glossary.Clothing.InnerTorso.Undershirt.Bra.Spotted,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Glasses_01_basic_01",
+            item = Glossary.Clothing.Face.Glasses.Aviators.Stylish,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_basic_01",
+            item = Glossary.Clothing.Legs.Shorts.CutOff.Denim,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_rich_01",
+            item = Glossary.Clothing.Legs.Shorts.CutOff.Magenta,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_01_basic_01",
+            item = Glossary.Clothing.Feet.Boots.Platform.UniWare,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_02_basic_02",
+            item = Glossary.Clothing.Feet.Boots.Shorties.Rocker,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_basic_01",
+            item = Glossary.Clothing.Feet.Boots.ExoJacks.Biker,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_basic_01",
+            item = Glossary.Clothing.Legs.FormalPants.Pleated.Sturdy,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_basic_02",
+            item = Glossary.Clothing.Legs.Pants.SlimFit.Azure,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_01_rich_02",
+            item = Glossary.Clothing.Legs.Pants.SlimFit.Basilisk,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_basic_01",
+            item = Glossary.Clothing.Legs.Pants.Jeans.Sturdy,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_basic_02",
+            item = Glossary.Clothing.Legs.Pants.Jeans.Canine,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_rich_03",
+            item = Glossary.Clothing.Legs.Pants.Jeans.Psycho,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_05_rich_02",
+            item = Glossary.Clothing.Legs.Pants.Racers.YoruNoSamurai,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Q001_Pants",
+            item = Glossary.Clothing.Legs.Special.V.Basic,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Q001_Shoes",
+            item = Glossary.Clothing.Feet.Special.V.Basic,
             quality = Glossary.Quality.Legendary
         }
     }
-    self.itemhandler:GiveMultiple(itemspecs)
+    self.handler.item:GiveMultiple(itemspecs)
 end
 
 function OutfitHack:GiveFemaleCorpoCustomOutfit()
     local itemspecs = {
         {
-            item = "Items.Fixer_01_Set_Glasses",
+            item = Glossary.Clothing.Face.Special.Fixer,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.TightJumpsuit_01_basic_01",
+            item = Glossary.Clothing.InnerTorso.Jumpsuit.Netrunner.Military,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.TightJumpsuit_01_rich_01",
+            item = Glossary.Clothing.InnerTorso.Jumpsuit.Netrunner.Arasaka,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Jacket_11_basic_02",
+            item = Glossary.Clothing.OuterTorso.Jacket.Foldtop.Basic,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Jacket_17_rich_02",
+            item = Glossary.Clothing.OuterTorso.Jacket.Pozer.Torera,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Vest_19_rich_02",
+            item = Glossary.Clothing.OuterTorso.Vest.Yukata.Murasaki,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Vest_19_basic_02",
+            item = Glossary.Clothing.OuterTorso.Vest.Yukata.Elegant,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Shorts_01_basic_01",
+            item = Glossary.Clothing.Legs.Shorts.CutOff.Denim,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Pants_03_rich_01",
+            item = Glossary.Clothing.Legs.FormalPants.Office.Marble,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Dress_02_basic_01",
+            item = Glossary.Clothing.OuterTorso.Dress.Formal.SynWeave,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_01_basic_02",
+            item = Glossary.Clothing.Legs.FormalSkirt.Straight.Classy,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_01_rich_02",
+            item = Glossary.Clothing.Legs.FormalSkirt.Straight.Mosaic,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_basic_01",
+            item = Glossary.Clothing.Legs.FormalSkirt.Angled.TearResist,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_basic_03",
+            item = Glossary.Clothing.Legs.FormalSkirt.Angled.Saeko,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_rich_01",
+            item = Glossary.Clothing.Legs.FormalSkirt.Angled.Heise,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalSkirt_02_rich_02",
+            item = Glossary.Clothing.Legs.FormalSkirt.Angled.Brass,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_old_01",
+            item = Glossary.Clothing.Feet.Boots.ExoJacks.Punk,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_basic_01",
+            item = Glossary.Clothing.Feet.Boots.ExoJacks.Biker,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.Boots_09_rich_03",
+            item = Glossary.Clothing.Feet.Boots.ExoJacks.Rouge,
             quality = Glossary.Quality.Legendary
         },
         {
-            item = "Items.FormalShoes_01_rich_01",
+            item = Glossary.Clothing.Feet.Formal.Pumps.Office.Silbermond,
             quality = Glossary.Quality.Legendary
         }
     }
-    self.itemhandler:GiveMultiple(itemspecs)
+    self.handler.item:GiveMultiple(itemspecs)
 end
 
 function OutfitHack:New()
