@@ -59,7 +59,7 @@ Minor release to support latest CET release. Hopefully this is the last of the b
  - No longer need to manually reset loaded packages cache.
  - Switch log messages to mostly use `info` instead of `warning` unless there is need.
 
-## 0.8.5 - TBD
+## 0.8.5 - 09/02/2021
 Focus of this release:
  - Complete clothing glossary.
 
