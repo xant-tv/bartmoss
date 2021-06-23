@@ -14,7 +14,7 @@ end
 function GameHandler:GetModSlotIDs(itemtype)
     -- Returns the appropriate generic modifier slots depending on the item type.
     -- These slots can also be found in the glossary.
-    return Game.GetModSlotIDs(itemtype)
+    return Game.GetModsSlotIDs(itemtype)
 end
 
 function GameHandler:GetAttachmentSlotIDs()

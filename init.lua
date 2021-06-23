@@ -7,7 +7,6 @@ local Bartmoss = {
 }
 
 local Logger = require("utility/logger")
-local Global = require("game/global")
 local System = require("game/system")
 local GameHandler = require("handler/game")
 local PlayerHandler = require("handler/player")
@@ -46,9 +45,6 @@ function Bartmoss:New()
         Inspect = InspectTool:New()
     }
     I.UI = UI:New(self.app)
-
-    -- Run any initialisation functions.
-    Global.OnLoad()
 
     -- Local overload functions.
     local function OverloadInit()

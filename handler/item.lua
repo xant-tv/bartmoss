@@ -258,7 +258,7 @@ function ItemHandler:GiveItems(item, n, quality, level)
 
     local items = {}
     for i = 1, n do
-        local seed = math.random(0, math.tointeger(2^32) - 1)
+        local seed = math.random(0, (2^32) - 1)
         local itemid = ItemID.new(tweakid, seed)
         local result = ts:GiveItem(player, itemid, 1)
 
