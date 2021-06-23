@@ -2,7 +2,7 @@
 local Bartmoss = {
     app = {
         name = "Bartmoss Suite",
-        version = "0.8.5"
+        version = "0.8.6"
     }
 }
 
@@ -71,7 +71,7 @@ function Bartmoss:New()
         I.UI:Shutdown()
     end
 
-    -- Attach user ifc events.
+    -- Attach user interface events.
     registerForEvent("onInit", OverloadInit)
     registerForEvent("onUpdate", OverloadUpdate)
     registerForEvent("onOverlayOpen", OverloadOpen)

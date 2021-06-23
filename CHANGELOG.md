@@ -67,3 +67,12 @@ Change notes:
  - Completed legs and inner torso glossaries!
  - Fixed a bug with outfit quickhacks trying to call the `ItemHandler` incorrectly.
  - Changed logger construction now that `spdlog` is properly supported in sandbox context (no difference for an end user).
+
+## 0.8.6 - 24/06/2021
+Focus of this release:
+ - Update to latest version of CET framework.
+
+Change notes:
+ - The global `Game` object is no longer a tablespace but now allows access to script functions.
+ - Removed all of `globals.lua` as it is now unnecessary.
+ - Minor bugfix in glossary naming for an item or two.
