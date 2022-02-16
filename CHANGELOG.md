@@ -5,7 +5,7 @@ Patch notes will go here until I track releases properly through Git - hopefully
 Three primary focuses for this release:
  - Shift to a more object-oriented paradigm (internally-facing only). 
  - Glossary and item tagging improvements.
- - Additional fixes and improvement after CB2077 Patch 1.1 release.
+ - Additional fixes and improvement after CP2077 Patch 1.1 release.
 
 Change notes:
  - Refactor of interfaces, handlers into objects. This changes how many elements are [interfaced](docs/INTERFACE.md) with.
@@ -76,3 +76,11 @@ Change notes:
  - The global `Game` object is no longer a tablespace but now allows access to script functions.
  - Removed all of `globals.lua` as it is now unnecessary.
  - Minor bugfix in glossary naming for an item or two.
+
+## 0.8.7 - 16/02/2022
+Focus of this release:
+ - Support changes in CP2077 Patch 1.5
+
+Change notes:
+ - Added the new weapon bases and attachment into the `Glossary`
+ - Fixed a regression that prevented the user from giving themselves weapon attachments.
