@@ -42,3 +42,8 @@ luac.out
 # Mod outputs.
 *.log
 *.sqlite3
+
+# Development environments
+# Exclude both folder and contents
+.vscode/
+.vscode/*
