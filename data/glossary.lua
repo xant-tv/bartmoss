@@ -500,6 +500,15 @@ Glossary.PartSlots = {
     }
 }
 
+Glossary.ItemTypes = {
+    Parts = {
+        Attachments = {
+            "Prt_Scope",
+            "Prt_Muzzle"
+        }
+    }
+}
+
 -- Property Lookups
 Glossary.ForcedQuality = {
     -- Keys should match those in item quality.
@@ -643,6 +652,7 @@ Glossary.ForcedQuality = {
         Glossary.Cyberware.Immune.Cataresist.Legendary,
         Glossary.Cyberware.Immune.PainEditor.Legendary,
         Glossary.Cyberware.Immune.ShockAwe.Legendary,
+        Glossary.Cyberware.Integumentary.OpticalCamo.Legendary,
         Glossary.Cyberware.Integumentary.SubdermalArmor.Legendary,
         Glossary.Cyberware.Nervous.Kerenzikov.Legendary,
         Glossary.Cyberware.Nervous.Neofiber.Legendary,
@@ -766,6 +776,7 @@ Glossary.ForcedQuality = {
         Glossary.Cyberware.Immune.Metabolic.Epic,
         Glossary.Cyberware.Immune.ShockAwe.Epic,
         Glossary.Cyberware.Integumentary.HeatConverter.Epic,
+        Glossary.Cyberware.Integumentary.OpticalCamo.Epic,
         Glossary.Cyberware.Integumentary.SubdermalArmor.Epic,
         Glossary.Cyberware.Legs.FortifiedAnkles.Epic,
         Glossary.Cyberware.Legs.LynxPaws.Epic,
@@ -927,6 +938,7 @@ Glossary.ForcedQuality = {
         Glossary.Cyberware.Immune.Detoxifier.Rare,
         Glossary.Cyberware.Integumentary.FireproofCoating.Rare,
         Glossary.Cyberware.Integumentary.GroundingPlating.Rare,
+        Glossary.Cyberware.Integumentary.OpticalCamo.Rare,
         Glossary.Cyberware.Integumentary.SubdermalArmor.Rare,
         Glossary.Cyberware.Integumentary.SupraDermalWeave.Rare,
         Glossary.Cyberware.Legs.BoostedTendons.Rare,
@@ -1352,6 +1364,10 @@ Glossary.CannotBeLevelled = {
     Glossary.Cyberware.Skeleton.Microrotors.Common,
     Glossary.Cyberware.Skeleton.SynapticSignal.Common,
     Glossary.Cyberware.Skeleton.TitaniumBones.Common
+}
+
+Glossary.DoNotCheckParts = {
+    Glossary.ItemTypes.Parts.Attachments
 }
 
 Glossary.Searchable = {

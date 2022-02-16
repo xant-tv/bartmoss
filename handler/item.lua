@@ -26,6 +26,15 @@ function ItemHandler:GetDefaultQuality(item)
     return nil
 end
 
+function ItemHandler:DoNotCheckParts(enum)
+    for _, table in ipairs(Glossary.DoNotCheckParts) do
+        if Table.HasValue(table, enum) then
+            return true
+        end
+    end
+    return false
+end
+
 function ItemHandler:GetModifier(itemdata, modifier)
     local ss = self.system:Stats()
     local statsobjid = itemdata:GetStatsObjectID()
@@ -220,7 +229,12 @@ end
 function ItemHandler:ClearSlots(itemdata, keep)
     -- Rewrite the crafting system function to actually ignore dummy attachment mods.
     -- This refunds all (valid) mods slotted into an item.
-    local modslots = self.handler.game:GetModSlotIDs(itemdata:GetItemType())
+    local itemtype = itemdata:GetItemType()
+    -- We don't clear slots for certain item types.
+    if self:DoNotCheckParts(itemtype.value) then
+        return
+    end
+    local modslots = self.handler.game:GetModSlotIDs(itemtype)
     local attslots = self.handler.game:GetAttachmentSlotIDs()
     for _, modslot in ipairs(modslots) do
         self:RemovePart(itemdata, modslot, keep)
