@@ -973,7 +973,19 @@ Clothing = {
             Samerai = {
                 Crystal = "Items.MQ017_Samerai_Jacket",
                 Fake = "Items.mq017_SameraiJacket"
-            }
+            },
+            -- Special items added through downloadable content.
+            -- Can't seem to find their item hashes yet so disabled for now.
+            -- Deltajock = {
+            --     Rare = '',
+            --     Epic = '',
+            --     Legendary = ''
+            -- },
+            -- LuminescentPunk = {
+            --     Rare = '',
+            --     Epic = '',
+            --     Legendary = ''
+            -- }
         }
     },
     Legs = {

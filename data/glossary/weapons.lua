@@ -121,6 +121,12 @@ Weapons = {
                 }
             }
         },
+        Guillotine = {
+            Default = "Items.Preset_Guillotine_Default",
+            Military = "Items.Preset_Guillotine_Military",
+            Neon = "Items.Preset_Guillotine_Neon",
+            Pimp = "Items.Preset_Guillotine_Pimp"
+        },
         Igla = {
             Default = "Items.Preset_Igla_Default",
             Military = "Items.Preset_Igla_Military",
@@ -372,6 +378,12 @@ Weapons = {
             Default = "Items.Preset_Testera_Default",
             Neon = "Items.Preset_Testera_Neon",
             Pimp = "Items.Preset_Testera_Pimp"
+        },
+        Umbra = {
+            Default = "Items.Preset_Umbra_Default",
+            Military = "Items.Preset_Umbra_Military",
+            Neon = "Items.Preset_Umbra_Neon",
+            Pimp = "Items.Preset_Umbra_Pimp"
         },
         Unity = {
             Default = "Items.Preset_Unity_Default",

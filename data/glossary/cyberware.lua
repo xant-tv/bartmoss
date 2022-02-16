@@ -264,12 +264,12 @@ Cyberware = {
         HeatConverter = {
             Epic = "Items.HeatUsingBooster"
         },
-        -- All of this is disabled because it isn't actually functional.
-        -- OpticalCamo = {
-        --     Rare = "Items.OpticalCamoRare",
-        --     Epic = "Items.OpticalCamoEpic",
-        --     Legendary = "Items.OpticalCamoLegendary"
-        -- },
+        -- Might be functional now!
+        OpticalCamo = {
+            Rare = "Items.OpticalCamoRare",
+            Epic = "Items.OpticalCamoEpic",
+            Legendary = "Items.OpticalCamoLegendary"
+        },
         SubdermalArmor = {
             Common = "Items.SubdermalArmorCommon",
             Uncommon = "Items.SubdermalArmorUncommon",
