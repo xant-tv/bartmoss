@@ -4,8 +4,12 @@ local Custom = {}
 
 Custom = {
     Spawn0 = {
-        Head = {},
-        Face = {},
+        Head = {
+            Subdermal = "Items.sp0subarmor0101"
+        },
+        Face = {
+            Subdermal = "Items.sp0subarmor0102"
+        },
         InnerTorso = {
             Bodysuit = {
                 Anarchist = "Items.sp0bsuit0104",
@@ -47,9 +51,12 @@ Custom = {
                 Ultralight = "Items.sp0minid0110",
                 Used = "Items.sp0minid0103",
                 Yellow = "Items.sp0minid0105"
-            }
+            },
+            Subdermal = "Items.sp0subarmor0104"
         },
-        OuterTorso = {},
+        OuterTorso = {
+            Subdermal = "Items.sp0subarmor0103"
+        },
         Legs = {
             PlaidSkirt = {
                 Black = "Items.sp0pskirt0101",
@@ -70,6 +77,7 @@ Custom = {
                 Satin = "Items.sp0shortsstrp0102",
                 Sexy = "Items.sp0shortsstrp0105"
             },
+            Subdermal = "Items.sp0subarmor0105",
             ZipperShorts = {
                 Black = "Items.sp0shortszip0101",
                 Gold = "Items.sp0shortszip0104",
@@ -122,6 +130,7 @@ Custom = {
                 Titanium = "Items.sp0sandals0108",
                 White = "Items.sp0sandals0105"
             },
+            Subdermal = "Items.sp0subarmor0106",
             StrappedHeels = {
                 Armored = "Items.sp0heelstr0103",
                 Elegant = "Items.sp0heelstr0104",
