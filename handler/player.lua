@@ -62,7 +62,7 @@ end
 function PlayerHandler:LockPerkArea(area)
     -- Forced lock of perk areas does not appear to work.
     -- Inbult script modifies the development data attribute directly which seems to not do anything.
-    local dspd = self.system:IsPerkAreaUnlocked(area)
+    local dspd = self.system:PlayerDevelopmentData()
     dspd:LockPerkArea(area)
     return
 end
@@ -90,7 +90,7 @@ end
 function PlayerHandler:RemovePerk(perk)
     -- This is the "proper" way to remove a perk.
     -- Will actually refund the perk points to the player.
-    local dspd = self.system:Player()
+    local dspd = self.system:PlayerDevelopmentData()
     local removed = dspd:RemovePerk(perk)
     return removed
 end
@@ -175,7 +175,7 @@ function PlayerHandler:GiveXP(attribute, amount)
 end
 
 function PlayerHandler:GivePoints(ptype, amount)
-    Game.GiveDevPoints(ptype, 1)
+    Game.GiveDevPoints(ptype, amount)
     self.logger:Info("GivePoints: " .. ptype .. " | " .. amount)
 end
 
