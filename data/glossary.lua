@@ -5,6 +5,7 @@ local Glossary = {}
 Glossary.Resources = require("data/glossary/resources")
 Glossary.Weapons = require("data/glossary/weapons")
 Glossary.Clothing = require("data/glossary/clothing")
+Glossary.Custom = require("data/glossary/custom")
 Glossary.Cyberware = require("data/glossary/cyberware")
 Glossary.Quickhacks = require("data/glossary/quickhacks")
 Glossary.Mods = require("data/glossary/mods")
@@ -1377,8 +1378,9 @@ Glossary.Searchable = {
     Cyberware = Glossary.Cyberware,
     Quickhacks = Glossary.Quickhacks,
     Mods = Glossary.Mods,
-    Attachments = Glossary.Attachments
+    Attachments = Glossary.Attachments,
     -- Recipes = Glossary.Recipes
+    Custom = Glossary.Custom
 }
 
 return Glossary

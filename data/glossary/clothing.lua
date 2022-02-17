@@ -1450,7 +1450,7 @@ Clothing = {
                 ExoJacks = "Items.Q115_Custom_Predator_Boots",
                 Thrusters = "Items.q115_thrusters" -- This item holds unequip blocked tag.
             }
-        },
+        }
     },
     Outfit = {
         V = {
