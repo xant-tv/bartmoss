@@ -505,7 +505,9 @@ Glossary.ItemTypes = {
     Parts = {
         Attachments = {
             "Prt_Scope",
-            "Prt_Muzzle"
+            "Prt_Muzzle",
+            "Prt_HandgunMuzzle",
+            "Prt_RifleMuzzle"
         }
     }
 }
@@ -530,6 +532,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Ranged.Liberty.Iconic.Kongou.Legendary,
         Glossary.Weapons.Ranged.Liberty.Iconic.PlanB.Legendary,
         Glossary.Weapons.Ranged.Liberty.Iconic.Pride.Legendary,
+        Glossary.Weapons.Ranged.Liberty.Iconic.Seraph.Legendary,
         Glossary.Weapons.Ranged.Masamune.Iconic.Prejudice.Legendary,
         Glossary.Weapons.Ranged.Nekomata.Iconic.Breakthrough.Legendary,
         Glossary.Weapons.Ranged.Nova.Iconic.DoomDoom.Legendary,
@@ -545,6 +548,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Ranged.Shingen.Iconic.Prototype.Legendary,
         Glossary.Weapons.Ranged.Sidewinder.Iconic.DividedWeStand.Legendary,
         Glossary.Weapons.Ranged.Silverhand.Legendary,
+        Glossary.Weapons.Ranged.Tactician.Iconic.BloodyMaria.Legendary,
         Glossary.Weapons.Ranged.Tactician.Iconic.Headsman.Legendary,
         Glossary.Weapons.Ranged.Yukimara.Iconic.Genjiroh.Legendary,
         Glossary.Weapons.Melee.BaseballBat.Iconic.GoldPlated.Legendary,
@@ -552,6 +556,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Melee.Cane.Iconic.Cottonmouth.Legendary,
         Glossary.Weapons.Melee.Dildo.Iconic.Phallustiff.Legendary,
         Glossary.Weapons.Melee.Katana.Iconic.BlackUnicorn.Legendary,
+        Glossary.Weapons.Melee.Katana.Iconic.Byakko.Legendary,
         Glossary.Weapons.Melee.Katana.Iconic.Cocktail.Legendary,
         Glossary.Weapons.Melee.Katana.Iconic.JinchuMaru.Legendary,
         Glossary.Weapons.Melee.Katana.Iconic.Satori.Legendary,
@@ -706,6 +711,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Ranged.Lexington.Iconic.DyingNight.Epic,
         Glossary.Weapons.Ranged.Liberty.Iconic.Kongou.Epic,
         Glossary.Weapons.Ranged.Liberty.Iconic.PlanB.Epic,
+        Glossary.Weapons.Ranged.Liberty.Iconic.Seraph.Epic,
         Glossary.Weapons.Ranged.Nekomata.Iconic.Breakthrough.Epic,
         Glossary.Weapons.Ranged.Nova.Iconic.DoomDoom.Epic,
         Glossary.Weapons.Ranged.Nue.Iconic.ChingonaDorada.Epic,
@@ -718,6 +724,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Ranged.Saratoga.Iconic.Fenrir.Epic,
         Glossary.Weapons.Ranged.Saratoga.Iconic.ProblemSolver.Epic,
         Glossary.Weapons.Ranged.Sidewinder.Iconic.DividedWeStand.Epic,
+        Glossary.Weapons.Ranged.Tactician.Iconic.BloodyMaria.Epic,
         Glossary.Weapons.Ranged.Tactician.Iconic.Headsman.Epic,
         Glossary.Weapons.Ranged.Yukimara.Iconic.Genjiroh.Epic,
         Glossary.Weapons.Ranged.Yukimara.Iconic.Skippy.Epic,
@@ -726,6 +733,7 @@ Glossary.ForcedQuality = {
         Glossary.Weapons.Melee.Cane.Iconic.Cottonmouth.Epic,
         Glossary.Weapons.Melee.Dildo.Iconic.Phallustiff.Epic,
         Glossary.Weapons.Melee.Katana.Iconic.BlackUnicorn.Epic,
+        Glossary.Weapons.Melee.Katana.Iconic.Byakko.Epic,
         Glossary.Weapons.Melee.Katana.Iconic.Cocktail.Epic,
         Glossary.Weapons.Melee.Katana.Iconic.JinchuMaru.Epic,
         Glossary.Weapons.Melee.Katana.Iconic.Satori.Epic,

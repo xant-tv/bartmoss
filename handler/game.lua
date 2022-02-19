@@ -31,6 +31,10 @@ function GameHandler:AddToInventory(item, n)
     return Game.AddToInventory(item, n)
 end
 
+function GameHandler:EnableTransmog()
+    return Game.EnableTransmog()
+end
+
 function GameHandler:New()
 
     local I = {}

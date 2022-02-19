@@ -139,6 +139,12 @@ Weapons = {
                 }
             }
         },
+        Kappa = {
+            Default = "Items.Preset_Kappa_Default",
+            Military = "Items.Preset_Kappa_Military",
+            Neon = "Items.Preset_Kappa_Neon",
+            Pimp = "Items.Preset_Kappa_Pimp"
+        },
         Kenshin = {
             Default = "Items.Preset_Kenshin_Default",
             Military = "Items.Preset_Kenshin_Military",
@@ -155,6 +161,18 @@ Weapons = {
                     Legendary = "Items.Preset_Kenshin_Royce_Legendary"
                 }
             }
+        },
+        Kolac = {
+            Default = "Items.Preset_Kolac_Default",
+            Military = "Items.Preset_Kolac_Military",
+            Neon = "Items.Preset_Kolac_Neon",
+            Pimp = "Items.Preset_Kolac_Pimp"
+        },
+        Kyubi = {
+            Default = "Items.Preset_Kyubi_Default",
+            Military = "Items.Preset_Kyubi_Military",
+            Neon = "Items.Preset_Kyubi_Neon",
+            Pimp = "Items.Preset_Kyubi_Pimp"
         },
         Lexington = {
             Default = "Items.Preset_Lexington_Default",
@@ -185,8 +203,18 @@ Weapons = {
                 },
                 Pride = {
                     Legendary = "Items.Preset_Liberty_Rogue"
+                },
+                Seraph = {
+                    Epic = "Items.Preset_Liberty_Padre",
+                    Legendary = "Items.Preset_Liberty_Padre_Legendary"
                 }
             }
+        },
+        MA70 = {
+            Default = "Items.Preset_MA70_Default",
+            Military = "Items.Preset_MA70_Military",
+            Neon = "Items.Preset_MA70_Neon",
+            Pimp = "Items.Preset_MA70_Pimp"
         },
         Masamune = {
             Default = "Items.Preset_Masamune_Default",
@@ -285,6 +313,12 @@ Weapons = {
             Neon = "Items.Preset_Palica_Neon",
             Pimp = "Items.Preset_Palica_Pimp"
         },
+        Pozhar = {
+            Default = "Items.Preset_Pozhar_Default",
+            Military = "Items.Preset_Pozhar_Military",
+            Neon = "Items.Preset_Pozhar_Neon",
+            Pimp = "Items.Preset_Pozhar_Pimp"
+        },
         Pulsar = {
             Default = "Items.Preset_Pulsar_Default",
             Military = "Items.Preset_Pulsar_Military",
@@ -329,6 +363,12 @@ Weapons = {
             Neon = "Items.Preset_Satara_Neon",
             Pimp = "Items.Preset_Satara_Pimp"
         },
+        Senkoh = {
+            Default = "Items.Preset_Senkoh_Default",
+            Military = "Items.Preset_Senkoh_Military",
+            Neon = "Items.Preset_Senkoh_Neon",
+            Pimp = "Items.Preset_Senkoh_Pimp"
+        },
         Shingen = {
             Default = "Items.Preset_Shingen_Default",
             Military = "Items.Preset_Shingen_Military",
@@ -368,6 +408,10 @@ Weapons = {
             Neon = "Items.Preset_Tactician_Neon",
             Pimp = "Items.Preset_Tactician_Pimp",
             Iconic = {
+                BloodyMaria = {
+                    Epic = "Items.Preset_Tactician_Dino",
+                    Legendary = "Items.Preset_Tactician_Dino_Legendary"
+                },
                 Headsman = {
                     Epic = "Items.Preset_Tactician_Headsman",
                     Legendary = "Items.Preset_Tactician_Headsman_Legendary"
@@ -454,8 +498,14 @@ Weapons = {
                 }
             }
         },
+        Chainsword = {
+            Default = "Items.Preset_Chainsword_Default"
+        },
         ChefsKnife = {
             Default = "Items.Preset_Chefs_Knife_Default"
+        },
+        CombatKnife = {
+            Default = "Items.Preset_Combat_Knife_Default"
         },
         Crowbar = {
             Default = "Items.Preset_Crowbar_Default"
@@ -468,6 +518,9 @@ Weapons = {
                     Legendary = "Items.Preset_Dildo_Stout_Legendary"
                 }
             }
+        },
+        FangedAxe = {
+            Default = "Items.Preset_Fanged_Axe_Default"
         },
         Hammer = {
             Default = "Items.Preset_Hammer_Default",
@@ -490,6 +543,10 @@ Weapons = {
                     Rare = "Items.Preset_Katana_GoG",
                     Epic = "Items.Preset_Katana_GoG_Epic",
                     Legendary = "Items.Preset_Katana_GoG_Legendary"
+                },
+                Byakko = {
+                    Epic = "Items.Preset_Katana_Wakako",
+                    Legendary = "Items.Preset_Katana_Wakako_Legendary"
                 },
                 Cocktail = {
                     Rare = "Items.Preset_Katana_Cocktail",
@@ -528,15 +585,15 @@ Weapons = {
                 }
             }
         },
-        -- Disabled until (if) it gets implemented?
-        -- Knuckles = {
-        --     Default = "Items.Preset_Knuckles_Default",
-        --     Military = "Items.Preset_Knuckles_Military",
-        --     Pimp = "Items.Preset_Knuckles_Pimp",
-        --     Iconic = {
-        --         Golden = "Items.Preset_Knuckles_Golden"
-        --     }
-        -- },
+        -- Not sure if this has been implemented yet.
+        Knuckles = {
+            Default = "Items.Preset_Knuckles_Default",
+            Military = "Items.Preset_Knuckles_Military",
+            Pimp = "Items.Preset_Knuckles_Pimp",
+            Iconic = {
+                Golden = "Items.Preset_Knuckles_Golden"
+            }
+        },
         Kukri = {
             Default = "Items.Preset_Kukri_Default",
             Voodoo = "Items.Preset_Kukri_Voodoo"
