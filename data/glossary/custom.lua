@@ -17,6 +17,21 @@ Custom = {
                 Prototype = "Items.sp0bsuit0102",
                 Rich = "Items.sp0bsuit0101"
             },
+            Corset = {
+                Armored = "Items.sp0gorsette0101",
+                Black = "Items.sp0gorsette0103",
+                Camo = "Items.sp0gorsette0104",
+                Pink = "Items.sp0gorsette0102",
+                Rich = "Items.sp0gorsette0105",
+                Six = "Items.sp0gorsette0106"
+            },
+            Dress = {
+                Holo = "Items.sp0minid0205",
+                Leather = "Items.sp0minid0206",
+                Red = "Items.sp0minid0204",
+                Transparent = "Items.sp0minid0201",
+                Yellow = "Items.sp0minid0203"
+            },
             Leotard = {
                 Bloody = "Items.sp0leotard0103",
                 Duolayer = "Items.sp0leotard0105",
@@ -52,12 +67,41 @@ Custom = {
                 Used = "Items.sp0minid0103",
                 Yellow = "Items.sp0minid0105"
             },
+            SkimpTop = {
+                Camo = "Items.sp0top0102",
+                Chic = "Items.sp0top0104",
+                Kevlar = "Items.sp0top0103",
+                Latex = "Items.sp0top0105",
+                Rich = "Items.sp0top0106",
+                Stylish = "Items.sp0top0101"
+            },
             Subdermal = "Items.sp0subarmor0104"
         },
         OuterTorso = {
             Subdermal = "Items.sp0subarmor0103"
         },
         Legs = {
+            MiniSkirt = {
+                Camo = "Items.sp0skirt0401",
+                Composite = "Items.sp0skirt0201",
+                Corporate = "Items.sp0skirt0302",
+                Duolayer = "Items.sp0skirt0203",
+                Elegant = "Items.sp0skirt0402",
+                Gold = "Items.sp0skirt0306",
+                Latex = "Items.sp0skirt0406",
+                Leather = "Items.sp0skirt0202",
+                NeoSilk = "Items.sp0skirt0305",
+                Pink = "Items.sp0skirt0303",
+                Purple = "Items.sp0skirt0307",
+                Red = "Items.sp0skirt0304",
+                Rich = {
+                    Formal = "Items.sp0skirt0404",
+                    Stylish = "Items.sp0skirt0405"
+                },
+                Silver = "Items.sp0skirt0301",
+                Stylish = "Items.sp0skirt0403",
+                Transparent = "Items.sp0skirt0204",
+            },
             PlaidSkirt = {
                 Black = "Items.sp0pskirt0101",
                 Copper = "Items.sp0pskirt0105",
@@ -120,6 +164,21 @@ Custom = {
                     Red = "Items.sp0bootsovr0101"
                 }
             },
+            OverkneeHeels = {
+                Latex = "Items.sp0heelsto0101",
+                Leather = "Items.sp0heelsto0102",
+                Stockings = {
+                    Classy = "Items.sp0heelsto0109",
+                    Black = "Items.sp0heelsto0104",
+                    Gold = "Items.sp0heelsto0108",
+                    Transparent = {
+                        Red = "Items.sp0heelsto0105",
+                        Blue = "Items.sp0heelsto0106",
+                        Green = "Items.sp0heelsto0107"
+                    }
+                },
+                Synfiber = "Items.sp0heelsto0103"
+            },
             Sandals = {
                 Louboutin = "Items.sp0sandals0106",
                 NeverEnding = "Items.sp0sandals0104",
@@ -175,6 +234,14 @@ Custom = {
                 Pink = "Items.sp0stk0103",
                 Red = "Items.sp0stk0102",
                 Rich = "Items.sp0stk0104",
+                Ripped = {
+                    Black = "Items.sp0stk0119",
+                    Fancy = "Items.sp0stk0120",
+                    Glowing = "Items.sp0stk0124",
+                    Gold = "Items.sp0stk0122",
+                    Torn = "Items.sp0stk0121",
+                    Worker = "Items.sp0stk0123"
+                },
                 Teal = "Items.sp0stk0105",
                 Transparent = {
                     Black = "Items.sp0stk0106",
@@ -182,6 +249,36 @@ Custom = {
                     Red = "Items.sp0stk0108",
                     Pink = "Items.sp0stk0109"
                 }
+            },
+            Tights = {
+                Camo = "Items.sp0tht0111",
+                Crotchless = { --
+                    Black = "Items.sp0tht0110",
+                    Blue = "Items.sp0tht0107",
+                    Glowing = "Items.sp0tht0112",
+                    Lace = "Items.sp0tht0105"
+                },
+                Elegant = "Items.sp0tht0114", --
+                Harem = {
+                    Duolayer = "Items.sp0tgh0101",
+                    Elastic = "Items.sp0tgh0104", --
+                    Pink = "Items.sp0tgh0103", --
+                    Red = "Items.sp0tgh0105",
+                    Shiny = "Items.sp0tgh0102", --
+                    Transparent = "Items.sp0tgh0106"
+                },
+                Lace = {
+                    Pink = "Items.sp0tht0106",
+                    Yellow = "Items.sp0tht0108",
+                },
+                Pink = "Items.sp0tht0102", --
+                Polka = {
+                    Black = "Items.sp0tht0113", --
+                    Green = "Items.sp0tht0109"
+                },
+                Red = "Items.sp0tht0104",
+                Seamed = "Items.sp0tht0101", --
+                White = "Items.sp0tht0103", --
             }
         }
     }

@@ -9,7 +9,9 @@ Weapons = {
             Neon = "Items.Preset_Achilles_Neon",
             Pimp = "Items.Preset_Achilles_Pimp",
             Iconic = {
-                -- TinyMike = "Items.Preset_Achilles_Tiny_Mike", -- What is this? Is it a Rick and Morty reference?
+                -- What is this? Is it a Rick and Morty reference?
+                -- Appears to have been reworked into an iconic weapon for the Kolac. 
+                -- TinyMike = "Items.Preset_Achilles_Tiny_Mike", 
                 WidowMaker = {
                     Rare = "Items.Preset_Achilles_Nash",
                     Epic = "Items.Preset_Achilles_Nash_Epic",
@@ -166,7 +168,12 @@ Weapons = {
             Default = "Items.Preset_Kolac_Default",
             Military = "Items.Preset_Kolac_Military",
             Neon = "Items.Preset_Kolac_Neon",
-            Pimp = "Items.Preset_Kolac_Pimp"
+            Pimp = "Items.Preset_Kolac_Pimp",
+            Iconic = {
+                Hypercritical = {
+                    Legendary = "Items.Preset_Kolac_Tiny_Mike_Legendary"
+                }
+            }
         },
         Kyubi = {
             Default = "Items.Preset_Kyubi_Default",
@@ -396,6 +403,9 @@ Weapons = {
         Silverhand = {
             Legendary = "Items.Preset_Silverhand_3516"
         },
+        Slaughtomatic = {
+            Neon = "Items.Preset_Base_Slaughtomatic"
+        },
         Sor22 = {
             Default = "Items.Preset_Sor22_Default",
             Military = "Items.Preset_Sor22_Military",
@@ -486,8 +496,21 @@ Weapons = {
                 }
             }
         },
+        Borg = {
+            Default = "Items.Preset_Machete_Borg_Default",
+            Neon = "Items.Preset_Machete_Borg_Neon",
+            Military = "Items.Preset_Machete_Borg_Military",
+            Pimp = "Items.Preset_Machete_Borg_Pimp"
+        },
         ButchersKnife = {
-            Default = "Items.Preset_Butchers_Knife_Default"
+            Default = "Items.Preset_Butchers_Knife_Default",
+            Iconic = {
+                Cleaver = {
+                    Rare = "Items.Preset_Butchers_Knife_Iconic",
+                    Epic = "Items.Preset_Butchers_Knife_Iconic_Epic",
+                    Legendary = "Items.Preset_Butchers_Knife_Iconic_Legendary"
+                }
+            }
         },
         Cane = {
             Iconic = {
@@ -499,7 +522,11 @@ Weapons = {
             }
         },
         Chainsword = {
-            Default = "Items.Preset_Chainsword_Default"
+            Default = "Items.Preset_Chainsword_Default",
+            Neon = "Items.Preset_Chainsword_Neon",
+            Military = "Items.Preset_Chainsword_Military",
+            Pimp = "Items.Preset_Chainsword_Pimp",
+
         },
         ChefsKnife = {
             Default = "Items.Preset_Chefs_Knife_Default"
@@ -520,7 +547,8 @@ Weapons = {
             }
         },
         FangedAxe = {
-            Default = "Items.Preset_Fanged_Axe_Default"
+            Default = "Items.Preset_Fanged_Axe_Default",
+            Neon = "Items.Preset_Fanged_Axe_Neon"
         },
         Hammer = {
             Default = "Items.Preset_Hammer_Default",
@@ -603,8 +631,34 @@ Weapons = {
             Maelstrom = "Items.Preset_Machete_Maelstrom",
             Valentino = "Items.Preset_Machete_Valentinos"
         },
+        NeurotoxinKnife = {
+            Default = "Items.Preset_Neurotoxin_Knife_Default",
+            Military = "Items.Preset_Neurotoxin_Knife_Military",
+            Neon = "Items.Preset_Neurotoxin_Knife_Neon",
+            Pimp = "Items.Preset_Neurotoxin_Knife_Pimp",
+            Iconic = {
+                BlueFang = {
+                    Rare = "Items.Preset_Neurotoxin_Knife_Iconic",
+                    Epic = "Items.Preset_Neurotoxin_Knife_Iconic_Epic",
+                    Legendary = "Items.Preset_Neurotoxin_Knife_Iconic_Legendary"
+                }
+            }
+        },
         PipeWrench = {
             Default = "Items.Preset_Pipe_Wrench_Default"
+        },
+        PunkKnife = {
+            Default = "Items.Preset_Punk_Knife_Default",
+            Military = "Items.Preset_Punk_Knife_Military",
+            Neon = "Items.Preset_Punk_Knife_Neon",
+            Pimp = "Items.Preset_Punk_Knife_Pimp",
+            Iconic = {
+                Headhunter = {
+                    Rare = "Items.Preset_Punk_Knife_Iconic",
+                    Epic = "Items.Preset_Punk_Knife_Iconic_Epic",
+                    Legendary = "Items.Preset_Punk_Knife_Iconic_Legendary"
+                }
+            }
         },
         Shovel = {
             Iconic = {
