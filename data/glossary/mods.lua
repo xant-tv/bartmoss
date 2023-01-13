@@ -11,9 +11,9 @@ Mods = {
         CoolIt = "Items.PowerfulFabricEnhancer01",
         CutItOut = "Items.PowerfulFabricEnhancer06",
         DeadEye = "Items.PowerfulFabricEnhancer08",
-        Footloose = "Items.SimpleFabricEnhancer06",
+        ThickSkinned = "Items.SimpleFabricEnhancer06", -- Used to be Footloose.
         Fortuna = "Items.SimpleFabricEnhancer03",
-        Osmosis = "Items.SimpleFabricEnhancer09", -- Literally why is oxygen even a thing in this game?
+        Hackslinger = "Items.SimpleFabricEnhancer09", -- Used to be Osmosis.
         Panacea = "Items.PowerfulFabricEnhancer03",
         Plume = "Items.SimpleFabricEnhancer10",
         Predator = "Items.PowerfulFabricEnhancer07",
@@ -187,7 +187,7 @@ Mods = {
                 NeuroTransmitters = "Items.SandevistanFragment3",
                 Overclocked = "Items.SandevistanFragment1",
                 Prototype = "Items.SandevistanFragment2",
-                RapidBull = "Items.ValentinosSandevistanFragment1",
+                RabidBull = "Items.ValentinosSandevistanFragment1",
                 TygerPaw = "Items.TygerClawsSandevistanFragment1"
             }
         },

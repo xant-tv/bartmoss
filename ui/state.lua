@@ -60,6 +60,7 @@ State.WeaponsTab.Modifiers = {
     ChargeFullMultiplier = 0,
     ChargeTime = 0,
     NumShotsInBurstMaxCharge = 0,
+    CycleTimeBurstMaxCharge = 0,
     HasSmartLink = false,
     SmartGunHitProbability = 0,
     SmartGunAdsMaxLockedTargets = 0,

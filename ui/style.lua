@@ -2,35 +2,43 @@
 -- Define intelligently to autosize from other properties as needed.
 local Style = {}
 
+-- We need mathematics to scale nicely.
+local Math = require("utility/math")
+
+-- Change this depending on your resolution.
+-- 1080p -> 1
+-- 2160p -> 1.4
+Style.ScalingFactor = 1.4
+
 Style.Position = {
     App = {
         X = 0,
-        Y = 410
+        Y = 390
     }
 }
 
 Style.Size = {
     App = {
-        Width = 730,
-        Height = 670
+        Width = Math.RoundToInteger(Style.ScalingFactor * 800),
+        Height = Math.RoundToInteger(Style.ScalingFactor * 690)
     },
-    ColSpacer = 16,
-    SmallColSpacer = 12
+    ColSpacer = Math.RoundToInteger(Style.ScalingFactor * 16),
+    SmallColSpacer = Math.RoundToInteger(Style.ScalingFactor * 12)
 }
 
 Style.Size.Global = {
     Button = {
         Full = {
-            Width = (Style.Size.App.Width - 18),
-            Height = 19
+            Width = (Style.Size.App.Width - Math.RoundToInteger(Style.ScalingFactor * 18)),
+            Height = Math.RoundToInteger(Style.ScalingFactor * 19)
         },
         Half = {
-            Width = ((Style.Size.App.Width / 2) - 13),
-            Height = 19
+            Width = ((Style.Size.App.Width / 2) - Math.RoundToInteger(Style.ScalingFactor * 13)),
+            Height = Math.RoundToInteger(Style.ScalingFactor * 19)
         },
         Third = {
-            Width = ((Style.Size.App.Width / 3) - 11),
-            Height = 19
+            Width = ((Style.Size.App.Width / 3) - Math.RoundToInteger(Style.ScalingFactor * 11)),
+            Height = Math.RoundToInteger(Style.ScalingFactor * 19)
         }
     }
 }
@@ -45,8 +53,8 @@ Style.Size.ItemsTab.Integer = {
     -- Integer elements seem to draw larger than their set size. 
     -- Suspect they scale to nearest full integer width.
     -- Include as offset.
-    Width = 104,
-    Offset = 10
+    Width = Math.RoundToInteger(Style.ScalingFactor * 104),
+    Offset = Math.RoundToInteger(Style.ScalingFactor * 10)
 }
 Style.Size.ItemsTab.Text = {
     Width = (Style.Size.App.Width - (Style.Size.ItemsTab.Integer.Width + Style.Size.ItemsTab.Integer.Offset + Style.Size.SmallColSpacer))
@@ -57,8 +65,8 @@ Style.Size.PlayerTab = {
         Width = (Style.Size.App.Width / 3)
     },
     Integer = {
-        Width = 124,
-        Offset = 4
+        Width = Math.RoundToInteger(Style.ScalingFactor * 124),
+        Offset = Math.RoundToInteger(Style.ScalingFactor * 4)
     }
 }
 
@@ -68,8 +76,8 @@ Style.Size.QuickhacksTab = {
         Height = Style.Size.Global.Button.Third.Height
     },
     SmallButton = {
-        Width = 124,
-        Offset = 10,
+        Width = Math.RoundToInteger(Style.ScalingFactor * 124),
+        Offset = Math.RoundToInteger(Style.ScalingFactor * 10),
         Height = Style.Size.Global.Button.Full.Height
     }
 }
@@ -83,7 +91,7 @@ Style.Size.WeaponsTab = {
         Height = Style.Size.Global.Button.Full.Height
     },
     Text = {
-        Width = 100
+        Width = Math.RoundToInteger(Style.ScalingFactor * 100)
     },
     Columns = {
         [1] = {
@@ -100,10 +108,10 @@ Style.Size.WeaponsTab = {
     },
     Float = {
         [2] = {
-            Width = 134
+            Width = Math.RoundToInteger(Style.ScalingFactor * 134)
         },
         [3] = {
-            Width = 110
+            Width = Math.RoundToInteger(Style.ScalingFactor * 134)
         }
     }
 }
@@ -114,10 +122,10 @@ Style.Size.ArmorTab = {
         Height = Style.Size.Global.Button.Full.Height
     },
     Text = {
-        Width = 100
+        Width = Math.RoundToInteger(Style.ScalingFactor * 100)
     },
     Float = {
-        Width = 134
+        Width = Math.RoundToInteger(Style.ScalingFactor * 134)
     }
 }
 

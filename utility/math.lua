@@ -7,4 +7,11 @@ function Math.SafeFloor(x)
     return math.floor(x + 0.01)
 end
 
+function Math.RoundToInteger(x)
+    if x >= 0 then
+        return math.floor(x + 0.5)
+    end
+    return math.ceil(x - 0.5)
+end
+
 return Math

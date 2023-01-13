@@ -252,33 +252,359 @@ Custom = {
             },
             Tights = {
                 Camo = "Items.sp0tht0111",
-                Crotchless = { --
+                Crotchless = {
                     Black = "Items.sp0tht0110",
                     Blue = "Items.sp0tht0107",
                     Glowing = "Items.sp0tht0112",
                     Lace = "Items.sp0tht0105"
                 },
-                Elegant = "Items.sp0tht0114", --
+                Elegant = "Items.sp0tht0114",
                 Harem = {
                     Duolayer = "Items.sp0tgh0101",
-                    Elastic = "Items.sp0tgh0104", --
-                    Pink = "Items.sp0tgh0103", --
+                    Elastic = "Items.sp0tgh0104",
+                    Pink = "Items.sp0tgh0103",
                     Red = "Items.sp0tgh0105",
-                    Shiny = "Items.sp0tgh0102", --
+                    Shiny = "Items.sp0tgh0102",
                     Transparent = "Items.sp0tgh0106"
                 },
                 Lace = {
                     Pink = "Items.sp0tht0106",
                     Yellow = "Items.sp0tht0108",
                 },
-                Pink = "Items.sp0tht0102", --
+                Pink = "Items.sp0tht0102",
                 Polka = {
-                    Black = "Items.sp0tht0113", --
+                    Black = "Items.sp0tht0113",
                     Green = "Items.sp0tht0109"
                 },
                 Red = "Items.sp0tht0104",
-                Seamed = "Items.sp0tht0101", --
-                White = "Items.sp0tht0103", --
+                Seamed = "Items.sp0tht0101",
+                White = "Items.sp0tht0103",
+            }
+        }
+    },
+    Heladios = {
+        Head = {
+            Hair = {
+                Lucy = "Items.hair_00_lucy"
+            }
+        },
+    },
+    Zwei = {
+        Head = {
+            NylonTights = {
+                Bordeaux = "Items.zwei_tightsbordeaux",
+                Brown = "Items.zwei_tightsbrown",
+                Default = "Items.zwei_tights",
+                Pink = "Items.zwei_tightspink",
+                Violet = "Items.zwei_tightsviolet"
+            }
+        },
+        InnerTorso = {
+            AltBustier = {
+                Black = "Items.zwei_altbustiernblack",
+                Blue = "Items.zwei_altbustiernblue",
+                Coral = "Items.zwei_altbustierncoral",
+                Cream = "Items.zwei_altbustierncream",
+                Pink = "Items.zwei_altbustiernpink",
+                Red = "Items.zwei_altbustiernred",
+                Roses = "Items.zwei_altbustiernroses",
+                White = "Items.zwei_altbustiern"
+            }
+        },
+        Feet = {
+            BootPants = {
+                Black = "Items.zwei_fvbootpantsblack",
+                Blue = "Items.zwei_fvbootpantsblue",
+                Default = "Items.zwei_fvbootpants",
+                HarleyQuinn = "Items.zwei_fvbootpantsharleyquinn",
+                Jadzia = "Items.zwei_fvbootpantsjadzia",
+                MetallicBlue = "Items.zwei_fvbootpantsmetallicblue",
+                MetallicGold = "Items.zwei_fvbootpantsmetallicgold",
+                MetallicPink = "Items.zwei_fvbootpantsmetallicpink",
+                MetallicRed = "Items.zwei_fvbootpantsmetallicred",
+                MetallicSilver = "Items.zwei_fvbootpantsmetallicsilver",
+                MetallicYellow = "Items.zwei_fvbootpantsmetallicyellow",
+                PastelRose = "Items.zwei_fvbootpantspastelrose",
+                PlaidRed = "Items.zwei_fvbootpantsplaidred",
+                PlaidBlue = "Items.zwei_fvbootpantsplaidblue",
+                Red = "Items.zwei_fvbootpantsredblack",
+                White = "Items.zwei_fvbootpantswhite"
+            }
+        }
+    },
+    CubFan = {
+        InnerTorso = {
+            AltTank = {
+                Black = "Items.cubfan82tank01_black",
+                Blue = "Items.cubfan82tank01_blue",
+                DarkPurple = "Items.cubfan82tank01_darkpurple",
+                Green = "Items.cubfan82tank01_green",
+                Grey = "Items.cubfan82tank01_grey",
+                Pink = "Items.cubfan82tank01_pink",
+                Purple = "Items.cubfan82tank01_purple",
+                Red = "Items.cubfan82tank01_red",
+                Teal = "Items.cubfan82tank01_teal",
+                White = "Items.cubfan82tank01_white"
+            }
+        },
+        Legs = {
+            HighHeelPants = {
+                Arasaka = "Items.cubfan82_highheelpants01_arasaka",
+                Black = "Items.cubfan82_highheelpants01_black",
+                BlueGrey = "Items.cubfan82_highheelpants01_bluegrey",
+                Brown = "Items.cubfan82_highheelpants01_brown",
+                Green = "Items.cubfan82_highheelpants01_green",
+                Grey = "Items.cubfan82_highheelpants01_grey",
+                Lilac = "Items.cubfan82_highheelpants01_lilac",
+                Navy = "Items.cubfan82_highheelpants01_navy",
+                Orange = "Items.cubfan82_highheelpants01_orange",
+                Purple = "Items.cubfan82_highheelpants01_purple",
+                Red = "Items.cubfan82_highheelpants01_red",
+                Rose = "Items.cubfan82_highheelpants01_rose",
+                Salmon = "Items.cubfan82_highheelpants01_salmon",
+                Sapphire = "Items.cubfan82_highheelpants01_sapphire",
+                Teal = "Items.cubfan82_highheelpants01_teal",
+                White = "Items.cubfan82_highheelpants01_white"
+            }
+        }
+    },
+    Alvarix = {
+        Face = {
+            RockerGirl = {
+                Jewels = "Items.rockergirl_jewels"
+            }
+        },
+        InnerTorso = {
+            RockerGirl = {
+                Bra = "Items.rockergirl_tank_bra",
+                Tank = "Items.rockergirl_tank_spyked"
+            }
+        },
+        OuterTorso = {
+            RockerGirl = {
+                Jacket = "Items.rockergirl_jacket"
+            }
+        },
+        Legs = {
+            RockerGirl = {
+                Shorts = "Items.rockergirl_shorts",
+                Skirt = "Items.rockergirl_skirt"
+            }
+        },
+        Feet = {
+            RockerGirl = {
+                HeelBoots = "Items.rockergirl_heel_boots",
+                KneeBoots = "Items.rockergirl_laceup_knee_boots"
+            }
+        }
+    },
+    Hyst = {
+        Feet = {
+            HighBoots = {
+                Black = "Items.hyst_highboots_black",
+                Blue = "Items.hyst_highboots_blue",
+                Purple = "Items.hyst_highboots_purple",
+                Red = "Items.hyst_highboots_red",
+                Yellow = "Items.hyst_highboots_yellow",
+                White = "Items.hyst_highboots_white"
+            }
+        },
+        InnerTorso = {
+            CelebDress = {
+                Gold = "Items.hyst_celebdress_gold",
+                Silver = "Items.hyst_celebdress_silver"
+            },
+            ShortTank = {
+                Normal = {
+                    Black = "Items.hyst_short_tank_black",
+                    Blue = "Items.hyst_short_tank_blue",
+                    Green = "Items.hyst_short_tank_green",
+                    Pink = "Items.hyst_short_tank_pink",
+                    PinkPastel = "Items.hyst_short_tank_pinkpastel",
+                    Red = "Items.hyst_short_tank_red",
+                    White = "Items.hyst_short_tank_white"
+                },
+                UnderBoob = {
+                    Black = "Items.hyst_short_tank_ub_black",
+                    Blue = "Items.hyst_short_tank_ub_blue",
+                    Green = "Items.hyst_short_tank_ub_green",
+                    Pink = "Items.hyst_short_tank_ub_pink",
+                    PinkPastel = "Items.hyst_short_tank_ub_pinkpastel",
+                    Red = "Items.hyst_short_tank_ub_red",
+                    White = "Items.hyst_short_tank_ub_white"
+                }
+            }
+        },
+        OuterTorso = {
+            Bodysuit = {
+                Normal = {
+                    Black = "Items.hyst_bodysuit_black",
+                    Blue = "Items.hyst_bodysuit_blue",
+                    Green = "Items.hyst_bodysuit_green",
+                    PinkPastel = "Items.hyst_bodysuit_pinkpastel",
+                    Red = "Items.hyst_bodysuit_red",
+                    White = "Items.hyst_bodysuit_white"
+                },
+                Sleeves = {
+                    Black = "Items.hyst_bodysuitsleeve_black",
+                    Blue = "Items.hyst_bodysuitsleeve_blue",
+                    Green = "Items.hyst_bodysuitsleeve_green",
+                    PinkPastel = "Items.hyst_bodysuitsleeve_pinkpastel",
+                    Red = "Items.hyst_bodysuitsleeve_red",
+                    White = "Items.hyst_bodysuitsleeve_white"
+                }
+            }
+        },
+        Outfit = {
+            FishnetBodysuit = {
+                Black = "Items.hyst_bds_fishnet_black",
+                White = "Items.hyst_bds_fishnet_white"
+            }
+        }
+    },
+    xBaebsae = {
+        Feet = {
+            Angy = {
+                Heels = {
+                    Beige = "Items.SE7EN_ClothingShoes_AngyFavHeel_Beige",
+                    Black = "Items.SE7EN_ClothingShoes_AngyFavHeel_Black",
+                    BlackGold = "Items.SE7EN_ClothingShoes_AngyFavHeel_BlackGold",
+                    BlackSilver = "Items.SE7EN_ClothingShoes_AngyFavHeel_BlackSilver",
+                    Brown = "Items.SE7EN_ClothingShoes_AngyFavHeel_Brown",
+                    Red = "Items.SE7EN_ClothingShoes_AngyFavHeel_Red",
+                    White = "Items.SE7EN_ClothingShoes_AngyFavHeel_White",
+                    WhiteGold = "Items.SE7EN_ClothingShoes_AngyFavHeel_WhiteGold",
+                    WhiteSilver = "Items.SE7EN_ClothingShoes_AngyFavHeel_WhiteSilver"
+                },
+                Boots = {
+                    Beige = "Items.SE7EN_ClothingShoes_AngyFav_Beige",
+                    Black = "Items.SE7EN_ClothingShoes_AngyFav_Black",
+                    BlackGold = "Items.SE7EN_ClothingShoes_AngyFav_BlackGold",
+                    BlackSilver = "Items.SE7EN_ClothingShoes_AngyFav_BlackSilver",
+                    Brown = "Items.SE7EN_ClothingShoes_AngyFav_Brown",
+                    Red = "Items.SE7EN_ClothingShoes_AngyFav_Red",
+                    White = "Items.SE7EN_ClothingShoes_AngyFav_White",
+                    WhiteGold = "Items.SE7EN_ClothingShoes_AngyFav_WhiteGold",
+                    WhiteSilver = "Items.SE7EN_ClothingShoes_AngyFav_WhiteSilver"
+                }
+            }
+        }
+    },
+    NolaDreamer = {
+        Head = {
+            FishnetTop = {
+                Black = "Items.nd_fishnet_top_black",
+                Blue = "Items.nd_fishnet_top_blue",
+                Burgundy = "Items.nd_fishnet_top_burgundy",
+                Pink = "Items.nd_fishnet_top_pink",
+                Red = "Items.nd_fishnet_top_red",
+                White = "Items.nd_fishnet_top_white"
+            }
+        },
+        InnerTorso = {
+            NippleStickers = {
+                Black = "Items.nd_nipple_stickers_black",
+                Blue = "Items.nd_nipple_stickers_blue",
+                Burgundy = "Items.nd_nipple_stickers_burgundy",
+                Pink = "Items.nd_nipple_stickers_pink",
+                Red = "Items.nd_nipple_stickers_red",
+                White = "Items.nd_nipple_stickers_white"
+            }
+        },
+        Legs = {
+            FishnetPants = {
+                Black = "Items.nd_fishnet_pants_black",
+                Blue = "Items.nd_fishnet_pants_blue",
+                Burgundy = "Items.nd_fishnet_pants_burgundy",
+                Pink = "Items.nd_fishnet_pants_pink",
+                Red = "Items.nd_fishnet_pants_red",
+                White = "Items.nd_fishnet_pants_white"
+            }
+        }
+    },
+    PinkyDude = {
+        InnerTorso = {
+            CrossTop = {
+               Black = "Items.PinkyDude_CrossTop_Black",
+               Blue = "Items.PinkyDude_CrossTop_Blue",
+               Green = "Items.PinkyDude_CrossTop_Green",
+               Orange = "Items.PinkyDude_CrossTop_Orange",
+               Pink = "Items.PinkyDude_CrossTop_Pink",
+               Purple = "Items.PinkyDude_CrossTop_Purple",
+               Red = "Items.PinkyDude_CrossTop_Red",
+               Turquoise = "Items.PinkyDude_CrossTop_Turquoise",
+               White = "Items.PinkyDude_CrossTop_White",
+               Yellow = "Items.PinkyDude_CrossTop_Yellow"
+            }
+        }
+    },
+    Kwek = {
+        Feet = {
+            HeeledSandals = {
+                Black = "Items.high_sandals_01_rich_02_kwek",
+                BlackOrange = "Items.high_sandals_01_basic_01_kwek",
+                Gold = "Items.high_sandals_01_old_03_kwek",
+                Green = "Items.high_sandals_01_rich_01_kwek",
+                Leopard = "Items.high_sandals_01_old_01_kwek",
+                Pink = "Items.high_sandals_01_basic_03_kwek",
+                Purple = "Items.high_sandals_01_basic_04_kwek",
+                Silver = "Items.high_sandals_01_old_02_kwek",
+                White = "Items.high_sandals_01_basic_02_kwek"
+            }
+        },
+        InnerTorso = {
+            MicroBikini = {
+                Holo = {
+                    Blue = "Items.micro_bikini_01_holo_01_kwek",
+                    YellowDot = "Items.micro_bikini_01_holo_02_kwek",
+                    Pink = "Items.micro_bikini_01_holo_03_kwek"
+                },
+                Pattern = {
+                    Blue = "Items.micro_bikini_01_rich_02_kwek",
+                    Camo = "Items.micro_bikini_01_old_02_kwek",
+                    Gold = "Items.micro_bikini_01_rich_03_kwek",
+                    Leopard = "Items.micro_bikini_01_basic_04_kwek",
+                    Red = "Items.micro_bikini_01_rich_01_kwek",
+                    Silver = "Items.micro_bikini_01_rich_04_kwek"
+                },
+                PVC = {
+                    Black = "Items.micro_bikini_01_pvc_01_kwek",
+                    Red = "Items.micro_bikini_01_pvc_03_kwek",
+                    White = "Items.micro_bikini_01_basic_03_kwek",
+                    Yellow = "Items.micro_bikini_01_pvc_02_kwek"
+                },
+                Sheer = {
+                    Black = "Items.micro_bikini_01_net_01_kwek",
+                    White = "Items.micro_bikini_01_net_02_kwek",
+                    Purple = "Items.micro_bikini_01_net_03_kwek"
+                },
+                Solid = {
+                    Black = "Items.micro_bikini_01_basic_01_kwek",
+                    Pink = "Items.micro_bikini_01_old_03_kwek",
+                    White = "Items.micro_bikini_01_basic_02_kwek",
+                    Yellow = "Items.micro_bikini_01_old_01_kwek",
+                },
+                Transparent = {
+                    Black = "Items.micro_bikini_01_transparent_01_kwek",
+                    Red = "Items.micro_bikini_01_transparent_02_kwek",
+                    Yellow = "Items.micro_bikini_01_transparent_03_kwek",
+                }
+            }
+        }
+    },
+    Llama = {
+        OuterTorso = {
+            Emmerick = {
+                Black = "Items.bouncer_black",
+                Camo = "Items.bouncer_camo",
+                Digital = "Items.bouncer_digi",
+                FDE = "Items.bouncer_fde",
+                Orange = "Items.bouncer_orange",
+                Original = "Items.bouncer_og",
+                PlaidGreen = "Items.bouncer_plaidg",
+                PlaidRed = "Items.bouncer_plaidr",
+                Purple = "Items.bouncer_purple",
+                Silver = "Items.bouncer_silver"
             }
         }
     }

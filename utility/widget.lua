@@ -30,7 +30,7 @@ function Widget.ParseRawIntoView(raw, viewtype)
     if string.lower(viewtype) == "boolean" then
         return Types.NumToBool(raw)
     end
-    return raw
+    return tonumber(raw)
 end
 
 function Widget.ParseViewIntoRaw(view, viewtype)
@@ -40,7 +40,7 @@ function Widget.ParseViewIntoRaw(view, viewtype)
     if string.lower(viewtype) == "boolean" then
         return Types.BoolToNum(view)
     end
-    return view
+    return tonumber(view)
 end
 
 function Widget.SetNextWindowPos(x, y)

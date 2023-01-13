@@ -128,6 +128,12 @@ function WeaponCheatsTab:BuildModifierFromLayout(elem, maxcol)
             Style.Size.WeaponsTab.Float[maxcol].Width,
             self.state[elem.Name].Value ~= self.state[elem.Name].Read
         )
+    elseif elem.Type == "Multiplier" then
+        self.state[elem.Name].Value = Widget.InputFloat(
+            elem.Display, self.state[elem.Name].Value, 0.001, 0.1, "%.4f",
+            Style.Size.WeaponsTab.Float[maxcol].Width,
+            self.state[elem.Name].Value ~= self.state[elem.Name].Read
+        )
     elseif elem.Type == "Boolean" then
         self.state[elem.Name].Value = Widget.Checkbox(
             elem.Display, self.state[elem.Name].Value,

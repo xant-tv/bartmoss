@@ -132,8 +132,10 @@ Cyberware = {
             Iconic = "Items.NetwatchNetdriverLegendaryMKV"
         },
         Qiant = {
-            Legendary = "Items.SandevistanC3MK4",
-            Iconic = "Items.SandevistanC3MK5"
+            Sandevistan = {
+                Legendary = "Items.SandevistanC3MK4",
+                Iconic = "Items.SandevistanC3MK5"
+            }
         },
         Raven = {
             Epic = "Items.RavenEpicMKIII",
@@ -207,7 +209,7 @@ Cyberware = {
             Rare = "Items.FastAccessMemoryRare"
         },
         SelfICE = {
-            Legendary = "Items.AntiVirus"
+            Rare = "Items.AntiVirus"
         },
         VisualCortex = {
             Common = "Items.ImprovedPerceptionCommon",

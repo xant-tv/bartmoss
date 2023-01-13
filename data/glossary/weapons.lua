@@ -223,6 +223,13 @@ Weapons = {
             Neon = "Items.Preset_MA70_Neon",
             Pimp = "Items.Preset_MA70_Pimp"
         },
+        Malorian = {
+            Iconic = {
+                Silverhand = {
+                    Legendary = "Items.Preset_Silverhand_3516"
+                }
+            }
+        },
         Masamune = {
             Default = "Items.Preset_Masamune_Default",
             Flashlight = "Items.Preset_Masamune_Flashlight",
@@ -374,7 +381,8 @@ Weapons = {
             Default = "Items.Preset_Senkoh_Default",
             Military = "Items.Preset_Senkoh_Military",
             Neon = "Items.Preset_Senkoh_Neon",
-            Pimp = "Items.Preset_Senkoh_Pimp"
+            Pimp = "Items.Preset_Senkoh_Pimp",
+            Arasaka = "Items.Preset_Senkoh_Legendary"
         },
         Shingen = {
             Default = "Items.Preset_Shingen_Default",

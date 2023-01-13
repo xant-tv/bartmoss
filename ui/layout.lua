@@ -50,17 +50,12 @@ Layout = {
                     Display = "Magazine Capacity",
                     Type = "Float"
                 }
-                -- Proxy for rate of fire.
-                -- Disable until more testing is done.
-                -- {
-                --     Name = "CycleTime",
-                --     Display = "Cycle Time",
-                --     Column = 1
-                -- }
             },
             [2] = {
                 {
-                    Type = "Skip"
+                    Name = "CycleTime",
+                    Display = "Cycle Time",
+                    Type = "Multiplier" -- It's not actually a multiplier but this will give small incrementals.
                 },
                 {
                     Name = "BleedChance",
@@ -160,26 +155,28 @@ Layout = {
                     Display = "Charge Burst",
                     Type = "Float",
                     Method = "Add"
+                },
+                {
+                    Name = "CycleTimeBurstMaxCharge",
+                    Display = "Charge Cycle",
+                    Type = "Multiplier" -- Also not actually a multiplier but finer control is needed.
                 }
             },
             [3] = {
                 {
                     Name = "HasSmartLink",
                     Display = "Has Smart Link",
-                    Column = 3,
                     Type = "Boolean"
                 },
                 {
                     Name = "SmartGunHitProbability",
                     Display = "Hit Chance",
-                    Column = 3,
                     Type = "Float"
                 },
                 {
                     Name = "SmartGunAdsMaxLockedTargets",
                     Copy = "SmartGunHipMaxLockedTargets",
                     Display = "Max Targets",
-                    Column = 3,
                     Type = "Float"
                 },
                 -- Smart guns need more research!
@@ -187,7 +184,6 @@ Layout = {
                 {
                     Name = "SmartGunTrackAllBodyparts",
                     Display = "Track Limbs",
-                    Column = 3,
                     Type = "Boolean"
                 }
             }

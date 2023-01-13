@@ -150,7 +150,7 @@ Preset.Presets = {
             -- Smart weapon (no inbuilt link).
             -- Fires insanely fast. Multiple (three) projectiles per shot.
             -- Bullets are designed to cause bleeding.
-            Base = Glossary.Weapons.Ranged.Dian.Pimp,
+            Base = Glossary.Weapons.Ranged.Dian.Default,
             Quality = Glossary.Quality.Legendary,
             Stats = {
                 {
