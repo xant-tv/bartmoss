@@ -84,3 +84,11 @@ Focus of this release:
 Change notes:
  - Added the new weapon bases and attachment into the `Glossary`
  - Fixed a regression that prevented the user from giving themselves weapon attachments.
+
+## 0.8.8 - 13/01/2023
+Focus of this release:
+ - Support changes in CP2077 Patch 1.6+
+
+Change notes:
+ - All forgotten, these changes were done over the last year without updating remote.
+ - Minor bug fixes.
