@@ -29,6 +29,9 @@ Weapons = {
                 MoronLabe = {
                     Epic = "Items.Preset_Ajax_Moron",
                     Legendary = "Items.Preset_Ajax_Moron_Legendary"
+                },
+                PitBull = {
+                    Legendary = "Items.Preset_Ajax_Amazon"
                 }
             }
         },
@@ -36,7 +39,12 @@ Weapons = {
             Default = "Items.Preset_Ashura_Default",
             Military = "Items.Preset_Ashura_Military",
             Neon = "Items.Preset_Ashura_Neon",
-            Pimp = "Items.Preset_Ashura_Pimp"
+            Pimp = "Items.Preset_Ashura_Pimp",
+            Iconic = {
+                Yasha = {
+                    Legendary = "Items.Preset_Ashura_Twitch"
+                }
+            }
         },
         Burya = {
             Default = "Items.Preset_Burya_Default",
@@ -86,7 +94,12 @@ Weapons = {
             Default = "Items.Preset_Crusher_Default",
             Military = "Items.Preset_Crusher_Military",
             Neon = "Items.Preset_Crusher_Neon",
-            Pimp = "Items.Preset_Crusher_Pimp"
+            Pimp = "Items.Preset_Crusher_Pimp",
+            Iconic = {
+                Redbone = {
+                    Legendary = "Items.Preset_Crusher_Amazon"
+                }
+            }
         },
         Defender = {
             Default = "Items.Preset_Defender_Default",
@@ -120,6 +133,13 @@ Weapons = {
                     Rare = "Items.Preset_Grad_Panam",
                     Epic = "Items.Preset_Grad_Panam_Epic",
                     Legendary = "Items.Preset_Grad_Panam_Legendary"
+                }
+            }
+        },
+        Grit = {
+            Iconic = {
+                Catahoula = {
+                    Legendary = "Items.Preset_Grit_Amazon"
                 }
             }
         },
@@ -179,7 +199,12 @@ Weapons = {
             Default = "Items.Preset_Kyubi_Default",
             Military = "Items.Preset_Kyubi_Military",
             Neon = "Items.Preset_Kyubi_Neon",
-            Pimp = "Items.Preset_Kyubi_Pimp"
+            Pimp = "Items.Preset_Kyubi_Pimp",
+            Iconic = {
+                Chinook = {
+                    Legendary = "Items.Preset_Kyubi_Amazon"
+                }
+            }
         },
         Lexington = {
             Default = "Items.Preset_Lexington_Default",
@@ -252,6 +277,9 @@ Weapons = {
                 Breakthrough = {
                     Epic = "Items.Preset_Nekomata_Breakthrough",
                     Legendary = "Items.Preset_Nekomata_Breakthrough_Legendary"
+                },
+                Foxhound = {
+                    Legendary = "Items.Preset_Nekomata_Amazon"
                 }
             }
         },
@@ -452,6 +480,13 @@ Weapons = {
             Military = "Items.Preset_Unity_Military",
             Neon = "Items.Preset_Unity_Neon",
             Pimp = "Items.Preset_Unity_Pimp"
+        },
+        Warden = {
+            Iconic = {
+                Chesapeake = {
+                    Legendary = "Items.Preset_Warden_Amazon"
+                }
+            }
         },
         Yukimara = {
             Default = "Items.Preset_Yukimura_Default",
@@ -687,32 +722,81 @@ Weapons = {
     },
     Grenades = {
         Biohazard = {
-            Homing = "Items.GrenadeBiohazardHoming",
-            Regular = "Items.GrenadeBiohazardRegular"
+            Rare = "Items.GrenadeBiohazardRegular",
+            RarePlus = "Items.GrenadeBiohazardRarePlus",
+            Epic = "Items.GrenadeBiohazardHoming",
+            EpicPlus = "Items.GrenadeBiohazardEpicPlus",
+            Legendary = "Items.GrenadeBiohazardLegendary",
+            LegendaryPlus = "Items.GrenadeBiohazardLegendaryPlus"
         },
         EMP = {
-            Homing = "Items.GrenadeEMPHoming",
-            Regular = "Items.GrenadeEMPRegular",
-            Sticky = "Items.GrenadeEMPSticky"
+            Common = "Items.GrenadeEMPRegular",
+            CommonPlus = "Items.GrenadeEMPCommonPlus",
+            Uncommon = "Items.GrenadeEMPUncommon",
+            UncommonPlus = "Items.GrenadeEMPUncommonPlus",
+            Rare = "Items.GrenadeEMPRare",
+            RarePlus = "Items.GrenadeEMPRarePlus",
+            Epic = "Items.GrenadeEMPSticky",
+            EpicPlus = "Items.GrenadeEMPEpicPlus",
+            Legendary = "Items.GrenadeEMPLegendary",
+            LegendaryPlus = "Items.GrenadeEMPLegendaryPlus"
         },
         Flash = {
-            Homing = "Items.GrenadeFlashHoming",
-            Regular = "Items.GrenadeFlashRegular"
+            CommonPlus = "Items.GrenadeFlashCommonPlus",
+            Uncommon = "Items.GrenadeFlashUncommon",
+            UncommonPlus = "Items.GrenadeFlashUncommonPlus",
+            Rare = "Items.GrenadeFlashHoming",
+            RarePlus = "Items.GrenadeFlashRarePlus",
+            Epic = "Items.GrenadeFlashEpic",
+            EpicPlus = "Items.GrenadeFlashEpicPlus",
+            Legendary = "Items.GrenadeFlashLegendary",
+            LegendaryPlus = "Items.GrenadeFlashLegendaryPlus"
         },
         Frag = {
-            Homing = "Items.GrenadeFragHoming",
-            Regular = "Items.GrenadeFragRegular",
-            Sticky = "Items.GrenadeFragSticky"
+            Common = "Items.GrenadeFragRegular",
+            CommonPlus = "Items.GrenadeFragCommonPlus",
+            Uncommon = "Items.GrenadeFragUncommon",
+            UncommonPlus = "Items.GrenadeFragUncommonPlus",
+            Rare = "Items.GrenadeFragSticky",
+            RarePlus = "Items.GrenadeFragRarePlus",
+            Epic = "Items.GrenadeFragEpic",
+            EpicPlus = "Items.GrenadeFragEpicPlus",
+            Legendary = "Items.GrenadeFragLegendary",
+            LegendaryPlus = "Items.GrenadeFragLegendaryPlus"
         },
-        Gash = "Items.GrenadeCuttingRegular",
+        Gash = {
+            Legendary = "Items.GrenadeCuttingRegular",
+            LegendaryPlus = "Items.CuttingGrenadeLegendaryPlus",
+        },
         Incendiary = {
-            Homing = "Items.GrenadeIncendiaryHoming",
-            Regular = "Items.GrenadeIncendiaryRegular",
-            Sticky = "Items.GrenadeIncendiarySticky"
+            Uncommon = "Items.GrenadeIncendiaryRegular",
+            UncommonPlus = "Items.GrenadeIncendiaryUncommonPlus",
+            Rare = "Items.GrenadeIncendiaryRare",
+            RarePlus = "Items.GrenadeIncendiaryRarePlus",
+            Epic = "Items.GrenadeIncendiarySticky",
+            EpicPlus = "Items.GrenadeIncendiaryEpicPlus",
+            Legendary = "Items.GrenadeIncendiaryLegendary",
+            LegendaryPlus = "Items.GrenadeIncendiaryLegendaryPlus"
         },
         Recon = {
-            Regular = "Items.GrenadeReconRegular",
-            Sticky = "Items.GrenadeReconSticky"
+            Uncommon = "Items.GrenadeReconRegular",
+            UncommonPlus = "Items.GrenadeReconUncommonPlus",
+            Rare = "Items.GrenadeReconRare",
+            RarePlus = "Items.GrenadeReconRarePlus",
+            Epic = "Items.GrenadeReconSticky",
+            EpicPlus = "Items.GrenadeReconEpicPlus",
+            Legendary = "Items.GrenadeReconLegendary",
+            LegendaryPlus = "Items.GrenadeReconLegendaryPlus"
+        },
+        Smoke = {
+            Uncommon = "Items.GrenadeSmokeRegular",
+            UncommonPlus = "Items.GrenadeSmokeUncommonPlus",
+            Rare = "Items.GrenadeSmokeRare",
+            RarePlus = "Items.GrenadeSmokeRarePlus",
+            Epic = "Items.GrenadeSmokeEpic",
+            EpicPlus = "Items.GrenadeSmokeEpicPlus",
+            Legendary = "Items.GrenadeSmokeLegendary",
+            LegendaryPlus = "Items.GrenadeSmokeLegendaryPlus"
         },
         Ozob = "Items.GrenadeOzobsNose"
     }

@@ -2,45 +2,197 @@
 local Mods = {}
 
 Mods = {
-    Clothing = {
-        AntiVenom = "Items.PowerfulFabricEnhancer02",
-        Armadillo = "Items.SimpleFabricEnhancer01",
-        Backpack = "Items.SimpleFabricEnhancer05",
-        BoomBreaker = "Items.SimpleFabricEnhancer14",
-        Bully = "Items.SimpleFabricEnhancer04",
-        CoolIt = "Items.PowerfulFabricEnhancer01",
-        CutItOut = "Items.PowerfulFabricEnhancer06",
-        DeadEye = "Items.PowerfulFabricEnhancer08",
-        ThickSkinned = "Items.SimpleFabricEnhancer06", -- Used to be Footloose.
-        Fortuna = "Items.SimpleFabricEnhancer03",
-        Hackslinger = "Items.SimpleFabricEnhancer09", -- Used to be Osmosis.
-        Panacea = "Items.PowerfulFabricEnhancer03",
-        Plume = "Items.SimpleFabricEnhancer10",
-        Predator = "Items.PowerfulFabricEnhancer07",
-        Resist = "Items.SimpleFabricEnhancer02",
-        Showtime = "Items.SimpleFabricEnhancer07",
-        SoftSole = "Items.PowerfulFabricEnhancer05",
-        SuperInsulator = "Items.PowerfulFabricEnhancer04",
-        Tenacity = "Items.SimpleFabricEnhancer12",
-        Vanguard = "Items.SimpleFabricEnhancer13",
-        ZeroDrag = "Items.SimpleFabricEnhancer11"
+    Generic = {
+        Pax = {
+            Common = "Items.GenericMod1_Common",
+            Uncommon = "Items.GenericMod1_Uncommon",
+            Rare = "Items.GenericMod1_Rare",
+            Epic = "Items.GenericMod1_Epic",
+            Legendary = "Items.GenericMod1_Legendary"
+        }
     },
     Ranged = {
-        Autoloader = "Items.SimpleWeaponMod16",
-        -- BeSmart = "Items.SimpleWeaponMod15", -- Disabled as this mod doesn't appear to actually be usable.
-        -- Bouncy = "Items.SimpleWeaponMod08", -- Disabled as this mod doesn't appear to actually be usable.
-        -- ChargeSpike = "Items.SimpleWeaponMod09", -- Disabled as this mod doesn't appear to actually be usable.
-        CombatAmplifier = "Items.SimpleWeaponMod04",
-        CounterMass = "Items.SimpleWeaponMod11",
-        Crunch = "Items.SimpleWeaponMod01",
-        NeonArrow = "Items.TygerRangedWeaponMod",
-        Pacifier = "Items.SimpleWeaponMod03",
-        Pax = "Items.SimpleWeaponMod17",
-        Penetrator = "Items.SimpleWeaponMod02",
-        Phantom = "Items.WraithsRangedWeaponMod",
-        Pulverize = "Items.SimpleWeaponMod12",
-        Vendetta = "Items.ValentinosRangedWeaponMod",
-        Weaken = "Items.SimpleWeaponMod13",
+        Generic = {
+            BetterHalf = {
+                Epic = "Items.RangedMod1_Epic",
+                Legendary = "Items.RangedMod1_Legendary"
+            },
+            Shuffler = {
+                Common = "Items.RangedMod2_Common",
+                Uncommon = "Items.RangedMod2_Uncommon",
+                Rare = "Items.RangedMod2_Rare",
+                Epic = "Items.RangedMod2_Epic",
+                Legendary = "Items.RangedMod2_Legendary"
+            },
+            Equalizer = {
+                Common = "Items.RangedMod3_Common",
+                Uncommon = "Items.RangedMod3_Uncommon",
+                Rare = "Items.RangedMod3_Rare",
+                Epic = "Items.RangedMod3_Epic",
+                Legendary = "Items.RangedMod3_Legendary"
+            }
+        },
+        Automatic = {
+            BigMag = {
+                Common = "Items.ARSMGLMGMod1_Common",
+                Uncommon = "Items.ARSMGLMGMod1_Uncommon",
+                Rare = "Items.ARSMGLMGMod1_Rare",
+                Epic = "Items.ARSMGLMGMod1_Epic",
+                Legendary = "Items.ARSMGLMGMod1_Legendary"
+            },
+            ReadSteady = {
+                Common = "Items.ARSMGLMGMod2_Common",
+                Uncommon = "Items.ARSMGLMGMod2_Uncommon",
+                Rare = "Items.ARSMGLMGMod2_Rare",
+                Epic = "Items.ARSMGLMGMod2_Epic",
+                Legendary = "Items.ARSMGLMGMod2_Legendary",
+            },
+            FocusFire = {
+                Common = "Items.ARSMGLMGMod3_Common",
+                Uncommon = "Items.ARSMGLMGMod3_Uncommon",
+                Rare =  "Items.ARSMGLMGMod3_Rare",
+                Epic = "Items.ARSMGLMGMod3_Epic",
+                Legendary = "Items.ARSMGLMGMod3_Legendary",
+            }
+        },
+        Handgun = {
+            Pinpoint = {
+                Common = "Items.HGMod1_Common",
+                Uncommon = "Items.HGMod1_Uncommon",
+                Rare = "Items.HGMod1_Rare",
+                Epic = "Items.HGMod1_Epic",
+                Legendary = "Items.HGMod1_Legendary"
+            },
+            Zenith = {
+                Common = "Items.HGMod2_Common",
+                Uncommon = "Items.HGMod2_Uncommon",
+                Rare = "Items.HGMod2_Rare",
+                Epic = "Items.HGMod2_Epic",
+                Legendary = "Items.HGMod2_Legendary"
+            },
+            Parallax = {
+                Common = "Items.HGMod3_Common",
+                Uncommon = "Items.HGMod3_Uncommon",
+                Rare = "Items.HGMod3_Rare",
+                Epic = "Items.HGMod3_Epic",
+                Legendary = "Items.HGMod3_Legendary"
+            }
+        },
+        Shotgun = {
+            Vivisector = {
+                Common = "Items.ShotgunMod1_Common",
+                Uncommon = "Items.ShotgunMod1_Uncommon",
+                Rare = "Items.ShotgunMod1_Rare",
+                Epic = "Items.ShotgunMod1_Epic",
+                Legendary = "Items.ShotgunMod1_Legendary"
+            },
+            Kneel = {
+                Common = "Items.ShotgunMod2_Common",
+                Uncommon = "Items.ShotgunMod2_Uncommon",
+                Rare = "Items.ShotgunMod2_Rare",
+                Epic = "Items.ShotgunMod2_Epic",
+                Legendary = "Items.ShotgunMod2_Legendary"
+            },
+            Condenser = {
+                Common = "Items.ShotgunMod3_Common",
+                Uncommon = "Items.ShotgunMod3_Uncommon",
+                Rare = "Items.ShotgunMod3_Rare",
+                Epic = "Items.ShotgunMod3_Epic",
+                Legendary = "Items.ShotgunMod3_Legendary"
+            }
+        },
+        Precision = {
+            Stabilizer = {
+                Common = "Items.PRSRMod1_Common",
+                Uncommon = "Items.PRSRMod1_Uncommon",
+                Rare = "Items.PRSRMod1_Rare",
+                Epic = "Items.PRSRMod1_Epic",
+                Legendary = "Items.PRSRMod1_Legendary"
+            },
+            Headtoll = {
+                Common = "Items.PRSRMod2_Common",
+                Uncommon = "Items.PRSRMod2_Uncommon",
+                Rare = "Items.PRSRMod2_Rare",
+                Epic = "Items.PRSRMod2_Epic",
+                Legendary = "Items.PRSRMod2_Legendary"
+            },
+            Fleetshot = {
+                Common = "Items.PRSRMod3_Common",
+                Uncommon = "Items.PRSRMod3_Uncommon",
+                Rare = "Items.PRSRMod3_Rare",
+                Epic = "Items.PRSRMod3_Epic",
+                Legendary = "Items.PRSRMod3_Legendary"
+            },
+        },
+        Power = {
+            Pyro = {
+                Common = "Items.PowerMod1_Common",
+                Uncommon = "Items.PowerMod1_Uncommon",
+                Rare = "Items.PowerMod1_Rare",
+                Epic = "Items.PowerMod1_Epic",
+                Legendary = "Items.PowerMod1_Legendary"
+            },
+            SwissCheese = {
+                Common = "Items.PowerMod2_Common",
+                Uncommon = "Items.PowerMod2_Uncommon",
+                Rare = "Items.PowerMod2_Rare",
+                Epic = "Items.PowerMod2_Epic",
+                Legendary = "Items.PowerMod2_Legendary"
+            },
+            Critochet = {
+                Common = "Items.PowerMod3_Common",
+                Uncommon = "Items.PowerMod3_Uncommon",
+                Rare = "Items.PowerMod3_Rare",
+                Epic = "Items.PowerMod3_Epic",
+                Legendary = "Items.PowerMod3_Legendary"
+            },
+            Firecracker = "Items.ChimeraPowerMod"
+        },
+        Tech = {
+            Spinetickler = {
+                Common = "Items.TechMod1_Common",
+                Uncommon = "Items.TechMod1_Uncommon",
+                Rare = "Items.TechMod1_Rare",
+                Epic = "Items.TechMod1_Epic",
+                Legendary = "Items.TechMod1_Legendary"
+            },
+            CThru = {
+                Common = "Items.TechMod2_Common",
+                Uncommon = "Items.TechMod2_Uncommon",
+                Rare = "Items.TechMod2_Rare",
+                Epic = "Items.TechMod2_Epic",
+                Legendary = "Items.TechMod2_Legendary"
+            },
+            Supercharger = {
+                Common = "Items.TechMod3_Common",
+                Uncommon = "Items.TechMod3_Uncommon",
+                Rare = "Items.TechMod3_Rare",
+                Epic = "Items.TechMod3_Epic",
+                Legendary = "Items.TechMod3_Legendary"
+            },
+            Wallpuncher = "Items.ChimeraTechMod"
+        },
+        Smart = {
+            Headhopper = {
+                Epic = "Items.SmartMod1_Epic",
+                Legendary = "Items.SmartMod1_Legendary"
+            },
+            Gambiteer = {
+                Common = "Items.SmartMod2_Common",
+                Uncommon = "Items.SmartMod2_Uncommon",
+                Rare = "Items.SmartMod2_Rare",
+                Epic = "Items.SmartMod2_Epic",
+                Legendary = "Items.SmartMod2_Legendary"
+            },
+            Panorama = {
+                Common = "Items.SmartMod3_Common",
+                Uncommon = "Items.SmartMod3_Uncommon",
+                Rare = "Items.SmartMod3_Rare",
+                Epic = "Items.SmartMod3_Epic",
+                Legendary = "Items.SmartMod3_Legendary"
+            },
+            Hackatomy = "Items.ChimeraSmartMod"
+        },
         Iconic = {
             -- These weapon mods can be added to inventory but are unable to be manually socketed.
             -- However, we can probably force these into special weapon slots.
@@ -59,7 +211,7 @@ Mods = {
             DoomDoom = "Items.DoomDoomWeaponMod",
             DyingNight = "Items.WilsonWeaponMod",
             Fenrir = "Items.SaratogaMaelstromWeaponMod",
-            Genjiroh = "YukimuraKijiWeaponMod",
+            Genjiroh = "Items.YukimuraKijiWeaponMod",
             Headsman = "Items.TacticianHeadsmanWeaponMod",
             Kongou = "Items.YorinobuLibertyWeaponMod",
             Lizzie = "Items.SuzieWeaponMod",
@@ -80,10 +232,90 @@ Mods = {
         }
     },
     Melee = {
-        ColdShoulder = "Items.ValentinosMeleeWeaponMod",
-        Kunai = "Items.ArasakaMeleeWeaponMod",
-        Scourge = "Items.WraithsMeleeWeaponMod",
-        WhiteKnuckled = "Items.TygerMeleeWeaponMod",
+        Generic = {
+            Airstrike = {
+                Common = "Items.MeleeMod1_Common",
+                Uncommon = "Items.MeleeMod1_Uncommon",
+                Rare = "Items.MeleeMod1_Rare",
+                Epic = "Items.MeleeMod1_Epic",
+                Legendary = "Items.MeleeMod1_Legendary"
+            },
+            Cyclone = {
+                Common = "Items.MeleeMod2_Common",
+                Uncommon = "Items.MeleeMod2_Uncommon",
+                Rare = "Items.MeleeMod2_Rare",
+                Epic = "Items.MeleeMod2_Epic",
+                Legendary = "Items.MeleeMod2_Legendary"
+            },
+            Silencio = {
+                Common = "Items.MeleeMod3_Common",
+                Uncommon = "Items.MeleeMod3_Uncommon",
+                Rare = "Items.MeleeMod3_Rare",
+                Epic = "Items.MeleeMod3_Epic",
+                Legendary = "Items.MeleeMod3_Legendary"
+            },
+            Severance = "Items.ChimeraMeleeMod",
+        },
+        Blade = {
+            Bleedout = {
+                Common = "Items.BladeMod1_Common",
+                Uncommon = "Items.BladeMod1_Uncommon",
+                Rare = "Items.BladeMod1_Rare",
+                Epic = "Items.BladeMod1_Epic",
+                Legendary = "Items.BladeMod1_Legendary"
+            },
+            SliceEmUp = {
+                Legendary = "Items.BladeMod2_Legendary"
+            },
+            Haemocide = {
+                Common = "Items.BladeMod3_Common",
+                Uncommon = "Items.BladeMod3_Uncommon",
+                Rare = "Items.BladeMod3_Rare",
+                Epic = "Items.BladeMod3_Epic",
+                Legendary = "Items.BladeMod3_Legendary"
+            }
+        },
+        Blunt = {
+            KO = {
+                Common = "Items.BluntMod1_Common",
+                Uncommon = "Items.BluntMod1_Uncommon",
+                Rare = "Items.BluntMod1_Rare",
+                Epic = "Items.BluntMod1_Epic",
+                Legendary = "Items.BluntMod1_Legendary"
+            },
+            Bloodbruiser = {
+                Common = "Items.BluntMod2_Common",
+                Uncommon = "Items.BluntMod2_Uncommon",
+                Rare = "Items.BluntMod2_Rare",
+                Epic = "Items.BluntMod2_Epic",
+                Legendary = "Items.BluntMod2_Legendary"
+            },
+            Barbarian = {
+                Epic = "Items.BluntMod3_Epic",
+                Legendary = "Items.BluntMod3_Legendary"
+            },
+        },
+        Throw = {
+            Boomerang = {
+                Common = "Items.ThrowMod1_Common",
+                Uncommon = "Items.ThrowMod1_Uncommon",
+                Rare = "Items.ThrowMod1_Rare",
+                Epic = "Items.ThrowMod1_Epic",
+                Legendary = "Items.ThrowMod1_Legendary"
+            },
+            ZeroG = {
+                Rare = "Items.ThrowMod2_Rare",
+                Epic = "Items.ThrowMod2_Epic",
+                Legendary = "Items.ThrowMod2_Legendary"
+            },
+            Javelin = {
+                Common = "Items.ThrowMod3_Common",
+                Uncommon = "Items.ThrowMod3_Uncommon",
+                Rare = "Items.ThrowMod3_Rare",
+                Epic = "Items.ThrowMod3_Epic",
+                Legendary = "Items.ThrowMod3_Legendary"
+            },
+        },
         Iconic = {
             -- Similar to ranged weapon mods but melee weapons do actually allow these mods to be manually socketed.
             Caretaker = "Items.CyberspadeWeaponMod",
@@ -99,110 +331,7 @@ Mods = {
             Tsumetogi = "Items.HiromiKatanaWeaponMod"
         }
     },
-    Cyberware = {
-        -- This needs to be filled out to contain all the cyberdeck, eyes and arms mods.
-        Arms = {
-            GorillaArms = {
-                Battery = {
-                    BlackMarket = "Items.AnimalsStrongArmsBattery1",
-                    Low = "Items.LowChargedBattery",
-                    High = "Items.HighChargedBattery",
-                    Medium = "Items.MediumChargedBattery",
-                    Rin3u = "Items.TygerClawsStrongArmsBattery1"
-                },
-                Knuckles = {
-                    Animals = "Items.AnimalsStrongArmsKnuckles1",
-                    Chemical = "Items.ChemicalDamageKnuckles",
-                    Electrical = "Items.ElectricDamageKnuckles",
-                    Physical = "Items.PhysicalDamageKnuckles",
-                    Thermal = "Items.ThermalDamageKnuckles"
-                }
-            },
-            MantisBlades = {
-                Edge = {
-                    Chemical = "Items.ChemicalDamageEdge",
-                    Electrical = "Items.ElectricDamageEdge",
-                    Physical = "Items.PhysicalDamageEdge",
-                    Thermal = "Items.ThermalDamageEdge"
-                },
-                Rotor = {
-                    Fast = "Items.FastRotor",
-                    Haming8 = "Items.TygerClawsMantisBladesRotor1",
-                    Slow = "Items.SlowRotor"
-                }
-            },
-            Monowire = {
-                Battery = {
-                    Low = "Items.LowChargedWiresBattery",
-                    High = "Items.HighChargedWiresBattery",
-                    Medium = "Items.MediumChargedWiresBattery"
-                },
-                Cable = {
-                    Chemical = "Items.ChemicalDamageCable",
-                    Electrical = "Items.ElectricDamageCable",
-                    Physical = "Items.PhysicalDamageCable",
-                    Thermal = "Items.ThermalDamageCable"
-                }
-            },
-            ProjectileLauncher = {
-                Round = {
-                    Chemical = "Items.ChemicalDamageRound",
-                    Electrical = "Items.ElectricDamageRound",
-                    Explosive = "Items.ExplosiveDamageRound",
-                    Incendiary = "Items.MilitechProjectileLauncherRound1",
-                    Thermal = "Items.ThermalDamageRound",
-                    Tranquilizer = "Items.TranquilizerRound"
-                },
-                Plating = {
-                    Metal = "Items.MetalPlating",
-                    Neoplastic = "Items.NeoplasticPlating",
-                    Titanium = "Items.TitaniumPlating"
-                }
-            },
-            Universal = {
-                SensoryAmplifier = {
-                    Armor = "Items.ArmsCyberwareSharedFragment4",
-                    CritChance = "Items.ArmsCyberwareSharedFragment1",
-                    CritDamage = "Items.ArmsCyberwareSharedFragment2",
-                    Health = "Items.ArmsCyberwareSharedFragment3"
-                }
-            }
-        },
-        Deck = {
-            Berserk = {
-                Armored = "Items.BerserkFragment3",
-                BeastMode = "Items.AnimalsBerserkFragment1",
-                Bruising = "Items.BerserkFragment4",
-                Chained = "Items.BerserkFragment2",
-                Devastating = "Items.BerserkFragment7",
-                Extended = "Items.BerserkFragment1",
-                Focused = "Items.BerserkFragment5",
-                Invigorating = "Items.BerserkFragment6",
-                Sharpened = "Items.BerserkFragment8"
-            },
-            Sandevistan = {
-                Arasaka = "Items.ArasakaSandevistanFragment1",
-                Heatsink = "Items.SandevistanFragment4",
-                MicroAmplifier = "Items.SandevistanFragment8",
-                NeuroTransmitters = "Items.SandevistanFragment3",
-                Overclocked = "Items.SandevistanFragment1",
-                Prototype = "Items.SandevistanFragment2",
-                RabidBull = "Items.ValentinosSandevistanFragment1",
-                TygerPaw = "Items.TygerClawsSandevistanFragment1"
-            }
-        },
-        Eyes = {
-            ExplosiveAnalysis = "Items.KiroshiOpticsFragment2",
-            TargetAnalysis = "Items.KiroshiOpticsFragment1",
-            -- For some reason this mod also has another name.
-            -- There does not appear to be any difference in terms of effect.
-            -- TargetAnalysis = "Items.KiroshiOpticsFragment3",
-            ThreatDetector = "Items.KiroshiOpticsFragment4",
-            TrajectoryAnalysis = "Items.KiroshiOpticsFragment5",
-            TrajectoryGenerator = "Items.KiroshiOpticsFragment7",
-            WeakspotDetection = "Items.KiroshiOpticsFragment6"
-        }
-    }
+    -- There are no more cyberware mods as of recent patch.
 }
 
 return Mods

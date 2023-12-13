@@ -113,30 +113,6 @@ function ItemHandler:Inspect(itemdata)
     return result
 end
 
-function ItemHandler:SetLevel(itemdata, level)
-
-    -- If no level, read from player current.
-    level = level or self.handler.player:GetPower()
-    if level <= 0 then
-        -- Setting zero level is special case.
-        -- Used for items which cannot be levelled.
-        return
-    end
-
-    -- Expects incoming level to be player level.
-    -- Effectively range should be [1, 50] inclusive.
-    -- This determines the level requirement to equip the item.
-    -- However, "true" item level is stored as (roughly) a factor of 10 over this.
-    local plevel = level
-    local ilevel = (10 * level)
-
-    -- Set pure, item and power level modifiers.
-    self:SetModifier(itemdata, Glossary.Stats.Level, Glossary.Calculation.Additive, level)
-    self:SetModifier(itemdata, Glossary.Stats.PowerLevel, Glossary.Calculation.Additive, plevel)
-    self:SetModifier(itemdata, Glossary.Stats.ItemLevel, Glossary.Calculation.Additive, ilevel)
-
-end
-
 function ItemHandler:SetQuality(itemdata, quality)
 
     -- If no quality, just exit.
@@ -155,6 +131,11 @@ function ItemHandler:SetQuality(itemdata, quality)
     -- Set quality modifiers.
     self:SetModifier(itemdata, Glossary.Stats.Quality, Glossary.Calculation.Additive, nquality)
 
+end
+
+function ItemHandler:SetPlus(itemdata, nplus)
+    -- This replaces SetLevel functionality.
+    self:SetModifier(itemdata, Glossary.Stats.IsItemPlus, Glossary.Calculation.Additive, nplus)
 end
 
 function ItemHandler:MarkCrafted(itemdata)
@@ -194,6 +175,8 @@ function ItemHandler:AddPart(itemdata, partdata, slot)
     local itemid = itemdata:GetID()
     local partid = partdata:GetID()
     local result = ts:ForcePartInSlot(player, itemid, partid, slot)
+    self.logger:Info(ts:CanPlaceItemInSlot(player, slot, partid))
+    self.logger:Info(partid)
     if result then
         self.logger:Info("AddPart: Success! | " .. tostring(partid) .. " --> " .. tostring(itemid) .. " @ " .. tostring(slot))
     else
@@ -248,10 +231,10 @@ function ItemHandler:UpgradeItem(itemid)
     local player = self.system:Player()
     local ts = self.system:Transaction()
     local itemdata = ts:GetItemData(player, itemid)
-    self:SetLevel(itemdata)
+    self:SetPlus(itemdata, 2)
 end
 
-function ItemHandler:GiveItems(item, n, quality, level)
+function ItemHandler:GiveItems(item, n, quality, plus)
     -- Items which share the same seed will have the same unique internal value!
     -- This causes all items such as clothing and mods to stack (even when they shouldn't).
     -- Solution is to randomly generate a seed each time this transaction is called.
@@ -262,12 +245,12 @@ function ItemHandler:GiveItems(item, n, quality, level)
     -- Force default quality for certain items!
     local default = self:GetDefaultQuality(item)
     if default then
-        quality = nil
+        quality = default
     end
 
     -- Force level for certain items!
     if self:CannotBeLevelled(item) then
-        level = 0
+        plus = 0
     end
 
     local items = {}
@@ -284,7 +267,7 @@ function ItemHandler:GiveItems(item, n, quality, level)
             self:UnmarkQuest(itemdata)
             self:AllowUnequip(itemdata)
             self:ClearSlots(itemdata)
-            self:SetLevel(itemdata, level)
+            self:SetPlus(itemdata, plus)
             self:SetQuality(itemdata, quality)
             table.insert(items, itemdata)
         else
@@ -300,7 +283,7 @@ function ItemHandler:GiveResources(item, n)
     return r
 end
 
-function ItemHandler:GiveN(item, n, quality, level)
+function ItemHandler:GiveN(item, n, quality, plus)
     if not item then
         return
     end
@@ -308,12 +291,12 @@ function ItemHandler:GiveN(item, n, quality, level)
     if self:IsStackable(item) then
         return self:GiveResources(item, n)
     else
-        return self:GiveItems(item, n, quality, level)
+        return self:GiveItems(item, n, quality, plus)
     end
 end
 
-function ItemHandler:Give(item, quality, level)
-    self:GiveN(item, 1, quality, level)
+function ItemHandler:Give(item, quality, plus)
+    self:GiveN(item, 1, quality, plus)
 end
 
 function ItemHandler:GiveMultiple(itemspecs)
@@ -323,11 +306,14 @@ function ItemHandler:GiveMultiple(itemspecs)
         local item = itemspec["item"]
         local quality = itemspec["quality"]
         local quantity = itemspec["quantity"]
-        local level = itemspec["level"]
+        local plus = itemspec["plus"]
         if not quantity then
             quantity = 1
         end
-        table.insert(items, self:GiveN(item, quantity, quality, level))
+        if not plus then
+            plus = 0
+        end
+        table.insert(items, self:GiveN(item, quantity, quality, plus))
     end
     return items
 end

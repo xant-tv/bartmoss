@@ -170,7 +170,8 @@ Clothing = {
             Media = "Items.Media_01_Set_Cap",
             Techie = "Items.Techie_01_Set_Cap",
             Spacesuit = "Items.Q203_Spacesuit_Helmet",
-            MaxTac = "Items.SQ030_MaxTac_Helmet"
+            MaxTac = "Items.SQ030_MaxTac_Helmet",
+            NUSA = "Items.Twitch_Drop_Specs"
         }
     },
     Face = {
@@ -526,7 +527,8 @@ Clothing = {
                 Rare = "Items.GOG_Galaxy_TShirt",
                 Epic = "Items.GOG_Galaxy_TShirt_Epic",
                 Legendary = "Items.GOG_Galaxy_TShirt_Legendary"
-            }
+            },
+            NUSA = "Items.Twitch_Drop_Vest"
         }
     },
     OuterTorso = {
@@ -779,6 +781,27 @@ Clothing = {
                 Punch = "Items.Jacket_17_rich_04",
                 Valentino = "Items.Jacket_17_rich_05",
                 DeadlyLagoon = "Items.Jacket_17_rich_06"
+            },
+            BoleroBlazer = {
+                Spacer = "Items.Jacket_25_basic_01",
+                FireResistant = "Items.Jacket_25_basic_02",
+                Fitted = "Items.Jacket_25_basic_03",
+                Trilayer = "Items.Jacket_25_basic_04",
+                Polycarbonate = "Items.Jacket_25_basic_05",
+                DoubleEmbroidered = "Items.Jacket_25_basic_06",
+                FiveHundred = "Items.Jacket_25_basic_07",
+                Neoprene = "Items.Jacket_25_basic_08",
+                Padded = "Items.Jacket_25_basic_09",
+                Quilted = "Items.Jacket_25_old_01",
+                Worn = "Items.Jacket_25_old_02",
+                Defective = "Items.Jacket_25_old_03",
+                FireProof = "Items.Jacket_25_rich_01",
+                Laminate = "Items.Jacket_25_rich_02",
+                Nanotube = "Items.Jacket_25_rich_03",
+                Aramid = "Items.Jacket_25_rich_04",
+                Minimalist = "Items.Jacket_25_rich_05",
+                Fiberglass = "Items.Jacket_25_rich_06",
+                ShockAbsorbent = "Items.Jacket_25_rich_07"
             }
         },
         LooseShirt = {
@@ -1246,7 +1269,8 @@ Clothing = {
                 Rare = "Items.Q005_Johnny_Pants",
                 Epic = "Items.Q005_Johnny_Pants_Epic",
                 Legendary = "Items.Q005_Johnny_Pants_Legendary"
-            }
+            },
+            NUSA = "Items.Twitch_Drop_Pants"
         }
     },
     Feet = {
@@ -1449,7 +1473,8 @@ Clothing = {
             Rogue = {
                 ExoJacks = "Items.Q115_Custom_Predator_Boots",
                 Thrusters = "Items.q115_thrusters" -- This item holds unequip blocked tag.
-            }
+            },
+            NUSA = "Items.Twitch_Drop_Boots"
         }
     },
     Outfit = {

@@ -6,6 +6,9 @@ local Recipes = {}
 Recipes = {
     Weapons = {
         Ranged = {
+            Iconic = {
+                Erebus = "Items.Recipe_Legendary_Borg4a_HauntedGun"
+            }
         },
         Melee = {
         },

@@ -31,7 +31,7 @@ function ItemCheatsTab:DoGiveItem()
     local itempath = self.state.GlossaryOptions[self.state.ItemSelect + 1]
     local quantity = self.state.ItemQuantity
     local quality = Glossary.QualityRank[self.state.QualitySelect + 1]
-    local level = self.state.ItemLevel
+    local plus = self.state.ItemUpgraded
     -- Sanitise inputs.
     -- Return on no item provided.
     local item = Utility.GetElementFromString("Glossary." .. itempath)
@@ -42,16 +42,15 @@ function ItemCheatsTab:DoGiveItem()
     if quantity <= 0 then
         quantity = 1
     end
-    -- Check level is valid otherwise remove (will use player level).
-    if level > 50 then
-        level = 50
+    -- Check upgrade plus is valid otherwise clamp.
+    if plus > 2 then
+        plus = 2
     end
-    if level <= 0 then
-        -- This will scale item to player level.
-        level = nil
+    if plus < 0 then
+        plus = 0
     end
-    self.logger:Info("GiveItems: " .. itempath .. " | Amount = " .. quantity .. " | Quality = " .. quality .. " | Level = " .. (level or "Auto"))
-    self.handler.item:GiveN(item, quantity, quality, level)
+    self.logger:Info("GiveItems: " .. itempath .. " | Amount = " .. quantity .. " | Quality = " .. quality .. " | Plus = " .. plus)
+    self.handler.item:GiveN(item, quantity, quality, plus)
 end
 
 function ItemCheatsTab:BuildDisplay()
@@ -96,7 +95,7 @@ function ItemCheatsTab:BuildItemProperties()
     Widget.Text("3. Properties")
     Widget.Text(" - Please read item statistics glossary documentation.")
     self.state.QualitySelect = Widget.Combo("Quality", self.state.QualitySelect, self.state.QualityOptions, 8)
-    self.state.ItemLevel = Widget.InputInt("Level (Auto=0)", self.state.ItemLevel, 1, 1)
+    self.state.ItemUpgraded = Widget.InputInt("Upgrade Level", self.state.ItemUpgraded, 1, 1)
     Widget.Spacing()
 end
 

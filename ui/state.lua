@@ -23,7 +23,7 @@ State.ItemsTab.ItemSelect = 0
 State.ItemsTab.ItemQuantity = 1
 State.ItemsTab.QualityOptions = Glossary.QualityRank
 State.ItemsTab.QualitySelect = 4
-State.ItemsTab.ItemLevel = 0
+State.ItemsTab.ItemUpgraded = 0
 
 State.WeaponsTab = {}
 State.WeaponsTab.SlotOptions = Glossary.WeaponSlots
@@ -48,6 +48,7 @@ State.WeaponsTab.Modifiers = {
     MagazineCapacity = 0,
     IsItemIconic = false,
     IsItemCrafted = false,
+    IsItemPlus = 0,
     RicochetChance = 0,
     RicochetCount = 0,
     BonusRicochetDamage = 0,

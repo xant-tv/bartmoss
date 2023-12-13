@@ -122,7 +122,13 @@ function WeaponCheatsTab:BuildModifierFromLayout(elem, maxcol)
     if not elem.Type then
         return
     end
-    if elem.Type == "Float" then
+    if elem.Type == "Int" then
+        self.state[elem.Name].Value = Widget.InputFloat(
+            elem.Display, self.state[elem.Name].Value, 1, 1, "%.0f",
+            Style.Size.WeaponsTab.Float[maxcol].Width,
+            self.state[elem.Name].Value ~= self.state[elem.Name].Read
+        )
+    elseif elem.Type == "Float" then
         self.state[elem.Name].Value = Widget.InputFloat(
             elem.Display, self.state[elem.Name].Value, 1, 100, "%.4f",
             Style.Size.WeaponsTab.Float[maxcol].Width,

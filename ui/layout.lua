@@ -91,6 +91,11 @@ Layout = {
                     Name = "IsItemCrafted",
                     Display = "Is Crafted",
                     Type = "Boolean"
+                },
+                {
+                    Name = "IsItemPlus",
+                    Display = "Item Plus",
+                    Type = "Int"
                 }
             }
         },

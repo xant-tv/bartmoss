@@ -60,7 +60,7 @@ Bartmoss.Handler.Items:Give(item, quality, level)
 Bartmoss.Handler.Items:GiveN(item, quantity, quality, level)
 
 -- Set level, quality or add any other modifier to underlying item data.
-Bartmoss.Handler.Items:SetLevel(itemdata, level)
+Bartmoss.Handler.Items:SetPlus(itemdata, count)
 Bartmoss.Handler.Items:SetQuality(itemdata, quality)
 Bartmoss.Handler.Items:AddModifier(itemdata, modtype, calc, val)
 ```

@@ -1,387 +1,897 @@
--- Cyberware items glossary. Cybermods are in the mods glossary.
+-- Cyberware items glossary.
 local Cyberware = {}
 
+-- Variants with +1 and +2 exist but it's easier to only support base quality.
+-- This is better to allow for players to upgrade and take advantage of the Engineer perk.
 Cyberware = {
     Arms = {
         MantisBlades = {
-            Rare = "Items.MantisBlades",
-            Epic = "Items.MantisBladesEpic",
-            Legendary = "Items.MantisBladesLegendary"
+            Physical = {
+                Uncommon = "Items.AdvancedMantisBladesUncommon",
+                Rare = "Items.AdvancedMantisBladesRare",
+                Epic = "Items.AdvancedMantisBladesEpic",
+                Legendary = "Items.AdvancedMantisBladesLegendary"
+            },
+            Electric = {
+                Uncommon = "Items.AdvancedMantisBladesElectricUncommon",
+                Rare = "Items.AdvancedMantisBladesElectricRare",
+                Epic = "Items.AdvancedMantisBladesElectricEpic",
+                Legendary = "Items.AdvancedMantisBladesElectricLegendary"
+            },
+            Thermal = {
+                Uncommon = "Items.AdvancedMantisBladesThermalUncommon",
+                Rare = "Items.AdvancedMantisBladesThermalRare",
+                Epic = "Items.AdvancedMantisBladesThermalEpic",
+                Legendary = "Items.AdvancedMantisBladesThermalLegendary"
+            },
+            Toxic = {
+                Uncommon = "Items.AdvancedMantisBladesChemicalUncommon",
+                Rare = "Items.AdvancedMantisBladesChemicalRare",
+                Epic = "Items.AdvancedMantisBladesChemicalEpic",
+                Legendary = "Items.AdvancedMantisBladesChemicalLegendary"
+            },
+            MaxTac = {
+                Epic = "Items.AdvancedMaxTacMantisBladesEpic",
+                Legendary = "Items.AdvancedMaxTacMantisBladesLegendary"
+            }
         },
         Monowire = {
-            Rare = "Items.NanoWires",
-            Epic = "Items.NanoWiresEpic",
-            Legendary = "Items.NanoWiresLegendary"
+            Physical = {
+                Uncommon = "Items.AdvancedNanoWiresUncommon",
+                Rare = "Items.AdvancedNanoWiresRare",
+                Epic = "Items.AdvancedNanoWiresEpic",
+                Legendary = "Items.AdvancedNanoWiresLegendary"
+            },
+            Electric = {
+                Uncommon = "Items.AdvancedNanoWiresElectricUncommon",
+                Rare = "Items.AdvancedNanoWiresElectricRare",
+                Epic = "Items.AdvancedNanoWiresElectricEpic",
+                Legendary = "Items.AdvancedNanoWiresElectricLegendary"
+            },
+            Thermal = {
+                Uncommon = "Items.AdvancedNanoWiresThermalUncommon",
+                Rare = "Items.AdvancedNanoWiresThermalRare",
+                Epic = "Items.AdvancedNanoWiresThermalEpic",
+                Legendary = "Items.AdvancedNanoWiresThermalLegendary"
+            },
+            Toxic = {
+                Uncommon = "Items.AdvancedNanoWiresChemicalUncommon",
+                Rare = "Items.AdvancedNanoWiresChemicalRare",
+                Epic = "Items.AdvancedNanoWiresChemicalEpic",
+                Legendary = "Items.AdvancedNanoWiresChemicalLegendary"
+            },
         },
         ProjectileLauncher = {
-            Rare = "Items.ProjectileLauncher",
-            Epic = "Items.ProjectileLauncherEpic",
-            Legendary = "Items.ProjectileLauncherLegendary"
+            Physical = {
+                Uncommon = "Items.AdvancedProjectileLauncherUncommon",
+                Rare = "Items.AdvancedProjectileLauncherRare",
+                Epic = "Items.AdvancedProjectileLauncherEpic",
+                Legendary = "Items.AdvancedProjectileLauncherLegendary"
+            },
+            Electric = {
+                Uncommon = "Items.AdvancedProjectileLauncherElectricUncommon",
+                Rare = "Items.AdvancedProjectileLauncherElectricRare",
+                Epic = "Items.AdvancedProjectileLauncherElectricEpic",
+                Legendary = "Items.AdvancedProjectileLauncherElectricLegendary"
+            },
+            Thermal = {
+                Uncommon = "Items.AdvancedProjectileLauncherThermalUncommon",
+                Rare = "Items.AdvancedProjectileLauncherThermalRare",
+                Epic = "Items.AdvancedProjectileLauncherThermalEpic",
+                Legendary = "Items.AdvancedProjectileLauncherThermalLegendary"
+            },
+            Toxic = {
+                Uncommon = "Items.AdvancedProjectileLauncherChemicalUncommon",
+                Rare = "Items.AdvancedProjectileLauncherChemicalRare",
+                Epic = "Items.AdvancedProjectileLauncherChemicalEpic",
+                Legendary = "Items.AdvancedProjectileLauncherChemicalLegendary"
+            }
         },
         GorillaArms = {
-            Rare = "Items.StrongArms",
-            Epic = "Items.StrongArmsEpic",
-            Legendary = "Items.StrongArmsLegendary"
+            Physical = {
+                Uncommon = "Items.AdvancedStrongArmsUncommon",
+                Rare = "Items.AdvancedStrongArmsRare",
+                Epic = "Items.AdvancedStrongArmsEpic",
+                Legendary = "Items.AdvancedStrongArmsLegendary"
+            },
+            Electric = {
+                Uncommon = "Items.AdvancedStrongArmsElectricUncommon",
+                Rare = "Items.AdvancedStrongArmsElectricRare",
+                Epic = "Items.AdvancedStrongArmsElectricEpic",
+                Legendary = "Items.AdvancedStrongArmsElectricLegendary"
+            },
+            Thermal = {
+                Uncommon = "Items.AdvancedStrongArmsThermalUncommon",
+                Rare = "Items.AdvancedStrongArmsThermalRare",
+                Epic = "Items.AdvancedStrongArmsThermalEpic",
+                Legendary = "Items.AdvancedStrongArmsThermalLegendary"
+            },
+            Toxic = {
+                Uncommon = "Items.AdvancedStrongArmsChemicalUncommon",
+                Rare = "Items.AdvancedStrongArmsChemicalRare",
+                Epic = "Items.AdvancedStrongArmsChemicalEpic",
+                Legendary = "Items.AdvancedStrongArmsChemicalLegendary"
+            }
         }
     },
     Circulatory = {
         AdrenalineBooster = {
-            Common = "Items.StaminaRegenBoosterCommon",
-            Uncommon = "Items.StaminaRegenBoosterUncommon",
-            Rare = "Items.StaminaRegenBoosterRare",
-            Epic = "Items.StaminaRegenBoosterEpic",
-            Legendary = "Items.StaminaRegenBoosterLegendary"
-        },
-        Bioconductor = {
-            Rare = "Items.BioConductorsRare",
-            Epic = "Items.BioConductorsEpic",
-            Legendary = "Items.BioConductorsLegendary"
+            Common = "Items.AdvancedStaminaRegenBoosterCommon",
+            Uncommon = "Items.AdvancedStaminaRegenBoosterUncommon",
+            Rare = "Items.AdvancedStaminaRegenBoosterRare",
+            Epic = "Items.AdvancedStaminaRegenBoosterEpic",
+            Legendary = "Items.AdvancedStaminaRegenBoosterLegendary"
         },
         Biomonitor = {
-            Common = "Items.HealthMonitorCommon",
-            Uncommon = "Items.HealthMonitorUncommon",
-            Rare = "Items.HealthMonitorRare",
-            Epic = "Items.HealthMonitorEpic",
-            Legendary = "Items.HealthMonitorLegendary"
+            Common = "Items.AdvancedBiomonitorCommon",
+            Uncommon = "Items.AdvancedBiomonitorUncommon",
+            Rare = "Items.AdvancedBiomonitorRare",
+            Epic = "Items.AdvancedBiomonitorEpic",
+            Legendary = "Items.AdvancedBiomonitorLegendary"
+        },
+        BlackMamba = {
+            Common = "Items.AdvancedViralVenomCommon",
+            Uncommon = "Items.AdvancedViralVenomUncommon",
+            Rare = "Items.AdvancedViralVenomRare",
+            Epic = "Items.AdvancedViralVenomEpic",
+            Legendary = "Items.AdvancedViralVenomLegendary"
         },
         BloodPump = {
-            Common = "Items.BloodPumpCommon",
-            Uncommon = "Items.BloodPumpUncommon",
-            Rare = "Items.BloodPumpRare",
-            Epic = "Items.BloodPumpEpic",
-            Legendary = "Items.BloodPumpLegendary"
+            Common = "Items.AdvancedBloodPumpCommon",
+            Uncommon = "Items.AdvancedBloodPumpUncommon",
+            Rare = "Items.AdvancedBloodPumpRare",
+            Epic = "Items.AdvancedBloodPumpEpic",
+            Legendary = "Items.AdvancedBloodPumpLegendary"
         },
-        BloodVessels = {
-            Common = "Items.EnhancedBloodVesselsCommon",
-            Uncommon = "Items.EnhancedBloodVesselsUncommon",
-            Rare = "Items.EnhancedBloodVesselsRare",
-            Epic = "Items.EnhancedBloodVesselsEpic",
-            Legendary = "Items.EnhancedBloodVesselsLegendary"
+        ClutchPadding = {
+            Common = "Items.AdvancedShockAbsorberCommon",
+            Uncommon = "Items.AdvancedShockAbsorberUncommon",
+            Rare = "Items.AdvancedShockAbsorberRare",
+            Epic = "Items.AdvancedShockAbsorberEpic",
+            Legendary = "Items.AdvancedShockAbsorberLegendary"
+        },
+        ElectromagRecycler = {
+            Rare = "Items.IconicDischargeConnectorRare",
+            Epic = "Items.IconicDischargeConnectorEpic",
+            Legendary = "Items.IconicDischargeConnectorLegendary"
         },
         FeedbackCircuit = {
-            Rare = "Items.DischargeConnectorRare",
-            Epic = "Items.DischargeConnectorEpic",
-            Legendary = "Items.DischargeConnectorLegendary"
+            Common = "Items.AdvancedDischargeConnectorCommon",
+            Uncommon = "Items.AdvancedDischargeConnectorUncommon",
+            Rare = "Items.AdvancedDischargeConnectorRare",
+            Epic = "Items.AdvancedDischargeConnectorEpic",
+            Legendary = "Items.AdvancedDischargeConnectorLegendary"
         },
-        MicroGenerator = {
-            Common = "Items.MicroGeneratorCommon",
-            Uncommon = "Items.MicroGeneratorUncommon",
-            Rare = "Items.MicroGeneratorRare",
-            Epic = "Items.MicroGeneratorEpic",
-            Legendary = "Items.MicroGeneratorLegendary"
+        HealOnKill = {
+            Common = "Items.AdvancedHealOnKillCommon",
+            Uncommon = "Items.AdvancedHealOnKillUncommon",
+            Rare = "Items.AdvancedHealOnKillRare",
+            Epic = "Items.AdvancedHealOnKillEpic",
+            Legendary = "Items.AdvancedHealOnKillLegendary"
+        },
+        IsometricStabilizer = {
+            Rare = "Items.IconicShockAbsorberRare",
+            Epic = "Items.IconicShockAbsorberEpic",
+            Legendary = "Items.IconicShockAbsorberLegendary"
+        },
+        MicroRotors = {
+            Common = "Items.AdvancedCyberRotorsCommon",
+            Uncommon = "Items.AdvancedCyberRotorsUncommon",
+            Rare = "Items.AdvancedCyberRotorsRare",
+            Epic = "Items.AdvancedCyberRotorsEpic",
+            Legendary = "Items.AdvancedCyberRotorsLegendary"
         },
         SecondHeart = {
-            Legendary = "Items.SecondHeart"
+            Epic = "Items.AdvancedSecondHeartEpic",
+            Legendary = "Items.AdvancedSecondHeartLegendary"
         },
-        SynLungs = {
-            Common = "Items.IronLungsCommon",
-            Uncommon = "Items.IronLungsUncommon",
-            Rare = "Items.IronLungsRare",
-            Epic = "Items.IronLungsEpic",
-            Legendary = "Items.IronLungsLegendary"
+        ThreatEvac = {
+            Common = "Items.AdvancedCatchMeIfYouCanCommon",
+            Uncommon = "Items.AdvancedCatchMeIfYouCanUncommon",
+            Rare = "Items.AdvancedCatchMeIfYouCanRare",
+            Epic = "Items.AdvancedCatchMeIfYouCanEpic",
+            Legendary = "Items.AdvancedCatchMeIfYouCanLegendary"
         },
-        TyrosineInjector = {
-            Uncommon = "Items.TyrosineInjector"
-        }
     },
     Deck = {
         Arasaka = {
-            Epic = "Items.ArasakaEpicMKIII",
-            Legendary = "Items.ArasakaLegendaryMKIV"
+            Common = "Items.AdvancedArasakaShadowMKICommon",
+            Uncommon = "Items.AdvancedArasakaShadowMKIIUncommon",
+            Rare = "Items.AdvancedArasakaShadowMKIIIRare",
+            Epic = "Items.AdvancedArasakaShadowMKIVEpic",
+            Legendary = "Items.AdvancedArasakaShadowMKVLegendary"
         },
         Biodyne = {
-            Uncommon = "Items.BioDyneUncommonMKI",
-            Rare = "Items.BioDyneRareMKII",
             Berserk = {
-                Uncommon = "Items.BerserkC2MK1",
-                Rare = "Items.BerserkC2MK2",
-                Epic = "Items.BerserkC2MK3",
-                Legendary = "Items.BerserkC2MK4"
+                Uncommon = "Items.AdvancedBerserkC2MK1",
+                Rare = "Items.AdvancedBerserkC2MK2",
+                Epic = "Items.AdvancedBerserkC2MK3",
+                Legendary = "Items.AdvancedBerserkC2MK4",
             }
         },
         Biotech = {
-            Uncommon = "Items.BiotechUncommonMKI",
-            Rare = "Items.BiotechRareMKII",
-            Epic = "Items.BiotechEpicMKIII"
+            Uncommon = "Items.AdvancedBiotechSigmaMKIUncommon",
+            Rare = "Items.AdvancedBiotechSigmaMKIIRare",
+            Epic = "Items.AdvancedBiotechSigmaMKIIIEpic",
+            Legendary = "Items.AdvancedBiotechSigmaMKIVLegendary"
         },
-        Dynalay = {
-            Uncommon = "Items.SandevistanC2MK1",
-            Rare = "Items.SandevistanC2MK2",
-            Epic = "Items.SandevistanC2MK3",
-            Legendary = "Items.SandevistanC2MK4"
+        ChromeCompressor = {
+            Uncommon = "Items.CapacityBoosterUncommon",
+            Rare = "Items.CapacityBoosterRare",
+            Epic = "Items.CapacityBoosterEpic",
+            Legendary = "Items.CapacityBoosterLegendary",
         },
-        Fuyutsui = {
-            Common = "Items.FuyutsuiCommonMKI",
-            Iconic = "Items.FuyutsuiTinkererLegendaryMKIII"
+        Dynalar = {
+            Sandevistan = {
+                Uncommon = "Items.AdvancedSandevistanC2MK1",
+                Rare = "Items.AdvancedSandevistanC2MK2",
+                Epic = "Items.AdvancedSandevistanC2MK3",
+                Legendary = "Items.AdvancedSandevistanC2MK4"
+            }
+        },
+        Fuyutsuki = {
+            Legendary = "Items.TetratronicLegendaryTest"
         },
         Militech = {
-            Common = "Items.MilitechParaline",
-            Berserk = {
-                Iconic = "Items.BerserkC4MK5"
-            },
             Sandevistan = {
-                Iconic = "Items.SandevistanC4MK5"
+                Apogee = {
+                    Legendary = "Items.AdvancedSandevistanApogee"
+                },
+                Falcon = {
+                    Epic = "Items.AdvancedSandevistanC4MK4",
+                    Legendary = "Items.AdvancedSandevistanC4MK5"
+                }
             },
+            Berserk = {
+                Epic = "Items.AdvancedBerserkC4MK4",
+                Legendary = "Items.AdvancedBerserkC4MK5"
+            },
+            Canto = {
+                Rare = "Items.HauntedCyberdeck_Rare",
+                Epic = "Items.HauntedCyberdeck_Epic",
+                Legendary = "Items.HauntedCyberdeck_Legendary"
+            },
+            Paraline = {
+                Uncommon = "Items.AdvancedMilitechParalineMKIIUncommon",
+                Rare = "Items.AdvancedMilitechParalineMKIIIRare",
+                Epic = "Items.AdvancedMilitechParalineMKIVEpic",
+                Legendary = "Items.AdvancedMilitechParalineMKVLegendary"
+            }
         },
         MooreTech = {
-            Uncommon = "Items.BerserkC1MK1",
-            Rare = "Items.BerserkC1MK2",
-            Epic = "Items.BerserkC1MK3"
+            Berserk = {
+                Uncommon = "Items.AdvancedBerserkC1MK1",
+                Rare = "Items.AdvancedBerserkC1MK2",
+                Epic = "Items.AdvancedBerserkC1MK3",
+                Legendary = "Items.AdvancedBerserkC1MK4"
+            }
         },
         Netwatch = {
-            Iconic = "Items.NetwatchNetdriverLegendaryMKV"
+            Legendary = "Items.AdvancedNetwatchNetdriverMKLegendary"
         },
         Qiant = {
             Sandevistan = {
-                Legendary = "Items.SandevistanC3MK4",
-                Iconic = "Items.SandevistanC3MK5"
+                Rare = "Items.AdvancedSandevistanC3MK3",
+                Epic = "Items.AdvancedSandevistanC3MK4",
+                Legendary = "Items.AdvancedSandevistanC3MK5"
             }
         },
         Raven = {
-            Epic = "Items.RavenEpicMKIII",
-            Legendary = "Items.RavenLegendaryMKIV"
+            Rare = "Items.AdvancedRavenMicrocyberMKIRare",
+            Epic = "Items.AdvancedRavenMicrocyberMKIIEpic",
+            Legendary = "Items.AdvancedRavenMicrocyberMKIIILegendary"
         },
-        Seocho = {
-            Uncommon = "Items.SeachoUncommonMKI",
-            Rare = "Items.SeachoRareMKII"
-        },
-        Stephenson = {
-            Rare = "Items.StephensonRareMKII",
-            Epic = "Items.StephensonEpicMKIII",
-            Legendary = "Items.StephensonLegendaryMKIV"
-        },
-        Tetratonic = {
-            Uncommon = "Items.TetratronicUncommonMKI",
-            Rare = "Items.TetratronicRareMKII",
-            Epic = "Items.TetratronicEpicMKIII",
-            Legendary = "Items.TetratronicRipplerLegendaryMKIV"
+        Tetratronic = {
+            Common = "Items.AdvancedTetratronicRipplerMKICommon",
+            Uncommon = "Items.AdvancedTetratronicRipplerMKIIUncommon",
+            Rare = "Items.AdvancedTetratronicRipplerMKIIIRare",
+            Epic = "Items.AdvancedTetratronicRipplerMKIVEpic",
+            Legendary = "Items.AdvancedTetratronicRipplerMKVLegendary"
         },
         Zetatech = {
             Berserk = {
-                Legendary = "Items.BerserkC3MK4",
-                Iconic = "Items.BerserkC3MK5"
+                Rare = "Items.AdvancedBerserkC3MK3",
+                Epic = "Items.AdvancedBerserkC3MK4",
+                Legendary = "Items.AdvancedBerserkC3MK5"
             },
             Sandevistan = {
-                Uncommon = "Items.SandevistanC1MK1",
-                Rare = "Items.SandevistanC1MK2",
-                Epic = "Items.SandevistanC1MK3"
+                Uncommon = "Items.AdvancedSandevistanC1MK1",
+                Rare = "Items.AdvancedSandevistanC1MK2",
+                Epic = "Items.AdvancedSandevistanC1MK3",
+                Legendary = "Items.AdvancedSandevistanC1MK4"
             }
-        },
-
+        }
     },
     FrontalCortex = {
-        Camillo = {
-            Epic = "Items.MemoryReplenishmentEpic",
-            Legendary = "Items.MemoryReplenishmentLegendary"
+        Axolotl = {
+            Epic = "Items.IconicAdvancedSubdermalCoProcessorEpic",
+            Legendary = "Items.IconicAdvancedSubdermalCoProcessorLegendary"
+        },
+        Bioconductor = {
+            Common = "Items.AdvancedBioConductorsCommon",
+            Uncommon = "Items.AdvancedBioConductorsUncommon",
+            Rare = "Items.AdvancedBioConductorsRare",
+            Epic = "Items.AdvancedBioConductorsEpic",
+            Legendary = "Items.AdvancedBioConductorsLegendary",
+        },
+        BurnoutBuffer = {
+            Common = "Items.AdvancedSmartStorageCommon",
+            Uncommon = "Items.AdvancedSmartStorageUncommon",
+            Rare = "Items.AdvancedSmartStorageRare",
+            Epic = "Items.AdvancedSmartStorageEpic",
+            Legendary = "Items.AdvancedSmartStorageLegendary"
+        },
+        CamilloRamManager = {
+            Epic = "Items.AdvancedCamilloRamManagerEpic",
+            Legendary = "Items.AdvancedCamilloRamManagerLegendary"
+        },
+        CybersomaticOptimizer = {
+            Rare = "Items.IconicBioConductorsRare",
+            Epic = "Items.IconicBioConductorsEpic",
+            Legendary = "Items.IconicBioConductorsLegendary"
         },
         ExDisk = {
-            Rare = "Items.BrainCapacityBoosterRare",
-            Epic = "Items.BrainCapacityBoosterEpic",
-            Legendary = "Items.BrainCapacityBoosterLegendary"
+            Rare = "Items.AdvancedExDiskRare",
+            Epic = "Items.AdvancedExDiskEpic",
+            Legendary = "Items.AdvancedExDiskLegendary"
         },
-        HealOnKill = {
-            Common = "Items.HealOnKillCommon",
-            Uncommon = "Items.HealOnKillUncommon",
-            Epic = "Items.HealOnKillEpic",
-            Legendary = "Items.HealOnKillLegendary"
+        KerenzikovBoostSystem = {
+            Common = "Items.AdvancedKerenziovBoostSystemCommon",
+            Uncommon = "Items.AdvancedKerenziovBoostSystemUncommon",
+            Rare = "Items.AdvancedKerenziovBoostSystemRare",
+            Epic = "Items.AdvancedKerenziovBoostSystemEpic",
+            Legendary = "Items.AdvancedKerenziovBoostSystemLegendary"
         },
-        Limbic = {
-            Common = "Items.LimbicSystemEnhancementCommon",
-            Rare = "Items.LimbicSystemEnhancementRare",
-            Legendary = "Items.LimbicSystemEnhancementLegendary"
-        },
-        Mechatronic = {
-            Common = "Items.RoboticCoreCommon",
-            Uncommon = "Items.RoboticCoreUncommon",
-            Rare = "Items.RoboticCoreRare",
-            Epic = "Items.RoboticCoreEpic",
-            Legendary = "Items.RoboticCoreLegendary"
+        MechatronicCore = {
+            Common = "Items.AdvancedMechatronicCoreCommon",
+            Uncommon = "Items.AdvancedMechatronicCoreUncommon",
+            Rare = "Items.AdvancedMechatronicCoreRare",
+            Epic = "Items.AdvancedMechatronicCoreEpic",
+            Legendary = "Items.AdvancedMechatronicCoreLegendary"
         },
         MemoryBoost = {
-            Common = "Items.MemoryBoostCommon",
-            Uncommon = "Items.MemoryBoostUncommon",
-            Rare = "Items.MemoryBoostRare",
-            Epic = "Items.MemoryBoostEpic"
+            Uncommon = "Items.AdvancedMemoryBoostUncommon",
+            Rare = "Items.AdvancedMemoryBoostRare",
+            Epic = "Items.AdvancedMemoryBoostEpic",
+            Legendary = "Items.AdvancedMemoryBoostLegendary"
         },
-        RAMUpgrade = {
-            Common = "Items.FastAccessMemoryCommon",
-            Uncommon = "Items.FastAccessMemoryUncommon",
-            Rare = "Items.FastAccessMemoryRare"
+        NewtonModule = {
+            Common = "Items.AdvancedSubdermalCoProcessorCommon",
+            Uncommon = "Items.AdvancedSubdermalCoProcessorUncommon",
+            Rare = "Items.AdvancedSubdermalCoProcessorRare",
+            Epic = "Items.AdvancedSubdermalCoProcessorEpic",
+            Legendary = "Items.AdvancedSubdermalCoProcessorLegendary"
         },
-        SelfICE = {
-            Rare = "Items.AntiVirus"
+        QuantumTuner = {
+            Legendary = "Items.AdvancedTimeBankLegendary",
         },
-        VisualCortex = {
-            Common = "Items.ImprovedPerceptionCommon",
-            Uncommon = "Items.ImprovedPerceptionUncommon",
-            Epic = "Items.ImprovedPerceptionEpic",
-            Legendary = "Items.ImprovedPerceptionLegendary"
+        RamReallocator = {
+            Epic = "Items.IconicCamilloRamManagerEpic",
+            Legendary = "Items.IconicCamilloRamManagerLegendary"
+        },
+        RamUpgrade = {
+            Common = "Items.AdvancedRamUpgradeCommon",
+            Uncommon = "Items.AdvancedRamUpgradeUncommon",
+            Rare = "Items.AdvancedRamUpgradeRare",
+            Epic = "Items.AdvancedRamUpgradeEpic",
+            Legendary = "Items.AdvancedRamUpgradeLegendary"
+        },
+        SelfIce = {
+            Rare = "Items.AdvancedSelfIceRare",
+            Epic = "Items.AdvancedSelfIceEpic",
+            Legendary = "Items.AdvancedSelfIceLegendary"
         }
     },
     Hands = {
-        Ballistic = {
-            Rare = "Items.PowerGripRare",
-            Epic = "Items.PowerGripEpic",
-            Legendary = "Items.PowerGripLegendary"
+        BallisticCoprocessor = {
+            Common = "Items.AdvancedPowerGripCommon",
+            Uncommon = "Items.AdvancedPowerGripUncommon",
+            Rare = "Items.AdvancedPowerGripRare",
+            Epic = "Items.AdvancedPowerGripEpic",
+            Legendary = "Items.AdvancedPowerGripLegendary"
+        },
+        HandleWrap = {
+            Common = "Items.AdvancedKnifeSharpenerCommon",
+            Uncommon = "Items.AdvancedKnifeSharpenerUncommon",
+            Rare = "Items.AdvancedKnifeSharpenerRare",
+            Epic = "Items.AdvancedKnifeSharpenerEpic",
+            Legendary = "Items.AdvancedKnifeSharpenerLegendary"
+        },
+        ImmovableForce = {
+            Common = "Items.IconicGunStabilizerCommon",
+            Uncommon = "Items.IconicGunStabilizerUncommon",
+            Rare = "Items.IconicGunStabilizerRare",
+            Epic = "Items.IconicGunStabilizerEpic",
+            Legendary = "Items.IconicGunStabilizerLegendary"
+        },
+        Microgenerator = {
+            Common = "Items.AdvancedMicroGeneratorCommon",
+            Uncommon = "Items.AdvancedMicroGeneratorUncommon",
+            Rare = "Items.AdvancedMicroGeneratorRare",
+            Epic = "Items.AdvancedMicroGeneratorEpic",
+            Legendary = "Items.AdvancedMicroGeneratorLegendary"
+        },
+        ShockAbsorber = {
+            Common = "Items.AdvancedJointLockCommon",
+            Uncommon = "Items.AdvancedJointLockUncommon",
+            Rare = "Items.AdvancedJointLockRare",
+            Epic = "Items.AdvancedJointLockEpic",
+            Legendary = "Items.AdvancedJointLockLegendary"
         },
         SmartLink = {
-            Rare = "Items.SmartLinkRare",
-            Epic = "Items.SmartLinkEpic",
-            Legendary = "Items.SmartLinkLegendary"
-        }
-    },
-    Immune = {
-        Cataresist = {
-            Common = "Items.ResistancesBoosterCommon",
-            Uncommon = "Items.ResistancesBoosterUncommon",
-            Epic = "Items.ResistancesBoosterEpic",
-            Legendary = "Items.ResistancesBoosterLegendary"
+            Common = "Items.AdvancedSmartLinkCommon",
+            Uncommon = "Items.AdvancedSmartLinkUncommon",
+            Rare = "Items.AdvancedSmartLinkRare",
+            Epic = "Items.AdvancedSmartLinkEpic",
+            Legendary = "Items.AdvancedSmartLinkLegendary"
         },
-        Detoxifier = {
-            Rare = "Items.ToxinCleanser"
+        TattooJohnny = {
+            Rare = "Items.AdvancedCasiusTattooRare",
+            Epic = "Items.AdvancedCasiusTattooEpic",
+            Legendary = "Items.AdvancedCasiusTattooLegendary"
         },
-        Inductor = {
-            Epic = "Items.ReversePowerInductor"
+        TattooTogetherForever = {
+            Rare = "Items.AdvancedSilverhandTattooRare",
+            Epic = "Items.AdvancedSilverhandTattooEpic",
+            Legendary = "Items.AdvancedSilverhandTattooLegendary"
         },
-        Metabolic = {
-            Epic = "Items.ReverseMetabolicEnhancer"
-        },
-        PainEditor = {
-            Legendary = "Items.PainReductor"
-        },
-        ShockAwe = {
-            Common = "Items.ElectroshockMechanismCommon",
-            Uncommon = "Items.ElectroshockMechanismUncommon",
-            Epic = "Items.ElectroshockMechanismEpic",
-            Legendary = "Items.ElectroshockMechanismLegendary"
+        TattooTygerClaws = {
+            Rare = "Items.AdvancedYakuzaTattooRare",
+            Epic = "Items.AdvancedYakuzaTattooEpic",
+            Legendary = "Items.AdvancedYakuzaTattooLegendary"
         }
     },
     Integumentary = {
-        FireproofCoating = {
-            Rare = "Items.FireproofSkin"
+        Carapace = {
+            Common = "Items.AdvancedWeirdTankyPlatingCommon",
+            Uncommon = "Items.AdvancedWeirdTankyPlatingUncommon",
+            Rare = "Items.AdvancedWeirdTankyPlatingRare",
+            Epic = "Items.AdvancedWeirdTankyPlatingEpic",
+            Legendary = "Items.AdvancedWeirdTankyPlatingLegendary"
         },
-        GroundingPlating = {
-            Rare = "Items.GroundingPlating"
+        CellularAdapter = {
+            Common = "Items.AdvancedAdaptiveStemCellsCommon",
+            Uncommon = "Items.AdvancedAdaptiveStemCellsUncommon",
+            Rare = "Items.AdvancedAdaptiveStemCellsRare",
+            Epic = "Items.AdvancedAdaptiveStemCellsEpic",
+            Legendary = "Items.AdvancedAdaptiveStemCellsLegendary"
         },
-        HeatConverter = {
-            Epic = "Items.HeatUsingBooster"
+        Chitin = {
+            Common = "Items.IconicAdvancedChitonCommon",
+            Uncommon = "Items.IconicAdvancedChitonUncommon",
+            Rare = "Items.IconicAdvancedChitonRare",
+            Epic = "Items.IconicAdvancedChitonEpic",
+            Legendary = "Items.IconicAdvancedChitonLegendary"
         },
-        -- Might be functional now!
+        Countershell = {
+            Common = "Items.AdvancedSuddenAidCommon",
+            Uncommon = "Items.AdvancedSuddenAidUncommon",
+            Rare = "Items.AdvancedSuddenAidRare",
+            Epic = "Items.AdvancedSuddenAidEpic",
+            Legendary = "Items.AdvancedSuddenAidLegendary"
+        },
+        Defenzikov = {
+            Common = "Items.AdvancedPlatingGlitchCommon",
+            Uncommon = "Items.AdvancedPlatingGlitchUncommon",
+            Rare = "Items.AdvancedPlatingGlitchRare",
+            Epic = "Items.AdvancedPlatingGlitchEpic",
+            Legendary = "Items.AdvancedPlatingGlitchLegendary"
+        },
+        NanoPlating = {
+            Common = "Items.AdvancedNanoTechPlatesCommon",
+            Uncommon = "Items.AdvancedNanoTechPlatesUncommon",
+            Rare = "Items.AdvancedNanoTechPlatesRare",
+            Epic = "Items.AdvancedNanoTechPlatesEpic",
+            Legendary = "Items.AdvancedNanoTechPlatesLegendary"
+        },
         OpticalCamo = {
-            Rare = "Items.OpticalCamoRare",
-            Epic = "Items.OpticalCamoEpic",
-            Legendary = "Items.OpticalCamoLegendary"
+            Common = "Items.AdvancedOpticalCamoCommon",
+            Uncommon = "Items.AdvancedOpticalCamoUncommon",
+            Rare = "Items.AdvancedOpticalCamoRare",
+            Epic = "Items.AdvancedOpticalCamoEpic",
+            Legendary = "Items.AdvancedOpticalCamoLegendary"
+        },
+        PainEditor = {
+            Epic = "Items.AdvancedPainReductorEpic",
+            Legendary = "Items.AdvancedPainReductorLegendary"
+        },
+        Painducer = {
+            Common = "Items.AdvancedBloodDepleterCommon",
+            Uncommon = "Items.AdvancedBloodDepleterUncommon",
+            Rare = "Items.AdvancedBloodDepleterRare",
+            Epic = "Items.AdvancedBloodDepleterEpic",
+            Legendary = "Items.AdvancedBloodDepleterLegendary",
+        },
+        PeripheralInverse = {
+            Epic = "Items.IconicAdvancedProximityReducerEpic",
+            Legendary = "Items.IconicAdvancedProximityReducerLegendary"
+        },
+        Proxishield = {
+            Common = "Items.AdvancedProximityReducerCommon",
+            Uncommon = "Items.AdvancedProximityReducerUncommon",
+            Rare = "Items.AdvancedProximityReducerRare",
+            Epic = "Items.AdvancedProximityReducerEpic",
+            Legendary = "Items.AdvancedProximityReducerLegendary"
+        },
+        Rangeguard = {
+            Common = "Items.AdvancedChargeSystemCommon",
+            Uncommon = "Items.AdvancedChargeSystemUncommon",
+            Rare = "Items.AdvancedChargeSystemRare",
+            Epic = "Items.AdvancedChargeSystemEpic",
+            Legendary = "Items.AdvancedChargeSystemLegendary",
+        },
+        ShockNAwe = {
+            Common = "Items.AdvancedElectroshockMechanismCommon",
+            Uncommon = "Items.AdvancedElectroshockMechanismUncommon",
+            Rare = "Items.AdvancedElectroshockMechanismRare",
+            Epic = "Items.AdvancedElectroshockMechanismEpic",
+            Legendary = "Items.AdvancedElectroshockMechanismLegendary",
         },
         SubdermalArmor = {
-            Common = "Items.SubdermalArmorCommon",
-            Uncommon = "Items.SubdermalArmorUncommon",
-            Rare = "Items.SubdermalArmorRare",
-            Epic = "Items.SubdermalArmorEpic",
-            Legendary = "Items.SubdermalArmorLegendary"
-        },
-        SupraDermalWeave = {
-            Rare = "Items.MetalCoveredSkin"
+            Common = "Items.AdvancedBoringPlatingCommon",
+            Uncommon = "Items.AdvancedBoringPlatingUncommon",
+            Rare = "Items.AdvancedBoringPlatingRare",
+            Epic = "Items.AdvancedBoringPlatingEpic",
+            Legendary = "Items.AdvancedBoringPlatingLegendary"
         }
     },
     Legs = {
-        BoostedTendons = {
-            Rare = "Items.BoostedTendonsRare"
-        },
         FortifiedAnkles = {
-            Rare = "Items.ReinforcedMusclesRare",
-            Epic = "Items.ReinforcedMusclesEpic"
+            Uncommon = "Items.AdvancedReinforcedMusclesUncommon",
+            Rare = "Items.AdvancedReinforcedMusclesRare",
+            Epic = "Items.AdvancedReinforcedMusclesEpic",
+            Legendary = "Items.AdvancedReinforcedMusclesLegendary",
+        },
+        JenkinsTendons = {
+            Common = "Items.AdvancedJenkinsTendonsCommon",
+            Uncommon = "Items.AdvancedJenkinsTendonsUncommon",
+            Rare = "Items.AdvancedJenkinsTendonsRare",
+            Epic = "Items.AdvancedJenkinsTendonsEpic",
+            Legendary = "Items.AdvancedJenkinsTendonsLegendary",
+        },
+        LeeroyLigamentSystem = {
+            Uncommon = "Items.IconicJenkinsTendonsUncommon",
+            Rare = "Items.IconicJenkinsTendonsRare",
+            Epic = "Items.IconicJenkinsTendonsEpic",
+            Legendary = "Items.IconicJenkinsTendonsLegendary",
         },
         LynxPaws = {
-            Epic = "Items.CatPaws"
+            Uncommon = "Items.AdvancedCatPawsUncommon",
+            Rare = "Items.AdvancedCatPawsRare",
+            Epic = "Items.AdvancedCatPawsEpic",
+            Legendary = "Items.AdvancedCatPawsLegendary",
+        },
+        ReinforcedTendons = {
+            Uncommon = "Items.AdvancedBoostedTendonsUncommon",
+            Rare = "Items.AdvancedBoostedTendonsRare",
+            Epic = "Items.AdvancedBoostedTendonsEpic",
+            Legendary = "Items.AdvancedBoostedTendonsLegendary",
         }
     },
     Nervous = {
+        AdrenalineConverter = {
+            Common = "Items.AdvancedDetectorRushCommon",
+            Uncommon = "Items.AdvancedDetectorRushUncommon",
+            Rare = "Items.AdvancedDetectorRushRare",
+            Epic = "Items.AdvancedDetectorRushEpic",
+            Legendary = "Items.AdvancedDetectorRushLegendary"
+        },
+        AdrenoTrigger = {
+            Rare = "Items.IconicAdvancedDetectorRushRare",
+            Epic = "Items.IconicAdvancedDetectorRushEpic",
+            Legendary = "Items.IconicAdvancedDetectorRushLegendary"
+        },
+        AtomicSensors = {
+            Common = "Items.AdvancedTroubleFinderCommon",
+            Uncommon = "Items.AdvancedTroubleFinderUncommon",
+            Rare = "Items.AdvancedTroubleFinderRare",
+            Epic = "Items.AdvancedTroubleFinderEpic",
+            Legendary = "Items.AdvancedTroubleFinderLegendary"
+        },
+        DeepFieldVisualInterface = {
+            Common = "Items.IconicAdvancedVisualCortexSupportCommon",
+            Uncommon = "Items.IconicAdvancedVisualCortexSupportUncommon",
+            Rare = "Items.IconicAdvancedVisualCortexSupportRare",
+            Epic = "Items.IconicAdvancedVisualCortexSupportEpic",
+            Legendary = "Items.IconicAdvancedVisualCortexSupportLegendary"
+        },
         Kerenzikov = {
-            Common = "Items.KerenzikovCommon",
-            Uncommon = "Items.KerenzikovUncommon",
-            Rare = "Items.KerenzikovRare",
-            Epic = "Items.KerenzikovEpic",
-            Legendary = "Items.KerenzikovLegendary"
-        },
-        Maneuvering = {
-            Rare = "Items.NervousSystemDischarge"
-        },
-        Nanorelays = {
-            Uncommon = "Items.ImprovedReactionUncommon",
-            Rare = "Items.ImprovedReactionRare",
-            Epic = "Items.ImprovedReactionEpic"
+            Common = "Items.AdvancedKerenzikovCommon",
+            Uncommon = "Items.AdvancedKerenzikovUncommon",
+            Rare = "Items.AdvancedKerenzikovRare",
+            Epic = "Items.AdvancedKerenzikovEpic",
+            Legendary = "Items.AdvancedKerenzikovLegendary",
         },
         Neofiber = {
-            Common = "Items.NeoFiberCommon",
-            Uncommon = "Items.NeoFiberUncommon",
-            Rare = "Items.NeoFiberRare",
-            Epic = "Items.NeoFiberEpic",
-            Legendary = "Items.NeoFiberLegendary"
+            Common = "Items.AdvancedNeoFiberCommon",
+            Uncommon = "Items.AdvancedNeoFiberUncommon",
+            Rare = "Items.AdvancedNeoFiberRare",
+            Epic = "Items.AdvancedNeoFiberEpic",
+            Legendary = "Items.AdvancedNeoFiberLegendary",
         },
         ReflexTuner = {
-            Common = "Items.ReflexRecorderCommon",
-            Uncommon = "Items.ReflexRecorderUncommon",
-            Rare = "Items.ReflexRecorderRare",
-            Legendary = "Items.ReflexRecorderLegendary"
+            Common = "Items.AdvancedReflexRecorderCommon",
+            Uncommon = "Items.AdvancedReflexRecorderUncommon",
+            Rare = "Items.AdvancedReflexRecorderRare",
+            Epic = "Items.AdvancedReflexRecorderEpic",
+            Legendary = "Items.AdvancedReflexRecorderLegendary"
         },
-        SynapticAccel = {
-            Common = "Items.SynapticAcceleratorCommon",
-            Uncommon = "Items.SynapticAcceleratorUncommon",
-            Rare = "Items.SynapticAcceleratorRare",
-            Epic = "Items.SynapticAcceleratorEpic",
-            Legendary = "Items.SynapticAcceleratorLegendary"
+        Revulsor = {
+            Rare = "Items.IconicAdvancedReflexRecorderRare",
+            Epic = "Items.IconicAdvancedReflexRecorderEpic",
+            Legendary = "Items.IconicAdvancedReflexRecorderLegendary"
+        },
+        Stabber = {
+            Common = "Items.AdvancedOilDispenserCommon",
+            Uncommon = "Items.AdvancedOilDispenserUncommon",
+            Rare = "Items.AdvancedOilDispenserRare",
+            Epic = "Items.AdvancedOilDispenserEpic",
+            Legendary = "Items.AdvancedOilDispenserLegendary",
+        },
+        SynapticAccelerator = {
+            Common = "Items.AdvancedSynapticAcceleratorCommon",
+            Uncommon = "Items.AdvancedSynapticAcceleratorUncommon",
+            Rare = "Items.AdvancedSynapticAcceleratorRare",
+            Epic = "Items.AdvancedSynapticAcceleratorEpic",
+            Legendary = "Items.AdvancedSynapticAcceleratorLegendary",
+        },
+        TyrosineInjector = {
+            Common = "Items.AdvancedTyrosineInjectorCommon",
+            Uncommon = "Items.AdvancedTyrosineInjectorUncommon",
+            Rare = "Items.AdvancedTyrosineInjectorRare",
+            Epic = "Items.AdvancedTyrosineInjectorEpic",
+            Legendary = "Items.AdvancedTyrosineInjectorLegendary",
+        },
+        VisualCortexSupport = {
+            Common = "Items.AdvancedVisualCortexSupportCommon",
+            Uncommon = "Items.AdvancedVisualCortexSupportUncommon",
+            Rare = "Items.AdvancedVisualCortexSupportRare",
+            Epic = "Items.AdvancedVisualCortexSupportEpic",
+            Legendary = "Items.AdvancedVisualCortexSupportLegendary",
         }
     },
     Ocular = {
         Kiroshi = {
-            Common = "Items.KiroshiOptics",
-            Rare = "Items.KiroshiOpticsRare",
-            Epic = "Items.KiroshiOpticsEpic"
+            Basic = {
+                Common = "Items.AdvancedKiroshiOpticsBareCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsBareUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsBareRare",
+                Epic = "Items.AdvancedKiroshiOpticsBareEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsBareLegendary"
+            },
+            Clairvoyant = {
+                Common = "Items.AdvancedKiroshiOpticsWallhackCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsWallhackUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsWallhackRare",
+                Epic = "Items.AdvancedKiroshiOpticsWallhackEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsWallhackLegendary"
+            },
+            Cockatrice = {
+                Epic = "Items.Iconic_AdvancedKiroshiOpticsBareEpic",
+                Legendary = "Items.Iconic_AdvancedKiroshiOpticsBareLegendary"
+            },
+            Doomsayer = {
+                Common = "Items.AdvancedKiroshiOpticsHunterCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsHunterUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsHunterRare",
+                Epic = "Items.AdvancedKiroshiOpticsHunterEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsHunterLegendary"
+            },
+            Oracle = {
+                Common = "Items.AdvancedKiroshiOpticsCombinedCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsCombinedUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsCombinedRare",
+                Epic = "Items.AdvancedKiroshiOpticsCombinedEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsCombinedLegendary"
+            },
+            Sentry = {
+                Common = "Items.AdvancedKiroshiOpticsSensorCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsSensorUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsSensorRare",
+                Epic = "Items.AdvancedKiroshiOpticsSensorEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsSensorLegendary"
+            },
+            Stalker = {
+                Common = "Items.AdvancedKiroshiOpticsPiercingCommon",
+                Uncommon = "Items.AdvancedKiroshiOpticsPiercingUncommon",
+                Rare = "Items.AdvancedKiroshiOpticsPiercingRare",
+                Epic = "Items.AdvancedKiroshiOpticsPiercingEpic",
+                Legendary = "Items.AdvancedKiroshiOpticsPiercingLegendary"
+            }
         }
     },
     Skeleton = {
+        -- This cyberware has two variants.
+        -- There are minor differences between the two - sometimes armour, sometimes effects.
+        -- Not sure what or why, yet.
         BionicJoints = {
-            Rare = "Items.JointLockRare",
-            Epic = "Items.JointLockEpic"
-        },
-        BionicLungs = {
-            Common = "Items.EnhancedTissueCommon",
-            Uncommon = "Items.EnhancedTissueUncommon",
-            Rare = "Items.EnhancedTissueRare",
-            Epic = "Items.EnhancedTissueEpic",
-            Legendary = "Items.EnhancedTissueLegendary"
+            VariantA = {
+                Common = "Items.AdvancedBionicJointsCommon",
+                Uncommon = "Items.AdvancedBionicJointsUncommon",
+                Rare = "Items.AdvancedBionicJointsRare",
+                Epic = "Items.AdvancedBionicJointsEpic",
+                Legendary = "Items.AdvancedBionicJointsLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedBionicJointsCommon2",
+                Uncommon = "Items.AdvancedBionicJointsUncommon2",
+                Rare = "Items.AdvancedBionicJointsRare2",
+                Epic = "Items.AdvancedBionicJointsEpic2",
+                Legendary = "Items.AdvancedBionicJointsLegendary2"
+            }
         },
         DenseMarrow = {
-            Uncommon = "Items.DenseMarrowUncommon",
-            Rare = "Items.DenseMarrowRare",
-            Epic = "Items.DenseMarrowEpic"
+            VariantA = {
+                Common = "Items.AdvancedDenseMarrowCommon",
+                Uncommon = "Items.AdvancedDenseMarrowUncommon",
+                Rare = "Items.AdvancedDenseMarrowRare",
+                Epic = "Items.AdvancedDenseMarrowEpic",
+                Legendary = "Items.AdvancedDenseMarrowLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedDenseMarrowCommon2",
+                Uncommon = "Items.AdvancedDenseMarrowUncommon2",
+                Rare = "Items.AdvancedDenseMarrowRare2",
+                Epic = "Items.AdvancedDenseMarrowEpic2",
+                Legendary = "Items.AdvancedDenseMarrowLegendary2"
+            }
         },
-        Microrotors = {
-            Common = "Items.CyberRotorsCommon",
-            Uncommon = "Items.CyberRotorsUncommon",
-            Rare = "Items.CyberRotorsRare",
-            Epic = "Items.CyberRotorsEpic",
-            Legendary = "Items.CyberRotorsLegendary"
+        EpimorphicSkeleton = {
+            VariantA = {
+                -- These don't show up in your inventory.
+                Epic = "Items.AdvancedEndoskeletonEpic",
+                Legendary = "Items.AdvancedEndoskeletonLegendary"
+            },
+            VariantB = {
+                Epic = "Items.AdvancedEndoskeletonEpic2",
+                Legendary = "Items.AdvancedEndoSkeletonLegendary2" -- Note the capitalisation!
+            }
         },
-        MicroVibrationGen = {
-            Uncommon = "Items.MicroVibrationsGeneratorUncommon",
-            Rare = "Items.MicroVibrationsGeneratorRare",
-            Legendary = "Items.MicroVibrationsGeneratorEpic"
+        KineticFrame = {
+            VariantA = {
+                Common = "Items.AdvancedBoneMarrowCellsCommon",
+                Uncommon = "Items.AdvancedBoneMarrowCellsUncommon",
+                Rare = "Items.AdvancedBoneMarrowCellsRare",
+                Epic = "Items.AdvancedBoneMarrowCellsEpic",
+                Legendary = "Items.AdvancedBoneMarrowCellsLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedBoneMarrowCellsCommon2",
+                Uncommon = "Items.AdvancedBoneMarrowCellsUncommon2",
+                Rare = "Items.AdvancedBoneMarrowCellsRare2",
+                Epic = "Items.AdvancedBoneMarrowCellsEpic2",
+                Legendary = "Items.AdvancedBoneMarrowCellsLegendary2"
+            }
         },
-        SynapticSignal = {
-            Common = "Items.EndoskeletonCommon",
-            Uncommon = "Items.EndoskeletonUncommon",
-            Rare = "Items.EndoskeletonRare",
-            Epic = "Items.EndoskeletonEpic",
-            Legendary = "Items.EndoskeletonLegendary"
+        ParaBellum = {
+            VariantA = {
+                Common = "Items.AdvancedT1000Common",
+                Uncommon = "Items.AdvancedT1000Uncommon",
+                Rare = "Items.AdvancedT1000Rare",
+                Epic = "Items.AdvancedT1000Epic",
+                Legendary = "Items.AdvancedT1000Legendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedT1000Common2",
+                Uncommon = "Items.AdvancedT1000Uncommon2",
+                Rare = "Items.AdvancedT1000Rare2",
+                Epic = "Items.AdvancedT1000Epic2",
+                Legendary = "Items.AdvancedT1000Legendary2"
+            }
+        },
+        RamRecoup = {
+            VariantA = {
+                Common = "Items.AdvancedCompilingSkeletonCommon",
+                Uncommon = "Items.AdvancedCompilingSkeletonUncommon",
+                Rare = "Items.AdvancedCompilingSkeletonRare",
+                Epic = "Items.AdvancedCompilingSkeletonEpic",
+                Legendary = "Items.AdvancedCompilingSkeletonLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedCompilingSkeletonCommon2",
+                Uncommon = "Items.AdvancedCompilingSkeletonUncommon2",
+                Rare = "Items.AdvancedCompilingSkeletonRare2",
+                Epic = "Items.AdvancedCompilingSkeletonEpic2",
+                Legendary = "Items.AdvancedCompilingSkeletonLegendary2"
+            }
+        },
+        RaraAvis = {
+            VariantA = {
+                Common = "Items.IconicAdvancedT1000Common",
+                Uncommon = "Items.IconicAdvancedT1000Uncommon",
+                Rare = "Items.IconicAdvancedT1000Rare",
+                Epic = "Items.IconicAdvancedT1000Epic",
+                Legendary = "Items.IconicAdvancedT1000Legendary"
+            },
+            VariantB = {
+                Common = "Items.IconicAdvancedT1000Common2",
+                Uncommon = "Items.IconicAdvancedT1000Uncommon2",
+                Rare = "Items.IconicAdvancedT1000Rare2",
+                Epic = "Items.IconicAdvancedT1000Epic2",
+                Legendary = "Items.IconicAdvancedT1000Legendary2"
+            }
+        },
+        Scarab = {
+            VariantA = {
+                Common = "Items.AdvancedRapidMuscleNurishCommon",
+                Uncommon = "Items.AdvancedRapidMuscleNurishUncommon",
+                Rare = "Items.AdvancedRapidMuscleNurishRare",
+                Epic = "Items.AdvancedRapidMuscleNurishEpic",
+                Legendary = "Items.AdvancedRapidMuscleNurishLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedRapidMuscleNurishCommon2",
+                Uncommon = "Items.AdvancedRapidMuscleNurishUncommon2",
+                Rare = "Items.AdvancedRapidMuscleNurishRare2",
+                Epic = "Items.AdvancedRapidMuscleNurishEpic2",
+                Legendary = "Items.AdvancedRapidMuscleNurishLegendary2"
+            }
+        },
+        ScarCoalescer = {
+            VariantA = {
+                Common = "Items.AdvancedNoPainNoGainCommon",
+                Uncommon = "Items.AdvancedNoPainNoGainUncommon",
+                Rare = "Items.AdvancedNoPainNoGainRare",
+                Epic = "Items.AdvancedNoPainNoGainEpic",
+                Legendary = "Items.AdvancedNoPainNoGainLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedNoPainNoGainCommon2",
+                Uncommon = "Items.AdvancedNoPainNoGainUncommon2",
+                Rare = "Items.AdvancedNoPainNoGainRare2",
+                Epic = "Items.AdvancedNoPainNoGainEpic2",
+                Legendary = "Items.AdvancedNoPainNoGainLegendary2"
+            }
+        },
+        SpringJoints = {
+            VariantA = {
+                Common = "Items.AdvancedAgileJointsCommon",
+                Uncommon = "Items.AdvancedAgileJointsUncommon",
+                Rare = "Items.AdvancedAgileJointsRare",
+                Epic = "Items.AdvancedAgileJointsEpic",
+                Legendary = "Items.AdvancedAgileJointsLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedAgileJointsCommon2",
+                Uncommon = "Items.AdvancedAgileJointsUncommon2",
+                Rare = "Items.AdvancedAgileJointsRare2",
+                Epic = "Items.AdvancedAgileJointsEpic2",
+                Legendary = "Items.AdvancedAgileJointsLegendary2"
+            }
         },
         TitaniumBones = {
-            Common = "Items.TitaniumInfusedBonesCommon",
-            Uncommon = "Items.TitaniumInfusedBonesUncommon",
-            Rare = "Items.TitaniumInfusedBonesRare"
+            VariantA = {
+                Common = "Items.AdvancedTitaniumInfusedBonesCommon",
+                Uncommon = "Items.AdvancedTitaniumInfusedBonesUncommon",
+                Rare = "Items.AdvancedTitaniumInfusedBonesRare",
+                Epic = "Items.AdvancedTitaniumInfusedBonesEpic",
+                Legendary = "Items.AdvancedTitaniumInfusedBonesLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedTitaniumInfusedBonesCommon2",
+                Uncommon = "Items.AdvancedTitaniumInfusedBonesUncommon2",
+                Rare = "Items.AdvancedTitaniumInfusedBonesRare2",
+                Epic = "Items.AdvancedTitaniumInfusedBonesEpic2",
+                Legendary = "Items.AdvancedTitaniumInfusedBonesLegendary2"
+            }
+        },
+        UniversalBooster = {
+            VariantA = {
+                Common = "Items.AdvancedPainDistributorCommon",
+                Uncommon = "Items.AdvancedPainDistributorUncommon",
+                Rare = "Items.AdvancedPainDistributorRare",
+                Epic = "Items.AdvancedPainDistributorEpic",
+                Legendary = "Items.AdvancedPainDistributorLegendary"
+            },
+            VariantB = {
+                Common = "Items.AdvancedPainDistributorCommon2",
+                Uncommon = "Items.AdvancedPainDistributorUncommon2",
+                Rare = "Items.AdvancedPainDistributorRare2",
+                Epic = "Items.AdvancedPainDistributorEpic2",
+                Legendary = "Items.AdvancedPainDistributorLegendary2"
+            }
         }
-    },
-
+    }
 }
 
 return Cyberware

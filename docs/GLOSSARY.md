@@ -3,8 +3,8 @@ Contains a variety of dictionaries and property lookups to make your life easier
 
 All glossary items can be used internally and when calling other functions.
 ```lua
--- I want some Armadillo mods!
-Bartmoss.Handler.Items:GiveItem(Bartmoss.Glossary.Mods.Clothing.Armadillo, 20, "Legendary")
+-- I want some Equalizer mods!
+Bartmoss.Handler.Items:GiveItem(Bartmoss.Glossary.Mods.Ranged.Generic.Equalizer.Legendary, 20)
 ```
 Glossaries are currently still a work in progress.
 
@@ -35,10 +35,8 @@ Bartmoss.Glossary.Quickhacks.RebootOptics.Legendary
 Split by mod type and (for cyberware) slot.
 ```lua
 -- Mods lookup by clothing, ranged, melee or cyberware types.
-Bartmoss.Glossary.Mods.Clothing.Fortuna
-Bartmoss.Glossary.Mods.Ranged.Crunch
+Bartmoss.Glossary.Mods.Ranged.Generic.Equalizer.Legendary
 Bartmoss.Glossary.Mods.Melee.Scourge
-Bartmoss.Glossary.Mods.Cyberware.Arms.MantisBlades.Edge.Physical
 ```
 
 ## Attachments

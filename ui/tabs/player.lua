@@ -5,14 +5,16 @@ local Logger = require("utility/logger")
 local Widget = require("utility/widget")
 local Style = require("ui/style")
 local State = require("ui/state")
+local Glossary = require("data/glossary")
 local PlayerHandler = require("handler/player")
 
 function PlayerCheatsTab:DoExperience()
     local amount = self.state.ExpAmount
+    local attr = self.state.AttrOptions[self.state.AttrSelect + 1]
     if amount < 0 then
         return
     end
-    self.handler.player:GiveXP(self.state.AttrOptions[self.state.AttrSelect + 1], amount)
+    self.handler.player:GiveXP(Glossary.Attributes[attr], amount)
 end
 
 function PlayerCheatsTab:BuildExpGiver()

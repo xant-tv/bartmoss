@@ -21,7 +21,9 @@ function Draw:BuildTabs()
         self.tab.player:Build()
         self.tab.item:Build()
         self.tab.weapon:Build()
-        self.tab.armor:Build()
+        -- Clothing armor is essentially deprecated. 
+        -- No point really diving into any clothing stats now.
+        -- self.tab.armor:Build()
         Widget.EndTabBar()
     end
 end

@@ -45,20 +45,20 @@ function EquipmentHandler:FindInventoryItemsByString(match)
     return matches
 end
 
-function EquipmentHandler:Upgrade(itemdata, quality, level, base)
+function EquipmentHandler:Upgrade(itemdata, quality, plus, base)
     local default = nil
     if base then
-        -- Force default quality and level for certain items if base is known.
+        -- Force default quality and upgrade for certain items if base is known.
         default = self.handler.item:GetDefaultQuality(base)
         if default then
-            quality = nil
+            quality = default
         end
         if self.handler.item:CannotBeLevelled(base) then
-            level = 0
+            plus = 0
         end
     end
     self.handler.item:ClearSlots(itemdata, true) -- Return any removed mods.
-    self.handler.item:SetLevel(itemdata, level)
+    self.handler.item:SetPlus(itemdata, plus)
     self.handler.item:SetQuality(itemdata, quality)
 end
 
@@ -73,8 +73,8 @@ function EquipmentHandler:UpgradeEquipped()
             if itemid.tdbid.hash ~= 0 then
                 self.logger:Info("UpgradeEquipped: " .. k .. " | " .. (i - 1))
                 local itemdata = ts:GetItemData(player, itemid)
-                -- Sets quality and level (not provided will auto-scale to player).
-                self:Upgrade(itemdata, Glossary.Quality.Legendary)
+                -- Sets quality and upgrade.
+                self:Upgrade(itemdata, Glossary.Quality.Legendary, 2)
             end
         end
     end
@@ -82,7 +82,6 @@ end
 
 function EquipmentHandler:UpgradeInventory()
     local tabs = {
-        Glossary.Mods.Clothing,
         Glossary.Mods.Ranged,
         Glossary.Mods.Melee,
         Glossary.Attachments.Scope.Short,
@@ -96,8 +95,8 @@ function EquipmentHandler:UpgradeInventory()
                 self.logger:Info("UpgradeInventory: " .. key .. " | " .. #matches)
             end
             for _, itemdata in ipairs(matches) do
-                -- Sets quality and level (not provided will auto-scale to player).
-                self:Upgrade(itemdata, Glossary.Quality.Legendary, nil, item)
+                -- Sets quality and upgrade.
+                self:Upgrade(itemdata, Glossary.Quality.Legendary, 2, item)
             end
         end
     end

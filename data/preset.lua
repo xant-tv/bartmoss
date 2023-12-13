@@ -313,147 +313,12 @@ Preset.Presets = {
             -- Can continue tracking enemies through walls after they have been marked. Does this via calibrating body heat - such lore!
             -- Sadly no way to allow target locking through walls as well.
             -- Burns enemies on impact.
-            Base =  Glossary.Weapons.Ranged.Sidewinder.Pimp,
+            Base =  Glossary.Weapons.Ranged.Dian.Pimp,
             Quality = Glossary.Quality.Legendary,
             Stats = {
                 {
-                    Stat = Glossary.Stats.PhysicalDamage,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.BleedChance,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.ThermalDamage,
-                    Value = 128,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.BurnChance,
-                    Value = 50,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.ElectricalDamage,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.ShockChance,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.ChemicalDamage,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.PoisonChance,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.CritChance,
-                    Value = 30,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.CritDamage,
-                    Value = 20,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.HeadshotDamageMultiplier,
-                    Value = 4,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    -- Straight up multiplier to the size of the magazine.
-                    Stat = Glossary.Stats.MagazineCapacityBonus,
-                    Value = 0.5,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Add"
-                },
-                {
-                    Stat = Glossary.Stats.TechPierceEnabled,
-                    Value = 1,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.TechPierceChargeLevel,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    -- Seconds before target is removed from lock after they are no longer in sight.
-                    Stat = Glossary.Stats.SmartGunTimeToRemoveOccludedTarget,
-                    Value = 30,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
                     Stat = Glossary.Stats.SmartGunHitProbability,
-                    Value = 1,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunMissRadius,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunAdsTimeToLock,
-                    Value = 0.2,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunHipTimeToLock,
-                    Value = 0.2,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunUseTimeBasedAccuracy,
-                    Value = 0,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunPlayerProjectileVelocity,
-                    Value = 175,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Add"
-                },
-                {
-                    Stat = Glossary.Stats.SmartGunTrackAllBodyparts,
-                    Value = 1,
-                    Calculation = Glossary.Calculation.Additive,
-                    Method = "Set"
-                },
-                {
-                    -- Heatseeker should have built-in smart link.
-                    Stat = Glossary.Stats.HasSmartLink,
-                    Value = 1,
+                    Value = 0.95,
                     Calculation = Glossary.Calculation.Additive,
                     Method = "Set"
                 },
@@ -465,6 +330,11 @@ Preset.Presets = {
                 }
             },
             Parts = {
+                {
+                    Slot = Glossary.PartSlots.Weapon.Iconic.Ranged,
+                    Part = Glossary.Mods.Ranged.Iconic.YingLong,
+                    Quality = Glossary.Quality.Epic
+                }
             }
         },
         Mikoto = {

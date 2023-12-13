@@ -31,7 +31,6 @@ end
 function System:Crafting()
     local ssc = self:Scriptable()
     local cs = ssc:Get(CName.new("CraftingSystem"))
-    cs["SetItemLevel"] = cs["SetItemLevel;gameItemData"]
     return cs
 end
 
@@ -45,7 +44,6 @@ function System:PlayerEquipmentData()
     local player = self:Player()
     local es = self:Equipment()
     local espd = es:GetPlayerData(player)
-    espd["GetItemInEquipSlot"] = espd["GetItemInEquipSlot;gamedataEquipmentAreaInt32"]
     return espd
 end
 
@@ -66,6 +64,17 @@ function System:InventoryManager()
     local espd = self:PlayerEquipmentData()
     local imgr = espd:GetInventoryManager()
     return imgr
+end
+
+function System:Quests()
+    local qs = Game.GetQuestsSystem()
+    return qs
+end
+
+function System:ItemModification()
+    local ssc = self:Scriptable()
+    local ims = ssc:Get(CName.new("ItemModificationSystem"))
+    return ims
 end
 
 function System:New()
